@@ -2,61 +2,49 @@
 
 **آخر تحديث:** 2026-06-26  
 **الجلسة:** session-005  
-**حالة المشروع:** نشط
+**حالة المشروع:** نشط  
+**إصدار التصنيف:** v2.0 (إعادة هيكلة كاملة)
 
-## الملخص الحالي
+## ⚠️ تغيير جوهري: إعادة هيكلة التصنيف
 
-أضيفت 4 إدخالات جديدة ومقارنة واحدة و3 فئات فرعية جديدة:
+تم إعادة تصميم التصنيف بالكامل من 10 فئات عامة إلى 7 فئات مبنية على أطر علمية:
 
-| المعرف | العنوان | النوع | الحالة | الفئة |
-|--------|---------|-------|--------|-------|
-| entry-fp8-001 | FP8 Quantization | 📘 عملية | ⭐⭐⭐⭐ إنتاج | model-compression/quantization |
-| entry-routing-001 | Intelligent Model Routing | 📘 عملية | ⭐⭐⭐ منشور | model-selection-and-routing/model-routing |
-| entry-semcache-001 | Semantic Caching | 📘 عملية | ⭐⭐⭐ منشور | token-and-prompt-cost/semantic-caching |
-| entry-chinchilla-001 | Chinchilla Scaling Laws | 📐 نظرية | ⭐⭐⭐ مُتحقق | efficient-training/compute-optimal |
+| القديم | الجديد |
+|--------|--------|
+| 10 فئات عامة فضفاضة | 7 فئات مبنية على 4 طبقات علمية |
+| 5 فئات فارغة تماماً | 3 فئات جديدة حرجة (وكلاء، حوكمة، سوق) |
+| library/ | library-v1/ (قديم) + library/ (جديد) |
 
-## المقارنات الجديدة
+**تفاصيل كاملة في:** `TAXONOMY_REDESIGN.md`
 
-- `comparisons/inference-engines.md` — مقارنة vLLM vs TensorRT-LLM vs SGLang vs TGI (بيانات Q2 2026)
+## الإدخالات الجديدة (هذه الجلسة)
 
-## الفئات الفرعية الجديدة
+| المعرف | العنوان | النوع | الحالة |
+|--------|---------|-------|--------|
+| entry-fp8-001 | FP8 Quantization | 📘 عملية | ⭐⭐⭐⭐ إنتاج |
+| entry-routing-001 | Intelligent Model Routing | 📘 عملية | ⭐⭐⭐ منشور |
+| entry-semcache-001 | Semantic Caching | 📘 عملية | ⭐⭐⭐ منشور |
+| entry-chinchilla-001 | Chinchilla Scaling Laws | 📐 نظرية | ⭐⭐⭐ مُتحقق |
 
-- `library/model-selection-and-routing/model-routing/` — توجيه النماذج
-- `library/token-and-prompt-cost/semantic-caching/` — التخزين المؤقت الدلالي
-- `library/efficient-training/compute-optimal/` — التدريب الأمثل حوسبياً
-
-## مصادر جديدة
-
-- 20 مصدر موثق (Tier 1-3) تشمل: ICLR 2025 (RouteLLM)، NeurIPS 2022 (Chinchilla)، معايير Q2 2026
-- 20 ادعاء مسجل مع روابط أدلة
-
-## قرارات مهمة
-
-1. FP8 مُصنَّف كـ Practical ⭐⭐⭐⭐ — المعيار الافتراضي في 2026 على Hopper/Blackwell مع تدهور 0.3-0.5 نقطة فقط.
-2. Model Routing مُصنَّف كـ Practical ⭐⭐⭐ — RouteLLM منشور في ICLR 2025 ومتاح كخدمة عبر Amazon Bedrock، لكن أرقام الإنتاج الفعلية تعتمد على توزيع الحركة.
-3. Semantic Caching مُصنَّف كـ Practical ⭐⭐⭐ — دراسات حالة إنتاجية موثقة (73% تقليل، ProjectDiscovery).
-4. Chinchilla مُصنَّف كـ Theoretical ⭐⭐⭐ — نظرية مُتحققة أثّرت على صناعة النماذج لكنها ليست أداة مباشرة.
-
-## إحصائيات المشروع الحالية
+## إحصائيات المشروع
 
 | المقياس | العدد |
 |---------|-------|
+| فئات رئيسية | 7 |
+| فئات فرعية | 21 (12 نشطة + 9 ⏳) |
 | إدخالات عملية | 16 |
 | إدخالات ناشئة | 3 |
 | إدخالات نظرية | 1 |
-| إجمالي الإدخالات | 20 |
-| الفئات الكبرى | 10 |
-| الفئات الفرعية | 17 |
-| المصادر | 48 |
-| الادعاءات | 55 |
-| المقارنات | 7 |
-| مصطلحات المعجم | 62 |
+| إجمالي | 20 |
+| مصادر | 48 |
+| ادعاءات | 55 |
+| مقارنات | 7 |
+| مصطلحات | 62 |
 
 ## ملفات يجب قراءتها عند الاستئناف
 
-- `CONTINUATION_PROTOCOL.md`
-- `NEXT_ACTIONS.md`
-- `data/project_state.json`
-- `data/backlog.json`
-- `RESEARCH_LOG.md`
-- `SESSION_LOG.md`
+1. `TAXONOMY_REDESIGN.md` — **الأهم** — يشرح لماذا وكيف تغير التصنيف
+2. `NEXT_ACTIONS.md` — المهام القادمة
+3. `CONTINUATION_PROTOCOL.md` — بروتوكول الاستمرار
+4. `data/project_state.json` — حالة المشروع
+5. `RESEARCH_LOG.md` — سجل البحث
