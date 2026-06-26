@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+# OS
+.DS_Store
+# Temporary scripts
+setup.py
+populate_md.py
+populate_entries.py
