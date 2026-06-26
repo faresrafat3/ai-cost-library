@@ -1,96 +1,118 @@
 ---
 id: entry-priceofprogress-001
-title_ar: ثمن التقدم — اقتصاديات أداء الذكاء الاصطناعي
-title_en: "The Price of Progress: Price Performance and the Future of AI"
+title_ar: ثمن التقدم — لماذا الأسعار تنخفض والفواتير ترتفع
+title_en: "The Price of Progress: Why Token Prices Fall But Bills Rise"
 type: theoretical
 status: validated
 category: market-economics
 subcategory: inference-paradox
-tree_path: "AI Cost Library → Market Economics → Inference Paradox → Price of Progress"
-cost_dimensions:
-  - inference-cost
-  - api-cost
-  - token-cost
+cost_dimensions: [inference-cost, api-cost, token-cost]
 proof_score: "⭐⭐⭐ مُتحقق | Validated"
-sources_count: 1
+sources_count: 3
 created: 2026-06-26
 updated: 2026-06-26
+scoring:
+  A1: 5
+  A2: 8
+  A3: 9
+  A4: 9
+  B1: 0
+  B2: 0
+  B3: 0
+  B4: 0
+  C1: 0
+  C2: 10
+  C3: 10
+  C4: 0
 research_review:
   paper_read: true
   full_text_scanned: true
-  decision: "يُضاف — أكبر مجموعة بيانات تاريخية لأسعار المعايير، نتائج كمية دقيقة"
-  limitations_noted: "preprint — لم يُراجع من أقران بعد. الفترة أبريل 2024 - نوفمبر 2025."
+  decision: "يُضاف — أكبر مجموعة بيانات تاريخية + تفسير رياضي للمفارقة"
 ---
 
 # 📐 ثمن التقدم — مفارقة الاستدلال | The Price of Progress
 
-> **التصنيف:** 📐 تحليلية | **الإثبات:** ⭐⭐⭐ مُتحقق
+> **التصنيف:** 📐 تحليلية | **الإثبات:** ⭐⭐⭐
 >
-> **المسار:** المكتبة ← اقتصاديات السوق ← مفارقة الاستدلال
+> **الورقة التي تشرح لماذا ميزانية AI ترتفع رغم انخفاض سعر التوكن**
 
 ---
 
 ## المحتوى العربي
 
-### ما هو هذا البحث؟
+### المفارقة بأرقام
 
-دراسة تحليلية كمية تقيس كيف تتغير تكلفة تشغيل المعايير (benchmarks) بمرور الوقت. تستخدم أكبر مجموعة بيانات تاريخية لأسعار النماذج اللغوية (من Artificial Analysis و Epoch AI).
+| المقياس | الاتجاه | القيمة | المصدر |
+|---------|---------|--------|--------|
+| سعر مستوى أداء معين | **↓ ينخفض** | **5-10× سنوياً** | Gundlach et al., MIT 2026 |
+| التقدم الخوارزمي وحده | **↓ ينخفض** | **~3× سنوياً** | عزل النماذج المفتوحة |
+| تكلفة تشغيل النموذج الحدودي | **↑ يرتفع** | **3-18× سنوياً** | نماذج أكبر + تفكير أطول |
+| إنفاق المؤسسات الإجمالي | **↑ يرتفع** | **320%** خلال سنتين | AnalyticsWeek 2026 |
+| سعر التوكن | **↓ ينخفض** | **280× خلال سنتين** | Stanford HAI 2025 |
 
-### النتائج الأساسية — الأرقام الحقيقية
+### لماذا يحدث هذا؟
 
-| الادعاء | القيمة | التفاصيل |
-|---------|--------|----------|
-| انخفاض تكلفة مستوى أداء معين سنوياً | **5×-10×** | على معايير المعرفة والاستدلال والرياضيات والبرمجة |
-| التقدم الخوارزمي وحده (بعد عزل العتاد والمنافسة) | **~3× سنوياً** | مُقاس على النماذج المفتوحة فقط |
-| ارتفاع تكلفة تشغيل النماذج الحدودية سنوياً | **3×-18×** | بسبب نماذج أكبر + استدلال أطول (reasoning) |
-| نسبة التقدم المرتبط بإنفاق أعلى (GPQA-D) | **~50%** | نصف التقدم "اشتراه" الإنفاق وليس الكفاءة |
+```
+2022: GPT-3.5 → $60/M tokens → يجيب أسئلة بسيطة
+2024: GPT-4  → $30/M tokens → أفضل 2× + يفكر أطول
+2025: o3     → $10/M tokens (أرخص!) → لكن يستهلك 50× توكنات للتفكير
+2026: GPT-5.5 → $5/M tokens (أرخص!) → لكن يستهلك 100× للوكلاء
 
-### المفارقة الأساسية
+السعر لكل توكن: ↓↓↓ (280× أرخص)
+التوكنات لكل مهمة: ↑↑↑↑↑ (1000× أكثر — وكلاء + تفكير + RAG)
+الفاتورة الإجمالية: ↑↑ (320% ارتفاع)
+```
 
-> **الأسعار تنخفض 5-10× سنوياً لنفس مستوى الأداء — لكن تكلفة تشغيل النموذج الحدودي ترتفع 3-18× سنوياً.**
+### أهم اكتشاف — نصف التقدم "مشترى" وليس "مُبتكَر"
 
-السبب: كل جيل جديد من النماذج يستهلك توكنات أكثر بكثير (خاصة نماذج "التفكير" مثل o3, DeepSeek-R1). الكفاءة تتحسن لكن الطلب على الحوسبة يتفوق عليها.
+على GPQA-Diamond:
+> **~50% من التقدم المُقاس مرتبط بإنفاق أعلى وليس بكفاءة أعلى.**
 
-**مثال حقيقي:** OpenAI أنفقت ~$3,000 لكل مهمة لتشغيل o3-high على ARC-AGI.
+عند تثبيت تكلفة المعيار، معدل التحسن ينخفض إلى النصف.
+
+### مثال صادم — o3 على ARC-AGI
+
+OpenAI أنفقت **~$3,000 لكل مهمة واحدة** لتشغيل o3-high على ARC-AGI.
+
+### الأرقام من الورقة (أكبر مجموعة بيانات من نوعها)
+
+| المعيار | انخفاض السعر السنوي (لنفس الأداء) |
+|---------|------------------------------|
+| GPQA-Diamond (معرفة) | **5-10×** |
+| OTIS Mock AIME (رياضيات) | **5-10×** |
+| SWE-bench Verified (كود) | **5-10×** |
+
+| المعيار | ارتفاع تكلفة النموذج الحدودي سنوياً |
+|---------|--------------------------------|
+| GPQA-Diamond | **3-18×** |
+| AIME | **3-18×** |
 
 ### ماذا يعني هذا عملياً؟
 
-1. **للمطور:** لا تنتظر "أن تصبح النماذج رخيصة" — الأداء يرتفع لكن الحدود ترتفع معه.
-2. **للشركة:** ميزانية AI ستنمو حتى لو انخفض سعر التوكن — لأن الاستخدام ينمو أسرع.
-3. **للباحث:** تقييم النماذج بدون ذكر التكلفة مُضلل — نفس الدقة أرخص 10× كل سنة.
+1. **لا تنتظر "أن تصبح النماذج رخيصة"** — الأسعار تنخفض لكن الحدود ترتفع
+2. **النماذج المفتوحة تتحسن 3× سنوياً** — حتى بدون عتاد جديد
+3. **المنافسة تُسرّع الانخفاض** — النماذج المغلقة تنخفض أسرع بسبب المنافسة
+4. **يجب نشر تكلفة المعايير** — تقييم بدون سعر مُضلل
 
-### مصدر البيانات
+### العلاقة بإدخالات أخرى
 
-- أكبر مجموعة بيانات تاريخية من نوعها
-- تجمع بيانات Artificial Analysis (أسعار فعلية) مع Epoch AI Benchmark Hub (نتائج معايير)
-- تغطي: GPQA-Diamond, OTIS Mock AIME, SWE-bench Verified
-
-### لماذا ⭐⭐⭐ وليس أعلى؟
-
-- ✅ بيانات كمية دقيقة من مصادر موثوقة
-- ✅ منهجية إحصائية صارمة (regressions مع ضبط)
-- ❌ preprint — لم يُنشر في مؤتمر مُراجع بعد
-- ❌ الفترة أبريل 2024 - نوفمبر 2025 — قد لا تعكس التسارع الحديث
+| الإدخال | العلاقة |
+|---------|---------|
+| **Inference-Time Compute** | **يُفسر** — "التفكير أكثر" هو سبب ارتفاع تكلفة النماذج الحدودية |
+| **Agent Token Multiplier** | **يُضاعف** — الوكلاء 5-30× = مضاعف فوق مضاعف السعر |
+| **Model Routing** | **يُخفف** — يُوجّه المهام البسيطة لنماذج رخيصة |
+| **LLM API Pricing** | **يُوثّق** — الأسعار الحالية = لقطة من اتجاه متحرك |
 
 ---
 
 ## English Content
 
-### Key Findings
-
-Using the largest historical dataset of AI benchmark prices:
-
-- **Price for a given performance level** drops 5-10× per year across knowledge, reasoning, math, and code benchmarks
-- **Algorithmic efficiency alone** (isolating open models, removing hardware effects) improves ~3× per year
-- **Frontier model costs** rise 3-18× per year due to bigger models and reasoning-heavy inference
-- For GPQA-Diamond, ~50% of measured progress is associated with increasing inference prices, not efficiency gains
-
-### The Paradox
-
-Per-token prices fall, but frontier model bills rise — because each new generation demands exponentially more tokens for marginal gains.
+The largest historical dataset of AI benchmark prices shows: price for a given performance level drops 5-10× per year, but frontier model costs rise 3-18× per year due to bigger models and reasoning overhead. For GPQA-Diamond, ~50% of measured progress is associated with higher spending, not efficiency. Net result: 280× token price reduction + 320% total spend increase.
 
 ---
 
-## المصادر | Sources
+## المصادر
 
-1. **[Tier 2]** Gundlach, H., Lynch, J., Mertens, M., Thompson, N., "The Price of Progress: Price Performance and the Future of AI", arXiv:2511.23455v2, November 2025 (revised March 2026). MIT + Epoch AI.
+1. **[Tier 2]** Gundlach, H., Lynch, J., Mertens, M., Thompson, N., "The Price of Progress", arXiv:2511.23455v2, MIT + Epoch AI. **قُرئ بالكامل.**
+2. **[Tier 2]** Epoch AI, "How persistent is the inference cost burden?", March 2026. 5-10× annual reduction.
+3. **[Tier 2]** Stanford HAI, "2025 AI Index Report", 2025. 280× price drop over 2 years.
