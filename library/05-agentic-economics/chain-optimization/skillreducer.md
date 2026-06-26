@@ -100,3 +100,8 @@ SkillReducer compresses agent skill definitions (system prompts) by classifying 
 | **Context Compression** | تاريخ المحادثة | أثناء التنفيذ | 22-57% | متغير |
 | **Anthropic Compaction** | كل السياق | تلقائي | تلقائي | مُدمج في API |
 | **Model Routing (فرعي)** | اختيار النموذج | لكل خطوة | 60-80% | < 1ms overhead |
+
+### مصادر إضافية
+
+2. **[Tier 2]** "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows", arXiv:2606.03618, June 2026. References SkillReducer as complementary.
+3. **[Tier 2]** Zylos AI, "AI Agent Context Compression Strategies", February 2026. Compares SkillReducer to ACON and Focus.

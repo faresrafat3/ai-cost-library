@@ -126,3 +126,8 @@ for token in generate_stream(prompt):
     if is_target_complete(output):
         break  # أوقف التوليد → وفر 44-89% طاقة
 ```
+
+### مصادر إضافية
+
+2. **[Tier 2]** Niu et al., "Energy Efficient Benchmarking of LLM Inference Engines", 2025. vLLM vs DeepSpeed vs TensorRT-LLM energy comparison.
+3. **[Tier 2]** Shi et al., "Efficient and Green Large Language Models for Software Engineering: Literature Review", 2025. Comprehensive green AI survey.

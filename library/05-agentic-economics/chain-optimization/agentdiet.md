@@ -103,3 +103,20 @@ Built and tested (Gates 1-2 ✅), but not deployed in production environments (G
 ## المصادر | Sources
 
 1. **[Tier 1]** Xiao, Y.-A., Gao, P., Peng, C., Xiong, Y., "Reducing Cost of LLM Agents with Trajectory Reduction", **FSE 2026** (مقبول), arXiv:2509.23586. DOI: 10.1145/3797084
+
+### أعمال مرتبطة (2025-2026)
+
+| البحث | ماذا يفعل | النتيجة | العلاقة بـ AgentDiet |
+|-------|-----------|---------|---------------------|
+| **AgentPrune** (Zhang et al., 2024) | يحذف الرسائل الزائدة في أنظمة multi-agent | 28-73% تقليل توكنات | مُكمّل — يعمل بين الوكلاء، AgentDiet داخل الوكيل |
+| **RedundancyBench** (arXiv:2605.29893, 2026) | معيار لاكتشاف الخطوات الزائدة | يُثبت أن LLMs ضعيفة في اكتشاف التكرار | يُحدد المشكلة — الاكتشاف التلقائي صعب |
+| **Simple Masking** (Emergent Mind 2025) | حذف مخرجات أدوات طويلة بدون تلخيص | تكلفة $0.61 مقابل $1.29 (52% وفر) | أبسط من AgentDiet لكن أقل ذكاءً |
+
+> **ملاحظة:** Simple Masking (حذف مخرجات الأدوات الطويلة) يتفوق أحياناً على التلخيص بـ LLM لأن التلخيص يُطيل المسار عبر إخفاء إشارات الفشل.
+
+---
+
+## مصادر إضافية
+
+2. **[Tier 2]** "RedundancyBench: Detecting Redundant Steps in LLM Agent Trajectories", arXiv:2605.29893, May 2026.
+3. **[Tier 2]** Emergent Mind, "Efficient LLM Agent Deployment: Cost Analysis", 2025-2026. Simple masking comparison.
