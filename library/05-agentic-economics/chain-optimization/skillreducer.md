@@ -82,3 +82,21 @@ SkillReducer compresses agent skill definitions (system prompts) by classifying 
 ## المصادر | Sources
 
 1. **[Tier 2]** "SkillReducer: Optimizing LLM Agent Skills for Token Efficiency", arXiv:2603.29919, March 2026.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **AgentDiet** | **تكاملي** — SkillReducer يضغط المهارة (قبل التنفيذ)، AgentDiet يضغط المسار (أثناء التنفيذ) |
+| **Context Compression** | **تكاملي** — SkillReducer = ضغط system prompt، Context Compression = ضغط التاريخ |
+| **Prompt Caching** | **يُحسّن** — مهارة مضغوطة = بادئة أقصر = cache أكفأ |
+
+### مقارنة تقنيات تقليل توكنات الوكلاء (2026)
+
+| التقنية | ماذا تضغط | متى | التقليل | التكلفة |
+|---------|-----------|-----|---------|---------|
+| **SkillReducer** | system prompt / المهارة | قبل التنفيذ | 27% | $14-18 لمرة واحدة |
+| **AgentDiet** | المسار المتراكم | أثناء التنفيذ | 40-60% | 5-15% overhead مستمر |
+| **Context Compression** | تاريخ المحادثة | أثناء التنفيذ | 22-57% | متغير |
+| **Anthropic Compaction** | كل السياق | تلقائي | تلقائي | مُدمج في API |
+| **Model Routing (فرعي)** | اختيار النموذج | لكل خطوة | 60-80% | < 1ms overhead |

@@ -94,3 +94,35 @@ Token generation gets progressively more expensive (last token costs 20% more th
 ## المصادر | Sources
 
 1. **[Tier 2]** Solovyeva, L., Castor, F., "Towards Green AI: Decoding the Energy of LLM Inference in Software Development", arXiv:2602.05712, February 2026. University of Twente.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **Inference-Time Compute** | **مرتبط** — Overthinking Tax مشابه لـ babbling |
+| **CPST** | **يقيس الأثر** — babbling يزيد CPST بدون فائدة |
+| **Context Compression** | **مكمل** — يضغط المخرجات بدلاً من المدخلات |
+| **Budget Enforcement** | **يمنع** — حد توكنات المخرجات يوقف الثرثرة |
+
+### تطبيق عملي بسيط
+
+```python
+# كاشف ثرثرة بسيط لتوليد الكود
+import re
+
+def is_target_complete(generated_text: str) -> bool:
+    """يتحقق هل الدالة المطلوبة اكتملت"""
+    # عدد def/class المفتوحة مقابل المغلقة
+    functions = re.findall(r'^def \w+', generated_text, re.MULTILINE)
+    returns = re.findall(r'^\s+return ', generated_text, re.MULTILINE)
+    
+    if len(functions) > 1:  # بدأ بدالة ثانية → ثرثرة
+        return True
+    return False
+
+# في حلقة التوليد:
+for token in generate_stream(prompt):
+    output += token
+    if is_target_complete(output):
+        break  # أوقف التوليد → وفر 44-89% طاقة
+```

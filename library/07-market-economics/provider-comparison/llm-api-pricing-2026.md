@@ -86,3 +86,20 @@ research_review:
 1. **[Tier 2]** BenchLM, "LLM API Pricing Comparison 2026", June 2026. https://benchlm.ai/llm-pricing
 2. **[Tier 2]** MorphLLM, "LLM API Providers 2026: 12 APIs Compared", June 2026. https://www.morphllm.com/llm-api
 3. **[Tier 2]** PE Collective, "LLM API Pricing 2026: 20+ Models", April 2026. https://pecollective.com/blog/llm-api-pricing-comparison/
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **Model Routing** | **يعتمد عليه** — الأسعار تُحدد عتبات التوجيه |
+| **Price of Progress** | **يُفسر** — لماذا الأسعار تنخفض 5-10× سنوياً |
+| **Self-Host vs API** | **يُكمل** — API vs استضافة ذاتية حسب الحجم |
+| **CPST** | **يُصحح** — السعر الأرخص لكل توكن ≠ الأرخص لكل مهمة |
+
+### اتجاهات أسعار 2026 الأهم
+
+1. **DeepSeek يُغير السوق:** V4 Flash = $0.14/M — أرخص 35× من Claude Opus
+2. **النماذج الصينية تنافس بقوة:** Kimi, GLM, Qwen — بنصف أسعار الغربيين
+3. **OpenAI تتوسع عمودياً:** من nano ($0.20) إلى Pro ($30) — 150× فرق
+4. **Reasoning models غالية:** o3 ($10 input) لأن التفكير = توكنات ضخمة
+5. **الإخراج أغلى 3-6×:** تكلفة الإخراج هي المحرك الحقيقي للفاتورة

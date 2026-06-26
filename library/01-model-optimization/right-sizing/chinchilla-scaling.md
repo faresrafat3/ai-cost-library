@@ -97,3 +97,25 @@ Chinchilla optimizes training cost alone. Since inference represents 70-90% of l
 2. **[Tier 1]** Kaplan, J., et al., "Scaling Laws for Neural Language Models", OpenAI, 2020. arXiv:2001.08361
 3. **[Tier 1]** Touvron, H., et al., "Llama 2: Open Foundation and Fine-Tuned Chat Models", Meta, 2023. arXiv:2307.09288
 4. **[Tier 2]** Epoch AI, "How persistent is the inference cost burden?", March 2026. https://epochai.substack.com/p/how-persistent-is-the-inference-cost
+
+### تحديث 2026: التدريب الزائد أصبح المعيار
+
+قوانين Chinchilla تُحسّن تكلفة التدريب فقط. في 2026، تكلفة الاستدلال = 70-90% من الإجمالي:
+
+| النموذج | معاملات | توكنات تدريب | نسبة Chinchilla | لماذا؟ |
+|---------|---------|------------|---------------|--------|
+| Chinchilla (أمثل) | 70B | 1.4T | **1:20** (مثالي) | تحسين تكلفة التدريب |
+| Llama 3 8B | 8B | **15T** | 1:1875 (!!) | استدلال أرخص 10× |
+| Llama 3 70B | 70B | 15T | 1:214 | Over-training مُتعمد |
+| Qwen 3 | مختلف | 36T+ | مُفرط | نفس المبدأ |
+
+> **"أنفق أكثر في التدريب مرة واحدة = وفّر أكثر في كل استدعاء استدلال مدى الحياة."**
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **Architecture-Aware Scaling (ICLR 2026)** | **يُوسّع** — يُضيف بُعد البنية المعمارية |
+| **Price of Progress** | **يُفسر** — لماذا النماذج الحديثة أصغر لكن أغلى تدريباً |
+| **MoE Economics** | **يُكمل** — MoE = over-training + sparse activation |
+| **Knowledge Distillation** | **يُطبّق** — دستل نموذج كبير → نموذج أصغر over-trained |

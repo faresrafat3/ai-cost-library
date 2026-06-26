@@ -75,3 +75,24 @@ research_review:
 2. **[Tier 2]** Luccioli, V., et al., "LLM on a Budget: Active Knowledge Distillation", arXiv:2511.11574, September 2025. 80% sample reduction.
 3. **[Tier 2]** "Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation", arXiv:2605.13981, May 2026.
 4. **[Tier 2]** Survey: "A Survey of On-Policy Distillation for Large Language Models", arXiv:2604.00626, April 2026.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **Knowledge Distillation** | **أساسي** — البيانات الاصطناعية هي "وقود" الاستخلاص |
+| **LoRA / QLoRA** | **تكاملي** — اضبط على بيانات اصطناعية بتكلفة منخفضة |
+| **Model Routing** | **يُمكّن** — درّب نموذج صغير على بيانات مُولَّدة → وجّه إليه |
+| **MoE Economics** | **يُطبّق** — DeepSeek-R1 Distills = بيانات تفكير اصطناعية |
+| **CPST** | **يقيس العائد** — هل البيانات الاصطناعية حسّنت CPST؟ |
+
+### خطوات عملية لتوليد بيانات اصطناعية بأقل تكلفة
+
+```
+1. ابدأ بعينة صغيرة (100 مثال بشري عالي الجودة)
+2. استخدم Active Learning (M-RARU) → 80% عينات أقل مطلوبة
+3. ولّد بطول معتدل (max_new_tokens = 512، ليس 2048)
+4. استخدم نموذج رخيص للتوليد (GPT-4o-mini أو DeepSeek V4 Flash)
+5. قيّم على مجموعة اختبار بشرية قبل التدريب
+6. كرر بزيادة البيانات فقط إذا لم يكفِ الأداء
+```
