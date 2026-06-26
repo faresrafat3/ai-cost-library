@@ -1,34 +1,61 @@
 # سجل البحث | Research Log
 
-## 2026-06-26 — Session 003
+## الجلسة 4 — 2026-06-26
 
-### ما تم بحثه وتدقيقه
-- التحقق من أن المستودع كان موجوداً مسبقاً، ثم اختيار مسار التحديث المحافظ بناءً على توجيه المستخدم.
-- مراجعة الفجوات البنيوية: كانت عدة مجلدات فرعية بلا README، وكانت `data/sources.json` و`data/claims.json` و`data/evidence.json` فارغة رغم وجود ادعاءات في ملفات Markdown.
-- تطبيق سياسة **عدم المبالغة**: خُفضت بعض درجات الإثبات إلى ⭐⭐⭐ عندما كان الدليل قوياً على البناء والاختبار والاعتماد في المكتبات، لكن دليل النشر الإنتاجي المباشر لكل بوابة غير مكتمل.
+### الأبحاث المُنجزة
 
-### المصادر الأساسية المسجلة
+#### 1. Mixture-of-Depths (MoD)
+- **المصدر الأساسي**: Raposo et al., DeepMind, arXiv:2404.02258 (أبريل 2024)
+- **النتائج**: MoD يطابق النماذج الأساسية iso-FLOP، تسريع أخذ عينات حتى ≈50%
+- **الحالة**: بحثي فقط، لا نشر إنتاجي مؤكد → تصنيف Emerging ⭐⭐
+- **مصدر ثانوي**: Graphcore Research Blog (مايو 2024) — ملخص وتحليل
+- **تنبيه**: تنفيذات GitHub غير رسمية — ليست موثقة إنتاجياً
 
-| ID | Tier | Source |
-|---|---|---|
-| `SRC-GPTQ-2023` | Tier 1 | Frantar et al., "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers", ICLR / arXiv, 2023, https://arxiv.org/abs/2210.17323 |
-| `SRC-AWQ-2024` | Tier 1 | Lin et al., "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration", MLSys / arXiv, 2024, https://arxiv.org/abs/2306.00978 |
-| `SRC-SMOOTHQUANT-2023` | Tier 1 | Xiao et al., "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models", ICML / arXiv, 2023, https://arxiv.org/abs/2211.10438 |
-| `SRC-LLMINT8-2022` | Tier 1 | Dettmers et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale", NeurIPS / arXiv, 2022, https://arxiv.org/abs/2208.07339 |
-| `SRC-SPECDEC-2023` | Tier 1 | Leviathan, Kalman, and Matias, "Fast Inference from Transformers via Speculative Decoding", ICML / arXiv, 2023, https://arxiv.org/abs/2211.17192 |
-| `SRC-ORCA-2022` | Tier 1 | Yu et al., "Orca: A Distributed Serving System for Transformer-Based Generative Models", OSDI, 2022, https://www.usenix.org/conference/osdi22/presentation/yu |
-| `SRC-VLLM-2023` | Tier 1 | Kwon et al., "Efficient Memory Management for Large Language Model Serving with PagedAttention", SOSP / arXiv, 2023, https://arxiv.org/abs/2309.06180 |
-| `SRC-SGLANG-2023` | Tier 2 | Zheng et al., "SGLang: Efficient Execution of Structured Language Model Programs", arXiv, 2023, https://arxiv.org/abs/2312.07104 |
-| `SRC-LORA-2022` | Tier 1 | Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models", ICLR / arXiv, 2022, https://arxiv.org/abs/2106.09685 |
-| `SRC-QLORA-2023` | Tier 1 | Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs", NeurIPS / arXiv, 2023, https://arxiv.org/abs/2305.14314 |
-| `SRC-PROMPTCACHE-2023` | Tier 2 | Gim et al., "Prompt Cache: Modular Attention Reuse for Low-Latency Inference", arXiv, 2023, https://arxiv.org/abs/2311.04934 |
-| `SRC-OPENAI-PROMPT-CACHING` | Tier 2 | OpenAI, "Prompt Caching documentation", Official documentation, 2024, https://platform.openai.com/docs/guides/prompt-caching |
-| `SRC-ANTHROPIC-PROMPT-CACHING` | Tier 2 | Anthropic, "Prompt caching documentation", Official documentation, 2024, https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching |
+#### 2. LayerSkip
+- **المصدر الأساسي**: Elhoushi et al., Meta FAIR, ACL 2024, DOI: 10.18653/v1/2024.acl-long.681
+- **النتائج**: 2.16× تسريع على CNN/DM، 1.82× على الترميز، 2.0× على TOPv2
+- **الأدلة**: كود مفتوح على GitHub، نماذج على HuggingFace → تصنيف Practical ⭐⭐⭐
+- **ملاحظة**: لا توجد تقارير نشر شركات كبرى → ليس ⭐⭐⭐⭐
 
-### قرارات تصنيفية
-- بقيت كل إدخالات البذرة الحالية ضمن **📘 Practical** لأنها تملك تطبيقات عامة ومكتبات أو أوراقاً معيارية، لكن ليست كلها **Production-Proven**.
-- أضيفت فئة **Energy and Sustainability** كفئة مزروعة بلا إدخالات حتى تُوثق لاحقاً بأدلة MLPerf/Green AI/قياسات طاقة مباشرة.
+#### 3. ShortGPT
+- **المصدر الأساسي**: Men et al., arXiv:2403.03853 (مارس 2024)
+- **النتائج**: قصّ ~25% طبقات مع الحفاظ على 85% أداء
+- **الأدلة**: معايير واضحة لكن لا نشر إنتاجي → تصنيف Emerging ⭐⭐
+- **مصدر تكميلي**: E3-Pruner (arXiv:2511.17205) — يتفوق على ShortGPT (58.3 vs 37.0)
 
-### مخاطر علمية متبقية
-- بعض ملفات الإدخالات القديمة ما زالت تحتوي صياغات قوية في بوابات النشر؛ يجب في الجلسة التالية ربط كل بوابة بمصدر مباشر أو تخفيض العبارة.
-- لا توجد إدخالات ناشئة أو نظرية بعد؛ يجب إضافتها لتوازن المكتبة.
+#### 4. Knowledge Distillation
+- **المصادر الأساسية**:
+  - DistilBERT (Sanh et al., NeurIPS 2019 Workshop, arXiv:1910.01108) — 40% أصغر، 60% أسرع، 97% GLUE
+  - DeepSeek-R1 Distills (DeepSeek AI, HuggingFace, يناير 2025) — 6 نماذج، 8B يطابق 235B MoE
+  - MiniLLM (Gu et al., ICLR 2024) — يتفوق على KL القياسي
+  - NVIDIA Minitron — 1/40 رموز تدريب، +16% MMLU
+  - AWS Bedrock deployment (فبراير 2025)
+  - Federal Reserve Feds (ديسمبر 2025) — Active Distillation مع 80% تخفيض عينات
+- **الأدلة**: نشر إنتاجي واسع، أرقام مفصلة، حزم متاحة → تصنيف Practical ⭐⭐⭐⭐
+
+#### 5. FlashAttention
+- **المصادر الأساسية**:
+  - FA-1: Dao et al., NeurIPS 2022 — 2-4× أسرع، 10-20× أقل ذاكرة
+  - FA-2: Dao et al., ICLR 2024 — ~2× أسرع، 50-73% استخدام A100
+  - FA-3: Shah et al., NeurIPS 2024 (Spotlight) — 740 TFLOPs/s على H100
+  - FA-4: 2026 — 1613 TFLOPs/s على B200
+  - Lambda Cloud benchmarks — 90% تخفيض تكلفة تدريب GPT-3
+  - MLPerf Inference v4.1
+- **الأدلة**: مُستخدَم في vLLM، TensorRT-LLM، Megatron-LM، HuggingFace → تصنيف Practical ⭐⭐⭐⭐
+
+#### 6. Serving Engines Comparison
+- **المصادر**:
+  - GMICloud (أبريل 2026) — vLLM vs TensorRT-LLM vs Triton
+  - Yottalabs (يونيو 2026) — تحديث 2026
+  - BentoML (يونيو 2024) — معايير متعددة
+  - NVIDIA Developer Blog (سبتمبر 2024) — MLPerf v4.1
+  - HotCarbon 2025 — استهلاك الطاقة
+- **النتائج**: TensorRT-LLM 15-30% أسرع من vLLM على H100
+
+### قرارات التصنيف
+1. DistilBERT → ⭐⭐⭐⭐ (نشر واسع + أرقام مفصلة + حزم رسمية)
+2. DeepSeek-R1 Distills → ⭐⭐⭐⭐ (نشر على Bedrock + Fireworks)
+3. FlashAttention → ⭐⭐⭐⭐ (دمج في كل البنى التحتية الرئيسية)
+4. LayerSkip → ⭐⭐⭐ (كود مفتوح + معايير واضحة، لا تقارير إنتاج شركات)
+5. ShortGPT → ⭐⭐ (معايير بحثية فقط، لا نشر)
+6. MoD → ⭐⭐ (ورقة بحثية فقط)

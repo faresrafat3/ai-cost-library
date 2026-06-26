@@ -1,53 +1,53 @@
 {
-  "glossary_version": "0.3.0",
+  "glossary_version": "0.4.0",
   "last_updated": "2026-06-26",
   "terms": [
     {
       "en": "Quantization",
-      "ar": "التكمية",
+      "ar": "التكميم",
       "definition_ar": "عملية تحويل الأوزان أو التنشيطات من دقة عالية إلى دقة منخفضة لتقليل حجم النموذج وتسريع الاستدلال",
       "definition_en": "Converting weights or activations from high precision to low precision to reduce model size and accelerate inference"
     },
     {
       "en": "Post-Training Quantization",
-      "ar": "التكمية بعد التدريب",
+      "ar": "التكميم بعد التدريب",
       "definition_ar": "ضغط النموذج دون الحاجة لإعادة التدريب، باستخدام مجموعة بيانات معايرة صغيرة",
       "definition_en": "Compressing a model without retraining, using a small calibration dataset"
     },
     {
       "en": "Quantization-Aware Training",
-      "ar": "التدريب الواعي بالتكمية",
-      "definition_ar": "تدريب النموذج مع محاكاة تأثير التكمية أثناء عملية التدريب لتحسين الدقة النهائية",
+      "ar": "التدريب الواعي بالتكميم",
+      "definition_ar": "تدريب النموذج مع محاكاة تأثير التكميم أثناء عملية التدريب لتحسين الدقة النهائية",
       "definition_en": "Training the model while simulating quantization effects to improve final accuracy"
     },
     {
       "en": "Pruning",
-      "ar": "التقليم",
-      "definition_ar": "إزالة الأوزان أو الوحدات العصبية غير الضرورية من النموذج لتقليل حجمه وتعقيده",
-      "definition_en": "Removing unnecessary weights or neural units from a model to reduce size and complexity"
+      "ar": "القصّ الهيكلي",
+      "definition_ar": "إزالة طبقات أو وحدات عصبية كاملة من النموذج لتقليل حجمه وتعقيده مع الحفاظ على الأداء",
+      "definition_en": "Removing entire layers or neural units from a model to reduce size and complexity while preserving performance"
     },
     {
-      "en": "Distillation",
-      "ar": "التقطير",
-      "definition_ar": "تدريب نموذج صغير (طالب) لتقليد سلوك نموذج كبير (معلّم) مع الحفاظ على الأداء",
-      "definition_en": "Training a small student model to mimic a large teacher model while preserving performance"
+      "en": "Knowledge Distillation",
+      "ar": "استخلاص المعرفة",
+      "definition_ar": "تدريب نموذج أصغر (طالب) على تقليد سلوك نموذج أكبر (معلّم) باستخدام مخرجاته أو تمثيلاته الداخلية",
+      "definition_en": "Training a smaller student model to mimic a larger teacher model using its outputs or internal representations"
     },
     {
       "en": "Weight Quantization",
-      "ar": "تكمية الأوزان",
+      "ar": "تكميم الأوزان",
       "definition_ar": "تقليل دقة أوزان النموذج فقط مع إبقاء التنشيطات بدقة عالية",
       "definition_en": "Reducing precision of model weights only while keeping activations at high precision"
     },
     {
       "en": "Activation Quantization",
-      "ar": "تكمية التنشيطات",
+      "ar": "تكميم التنشيطات",
       "definition_ar": "تقليل دقة القيم الوسيطة (التنشيطات) أثناء تمرير البيانات عبر طبقات النموذج",
       "definition_en": "Reducing precision of intermediate values (activations) during forward passes"
     },
     {
       "en": "Inference",
       "ar": "الاستدلال",
-      "definition_ar": "عملية استخدام نموذج مدرب لتوليد مخرجات من مدخلات جديدة دون تحديث أوزانه",
+      "definition_ar": "عملية استخدام نموذج مُدرَّب لتوليد مخرجات من مدخلات جديدة دون تحديث أوزانه",
       "definition_en": "Using a trained model to generate outputs from new inputs without updating its weights"
     },
     {
@@ -59,8 +59,8 @@
     {
       "en": "Throughput",
       "ar": "الإنتاجية",
-      "definition_ar": "عدد الطلبات التي يمكن معالجتها في وحدة زمنية واحدة",
-      "definition_en": "Number of requests that can be processed per unit of time"
+      "definition_ar": "عدد الطلبات أو الرموز التي يمكن معالجتها في وحدة زمنية واحدة",
+      "definition_en": "Number of requests or tokens that can be processed per unit of time"
     },
     {
       "en": "Batching",
@@ -76,9 +76,15 @@
     },
     {
       "en": "Speculative Decoding",
-      "ar": "فك التشفير التكهني",
+      "ar": "فك الترميز التخميني",
       "definition_ar": "استخدام نموذج صغير لتوليد رموز مسودة يتحقق منها النموذج الكبير بالتوازي",
       "definition_en": "Using a small model to generate draft tokens that the large model verifies in parallel"
+    },
+    {
+      "en": "Self-Speculative Decoding",
+      "ar": "فك الترميز التخميني الذاتي",
+      "definition_ar": "استخدام الطبقات الأولى من نفس النموذج لتوليد رموز مسودة والتحقق منها بالطبقات المتبقية",
+      "definition_en": "Using the model's own early layers to generate draft tokens and verify them with remaining layers"
     },
     {
       "en": "KV Cache",
@@ -114,7 +120,7 @@
       "en": "Gradient Checkpointing",
       "ar": "ترقيم النقاط المرجعية للتدرج",
       "definition_ar": "تقنية توفّر الذاكرة بإعادة حساب التدرجات بدلاً من تخزينها",
-      "definition_en": "A memory-saving technique that recomputes gradients instead storing them"
+      "definition_en": "A memory-saving technique that recomputes gradients instead of storing them"
     },
     {
       "en": "GPU Memory",
@@ -160,7 +166,7 @@
     },
     {
       "en": "Prompt Caching",
-      "ar": "تخزين الموجهات المؤقت",
+      "ar": "تخزين الموجِّهات المؤقت",
       "definition_ar": "إعادة استخدام الحسابات السابقة للمقاطع المشتركة بين الطلبات المتعددة",
       "definition_en": "Reusing previous computations for shared text segments across multiple requests"
     },
@@ -173,26 +179,176 @@
     {
       "en": "Serving Engine",
       "ar": "محرك تقديم النماذج",
-      "definition_ar": "نظام برمجي يدير استقبال طلبات الاستدلال وجدولتها وتنفيذها على المسرّعات مع تحسين الذاكرة والإنتاجية.",
-      "definition_en": "Software that receives, schedules, and executes inference requests on accelerators while optimizing memory and throughput."
+      "definition_ar": "نظام برمجي يدير استقبال طلبات الاستدلال وجدولتها وتنفيذها على المسرّعات",
+      "definition_en": "Software that receives, schedules, and executes inference requests on accelerators"
     },
     {
       "en": "Energy Efficiency",
       "ar": "كفاءة الطاقة",
-      "definition_ar": "نسبة العمل المفيد، مثل عدد التوكنات أو العينات المعالجة، إلى الطاقة المستهلكة أثناء التدريب أو الاستدلال.",
-      "definition_en": "The amount of useful work, such as processed tokens or samples, per unit of energy consumed during training or inference."
+      "definition_ar": "نسبة العمل المفيد إلى الطاقة المستهلكة أثناء التدريب أو الاستدلال",
+      "definition_en": "The amount of useful work per unit of energy consumed during training or inference"
     },
     {
-      "en": "Carbon-Aware Scheduling",
-      "ar": "الجدولة الواعية بالكربون",
-      "definition_ar": "تشغيل أحمال الحوسبة في أوقات أو مناطق تكون فيها كثافة الكربون في الكهرباء أقل لتقليل الأثر البيئي.",
-      "definition_en": "Running compute workloads at times or locations with lower electricity carbon intensity to reduce environmental impact."
+      "en": "Early Exit",
+      "ar": "الإنهاء المبكر",
+      "definition_ar": "آلية تسمح للنموذج بإصدار تنبؤ بعد مرور جزئي عبر طبقاته إذا تجاوزت الثقة عتبة محددة",
+      "definition_en": "A mechanism allowing a model to emit a prediction after partial forward pass if confidence exceeds a threshold"
     },
     {
-      "en": "Prefix Reuse",
-      "ar": "إعادة استخدام البادئات",
-      "definition_ar": "إعادة استعمال نتائج حسابية لسياقات أو بادئات متكررة بدلاً من حسابها من جديد في كل طلب.",
-      "definition_en": "Reusing computed results for repeated contexts or prefixes instead of recomputing them for every request."
+      "en": "Mixture-of-Depths",
+      "ar": "خلط الأعماق",
+      "definition_ar": "نهج يخصص الحوسبة ديناميكياً للرموز المختلفة، حيث يتخطى بعضها الطبقات بالكامل",
+      "definition_en": "An approach that dynamically allocates compute to different tokens, with some skipping layers entirely"
+    },
+    {
+      "en": "Layer Dropout",
+      "ar": "تسريب الطبقات",
+      "definition_ar": "تقنية تدريب تُسقط عشوائياً طبقات أثناء التدريب لتمكين الإنهاء المبكر أثناء الاستدلال",
+      "definition_en": "A training technique that randomly drops layers during training to enable early exit at inference"
+    },
+    {
+      "en": "FlashAttention",
+      "ar": "الانتباه المُحسَّن",
+      "definition_ar": "خوارزمية انتباه واعية للذاكرة تُقسّم الحسابات إلى بلاطات صغيرة وتُنفذها على SRAM لتجنب الكتابة على HBM",
+      "definition_en": "An I/O-aware attention algorithm that tiles computation and executes on SRAM to avoid HBM writes"
+    },
+    {
+      "en": "FLOPs",
+      "ar": "العمليات الفاصلة العائمة",
+      "definition_ar": "Floating-Point Operations — مقياس للحوسبة المطلوبة لتنفيذ نموذج",
+      "definition_en": "Floating-Point Operations — a measure of the computation required to run a model"
+    },
+    {
+      "en": "iso-FLOP",
+      "ar": "تكافؤ العمليات الحسابية",
+      "definition_ar": "مقارنة نماذج مختلفة بنفس ميزانية الحوسبة (نفس عدد FLOPs)",
+      "definition_en": "Comparing different models at the same compute budget (same FLOPs)"
+    },
+    {
+      "en": "Soft Targets",
+      "ar": "الأهداف اللينة",
+      "definition_ar": "توزيعات الاحتمالات الناتجة من نموذج المعلّم (بدلاً من التصنيفات الصلبة) المستخدمة في استخلاص المعرفة",
+      "definition_en": "Probability distributions from the teacher model (rather than hard labels) used in knowledge distillation"
+    },
+    {
+      "en": "HBM",
+      "ar": "الذاكرة عالية النطاق الترددي",
+      "definition_ar": "High Bandwidth Memory — الذاكرة الرئيسية للبطاقة الرسومية، أبطأ من SRAM بكثير",
+      "definition_en": "High Bandwidth Memory — the main GPU memory, much slower than on-chip SRAM"
+    },
+    {
+      "en": "SRAM",
+      "ar": "الذاكرة العشوائية الثابتة",
+      "definition_ar": "Static RAM — ذاكرة سريعة داخل شريحة المعالج تُستخدم في FlashAttention",
+      "definition_en": "Static RAM — fast on-chip memory used in FlashAttention"
+    },
+    {
+      "en": "Chain-of-Thought Distillation",
+      "ar": "استخلاص سلاسل التفكير",
+      "definition_ar": "نوع من استخلاص المعرفة حيث يتعلم الطالب سلاسل التفكير خطوة بخطوة من المعلّم",
+      "definition_en": "A type of knowledge distillation where the student learns step-by-step reasoning chains from the teacher"
+    },
+    {
+      "en": "Block Importance",
+      "ar": "أهمية الكتلة",
+      "definition_ar": "مقياس لأهمية طبقة معينة في النموذج بناءً على إنتروبيا آليات الاهتمام",
+      "definition_en": "A measure of a layer's importance in a model based on attention mechanism entropy"
+    },
+    {
+      "en": "Forward KL Divergence",
+      "ar": "تباعد كولباك-ليبلر الأمامي",
+      "definition_ar": "مقياس إحصائي للفروق بين توزيعين احتماليين، يُستخدم في استخلاص المعرفة التقليدي",
+      "definition_en": "A statistical measure of divergence between two probability distributions, used in traditional knowledge distillation"
+    },
+    {
+      "en": "Reverse KL Divergence",
+      "ar": "تباعد كولباك-ليبلر العكسي",
+      "definition_ar": "نسخة معكوسة من تباعد KL تمنع الطالب من توزيع الانتباه على مناطق منخفضة الاحتمال",
+      "definition_en": "A reverse version of KL divergence that prevents the student from spreading attention over low-probability regions"
+    },
+    {
+      "en": "Mixture-of-Experts",
+      "ar": "مزيج الخبراء",
+      "definition_ar": "بنية نموذجية تنشّط جزءاً فقط من المعاملات لكل رمز، مما يقلل التكلفة الحسابية",
+      "definition_en": "A model architecture that activates only a subset of parameters per token, reducing compute cost"
+    },
+    {
+      "en": "Attention Entropy",
+      "ar": "إنتروبيا الانتباه",
+      "definition_ar": "مقياس لعدم اليقين في توزيع الانتباه، يُستخدم لتحديد الطبقات الزائدة عن الحاجة",
+      "definition_en": "A measure of uncertainty in attention distribution, used to identify redundant layers"
+    },
+    {
+      "en": "Active Distillation",
+      "ar": "الاستخلاص النشط",
+      "definition_ar": "دمج التعلم النشط مع استخلاص المعرفة لاختيار أكثر العينات إفادة فقط لتدريب الطالب",
+      "definition_en": "Combining active learning with knowledge distillation to select only the most informative samples for student training"
+    },
+    {
+      "en": "Warp Specialization",
+      "ar": "تخصيص الألتفاف",
+      "definition_ar": "تقنية GPU لتخصيص مجموعات الخيوط المختلفة لمهام متداخلة من حساب ونقل بيانات",
+      "definition_en": "A GPU technique for assigning different warp groups to interleaved compute and data movement tasks"
+    },
+    {
+      "en": "Carbon Emissions",
+      "ar": "الانبعاثات الكربونية",
+      "definition_ar": "كمية ثاني أكسيد الكربون المنبعثة نتيجة استهلاك الطاقة في تدريب أو تشغيل النماذج",
+      "definition_en": "Amount of CO₂ emitted as a result of energy consumed in training or running models"
+    },
+    {
+      "en": "MFU",
+      "ar": "استخدام وحدات المعالجة الفعلية",
+      "definition_ar": "Model FLOPs Utilization — نسبة FLOPs الفعلية المُستخدمة إلى الحد الأقصى النظري للجهاز",
+      "definition_en": "Model FLOPs Utilization — the ratio of actual FLOPs used to the theoretical maximum of the hardware"
+    },
+    {
+      "en": "PagedAttention",
+      "ar": "الانتباه المصفح",
+      "definition_ar": "تقنية إدارة ذاكرة KV Cache على غرار الصفحات الافتراضية في أنظمة التشغيل، تُزيل التجاهيل وتُحسّن الاستخدام",
+      "definition_en": "A KV Cache memory management technique inspired by OS virtual memory paging, eliminating fragmentation and improving utilization"
+    },
+    {
+      "en": "RadixAttention",
+      "ar": "الانتباه الجذري",
+      "definition_ar": "توسيع لـ PagedAttention يُدير الذاكرة المؤقتة بنية بيانات شجرية لتمكين إعادة استخدام البادئات عبر الجلسات",
+      "definition_en": "An extension of PagedAttention that manages cached memory with a tree structure to enable cross-session prefix reuse"
+    },
+    {
+      "en": "LoRA",
+      "ar": "التكيّف منخفض الرتبة",
+      "definition_ar": "Low-Rank Adaptation — تقنية ضبط دقيق فعّالة تُضيف مصفوفات منخفضة الرتبة بدلاً من تعديل كل الأوزان",
+      "definition_en": "Low-Rank Adaptation — a parameter-efficient fine-tuning technique that adds low-rank matrices instead of modifying all weights"
+    },
+    {
+      "en": "QLoRA",
+      "ar": "التكيّف منخفض الرتبة المُكمَّم",
+      "definition_ar": "دمج LoRA مع تكميم 4-بت لتدريب نماذج كبيرة على GPU استهلاكية واحدة",
+      "definition_en": "Combining LoRA with 4-bit quantization to train large models on a single consumer GPU"
+    },
+    {
+      "en": "GPTQ",
+      "ar": "تكميم ما بعد التدريب للنماذج اللغوية",
+      "definition_ar": "Generative Pre-trained Transformer Quantization — خوارزمية تكميم 4-بت للنماذج اللغوية الكبيرة",
+      "definition_en": "Generative Pre-trained Transformer Quantization — a 4-bit quantization algorithm for large language models"
+    },
+    {
+      "en": "AWQ",
+      "ar": "التكميم المُفعَّل بالوزن",
+      "definition_ar": "Activation-aware Weight Quantization — تكميم 4-بت يحمي الأوزان النشطة لتقليل فقدان الدقة",
+      "definition_en": "Activation-aware Weight Quantization — 4-bit quantization that protects active weights to minimize accuracy loss"
+    },
+    {
+      "en": "SmoothQuant",
+      "ar": "التكميم السلس",
+      "definition_ar": "خوارزمية تكميم 8-بت تحل مشكلة القيم الشاذة في التنشيطات عن طريق توزيعها على الأوزان",
+      "definition_en": "An 8-bit quantization algorithm that solves outlier activation values by smoothing them across weights"
+    },
+    {
+      "en": "LLM.int8()",
+      "ar": "تكميم 8-بت للنماذج اللغوية",
+      "definition_ar": "تكميم 8-بت يتعامل مع القيم الشاذة بدقة 16-بت مع تكميم باقي النموذج",
+      "definition_en": "8-bit quantization that handles outlier values in 16-bit while quantizing the rest of the model"
     }
   ]
 }

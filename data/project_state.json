@@ -1,7 +1,7 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "last_updated": "2026-06-26",
-  "session_count": 3,
+  "session_count": 4,
   "project_status": "active",
   "completed_tasks": [
     "repository_inspected_existing",
@@ -10,7 +10,19 @@
     "energy_category_added",
     "tracking_json_populated",
     "claims_and_evidence_ledgers_synced",
-    "tree_and_stats_corrected"
+    "tree_and_stats_corrected",
+    "layer_skip_entry_added",
+    "mixture_of_depths_entry_added",
+    "shortgpt_entry_added",
+    "distillation_entry_added",
+    "flashattention_entry_added",
+    "pruning_subcategory_populated",
+    "distillation_subcategory_populated",
+    "serving_subcategory_populated",
+    "early_exit_subcategory_created",
+    "compute_allocation_subcategory_created",
+    "glossary_expanded_to_52_terms",
+    "evidence_ledger_updated_15_entries"
   ],
   "pending_tasks": [
     "BL-001",
@@ -18,15 +30,17 @@
     "BL-003",
     "BL-004"
   ],
-  "current_focus": "تدقيق الإدخالات الحالية بوابة-ببوابة ثم إضافة إدخالات ناشئة ونظرية",
+  "current_focus": "توسيع المكتبة بإدخالات نظرية وتحديث المقارنات",
   "unresolved_issues": [
     "بعض بوابات Evidence Gates داخل ملفات الإدخالات تحتاج مصادر مباشرة لكل سطر.",
-    "لا توجد إدخالات Emerging/Theoretical/Rejected/Pending حتى الآن.",
+    "لا توجد إدخالات Theoretical/Rejected/Pending حتى الآن.",
     "ينبغي إضافة ملفات README لفئات فرعية مستقبلية في الفئات المزروعة عند إنشائها."
   ],
   "quality_notes": [
     "تم إصلاح ملفات JSON الفارغة وربط الادعاءات بالمصادر.",
     "تم تخفيض بعض درجات الإثبات وفق سياسة عدم المبالغة.",
-    "تم استكمال فئة Energy and Sustainability المطلوبة."
+    "تم استكمال فئة Energy and Sustainability المطلوبة.",
+    "تمت إضافة 6 إدخالات جديدة (1 عملية منتجة، 3 عملية مُتحققة، 2 ناشئة).",
+    "تمت إضافة 15 مصدر موثق جديد."
   ]
 }

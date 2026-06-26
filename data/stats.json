@@ -1,38 +1,40 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "last_updated": "2026-06-26",
   "session": "session-004",
-  "total_entries": 16,
+  "total_entries": 17,
   "total_categories": 10,
-  "total_subcategories": 13,
-  "total_sources": 22,
-  "total_claims": 25,
+  "total_subcategories": 14,
+  "total_sources": 28,
+  "total_claims": 35,
   "classification_summary": {
-    "practical": 13,
+    "practical": 14,
     "emerging": 3,
     "theoretical": 0,
     "rejected": 0,
     "pending": 0
   },
   "proof_score_summary": {
-    "4_stars_production_proven": 6,
+    "4_stars_production_proven": 7,
     "3_stars_deployed_or_validated": 5,
     "2_stars_validated": 3,
     "1_star_prototype": 2
   },
   "playbooks_count": 5,
   "comparisons_count": 6,
-  "glossary_terms": 42,
+  "glossary_terms": 48,
   "session_004_changes": [
     "added_entry_layerskip",
     "added_entry_mixture_of_depths",
     "added_entry_shortgpt",
     "added_entry_distillation",
+    "added_entry_flashattention",
     "created_subcategory_early_exit",
     "created_subcategory_compute_allocation",
+    "updated_serving_readme",
     "updated_pruning_readme",
     "updated_distillation_readme",
-    "added_10_new_sources",
+    "added_15_new_sources",
     "added_10_new_claims"
   ]
 }

@@ -1,16 +1,29 @@
-# سجل الجلسات | Session Log
+# سجل الجلسة | Session Log
 
-## session-003 — 2026-06-26
+## الجلسة 4 — 2026-06-26
 
-### الأعمال المنجزة
-- تم التحقق من أن المستودع موجود بالفعل، ثم متابعة التحديث بعد موافقة المستخدم.
-- أضيفت ملفات README للفئات الفرعية النشطة والمزروعة.
-- أُضيفت فئة `energy-and-sustainability` المطلوبة.
-- نُقل `Prompt Caching` إلى مجلد فرعي مستقل.
-- تمت تعبئة `data/sources.json`, `data/claims.json`, `data/evidence.json`, `data/decision_matrix.json`, `data/backlog.json`, و`data/session_history.json`.
-- تمت مزامنة `CLAIMS.md` و`EVIDENCE_LEDGER.md` مع JSON.
-- تم تحديث `TREE.md`, `RESEARCH_LOG.md`, `AGENT_STATE.md`, `NEXT_ACTIONS.md`, و`data/project_state.json`.
+### الملخص التنفيذي
+- تمت إضافة 6 إدخالات جديدة للمكتبة
+- تم إنشاء فئتين فرعيتين جديدتين
+- تم تحديث جميع ملفات التتبع JSON
 
-### تحذيرات
-- بعض نصوص الإدخالات القديمة تحتاج تدقيقاً لغوياً ومنهجياً لأن بوابات النشر قد تكون أقوى من الأدلة المباشرة المتاحة.
-- لا توجد إدخالات ناشئة أو نظرية حتى الآن.
+### الإدخالات الجديدة
+1. **LayerSkip** (Practical, ⭐⭐⭐) — efficient-inference/early-exit/layer-skip.md
+2. **Mixture-of-Depths** (Emerging, ⭐⭐) — efficient-training/compute-allocation/mixture-of-depths.md
+3. **ShortGPT** (Emerging, ⭐⭐) — model-compression/pruning/short-gpt.md
+4. **Knowledge Distillation** (Practical, ⭐⭐⭐⭐) — model-compression/distillation/distillation.md
+5. **FlashAttention** (Practical, ⭐⭐⭐⭐) — efficient-inference/kv-cache/flash-attention.md
+
+### الفئات الفرعية الجديدة
+- efficient-inference/early-exit/ — شبكات الإنهاء المبكر
+- efficient-training/compute-allocation/ — التخصيص الديناميكي للحوسبة
+
+### المصادر الجديدة
+- 15 مصدر موثق (Tier 1-3)
+
+### الادعاءات الجديدة
+- 10 ادعاءات إضافية مع مستويات ثقة
+
+### التحديات
+- بعض الإدخالات الناشئة تحتاج مراقبة مستمرة للنشر الإنتاجي
+- الأرقام تحتاج تحديث مع إصدارات النماذج الجديدة
