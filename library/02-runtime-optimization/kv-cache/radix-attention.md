@@ -1,64 +1,134 @@
 ---
-id: "entry-radixattention-001"
-title_ar: "الانتباه الشجري (RadixAttention)"
-title_en: "RadixAttention — Tree-Based KV Cache Reuse"
-type: "Practical"
-status: "Deployed"
-category: "Efficient Inference"
-subcategory: "KV Cache Optimization"
-tree_path: ["Efficient Inference", "KV Cache Optimization", "RadixAttention"]
-cost_dimensions: ["api-cost", "latency", "throughput", "memory"]
-proof_score: 4
+id: entry-radixattention-001
+title_ar: شجرة الانتباه المتفرعة — RadixAttention (SGLang)
+title_en: "RadixAttention: Prefix Sharing via Radix Tree KV Cache"
+type: practical
+status: deployed
+category: runtime-optimization
+subcategory: kv-cache
+cost_dimensions: [inference-cost, throughput, latency, memory]
+proof_score: "⭐⭐⭐ منشور | Deployed"
 sources_count: 4
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 8
+  A2: 8
+  A3: 8
+  A4: 8
+  B1: 7
+  B2: 0
+  B3: 6
+  B4: 8
+  C1: 7
+  C2: 6
+  C3: 8
+  C4: 7
 ---
 
-# الانتباه الشجري | RadixAttention
+# 📘 RadixAttention — مشاركة البادئات عبر شجرة Radix
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — مُنشَر | **الإثبات:** ⭐⭐⭐
+>
+> **الميزة التنافسية الأساسية لـ SGLang مقابل vLLM**
 
-## 📌 الملخص العربي | Arabic Summary
+---
 
-الانتباه الشجري (RadixAttention) هو خوارزمية متقدمة لإعادة استخدام الذاكرة المؤقتة للمفاتيح والقيم (KV Cache) عبر الطلبات التي تتشارك سوابق نصية مشتركة. يُخزّن KV Cache في شجرة شجعية (Radix Tree) مُفهرسة بتسلسلات الرموز، مما يمكّن من مشاركة الأجزاء المشتركة بين الطلبات المختلفة بدلاً من إعادة حسابها.
+## المحتوى العربي
 
-على عكس التخزين المؤقت البسيط (Prefix Caching) الذي يطابق فقط السوابق الثابتة، يتعامل RadixAttention مع أي بنية مشتركة متعددة المستويات: تعليمات النظام، وثائق RAG، وسجلات المحادثة. يحقق معدلات إصابة (Hit Rate) بنسبة 70-95% لأحمال الوكلاء وRAG، مما يقلل تكلفة Prefill بنسبة 80-90%.
+### ما هو RadixAttention؟
 
-## 📌 English Summary
+RadixAttention — وهو تقنية تُخزّن مؤقتات KV في شجرة Radix (شجرة بادئات مضغوطة) بدلاً من تخزين مستقل لكل طلب. عندما يتشارك طلبان بادئة (system prompt, أمثلة, تاريخ محادثة)، يُعاد استخدام حسابات البادئة بدلاً من إعادتها من الصفر.
 
-RadixAttention is an advanced algorithm for reusing KV caches across requests with shared text prefixes. It stores KV entries in a radix tree indexed by token sequences, enabling arbitrary common sub-sequence sharing across different requests.
+### الفرق عن Prefix Caching العادي
 
-Unlike simple Prefix Caching that matches only fixed leading prefixes, RadixAttention handles multi-level shared structures: system prompts, RAG documents, and conversation histories. It achieves 70-95% cache hit rates for agent and RAG workloads, reducing Prefill compute costs by 80-90%.
+| | Prefix Caching (vLLM) | RadixAttention (SGLang) |
+|---|---------------------|----------------------|
+| البنية | قائمة مسطحة | **شجرة متفرعة** |
+| مشاركة | بادئات كاملة فقط | **متعددة المستويات** (أي نقطة تفرع) |
+| الجدولة | FIFO عادي | **واعية بالتخزين المؤقت** (depth-first) |
+| المحادثات المتعددة | محدود | **ممتاز** (شجرة تنمو مع المحادثة) |
+| الوكلاء + أدوات | محدود | **ممتاز** (فروع لكل أداة) |
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
+### الأرقام — أين يتفوق SGLang بسبب RadixAttention
 
-- **تكلفة الـ API (API Cost):** تقليل 80-90% في تكلفة Prefill عندما تكون Hit Rate ≥90%.
-- **الكمون (Latency):** TTFT أقل بـ 3-4× على الطلبات ذات السوابق المشتركة (من ~280ms إلى ~80-120ms).
-- **الإنتاجية (Throughput):** حتى 6.4× تحسين على أحمال الوكلاء وRAG مقارنة بمحركات بدون إعادة استخدام.
-- **تكلفة الذاكرة (Memory Cost):** مشاركة الصفحات الفيزيائية تقلل استهلاك HBM بنسبة تصل إلى 90% للطلبات ذات البادئات المشتركة.
+#### إنتاجية مع مشاركة بادئات
 
-## 🛡️ بوابات الأدلة | Evidence Gates
+| حمل العمل | طول البادئة | vLLM | SGLang | **التسريع** |
+|-----------|------------|------|--------|-----------|
+| بدون بادئة مشتركة | 0 | 2,500 | 2,800 | 1.12× |
+| Few-shot (5 أمثلة) | 1,000 | 800 | 3,200 | **4×** |
+| Few-shot (10 أمثلة) | 2,000 | 500 | 5,000 | **10×!** |
+| وكيل + أدوات | 1,500 | 800 | 4,000 | **5×** |
+| محادثة متعددة | 500-2K | 1,200 | 3,600 | **3×** |
 
-- ✅ **Gate 1 (Built):** مُدمج في SGLang (مفتوح المصدر، مدعوم من xAI/LMSYS/UC Berkeley).
-- ✅ **Gate 2 (Tested):** مُختبر على Llama-7B (A10G), Mixtral-8x7B (8× A10G), و Llama-3.3-70B (H100).
-- ✅ **Gate 3 (Deployed):** يُستخدم في الإنتاج من قبل xAI (Grok) على 100K+ GPU.
-- ✅ **Gate 4 (Saved):** 5× إنتاجية أعلى على أحمال MMLU (إعادة استخدام أمثلة 5-shot). 6.4× على أحمال RAG. 80-90% توفير في تكلفة Prefill.
+*المصدر: معايير مُجمّعة من SGLang paper + AI Research Skills + PremAI*
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
+> **القاعدة:** بادئات أطول = تسريع أكبر. بدون بادئات = لا فائدة تقريباً.
 
-- الفعالية تعتمد على نسبة مشاركة السوابق — أحمال الأوامر الفريدة لا تستفيد.
-- تغيير حرف واحد في تعليمات النظام يُبطِل الذاكرة المؤقتة بالكامل (Byte-exact matching).
-- يحتاج إدارة LRU فعّالة لتجنب ازدحام الشجرة بالمدخلات القديمة.
-- أقل فعالية على أحمال التوليد المحتوى الفريد (Content generation).
+#### زمن الاستجابة (TTFT) لأحمال الوكلاء
 
-## 📚 المصادر | Sources
+| المقياس | vLLM | SGLang | التحسن |
+|---------|------|--------|--------|
+| الطلب الأول (بارد) | 1.8s | 1.8s | **متساوٍ** |
+| الطلبات اللاحقة | 1.8s | **0.35s** | **5× أسرع** |
+| P50 (100 طلب) | 1.8s | 0.42s | 4.3× |
+| P99 | 2.1s | 0.58s | 3.6× |
 
-- [1] Zheng et al., "SGLang: Efficient Execution of Structured Language Model Programs", arXiv, 2023. DOI: [arXiv:2312.07104](https://arxiv.org/abs/2312.07104)
-- [2] LMSYS Blog, "Fast and Expressive LLM Inference with RadixAttention and SGLang", 2024. [URL](https://www.lmsys.org/blog/2024-01-17-sglang/)
-- [3] Spheron, "SGLang Production Deployment Guide", 2026. [URL](https://www.spheron.network/blog/sglang-production-deployment-guide/)
-- [4] Particula, "SGLang vs vLLM in 2026: Benchmarks", 2026. [URL](https://particula.tech/blog/sglang-vs-vllm-inference-engine-comparison)
+#### كفاءة الذاكرة
 
-## 🔗 إدخالات ذات صلة | Related Entries
+100 طلب × 2,000 توكن بادئة مشتركة:
+- **بدون RadixAttention:** 200K توكن مُخزَّنة = ~1.5 GB (8B FP16)
+- **مع RadixAttention:** 2K توكن (مرة واحدة) + فريد = **~15 MB**
+- **التوفير: 99%** للأجزاء المشتركة
 
-- [PagedAttention](./paged-attention.md)
-- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching/prompt-caching.md)
-- [التجميع المستمر](../batching/continuous-batching.md)
+### نسب الإصابة في الإنتاج
+
+| نوع حمل العمل | نسبة الإصابة النموذجية |
+|-------------|---------------------|
+| وكلاء (system prompt + أدوات ثابتة) | **75-95%** |
+| محادثات متعددة الأدوار | **50-85%** |
+| RAG (نفس المستندات) | **60-90%** |
+| عمليات دفعية فريدة | **< 5%** (لا فائدة) |
+
+### ما يقتل نسبة الإصابة
+
+1. **حرف واحد مختلف في البادئة** → إخفاق كامل (الشجرة تُطابق بايت-بايت)
+2. **ترتيب غير ثابت للأمثلة** → فروع جديدة لكل ترتيب
+3. **FIFO scheduling** → يُخرج بادئات مفيدة مبكراً (SGLang يحل هذا بجدولة واعية)
+
+### من يستخدم SGLang في الإنتاج (2026)
+
+| الشركة | الاستخدام |
+|--------|----------|
+| **xAI** | Grok 3 — تريليونات التوكنات |
+| **Microsoft Azure** | نقاط نهاية Azure AI |
+| **Cursor** | إكمال الكود (بادئات طويلة متكررة) |
+| **LinkedIn** | ميزات AI |
+| **DeepSeek** | المحرك الرسمي الموصى — 3.1× أسرع من vLLM لـ V3 |
+| **Oracle Cloud** | خدمات الاستدلال |
+
+### العلاقة بتقنيات أخرى
+
+```
+PagedAttention (أساس الذاكرة) ──→ RadixAttention (يُضيف شجرة مشاركة فوقه)
+                                        │
+                                        ├── Prefix Caching (حالة خاصة أبسط)
+                                        ├── Prompt Caching APIs (Anthropic/OpenAI — نفس المبدأ على الخادم)
+                                        └── Semantic Caching (مشاركة بالمعنى، RadixAttention بالنص الحرفي)
+```
+
+---
+
+## English Content
+
+RadixAttention stores KV cache in a radix tree, enabling multi-level prefix sharing. 4-10× speedup over vLLM on prefix-heavy workloads. 75-95% cache hit rates for agents. 99% memory savings for shared portions. Used by xAI (Grok 3), Microsoft Azure, Cursor, DeepSeek (3.1× faster than vLLM for V3).
+
+---
+
+## المصادر | Sources
+
+1. **[Tier 1]** Zheng, L., et al., "SGLang: Efficient Execution of Structured Language Model Programs", 2024. UC Berkeley.
+2. **[Tier 2]** Spheron, "SGLang Production Deployment Guide: RadixAttention", March 2026. Cache hit rates + configuration.
+3. **[Tier 2]** Particula Tech, "SGLang vs vLLM in 2026: Benchmarks", March 2026. Head-to-head comparison.
+4. **[Tier 2]** RunPod, "SGLang in Production: RadixAttention", April 2026. 6.4× throughput, production deployment.
