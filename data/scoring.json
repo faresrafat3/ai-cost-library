@@ -1,0 +1,434 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-26",
+  "dimensions": {
+    "A1_production_maturity": {
+      "name_ar": "نضج الإنتاج",
+      "name_en": "Production Maturity",
+      "icon": "🏭",
+      "max": 10
+    },
+    "A2_source_quality": {
+      "name_ar": "جودة المصدر",
+      "name_en": "Source Quality",
+      "icon": "📎",
+      "max": 10
+    },
+    "A3_reproducibility": {
+      "name_ar": "قابلية التكرار",
+      "name_en": "Reproducibility",
+      "icon": "🔄",
+      "max": 10
+    },
+    "A4_recency": {
+      "name_ar": "حداثة البحث",
+      "name_en": "Recency",
+      "icon": "🆕",
+      "max": 10
+    },
+    "B1_inference_cost": {
+      "name_ar": "تقليل تكلفة الاستدلال",
+      "name_en": "Inference Cost Reduction",
+      "icon": "⚡",
+      "max": 10
+    },
+    "B2_training_cost": {
+      "name_ar": "تقليل تكلفة التدريب",
+      "name_en": "Training Cost Reduction",
+      "icon": "🏋️",
+      "max": 10
+    },
+    "B3_memory_reduction": {
+      "name_ar": "تقليل الذاكرة",
+      "name_en": "Memory Reduction",
+      "icon": "💾",
+      "max": 10
+    },
+    "B4_throughput": {
+      "name_ar": "تحسين الإنتاجية",
+      "name_en": "Throughput Improvement",
+      "icon": "📈",
+      "max": 10
+    },
+    "C1_ease_of_use": {
+      "name_ar": "سهولة التطبيق",
+      "name_en": "Ease of Implementation",
+      "icon": "🔧",
+      "max": 10
+    },
+    "C2_generality": {
+      "name_ar": "عمومية الاستخدام",
+      "name_en": "Generality",
+      "icon": "🌐",
+      "max": 10
+    },
+    "C3_scalability": {
+      "name_ar": "قابلية التوسع",
+      "name_en": "Scalability",
+      "icon": "📊",
+      "max": 10
+    },
+    "C4_tooling": {
+      "name_ar": "نضج الأدوات",
+      "name_en": "Tooling Maturity",
+      "icon": "🛠️",
+      "max": 10
+    }
+  },
+  "user_profiles": {
+    "individual_developer": {
+      "name_ar": "المطور الفردي",
+      "name_en": "Individual Developer",
+      "icon": "👨‍💻",
+      "weights": {
+        "A1": 1,
+        "A2": 1,
+        "A3": 1,
+        "A4": 1,
+        "B1": 2,
+        "B2": 1,
+        "B3": 3,
+        "B4": 1,
+        "C1": 3,
+        "C2": 1,
+        "C3": 1,
+        "C4": 2
+      }
+    },
+    "midsize_team": {
+      "name_ar": "فريق الشركة المتوسطة",
+      "name_en": "Mid-size Team",
+      "icon": "🏢",
+      "weights": {
+        "A1": 3,
+        "A2": 1,
+        "A3": 1,
+        "A4": 1,
+        "B1": 3,
+        "B2": 1,
+        "B3": 1,
+        "B4": 1,
+        "C1": 2,
+        "C2": 2,
+        "C3": 1,
+        "C4": 1
+      }
+    },
+    "infra_team": {
+      "name_ar": "فريق البنية التحتية",
+      "name_en": "Infrastructure Team",
+      "icon": "🏗️",
+      "weights": {
+        "A1": 2,
+        "A2": 1,
+        "A3": 1,
+        "A4": 1,
+        "B1": 1,
+        "B2": 1,
+        "B3": 3,
+        "B4": 3,
+        "C1": 1,
+        "C2": 1,
+        "C3": 3,
+        "C4": 1
+      }
+    },
+    "researcher": {
+      "name_ar": "الباحث / المهووس",
+      "name_en": "Researcher / Enthusiast",
+      "icon": "🔬",
+      "weights": {
+        "A1": 1,
+        "A2": 3,
+        "A3": 2,
+        "A4": 3,
+        "B1": 2,
+        "B2": 2,
+        "B3": 2,
+        "B4": 2,
+        "C1": 1,
+        "C2": 2,
+        "C3": 2,
+        "C4": 1
+      }
+    },
+    "agent_developer": {
+      "name_ar": "مطور الوكلاء",
+      "name_en": "Agent Developer",
+      "icon": "🤖",
+      "weights": {
+        "A1": 2,
+        "A2": 1,
+        "A3": 1,
+        "A4": 1,
+        "B1": 4,
+        "B2": 1,
+        "B3": 1,
+        "B4": 1,
+        "C1": 3,
+        "C2": 1,
+        "C3": 1,
+        "C4": 2
+      }
+    }
+  },
+  "entries": {
+    "entry-fp8-001": {
+      "title": "FP8 Quantization",
+      "scores": {
+        "A1": 10,
+        "A2": 8,
+        "A3": 9,
+        "A4": 9,
+        "B1": 8,
+        "B2": 2,
+        "B3": 8,
+        "B4": 8,
+        "C1": 8,
+        "C2": 7,
+        "C3": 9,
+        "C4": 9
+      }
+    },
+    "entry-routing-001": {
+      "title": "Model Routing (RouteLLM)",
+      "scores": {
+        "A1": 8,
+        "A2": 10,
+        "A3": 8,
+        "A4": 9,
+        "B1": 10,
+        "B2": 0,
+        "B3": 0,
+        "B4": 2,
+        "C1": 7,
+        "C2": 8,
+        "C3": 9,
+        "C4": 8
+      }
+    },
+    "entry-semcache-001": {
+      "title": "Semantic Caching",
+      "scores": {
+        "A1": 8,
+        "A2": 7,
+        "A3": 7,
+        "A4": 9,
+        "B1": 9,
+        "B2": 0,
+        "B3": 0,
+        "B4": 3,
+        "C1": 6,
+        "C2": 7,
+        "C3": 8,
+        "C4": 7
+      }
+    },
+    "entry-contbatching-001": {
+      "title": "Continuous Batching",
+      "scores": {
+        "A1": 10,
+        "A2": 8,
+        "A3": 10,
+        "A4": 7,
+        "B1": 9,
+        "B2": 0,
+        "B3": 3,
+        "B4": 10,
+        "C1": 8,
+        "C2": 10,
+        "C3": 10,
+        "C4": 10
+      }
+    },
+    "entry-pagedattention-001": {
+      "title": "PagedAttention",
+      "scores": {
+        "A1": 10,
+        "A2": 9,
+        "A3": 10,
+        "A4": 7,
+        "B1": 7,
+        "B2": 0,
+        "B3": 9,
+        "B4": 8,
+        "C1": 8,
+        "C2": 10,
+        "C3": 10,
+        "C4": 10
+      }
+    },
+    "entry-lora-001": {
+      "title": "LoRA",
+      "scores": {
+        "A1": 10,
+        "A2": 10,
+        "A3": 10,
+        "A4": 6,
+        "B1": 2,
+        "B2": 10,
+        "B3": 9,
+        "B4": 0,
+        "C1": 9,
+        "C2": 9,
+        "C3": 8,
+        "C4": 10
+      }
+    },
+    "entry-agentdiet-001": {
+      "title": "AgentDiet",
+      "scores": {
+        "A1": 3,
+        "A2": 9,
+        "A3": 8,
+        "A4": 10,
+        "B1": 7,
+        "B2": 0,
+        "B3": 0,
+        "B4": 0,
+        "C1": 5,
+        "C2": 4,
+        "C3": 5,
+        "C4": 3
+      }
+    },
+    "entry-agentmultiplier-001": {
+      "title": "Agent Token Multiplier",
+      "scores": {
+        "A1": 9,
+        "A2": 5,
+        "A3": 5,
+        "A4": 10,
+        "B1": 0,
+        "B2": 0,
+        "B3": 0,
+        "B4": 0,
+        "C1": 0,
+        "C2": 10,
+        "C3": 10,
+        "C4": 0
+      }
+    },
+    "entry-ipw-001": {
+      "title": "Local vs Cloud (IPW)",
+      "scores": {
+        "A1": 6,
+        "A2": 8,
+        "A3": 8,
+        "A4": 9,
+        "B1": 7,
+        "B2": 0,
+        "B3": 0,
+        "B4": 3,
+        "C1": 5,
+        "C2": 7,
+        "C3": 6,
+        "C4": 5
+      }
+    },
+    "entry-kvcachecompress-001": {
+      "title": "KV Cache Compression",
+      "scores": {
+        "A1": 2,
+        "A2": 7,
+        "A3": 7,
+        "A4": 10,
+        "B1": 6,
+        "B2": 0,
+        "B3": 9,
+        "B4": 5,
+        "C1": 3,
+        "C2": 6,
+        "C3": 7,
+        "C4": 3
+      }
+    },
+    "entry-deepspeed-001": {
+      "title": "DeepSpeed ZeRO + FSDP",
+      "scores": {
+        "A1": 10,
+        "A2": 10,
+        "A3": 10,
+        "A4": 6,
+        "B1": 0,
+        "B2": 9,
+        "B3": 9,
+        "B4": 7,
+        "C1": 6,
+        "C2": 9,
+        "C3": 10,
+        "C4": 10
+      }
+    },
+    "entry-finops-001": {
+      "title": "AI FinOps Observability",
+      "scores": {
+        "A1": 7,
+        "A2": 6,
+        "A3": 5,
+        "A4": 10,
+        "B1": 6,
+        "B2": 1,
+        "B3": 0,
+        "B4": 0,
+        "C1": 5,
+        "C2": 8,
+        "C3": 8,
+        "C4": 7
+      }
+    }
+  },
+  "relationships": {
+    "complementary": [
+      [
+        "entry-fp8-001",
+        "entry-contbatching-001",
+        "entry-pagedattention-001"
+      ],
+      [
+        "entry-routing-001",
+        "entry-semcache-001",
+        "entry-promptcache-001"
+      ],
+      [
+        "entry-agentdiet-001",
+        "entry-skillreducer-001"
+      ],
+      [
+        "entry-lora-001",
+        "entry-synthdata-001",
+        "entry-distillation-001"
+      ]
+    ],
+    "alternative": [
+      [
+        "entry-gptq-001",
+        "entry-awq-001",
+        "entry-llmint8-001",
+        "entry-fp8-001"
+      ],
+      [
+        "entry-decentral-001",
+        "entry-ipw-001"
+      ]
+    ],
+    "dependency": [
+      {
+        "from": "entry-fp8-001",
+        "requires": "Hopper/Blackwell GPU"
+      },
+      {
+        "from": "entry-contbatching-001",
+        "requires": "Serving Engine"
+      },
+      {
+        "from": "entry-kvcachecompress-001",
+        "requires": "Custom kernel"
+      },
+      {
+        "from": "entry-budgetlimits-001",
+        "requires": "entry-finops-001"
+      }
+    ]
+  }
+}

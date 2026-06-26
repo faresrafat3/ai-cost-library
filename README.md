@@ -82,6 +82,8 @@ This library helps developers, companies, and researchers understand AI cost red
 
 ### المنهجية والجودة
 - [المنهجية](METHODOLOGY.md)
+- [🆕 نظام التقييم الشامل (12 بُعد × 5 ملفات مستخدم)](SCORING_SYSTEM.md)
+- [🆕 خريطة العلاقات بين التقنيات](RELATIONSHIPS.md)
 - [المعجم](GLOSSARY.md)
 - [سياسة عدم المبالغة](NO_HYPE_POLICY.md)
 - [قائمة الجودة](QUALITY_CHECKLIST.md)
