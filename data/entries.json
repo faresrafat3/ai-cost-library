@@ -1,19 +1,231 @@
 {
   "entries": [
-    {"id": "entry-gptq-001", "title_en": "GPTQ", "title_ar": "GPTQ — تكميم ما بعد التدريب للنماذج اللغوية", "type": "practical", "status": "validated", "category": "model-compression", "subcategory": "quantization"},
-    {"id": "entry-awq-001", "title_en": "AWQ", "title_ar": "AWQ — تكميم مُفعَّل بالوزن", "type": "practical", "status": "deployed", "category": "model-compression", "subcategory": "quantization"},
-    {"id": "entry-smoothquant-001", "title_en": "SmoothQuant", "title_ar": "SmoothQuant — تكميم سلس", "type": "practical", "status": "deployed", "category": "model-compression", "subcategory": "quantization"},
-    {"id": "entry-llmint8-001", "title_en": "LLM.int8()", "title_ar": "LLM.int8() — تكميم 8-بت", "type": "practical", "status": "deployed", "category": "model-compression", "subcategory": "quantization"},
-    {"id": "entry-specdec-001", "title_en": "Speculative Decoding", "title_ar": "فك الترميز التخميني", "type": "practical", "status": "deployed", "category": "efficient-inference", "subcategory": "decoding"},
-    {"id": "entry-contbatching-001", "title_en": "Continuous Batching", "title_ar": "التجميع المستمر", "type": "practical", "status": "deployed", "category": "efficient-inference", "subcategory": "batching"},
-    {"id": "entry-pagedattention-001", "title_en": "PagedAttention", "title_ar": "الانتباه المصفح", "type": "practical", "status": "production-proven", "category": "efficient-inference", "subcategory": "kv-cache"},
-    {"id": "entry-radixattention-001", "title_en": "RadixAttention", "title_ar": "الانتباه الجذري", "type": "practical", "status": "deployed", "category": "efficient-inference", "subcategory": "kv-cache"},
-    {"id": "entry-lora-001", "title_en": "LoRA", "title_ar": "LoRA — تكييف الرتبة المنخفضة", "type": "practical", "status": "production-proven", "category": "efficient-training", "subcategory": "parameter-efficient"},
-    {"id": "entry-qlora-001", "title_en": "QLoRA", "title_ar": "QLoRA — تكييف الرتبة المنخفضة المُكمَّم", "type": "practical", "status": "production-proven", "category": "efficient-training", "subcategory": "parameter-efficient"},
-    {"id": "entry-promptcache-001", "title_en": "Prompt Caching", "title_ar": "تخزين الطلبات المؤقت", "type": "practical", "status": "deployed", "category": "token-and-prompt-cost", "subcategory": "prompt-caching"},
-    {"id": "entry-layerskip-001", "title_en": "LayerSkip", "title_ar": "LayerSkip — قفز الطبقات", "type": "practical", "status": "validated", "category": "efficient-inference", "subcategory": "early-exit"},
-    {"id": "entry-mod-001", "title_en": "Mixture-of-Depths", "title_ar": "Mixture-of-Depths — خلط الأعماق", "type": "emerging", "status": "emerging", "category": "efficient-training", "subcategory": "compute-allocation"},
-    {"id": "entry-shortgpt-001", "title_en": "ShortGPT", "title_ar": "ShortGPT — قصّ الطبقات", "type": "emerging", "status": "emerging", "category": "model-compression", "subcategory": "pruning"},
-    {"id": "entry-distillation-001", "title_en": "Knowledge Distillation", "title_ar": "استخلاص المعرفة", "type": "practical", "status": "production-proven", "category": "model-compression", "subcategory": "distillation"}
+    {
+      "id": "entry-gptq-001",
+      "title_en": "GPTQ",
+      "title_ar": "GPTQ — تكميم ما بعد التدريب للنماذج اللغوية",
+      "type": "practical",
+      "status": "validated",
+      "category": "model-compression",
+      "subcategory": "quantization"
+    },
+    {
+      "id": "entry-awq-001",
+      "title_en": "AWQ",
+      "title_ar": "AWQ — تكميم مُفعَّل بالوزن",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-compression",
+      "subcategory": "quantization"
+    },
+    {
+      "id": "entry-smoothquant-001",
+      "title_en": "SmoothQuant",
+      "title_ar": "SmoothQuant — تكميم سلس",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-compression",
+      "subcategory": "quantization"
+    },
+    {
+      "id": "entry-llmint8-001",
+      "title_en": "LLM.int8()",
+      "title_ar": "LLM.int8() — تكميم 8-بت",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-compression",
+      "subcategory": "quantization"
+    },
+    {
+      "id": "entry-specdec-001",
+      "title_en": "Speculative Decoding",
+      "title_ar": "فك الترميز التخميني",
+      "type": "practical",
+      "status": "deployed",
+      "category": "efficient-inference",
+      "subcategory": "decoding"
+    },
+    {
+      "id": "entry-contbatching-001",
+      "title_en": "Continuous Batching",
+      "title_ar": "التجميع المستمر",
+      "type": "practical",
+      "status": "deployed",
+      "category": "efficient-inference",
+      "subcategory": "batching"
+    },
+    {
+      "id": "entry-pagedattention-001",
+      "title_en": "PagedAttention",
+      "title_ar": "الانتباه المصفح",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "efficient-inference",
+      "subcategory": "kv-cache"
+    },
+    {
+      "id": "entry-radixattention-001",
+      "title_en": "RadixAttention",
+      "title_ar": "الانتباه الجذري",
+      "type": "practical",
+      "status": "deployed",
+      "category": "efficient-inference",
+      "subcategory": "kv-cache"
+    },
+    {
+      "id": "entry-lora-001",
+      "title_en": "LoRA",
+      "title_ar": "LoRA — تكييف الرتبة المنخفضة",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "efficient-training",
+      "subcategory": "parameter-efficient"
+    },
+    {
+      "id": "entry-qlora-001",
+      "title_en": "QLoRA",
+      "title_ar": "QLoRA — تكييف الرتبة المنخفضة المُكمَّم",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "efficient-training",
+      "subcategory": "parameter-efficient"
+    },
+    {
+      "id": "entry-promptcache-001",
+      "title_en": "Prompt Caching",
+      "title_ar": "تخزين الطلبات المؤقت",
+      "type": "practical",
+      "status": "deployed",
+      "category": "token-and-prompt-cost",
+      "subcategory": "prompt-caching"
+    },
+    {
+      "id": "entry-layerskip-001",
+      "title_en": "LayerSkip",
+      "title_ar": "LayerSkip — قفز الطبقات",
+      "type": "practical",
+      "status": "validated",
+      "category": "efficient-inference",
+      "subcategory": "early-exit"
+    },
+    {
+      "id": "entry-mod-001",
+      "title_en": "Mixture-of-Depths",
+      "title_ar": "Mixture-of-Depths — خلط الأعماق",
+      "type": "emerging",
+      "status": "emerging",
+      "category": "efficient-training",
+      "subcategory": "compute-allocation"
+    },
+    {
+      "id": "entry-shortgpt-001",
+      "title_en": "ShortGPT",
+      "title_ar": "ShortGPT — قصّ الطبقات",
+      "type": "emerging",
+      "status": "emerging",
+      "category": "model-compression",
+      "subcategory": "pruning"
+    },
+    {
+      "id": "entry-distillation-001",
+      "title_en": "Knowledge Distillation",
+      "title_ar": "استخلاص المعرفة",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-compression",
+      "subcategory": "distillation"
+    },
+    {
+      "id": "entry-fp8-001",
+      "title_ar": "التكميم بدقة FP8",
+      "title_en": "FP8 Quantization",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-compression",
+      "subcategory": "quantization",
+      "tree_path": "AI Cost Library → Model Compression → Quantization → FP8 Quantization",
+      "cost_dimensions": [
+        "memory",
+        "compute",
+        "inference-cost",
+        "throughput",
+        "hardware-cost",
+        "energy"
+      ],
+      "proof_score": 4,
+      "proof_label": "⭐⭐⭐⭐ Production-Proven",
+      "sources_count": 5,
+      "file_path": "library/model-compression/quantization/fp8-quantization.md",
+      "created": "2026-06-26",
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-routing-001",
+      "title_ar": "توجيه النماذج الذكي",
+      "title_en": "Intelligent Model Routing (RouteLLM)",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-selection-and-routing",
+      "subcategory": "model-routing",
+      "tree_path": "AI Cost Library → Model Selection and Routing → Model Routing → Intelligent Model Routing",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost",
+        "latency"
+      ],
+      "proof_score": 3,
+      "proof_label": "⭐⭐⭐ Deployed",
+      "sources_count": 6,
+      "file_path": "library/model-selection-and-routing/model-routing/model-routing.md",
+      "created": "2026-06-26",
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-semcache-001",
+      "title_ar": "التخزين المؤقت الدلالي",
+      "title_en": "Semantic Caching",
+      "type": "practical",
+      "status": "deployed",
+      "category": "token-and-prompt-cost",
+      "subcategory": "semantic-caching",
+      "tree_path": "AI Cost Library → Token and Prompt Cost → Semantic Caching",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost",
+        "latency",
+        "compute",
+        "energy"
+      ],
+      "proof_score": 3,
+      "proof_label": "⭐⭐⭐ Deployed",
+      "sources_count": 5,
+      "file_path": "library/token-and-prompt-cost/semantic-caching/semantic-caching.md",
+      "created": "2026-06-26",
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-chinchilla-001",
+      "title_ar": "قوانين التحجيم الأمثل حوسبياً (Chinchilla)",
+      "title_en": "Compute-Optimal Scaling Laws (Chinchilla)",
+      "type": "theoretical",
+      "status": "validated",
+      "category": "efficient-training",
+      "subcategory": "compute-optimal",
+      "tree_path": "AI Cost Library → Efficient Training → Compute-Optimal → Chinchilla Scaling",
+      "cost_dimensions": [
+        "training-cost",
+        "compute",
+        "energy",
+        "hardware-cost"
+      ],
+      "proof_score": 3,
+      "proof_label": "⭐⭐⭐ Validated",
+      "sources_count": 4,
+      "file_path": "library/efficient-training/compute-optimal/chinchilla-scaling.md",
+      "created": "2026-06-26",
+      "updated": "2026-06-26"
+    }
   ]
 }

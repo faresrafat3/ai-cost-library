@@ -17,16 +17,16 @@ This library helps developers, companies, and researchers understand AI cost red
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🌿 الفئات الكبرى:       10
-🍃 الفئات الفرعية:      14
-📘 تطبيقية:             14 (⭐⭐⭐⭐ إنتاج: 7 | ⭐⭐⭐ منشور: 5 | ⭐⭐ مُتحقق: 2)
+🍃 الفئات الفرعية:      17
+📘 تطبيقية:             16 (⭐⭐⭐⭐ إنتاج: 8 | ⭐⭐⭐ منشور: 8)
 🧪 ناشئة:               3
-📐 نظرية:               0
+📐 نظرية:               1
 ❌ مرفوض:               0
 ⏳ قيد المراجعة:        0
 ⚠️ غير متحقق:           0
-📚 مصطلحات المعجم:      52
-🔗 مصادر موثقة:         28
-🧾 ادعاءات مسجلة:       35
+📚 مصطلحات المعجم:      62
+🔗 مصادر موثقة:         48
+🧾 ادعاءات مسجلة:       55
 📅 آخر تحديث:           2026-06-26
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -35,11 +35,11 @@ This library helps developers, companies, and researchers understand AI cost red
 
 | المعرف | التقنية | التصنيف | الإثبات | الفئة |
 |--------|---------|---------|---------|-------|
-| entry-flashattn-001 | FlashAttention | 📘 عملية | ⭐⭐⭐⭐ إنتاج | kv-cache |
-| entry-layerskip-001 | LayerSkip | 📘 عملية | ⭐⭐³ مُتحقق | early-exit |
-| entry-distillation-001 | استخلاص المعرفة | 📘 عملية | ⭐⭐⭐⭐ إنتاج | distillation |
-| entry-shortgpt-001 | ShortGPT | 🧪 ناشئة | ⭐⭐ نموذج أولي | pruning |
-| entry-mod-001 | Mixture-of-Depths | 🧪 ناشئة | ⭐⭐ نموذج أولي | compute-allocation |
+| entry-fp8-001 | FP8 Quantization | 📘 عملية | ⭐⭐⭐⭐ إنتاج | quantization |
+| entry-routing-001 | توجيه النماذج الذكي | 📘 عملية | ⭐⭐⭐ منشور | model-routing |
+| entry-semcache-001 | التخزين المؤقت الدلالي | 📘 عملية | ⭐⭐⭐ منشور | semantic-caching |
+| entry-chinchilla-001 | قوانين Chinchilla | 📐 نظرية | ⭐⭐⭐ مُتحقق | compute-optimal |
+| — | مقارنة محركات الاستدلال | مقارنة | — | comparisons |
 
 ## روابط أساسية | Key Links
 

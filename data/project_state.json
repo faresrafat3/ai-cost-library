@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "last_updated": "2026-06-26",
   "session_count": 4,
   "project_status": "active",
@@ -42,5 +42,9 @@
     "تم استكمال فئة Energy and Sustainability المطلوبة.",
     "تمت إضافة 6 إدخالات جديدة (1 عملية منتجة، 3 عملية مُتحققة، 2 ناشئة).",
     "تمت إضافة 15 مصدر موثق جديد."
-  ]
+  ],
+  "last_session": "session-005",
+  "total_entries": 19,
+  "total_sources": 48,
+  "total_claims": 55
 }

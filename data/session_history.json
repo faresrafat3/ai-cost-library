@@ -16,5 +16,11 @@
     "date": "2026-06-26",
     "summary_ar": "فحص المستودع الموجود، إضافة ملفات README للفئات الفرعية، إصلاح JSON للتتبّع، إضافة فئة الطاقة والاستدامة، وتحديث بروتوكول الاستمرار.",
     "summary_en": "Inspected existing repository, added subcategory READMEs, fixed tracking JSON, added Energy and Sustainability category, and updated continuation state."
+  },
+  {
+    "session": "session-005",
+    "date": "2026-06-26",
+    "summary_ar": "أضيفت 4 إدخالات جديدة: FP8، توجيه النماذج، التخزين الدلالي، قوانين Chinchilla. مقارنة محركات الاستدلال. 3 فئات فرعية جديدة.",
+    "summary_en": "Added 4 new entries: FP8, Model Routing, Semantic Caching, Chinchilla Scaling. Inference engines comparison. 3 new subcategories."
   }
 ]

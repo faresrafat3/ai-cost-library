@@ -12,6 +12,7 @@ This subcategory belongs to **Model Compression** and groups evidence-tracked AI
 | [تكمية الأوزان المعتمدة على التنشيط](awq.md) | AWQ | Practical | ⭐⭐⭐/⭐⭐⭐⭐ |
 | [التكمية الملساء](smoothquant.md) | SmoothQuant | Practical | ⭐⭐⭐/⭐⭐⭐⭐ |
 | [LLM.int8()](llm-int8.md) | LLM.int8() | Practical | ⭐⭐⭐/⭐⭐⭐⭐ |
+| [التكميم بدقة FP8](fp8-quantization.md) | FP8 Quantization | Practical | ⭐⭐⭐⭐ **جديد** |
 
 ## ملاحظة منهجية | Methodological Note
 لا تُعدّ أي تقنية «مثبتة إنتاجياً» إلا إذا وُجدت أدلة على البناء والاختبار والنشر والأثر المقاس. عند غياب أحد الأبواب تُخفض درجة الإثبات أو تُذكر حدود الثقة صراحة.

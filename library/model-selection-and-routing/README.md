@@ -1,22 +1,23 @@
 # اختيار وتوجيه النماذج | Model Selection and Routing
 
-![Category Status](https://img.shields.io/badge/Status-Seeded-yellow)
+> **المسار:** مكتبة تكلفة الذكاء الاصطناعي ← اختيار وتوجيه النماذج
+>
+> **Tree Path:** AI Cost Library → Model Selection and Routing
 
-## 📌 نظرة عامة | Overview
+## نظرة عامة | Overview
 
-اختيار وتوجيه النماذج (Model Selection and Routing) يُعنى باختيار النموذج المناسب لكل مهمة — لا الأغلى ولا الأكبر بل الأنسب. التوجيه الذكي (Router) يُوجّه الطلبات البسيطة لنماذج رخيصة والمعقدة لنماذج أقوى، مما يقلل التكلفة الإجمالية بشكل كبير.
+يشمل هذا القسم طرق اختيار النموذج الأنسب لكل مهمة من حيث التكلفة والجودة، وتوجيه الطلبات تلقائياً إلى النموذج المناسب بدلاً من استخدام نموذج واحد باهظ لجميع المهام.
 
-Model Selection and Routing is about choosing the right model for each task — not the most expensive or largest, but the most appropriate. Intelligent routing sends simple requests to cheap models and complex ones to powerful models, significantly reducing overall cost.
+This section covers methods for selecting the most cost-appropriate model for each task and automatically routing requests to the right model, instead of using a single expensive model for all tasks.
 
-## 🌿 الفئات الفرعية | Subcategories
+## الفئات الفرعية | Subcategories
 
-| الفئة الفرعية | Subcategory | الإدخالات | Entries | الحالة |
-|---|---|---|---|---|
-| اختيار النماذج | Model Selection | 0 | — | 🔜 قادمة |
-| التوجيه الذكي | Intelligent Routing | 0 | — | 🔜 قادمة |
-| التقييم المقارن | Comparative Evaluation | 0 | — | 🔜 قادمة |
+| الفئة الفرعية | الوصف | عدد الإدخالات |
+|--------------|-------|--------------|
+| [توجيه النماذج](model-routing/) | توزيع الطلبات على نماذج مختلفة حسب التعقيد | 1 |
 
-## 🔗 ملفات ذات صلة | Related Files
+## لماذا هذه الفئة مهمة؟ | Why This Category Matters
 
-- [مصفوفة اتخاذ القرار](../../DECISION_MATRIX.md)
-- [دليل خفض تكلفة API](../../playbooks/reduce-llm-api-cost.md)
+توجيه النماذج هو أعلى رافعة تكلفة متاحة في 2026 — يمكن أن يقلل الإنفاق 40-85% مع الحفاظ على 95%+ من الجودة. إنه ليس تحسيناً تقنياً فحسب، بل إعادة هيكلة اقتصادية لكيفية استخدام النماذج.
+
+Model routing is the single highest-ROI cost optimization available in 2026 — it can reduce spending 40-85% while maintaining 95%+ quality. It's not just a technical optimization but an economic restructuring of how models are used.
