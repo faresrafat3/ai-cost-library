@@ -1,119 +1,24 @@
-[
-  {
-    "id": "SRC-GPTQ-2023",
-    "tier": 1,
-    "authors": "Frantar et al.",
-    "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
-    "venue": "ICLR / arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2210.17323"
-  },
-  {
-    "id": "SRC-AWQ-2024",
-    "tier": 1,
-    "authors": "Lin et al.",
-    "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
-    "venue": "MLSys / arXiv",
-    "year": 2024,
-    "url": "https://arxiv.org/abs/2306.00978"
-  },
-  {
-    "id": "SRC-SMOOTHQUANT-2023",
-    "tier": 1,
-    "authors": "Xiao et al.",
-    "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
-    "venue": "ICML / arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2211.10438"
-  },
-  {
-    "id": "SRC-LLMINT8-2022",
-    "tier": 1,
-    "authors": "Dettmers et al.",
-    "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
-    "venue": "NeurIPS / arXiv",
-    "year": 2022,
-    "url": "https://arxiv.org/abs/2208.07339"
-  },
-  {
-    "id": "SRC-SPECDEC-2023",
-    "tier": 1,
-    "authors": "Leviathan, Kalman, and Matias",
-    "title": "Fast Inference from Transformers via Speculative Decoding",
-    "venue": "ICML / arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2211.17192"
-  },
-  {
-    "id": "SRC-ORCA-2022",
-    "tier": 1,
-    "authors": "Yu et al.",
-    "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
-    "venue": "OSDI",
-    "year": 2022,
-    "url": "https://www.usenix.org/conference/osdi22/presentation/yu"
-  },
-  {
-    "id": "SRC-VLLM-2023",
-    "tier": 1,
-    "authors": "Kwon et al.",
-    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
-    "venue": "SOSP / arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2309.06180"
-  },
-  {
-    "id": "SRC-SGLANG-2023",
-    "tier": 2,
-    "authors": "Zheng et al.",
-    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
-    "venue": "arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2312.07104"
-  },
-  {
-    "id": "SRC-LORA-2022",
-    "tier": 1,
-    "authors": "Hu et al.",
-    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
-    "venue": "ICLR / arXiv",
-    "year": 2022,
-    "url": "https://arxiv.org/abs/2106.09685"
-  },
-  {
-    "id": "SRC-QLORA-2023",
-    "tier": 1,
-    "authors": "Dettmers et al.",
-    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
-    "venue": "NeurIPS / arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2305.14314"
-  },
-  {
-    "id": "SRC-PROMPTCACHE-2023",
-    "tier": 2,
-    "authors": "Gim et al.",
-    "title": "Prompt Cache: Modular Attention Reuse for Low-Latency Inference",
-    "venue": "arXiv",
-    "year": 2023,
-    "url": "https://arxiv.org/abs/2311.04934"
-  },
-  {
-    "id": "SRC-OPENAI-PROMPT-CACHING",
-    "tier": 2,
-    "authors": "OpenAI",
-    "title": "Prompt Caching documentation",
-    "venue": "Official documentation",
-    "year": 2024,
-    "url": "https://platform.openai.com/docs/guides/prompt-caching"
-  },
-  {
-    "id": "SRC-ANTHROPIC-PROMPT-CACHING",
-    "tier": 2,
-    "authors": "Anthropic",
-    "title": "Prompt caching documentation",
-    "venue": "Official documentation",
-    "year": 2024,
-    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
-  }
-]
+{
+  "sources": [
+    {"id": "SRC-001", "tier": 2, "authors": "Men et al.", "title": "ShortGPT: Layers in Large Language Models are More Redundant Than You Expect", "venue": "arXiv:2403.03853", "year": 2024, "url": "https://arxiv.org/abs/2403.03853", "entry": "entry-shortgpt-001"},
+    {"id": "SRC-002", "tier": 2, "authors": "E3-Pruner Authors", "title": "E3-Pruner: Towards Efficient, Economical, and Effective Layer Pruning for LLMs", "venue": "arXiv:2511.17205", "year": 2025, "url": "https://arxiv.org/html/2511.17205v1", "entry": "entry-shortgpt-001"},
+    {"id": "SRC-003", "tier": 1, "authors": "Elhoushi et al.", "title": "LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding", "venue": "ACL 2024", "year": 2024, "url": "https://aclanthology.org/2024.acl-long.681/", "doi": "10.18653/v1/2024.acl-long.681", "entry": "entry-layerskip-001"},
+    {"id": "SRC-004", "tier": 2, "authors": "Meta FAIR", "title": "LayerSkip GitHub Repository", "venue": "GitHub", "year": 2024, "url": "https://github.com/facebookresearch/LayerSkip", "entry": "entry-layerskip-001"},
+    {"id": "SRC-005", "tier": 2, "authors": "Meta", "title": "LayerSkip HuggingFace Collection", "venue": "HuggingFace", "year": 2024, "url": "https://huggingface.co/collections/facebook/layerskip-666b25c50c8ae90e1965727a", "entry": "entry-layerskip-001"},
+    {"id": "SRC-006", "tier": 2, "authors": "Raposo et al.", "title": "Mixture-of-Depths: Dynamically allocating compute in transformer-based language models", "venue": "arXiv:2404.02258", "year": 2024, "url": "https://arxiv.org/abs/2404.02258", "entry": "entry-mod-001"},
+    {"id": "SRC-007", "tier": 3, "authors": "Graphcore Research", "title": "TriForce, QuaRot, Mixture-of-Depths: Papers of the Month (Apr 2024)", "venue": "Graphcore Blog", "year": 2024, "url": "https://www.graphcore.ai/posts/triforce-quarot-mixture-of-depths-papers-of-the-month-apr-2024", "entry": "entry-mod-001"},
+    {"id": "SRC-008", "tier": 1, "authors": "Sanh et al.", "title": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter", "venue": "NeurIPS Workshop 2019", "year": 2019, "url": "https://arxiv.org/abs/1910.01108", "entry": "entry-distillation-001"},
+    {"id": "SRC-009", "tier": 2, "authors": "Hinton et al.", "title": "Distilling the Knowledge in a Neural Network", "venue": "NeurIPS Workshop 2015", "year": 2015, "entry": "entry-distillation-001"},
+    {"id": "SRC-010", "tier": 1, "authors": "Gu et al.", "title": "MiniLLM: Knowledge Distillation of Large Language Models", "venue": "ICLR 2024", "year": 2024, "entry": "entry-distillation-001"},
+    {"id": "SRC-011", "tier": 2, "authors": "NVIDIA", "title": "Minitron: Pruning and Distillation for Efficient LLMs", "venue": "NVIDIA Blog", "year": 2024, "entry": "entry-distillation-001"},
+    {"id": "SRC-012", "tier": 1, "authors": "DeepSeek AI", "title": "DeepSeek-R1 Distilled Models", "venue": "HuggingFace", "year": 2025, "entry": "entry-distillation-001"},
+    {"id": "SRC-013", "tier": 2, "authors": "AWS", "title": "Deploy DeepSeek-R1 distilled Llama models with Amazon Bedrock", "venue": "AWS ML Blog", "year": 2025, "url": "https://aws.amazon.com/blogs/machine-learning/deploy-deepseek-r1-distilled-llama-models-with-amazon-bedrock-custom-model-import/", "entry": "entry-distillation-001"},
+    {"id": "SRC-014", "tier": 2, "authors": "Federal Reserve Feds", "title": "LLM on a Budget: Active Knowledge Distillation", "venue": "Federal Reserve", "year": 2025, "url": "https://www.federalreserve.gov/econres/feds/llm-on-a-budget-active-knowledge-distillation-for-efficient-classification-of-large-text-corpora.htm", "entry": "entry-distillation-001"},
+    {"id": "SRC-015", "tier": 2, "authors": "Fireworks AI", "title": "DeepSeek Models: V3.2, R1, Distills, and Production Caveats", "venue": "Fireworks AI Blog", "year": 2026, "url": "https://fireworks.ai/blog/deepseek-models", "entry": "entry-distillation-001"},
+    {"id": "SRC-016", "tier": 2, "authors": "Yang et al.", "title": "SpecExit: Accelerating Large Reasoning Model via Speculative Exit", "venue": "arXiv", "year": 2025, "entry": "entry-layerskip-001"},
+    {"id": "SRC-017", "tier": 2, "authors": "Bajpai et al.", "title": "BEEM: Early-Exit Aggregation", "venue": "arXiv", "year": 2025, "entry": "entry-layerskip-001"},
+    {"id": "SRC-018", "tier": 2, "authors": "Paula et al.", "title": "Comparative analysis of model compression techniques for achieving carbon efficient AI", "venue": "Scientific Reports, Nature", "year": 2025, "url": "https://www.nature.com/articles/s41598-025-07821-w", "entry": "entry-distillation-001"},
+    {"id": "SRC-019", "tier": 3, "authors": "MarkTechPost", "title": "ShortGPT: Novel AI Approach to Pruning LLMs", "venue": "MarkTechPost", "year": 2024, "url": "https://www.marktechpost.com/2024/03/10/this-ai-paper-from-china-introduces-shortgpt/", "entry": "entry-shortgpt-001"},
+    {"id": "SRC-020", "tier": 2, "authors": "Meta Intelligence Tech", "title": "Knowledge Distillation — Comprehensive Overview", "venue": "meta-intelligence.tech", "year": 2025, "url": "https://www.meta-intelligence.tech/en/insight-distillation", "entry": "entry-distillation-001"}
+  ]
+}

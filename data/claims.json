@@ -1,168 +1,29 @@
-[
-  {
-    "id": "CLAIM-GPTQ-01",
-    "entry_id": "entry-gptq-001",
-    "metric": "memory/storage",
-    "claim_ar": "تكمية الأوزان إلى 3 أو 4 بت تخفض الذاكرة النظرية بنحو 4-5× مقارنة بـ FP16، مع قياسات دقة قريبة من الأصل في نماذج OPT كبيرة.",
-    "claim_en": "3/4-bit weight quantization provides roughly 4-5× theoretical weight memory reduction versus FP16 with near-baseline accuracy in large OPT experiments.",
-    "source_ids": [
-      "SRC-GPTQ-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-GPTQ-02",
-    "entry_id": "entry-gptq-001",
-    "metric": "quantization time",
-    "claim_ar": "أبلغت الورقة عن تكمية نموذج 175B خلال نحو أربع ساعات GPU.",
-    "claim_en": "The paper reports quantizing a 175B model in about four GPU hours.",
-    "source_ids": [
-      "SRC-GPTQ-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-AWQ-01",
-    "entry_id": "entry-awq-001",
-    "metric": "latency/edge serving",
-    "claim_ar": "أظهر TinyChat المرتبط بـ AWQ تسريعاً يتجاوز 3× مقارنة بتنفيذ Hugging Face FP16 على حواسيب مكتبية ومحمولة في تجارب الورقة.",
-    "claim_en": "TinyChat with AWQ reports more than 3× speedup over Hugging Face FP16 on desktop and mobile GPUs.",
-    "source_ids": [
-      "SRC-AWQ-2024"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-SQ-01",
-    "entry_id": "entry-smoothquant-001",
-    "metric": "memory/accuracy",
-    "claim_ar": "تنقل SmoothQuant صعوبة التكمية من التنشيطات إلى الأوزان لتمكين W8A8 مع فقد دقة صغير في نماذج كبيرة.",
-    "claim_en": "SmoothQuant migrates quantization difficulty from activations to weights, enabling W8A8 quantization with small accuracy loss on large models.",
-    "source_ids": [
-      "SRC-SMOOTHQUANT-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-INT8-01",
-    "entry_id": "entry-llmint8-001",
-    "metric": "memory",
-    "claim_ar": "تخفض LLM.int8() ذاكرة الأوزان تقريباً إلى النصف مقارنة بـ FP16 مع معالجة القيم الشاذة بدقة أعلى.",
-    "claim_en": "LLM.int8() roughly halves weight memory compared with FP16 while handling outlier features in higher precision.",
-    "source_ids": [
-      "SRC-LLMINT8-2022"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-SPECDEC-01",
-    "entry_id": "entry-specdec-001",
-    "metric": "latency",
-    "claim_ar": "يمكن لفك التشفير التكهني إعطاء تسريع يقارب 2-3× في ظروف يكون فيها نموذج المسودة جيداً وتكلفة التحقق مناسبة.",
-    "claim_en": "Speculative decoding can provide about 2-3× speedups when the draft model is accurate enough and verification overhead is favorable.",
-    "source_ids": [
-      "SRC-SPECDEC-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-CBATCH-01",
-    "entry_id": "entry-contbatching-001",
-    "metric": "throughput",
-    "claim_ar": "أظهر Orca تحسينات كبيرة في إنتاجية تقديم النماذج عبر جدولة على مستوى التكرار بدلاً من التجميع الثابت.",
-    "claim_en": "Orca demonstrates substantial serving throughput gains via iteration-level scheduling rather than static request batching.",
-    "source_ids": [
-      "SRC-ORCA-2022"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-PA-01",
-    "entry_id": "entry-pagedattention-001",
-    "metric": "memory waste",
-    "claim_ar": "يخفض PagedAttention هدر ذاكرة KV Cache إلى أقل من 4% مقارنة بهدر كبير في التخصيص التقليدي.",
-    "claim_en": "PagedAttention reduces KV-cache memory waste to below 4% compared with much higher waste under conventional allocation.",
-    "source_ids": [
-      "SRC-VLLM-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-PA-02",
-    "entry_id": "entry-pagedattention-001",
-    "metric": "throughput",
-    "claim_ar": "أبلغ vLLM عن إنتاجية أعلى بنحو 2-4× مقارنة بأنظمة تقديم سابقة في أحمال متعددة.",
-    "claim_en": "vLLM reports roughly 2-4× throughput gains over prior serving systems across multiple workloads.",
-    "source_ids": [
-      "SRC-VLLM-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-RA-01",
-    "entry_id": "entry-radixattention-001",
-    "metric": "prefix reuse",
-    "claim_ar": "يوفر RadixAttention إعادة استخدام منظمة للبادئات المشتركة في البرامج اللغوية، لكن مقدار الوفر يعتمد بشدة على نمط الحمل.",
-    "claim_en": "RadixAttention enables structured reuse of shared prefixes in language-model programs, but savings depend strongly on workload shape.",
-    "source_ids": [
-      "SRC-SGLANG-2023"
-    ],
-    "confidence": "medium"
-  },
-  {
-    "id": "CLAIM-LORA-01",
-    "entry_id": "entry-lora-001",
-    "metric": "trainable parameters",
-    "claim_ar": "تخفض LoRA عدد المعاملات القابلة للتدريب بعدة رتب مقدارية مقارنة بالضبط الكامل، وقد تصل في تجارب GPT-3 إلى 10,000×.",
-    "claim_en": "LoRA reduces trainable parameters by orders of magnitude compared with full fine-tuning, up to 10,000× in GPT-3 experiments.",
-    "source_ids": [
-      "SRC-LORA-2022"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-LORA-02",
-    "entry_id": "entry-lora-001",
-    "metric": "checkpoint storage",
-    "claim_ar": "تخفض LoRA حجم نقاط الحفظ الخاصة بكل مهمة بدرجة كبيرة لأنها تخزن مصفوفات منخفضة الرتبة بدلاً من نسخة كاملة من النموذج.",
-    "claim_en": "LoRA greatly reduces per-task checkpoint storage by saving low-rank matrices rather than a full model copy.",
-    "source_ids": [
-      "SRC-LORA-2022"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-QLORA-01",
-    "entry_id": "entry-qlora-001",
-    "metric": "GPU memory",
-    "claim_ar": "أتاحت QLoRA ضبط نموذج 65B على بطاقة واحدة بسعة 48GB مع الحفاظ على أداء قريب من الضبط الكامل 16-بت.",
-    "claim_en": "QLoRA enabled fine-tuning a 65B model on a single 48GB GPU while preserving near 16-bit fine-tuning performance.",
-    "source_ids": [
-      "SRC-QLORA-2023"
-    ],
-    "confidence": "high"
-  },
-  {
-    "id": "CLAIM-PCACHE-01",
-    "entry_id": "entry-promptcache-001",
-    "metric": "api/token cost",
-    "claim_ar": "يوفر تخزين الموجهات المؤقت خصومات على أجزاء الموجه المتكررة في واجهات تجارية، لكن مقدار الوفر يتغير حسب المزود وطول البادئة ونمط الطلبات.",
-    "claim_en": "Prompt caching can discount repeated prompt prefixes in commercial APIs, but realized savings vary by provider, prefix length, and traffic pattern.",
-    "source_ids": [
-      "SRC-OPENAI-PROMPT-CACHING",
-      "SRC-ANTHROPIC-PROMPT-CACHING"
-    ],
-    "confidence": "medium"
-  },
-  {
-    "id": "CLAIM-PCACHE-02",
-    "entry_id": "entry-promptcache-001",
-    "metric": "latency",
-    "claim_ar": "توضح أبحاث Prompt Cache أن إعادة استخدام الانتباه يمكن أن تخفض زمن الاستجابة للبادئات المتكررة، مع اعتماد الأثر على قابلية مشاركة السياق.",
-    "claim_en": "Prompt Cache research shows attention reuse can reduce latency for repeated prefixes, with impact depending on context shareability.",
-    "source_ids": [
-      "SRC-PROMPTCACHE-2023"
-    ],
-    "confidence": "medium"
-  }
-]
+{
+  "claims": [
+    {"id": "CL-001", "claim_ar": "ShortGPT يحافظ على 85% من أداء Llama-2-7B بعد قص 25% من الطبقات", "claim_en": "ShortGPT retains 85% of Llama-2-7B performance after pruning 25% of layers", "entry": "entry-shortgpt-001", "source": "SRC-001", "confidence": "medium", "verified": false},
+    {"id": "CL-002", "claim_ar": "ShortGPT يحقق تسريع ~1.63× على Llama-2", "claim_en": "ShortGPT achieves ~1.63× speedup on Llama-2", "entry": "entry-shortgpt-001", "source": "SRC-001", "confidence": "medium", "verified": false},
+    {"id": "CL-003", "claim_ar": "LayerSkip يحقق تسريع 2.16× على التلخيص (CNN/DM)", "claim_en": "LayerSkip achieves 2.16× speedup on summarization (CNN/DM)", "entry": "entry-layerskip-001", "source": "SRC-003", "confidence": "high", "verified": true},
+    {"id": "CL-004", "claim_ar": "LayerSkip يحقق تسريع 1.82× على الترميز", "claim_en": "LayerSkip achieves 1.82× speedup on coding tasks", "entry": "entry-layerskip-001", "source": "SRC-003", "confidence": "high", "verified": true},
+    {"id": "CL-005", "claim_ar": "LayerSkip يقلل بصمة الذاكرة 15-25% مقارنة بالترميز التخميني التقليدي", "claim_en": "LayerSkip reduces memory footprint by 15-25% vs traditional speculative decoding", "entry": "entry-layerskip-001", "source": "SRC-003", "confidence": "medium", "verified": false},
+    {"id": "CL-006", "claim_ar": "MoD يحقق تسريع أخذ عينات حتى 50%", "claim_en": "MoD achieves up to 50% sampling speedup", "entry": "entry-mod-001", "source": "SRC-006", "confidence": "medium", "verified": false},
+    {"id": "CL-007", "claim_ar": "MoD يطابق النماذج الأساسية بمعيار iso-FLOP", "claim_en": "MoD matches vanilla baselines at iso-FLOP", "entry": "entry-mod-001", "source": "SRC-006", "confidence": "medium", "verified": false},
+    {"id": "CL-008", "claim_ar": "DistilBERT أصغر 40% وأسرع 60% مع 97% من دقة BERT", "claim_en": "DistilBERT is 40% smaller, 60% faster, retains 97% of BERT accuracy", "entry": "entry-distillation-001", "source": "SRC-008", "confidence": "high", "verified": true},
+    {"id": "CL-009", "claim_ar": "DistilBERT يتطلب 700 ساعة GPU مقابل 24,000 ساعة لRoBERTa", "claim_en": "DistilBERT requires 700 GPU hours vs 24,000 for RoBERTa", "entry": "entry-distillation-001", "source": "SRC-008", "confidence": "high", "verified": true},
+    {"id": "CL-010", "claim_ar": "R1-Distill-Qwen-8B يطابق Qwen3-235B-thinking في معايير الاستدلال", "claim_en": "R1-Distill-Qwen-8B matches Qwen3-235B-thinking on reasoning benchmarks", "entry": "entry-distillation-001", "source": "SRC-015", "confidence": "high", "verified": true},
+    {"id": "CL-011", "claim_ar": "النماذج المُستخلصة من R1 تخفض تكلفة الاستدلال 60-70% مقارنة بـ30B+", "claim_en": "R1 distilled models reduce inference cost 60-70% vs 30B+ models", "entry": "entry-distillation-001", "source": "SRC-001", "confidence": "medium", "verified": false},
+    {"id": "CL-012", "claim_ar": "NVIDIA Minitron يستخدم 1/40 رموز تدريب مقارنة بالتدريب من الصفر", "claim_en": "NVIDIA Minitron uses 1/40 training tokens vs from-scratch", "entry": "entry-distillation-001", "source": "SRC-011", "confidence": "high", "verified": true},
+    {"id": "CL-013", "claim_ar": "TinyBERT-4 يحقق 7.5× تصغير و9.4× تسريع", "claim_en": "TinyBERT-4 achieves 7.5× compression and 9.4× speedup", "entry": "entry-distillation-001", "source": "SRC-020", "confidence": "high", "verified": true},
+    {"id": "CL-014", "claim_ar": "Minitron يحسّن MMLU بـ+16% مقارنة بالتدريب من الصفر", "claim_en": "Minitron improves MMLU by +16% vs training from scratch", "entry": "entry-distillation-001", "source": "SRC-011", "confidence": "high", "verified": true},
+    {"id": "CL-015", "claim_ar": "E3-Pruner يتفوق على ShortGPT في المتوسط العام (58.3 vs 37.0 على LLaMA-2-7B)", "claim_en": "E3-Pruner outperforms ShortGPT on average (58.3 vs 37.0 on LLaMA-2-7B)", "entry": "entry-shortgpt-001", "source": "SRC-002", "confidence": "medium", "verified": false},
+    {"id": "CL-016", "claim_ar": "R1-Distill-Qwen-7B يعمل على أجهزة استهلاكية (16GB VRAM)", "claim_en": "R1-Distill-Qwen-7B runs on consumer hardware (16GB VRAM)", "entry": "entry-distillation-001", "source": "SRC-001", "confidence": "high", "verified": true},
+    {"id": "CL-017", "claim_ar": "الإنهاء المبكر يحقق تخفيض 60-80% في FLOPs للعينات السهلة", "claim_en": "Early exit achieves 60-80% FLOPs reduction for easy samples", "entry": "entry-layerskip-001", "source": "SRC-003", "confidence": "medium", "verified": false},
+    {"id": "CL-018", "claim_ar": "الاستخلاص النشط يقلل متطلبات العينات 80% مقارنة بالعينة العشوائية", "claim_en": "Active distillation reduces sample requirements by 80% vs random sampling", "entry": "entry-distillation-001", "source": "SRC-014", "confidence": "high", "verified": true},
+    {"id": "CL-019", "claim_ar": "نماذج R1 المُستخلصة متاحة على AWS Bedrock كنماذج مخصصة", "claim_en": "R1 distilled models available on AWS Bedrock as custom models", "entry": "entry-distillation-001", "source": "SRC-013", "confidence": "high", "verified": true},
+    {"id": "CL-020", "claim_ar": "LayerSkip متاح مفتوح المصدر على GitHub", "claim_en": "LayerSkip is open-source on GitHub", "entry": "entry-layerskip-001", "source": "SRC-004", "confidence": "high", "verified": true},
+    {"id": "CL-021", "claim_ar": "القصّ الهيكلي (ShortGPT) يتكامل مع التكميم (orthogonal)", "claim_en": "Structural pruning (ShortGPT) is orthogonal to quantization", "entry": "entry-shortgpt-001", "source": "SRC-001", "confidence": "medium", "verified": false},
+    {"id": "CL-022", "claim_ar": "MoD من DeepMind (Raposo et al.) — رسم حوسبة ثابت", "claim_en": "MoD from DeepMind (Raposo et al.) — static compute graph", "entry": "entry-mod-001", "source": "SRC-006", "confidence": "high", "verified": true},
+    {"id": "CL-023", "claim_ar": "MiniLLM يتفوق على استخلاص KL القياسي", "claim_en": "MiniLLM outperforms standard KL distillation", "entry": "entry-distillation-001", "source": "SRC-010", "confidence": "high", "verified": true},
+    {"id": "CL-024", "claim_ar": "تخفيض الكربون 32% باستخدام الاستخلاص والقص معاً (BERT)", "claim_en": "32% carbon reduction using combined distillation and pruning (BERT)", "entry": "entry-distillation-001", "source": "SRC-018", "confidence": "medium", "verified": false},
+    {"id": "CL-025", "claim_ar": "R1-Distill-Qwen-8B ينتج 20-40 رمز/ثانية على أجهزة استهلاكية", "claim_en": "R1-Distill-Qwen-8B produces 20-40 tokens/sec on consumer hardware", "entry": "entry-distillation-001", "source": "SRC-001", "confidence": "medium", "verified": false}
+  ]
+}

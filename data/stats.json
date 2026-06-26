@@ -1,26 +1,38 @@
 {
   "version": "0.3.0",
   "last_updated": "2026-06-26",
-  "session": "session-003",
-  "total_entries": 11,
+  "session": "session-004",
+  "total_entries": 16,
   "total_categories": 10,
-  "total_subcategories": 9,
-  "total_sources": 13,
-  "total_claims": 15,
+  "total_subcategories": 13,
+  "total_sources": 22,
+  "total_claims": 25,
   "classification_summary": {
-    "practical": 11,
-    "emerging": 0,
+    "practical": 13,
+    "emerging": 3,
     "theoretical": 0,
     "rejected": 0,
     "pending": 0
   },
   "proof_score_summary": {
-    "4_stars_production_proven": 4,
-    "3_stars_deployed_or_validated": 7,
-    "2_stars_validated": 0,
-    "1_star_prototype": 0
+    "4_stars_production_proven": 6,
+    "3_stars_deployed_or_validated": 5,
+    "2_stars_validated": 3,
+    "1_star_prototype": 2
   },
   "playbooks_count": 5,
   "comparisons_count": 6,
-  "glossary_terms": 32
+  "glossary_terms": 42,
+  "session_004_changes": [
+    "added_entry_layerskip",
+    "added_entry_mixture_of_depths",
+    "added_entry_shortgpt",
+    "added_entry_distillation",
+    "created_subcategory_early_exit",
+    "created_subcategory_compute_allocation",
+    "updated_pruning_readme",
+    "updated_distillation_readme",
+    "added_10_new_sources",
+    "added_10_new_claims"
+  ]
 }

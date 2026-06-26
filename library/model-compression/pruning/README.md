@@ -1,14 +1,41 @@
-# التقليم | Pruning
+# القصّ الهيكلي | Structural Pruning
 
-هذا مجلد فرعي ضمن **ضغط النماذج | Model Compression**. يجمع إدخالات مكتبة تكلفة الذكاء الاصطناعي المرتبطة بهذا المحور، مع الالتزام بقاعدة: العربية أولاً، ثم الإنجليزية، وكل ادعاء رقمي يجب أن يرتبط بمصدر في سجل الأدلة.
+## العربية
 
-This subcategory belongs to **Model Compression** and groups evidence-tracked AI cost-reduction entries.
+يُقصد بـ **القصّ الهيكلي** إزالة أجزاء كاملة من الشبكة العصبية (طبقات كاملة، رؤوس اهتمام، قنوات) بدلاً من إزالة أوزان فردية متفرقة. هذا يُنتج نموذجاً أصغر يعمل على أجهزة عادية بدون حاجة لمكتبات خاصة.
 
-## الإدخالات | Entries
+### تقنيات فرعية
 
-| الإدخال العربي | English Entry | الحالة | درجة الإثبات |
-|---|---|---|---|
-| — | — | لا توجد إدخالات بعد | — |
+| التقنية | الوصف | الحالة |
+|---------|-------|--------|
+| [ShortGPT](short-gpt.md) | إزالة طبقات كاملة بناءً على إنتروبيا الاهتمام | 📘 تطبيقية |
+| [SlimGPT](short-gpt.md) | قصّ هيكلي طبقة-بطبقة | 📘 تطبيقية |
+| [E3-Pruner](#) | قصّ فعال واقتصادي | 🧪 ناشئة |
+| [Týr-the-Pruner](#) | قصّ عبر التفرّد الشامل | 🧪 ناشئة |
 
-## ملاحظة منهجية | Methodological Note
-لا تُعدّ أي تقنية «مثبتة إنتاجياً» إلا إذا وُجدت أدلة على البناء والاختبار والنشر والأثر المقاس. عند غياب أحد الأبواب تُخفض درجة الإثبات أو تُذكر حدود الثقة صراحة.
+### تأثير التكلفة
+
+- **الذاكرة**: تخفيض 20-50% من المعاملات
+- **الحوسبة**: تخفيض مماثل في FLOPs
+- **الزمنية**: تسريع 1.4-2.18× حسب نسبة القصّ
+
+---
+
+## English
+
+**Structural pruning** removes entire components of a neural network (full layers, attention heads, channels) rather than individual sparse weights. This produces a smaller model that runs on standard hardware without special libraries.
+
+### Sub-techniques
+
+| Technique | Description | Status |
+|-----------|-------------|--------|
+| [ShortGPT](short-gpt.md) | Full layer removal based on attention entropy | 📘 Practical |
+| [SlimGPT](short-gpt.md) | Layer-wise structured pruning | 📘 Practical |
+| [E3-Pruner](#) | Efficient, economical, effective pruning | 🧪 Emerging |
+| [Týr-the-Pruner](#) | Global sparsity-based structural pruning | 🧪 Emerging |
+
+### Cost Impact
+
+- **Memory**: 20-50% parameter reduction
+- **Compute**: Proportional FLOPs reduction
+- **Latency**: 1.4-2.18× speedup depending on pruning ratio

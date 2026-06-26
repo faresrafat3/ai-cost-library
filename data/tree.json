@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "last_updated": "2026-06-26",
   "tree": {
     "root": "AI Cost Library",
@@ -13,28 +13,23 @@
           {
             "id": "quantization",
             "name_en": "Quantization",
-            "name_ar": "التكمية",
+            "name_ar": "التكميم",
             "status": "active",
-            "entries": [
-              "entry-gptq-001",
-              "entry-awq-001",
-              "entry-smoothquant-001",
-              "entry-llmint8-001"
-            ]
+            "entries": ["entry-gptq-001", "entry-awq-001", "entry-smoothquant-001", "entry-llmint8-001"]
           },
           {
             "id": "pruning",
             "name_en": "Pruning",
-            "name_ar": "التقليم",
-            "status": "seeded",
-            "entries": []
+            "name_ar": "القصّ الهيكلي",
+            "status": "active",
+            "entries": ["entry-shortgpt-001"]
           },
           {
             "id": "distillation",
             "name_en": "Distillation",
-            "name_ar": "التقطير",
-            "status": "seeded",
-            "entries": []
+            "name_ar": "استخلاص المعرفة",
+            "status": "active",
+            "entries": ["entry-distillation-001"]
           }
         ]
       },
@@ -47,30 +42,30 @@
           {
             "id": "decoding",
             "name_en": "Decoding Strategies",
-            "name_ar": "استراتيجيات فك التشفير",
+            "name_ar": "استراتيجيات فك الترميز",
             "status": "active",
-            "entries": [
-              "entry-specdec-001"
-            ]
+            "entries": ["entry-specdec-001"]
           },
           {
             "id": "batching",
             "name_en": "Batching",
             "name_ar": "التجميع",
             "status": "active",
-            "entries": [
-              "entry-contbatching-001"
-            ]
+            "entries": ["entry-contbatching-001"]
           },
           {
             "id": "kv-cache-optimization",
             "name_en": "KV Cache Optimization",
             "name_ar": "تحسين الذاكرة المؤقتة للمفاتيح والقيم",
             "status": "active",
-            "entries": [
-              "entry-pagedattention-001",
-              "entry-radixattention-001"
-            ]
+            "entries": ["entry-pagedattention-001", "entry-radixattention-001"]
+          },
+          {
+            "id": "early-exit",
+            "name_en": "Early Exit Networks",
+            "name_ar": "شبكات الإنهاء المبكر",
+            "status": "active",
+            "entries": ["entry-layerskip-001"]
           },
           {
             "id": "serving",
@@ -92,10 +87,14 @@
             "name_en": "Parameter-Efficient Fine-Tuning",
             "name_ar": "الضبط الدقيق الموفّر للمعاملات",
             "status": "active",
-            "entries": [
-              "entry-lora-001",
-              "entry-qlora-001"
-            ]
+            "entries": ["entry-lora-001", "entry-qlora-001"]
+          },
+          {
+            "id": "compute-allocation",
+            "name_en": "Dynamic Compute Allocation",
+            "name_ar": "التخصيص الديناميكي للحوسبة",
+            "status": "seeded",
+            "entries": ["entry-mod-001"]
           }
         ]
       },
@@ -130,17 +129,15 @@
       {
         "id": "cat-token-prompt-cost",
         "name_en": "Token and Prompt Cost Optimization",
-        "name_ar": "تكلفة التوكن والموجهات",
+        "name_ar": "تكلفة التوكن والموجِّهات",
         "status": "active",
         "subcategories": [
           {
             "id": "prompt-caching",
             "name_en": "Prompt Caching",
-            "name_ar": "تخزين الموجهات المؤقت",
+            "name_ar": "تخزين الموجِّهات المؤقت",
             "status": "active",
-            "entries": [
-              "entry-promptcache-001"
-            ]
+            "entries": ["entry-promptcache-001"]
           }
         ]
       },
