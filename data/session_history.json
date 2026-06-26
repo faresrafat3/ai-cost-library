@@ -22,5 +22,11 @@
     "date": "2026-06-26",
     "summary_ar": "أضيفت 4 إدخالات جديدة: FP8، توجيه النماذج، التخزين الدلالي، قوانين Chinchilla. مقارنة محركات الاستدلال. 3 فئات فرعية جديدة.",
     "summary_en": "Added 4 new entries: FP8, Model Routing, Semantic Caching, Chinchilla Scaling. Inference engines comparison. 3 new subcategories."
+  },
+  {
+    "session": "session-006",
+    "date": "2026-06-26",
+    "summary_ar": "مراجعة بحثية منهجية: 9 أبحاث. أُضيفت 3 إدخالات جديدة (Architecture Scaling ICLR 2026, Price of Progress, Agent Token Multiplier). أول محتوى في فئتي اقتصاديات الوكلاء واقتصاديات السوق.",
+    "summary_en": "Systematic research review: 9 papers. Added 3 new entries. First content in Agentic Economics and Market Economics categories."
   }
 ]

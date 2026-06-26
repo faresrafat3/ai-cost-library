@@ -226,6 +226,45 @@
       "file_path": "library/efficient-training/compute-optimal/chinchilla-scaling.md",
       "created": "2026-06-26",
       "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-iescaling-001",
+      "title_ar": "قوانين التحجيم المعماري لكفاءة الاستدلال",
+      "title_en": "Architecture-Aware Scaling Laws for Inference-Efficient LLMs",
+      "type": "theoretical",
+      "status": "peer-reviewed",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "proof_score": 3,
+      "sources_count": 1,
+      "file_path": "library/01-model-optimization/efficient-architecture/inference-efficient-scaling.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-priceofprogress-001",
+      "title_ar": "ثمن التقدم — مفارقة الاستدلال",
+      "title_en": "The Price of Progress: Price Performance and the Future of AI",
+      "type": "theoretical",
+      "status": "validated",
+      "category": "market-economics",
+      "subcategory": "inference-paradox",
+      "proof_score": 3,
+      "sources_count": 1,
+      "file_path": "library/07-market-economics/inference-paradox/price-of-progress.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-agentmultiplier-001",
+      "title_ar": "مضاعف التوكن الوكيلي",
+      "title_en": "Agent Token Multiplier",
+      "type": "practical",
+      "status": "deployed",
+      "category": "agentic-economics",
+      "subcategory": "token-multiplier",
+      "proof_score": 3,
+      "sources_count": 5,
+      "file_path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
+      "created": "2026-06-26"
     }
   ]
 }

@@ -1,40 +1,28 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "last_updated": "2026-06-26",
-  "session": "session-005",
-  "total_entries": 19,
-  "total_categories": 10,
-  "total_subcategories": 17,
-  "total_sources": 48,
-  "total_claims": 55,
+  "session": "session-006",
+  "total_entries": 24,
+  "total_categories": 7,
+  "total_subcategories": 21,
+  "total_sources": 55,
+  "total_claims": 70,
   "total_comparisons": 7,
   "classification_summary": {
-    "practical": 16,
-    "emerging": 3,
-    "theoretical": 1,
+    "practical": 17,
+    "emerging": 4,
+    "theoretical": 3,
     "rejected": 0,
     "pending": 0
   },
   "proof_score_summary": {
-    "4_stars_production_proven": 8,
-    "3_stars_deployed_or_validated": 8,
-    "2_stars_validated": 3,
-    "1_star_prototype": 0
+    "4_stars": 8,
+    "3_stars": 12,
+    "2_stars": 4,
+    "1_star": 0
   },
   "playbooks_count": 5,
   "comparisons_count": 7,
   "glossary_terms": 62,
-  "session_005_changes": [
-    "added_entry_fp8_quantization",
-    "added_entry_model_routing",
-    "added_entry_semantic_caching",
-    "added_entry_chinchilla_scaling",
-    "added_comparison_inference_engines",
-    "created_subcategory_model_routing",
-    "created_subcategory_semantic_caching",
-    "created_subcategory_compute_optimal",
-    "updated_model_selection_routing_readme",
-    "added_20_new_sources",
-    "added_20_new_claims"
-  ]
+  "taxonomy_version": "2.0"
 }
