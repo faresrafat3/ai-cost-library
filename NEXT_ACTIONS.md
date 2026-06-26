@@ -1,37 +1,26 @@
 # الإجراءات التالية | Next Actions
 
-> **بعد إعادة هيكلة التصنيف v2.0**
+> **بعد اكتمال نظام التقييم والعلاقات**
 
-## أولوية قصوى — ملء الفجوات الحرجة
-1. **اقتصاديات الوكلاء (الفئة 5):** أضف 3 إدخالات:
-   - مضاعف التوكن الوكيلي (5-30× — Gartner 2026)
-   - تحسين سلاسل الوكلاء (تقليل خطوات، تخزين مؤقت بين الخطوات)
-   - RAG Cost vs Long Context Cost (نقل من المقارنات + تعميق)
+## أولوية قصوى — تعميق المحتوى
+1. **إضافة MoE Economics** — Mixture-of-Experts كبنية فعّالة: DeepSeek V3/V4 كدراسة حالة، اقتصاديات Expert Parallelism
+2. **إضافة Inference-Time Compute** — scaling اختبار الوقت (o3, DeepSeek-R1): متى يستحق الحوسبة الإضافية؟
+3. **تحديث مقارنة الأسعار** — الأسعار تتغير شهرياً — يحتاج تحديث دوري
+4. **إضافة Spot vs On-Demand** — حسابات نقطة التعادل لكل سيناريو
 
-2. **البنية التحتية (الفئة 4):** أضف إدخالين:
-   - مقارنة GPU للاستدلال (H100 vs H200 vs B200 vs A100)
-   - سحابي vs محلي vs هجين (بأرقام نقطة التعادل)
+## أولوية عالية — بحث إضافي
+5. **البحث عن أوراق ICML 2026 / NeurIPS 2026** عن كفاءة LLM
+6. **إضافة EAGLE-3** كإدخال مستقل (أحدث من Speculative Decoding الأصلي)
+7. **إضافة SGLang RadixAttention** كإدخال مستقل (مع أرقام cache hit 75-95%)
+8. **البيانات الاصطناعية المتقدمة** — Self-Instruct, SPIN, Constitutional AI
 
-3. **الحوكمة المالية (الفئة 6):** أضف إدخالاً:
-   - AI FinOps: المراقبة والإسناد (أدوات: Vantage, Datadog AI Costs, CloudZero)
-
-## أولوية عالية
-4. أضف إدخالات ناقصة في التدريب: DeepSpeed ZeRO, FSDP, Mixed Precision Training
-5. أضف Mixture-of-Experts (MoE) في البنية الفعّالة — DeepSeek V3 كدراسة حالة
-6. أضف مقارنة Cloud API Pricing (OpenAI vs Anthropic vs Google vs open-source)
-7. حدّث DECISION_MATRIX.md بالكامل ليعكس التصنيف الجديد
-
-## أولوية متوسطة
-8. أضف playbooks جديدة: "How to Build a Model Routing Pipeline", "Agent Cost Governance"
-9. أضف IndexCache (2026) — تقنية ناشئة
-10. أضف Attention Residuals (Moonshot AI) — تقنية ناشئة
-11. أنشئ سكربت تحقق يتأكد من اتساق الروابط بعد إعادة الهيكلة
-12. حدّث data/tree.json ليعكس التصنيف الجديد بالكامل
+## أولوية متوسطة — تحسين البنية
+9. **إضافة تقييم لكل إدخال في YAML front matter** — الآن التقييم في scoring.json فقط
+10. **سكربت تحقق تلقائي** — يتأكد من اتساق entries.json و scoring.json والملفات
+11. **حذف library-v1/** — بعد التأكد الكامل من نقل كل شيء
+12. **إضافة مصطلحات جديدة للمعجم** — من الإدخالات الجديدة
 
 ## أولوية منخفضة
-13. أضف فئة "Rejected" — تقنيات ادّعت تقليل تكلفة بدون أساس
-14. أضف اقتصاديات السوق: مفارقة الاستدلال (280× انخفاض سعر + 320% ارتفاع إنفاق)
-15. نظّف library-v1/ (احذفها بعد التأكد من نقل كل شيء)
-
-## قاعدة قبل أي دفع جديد
-حدّث: `README.md`, `TREE.md`, `GLOSSARY.md`, `RESEARCH_LOG.md`, `AGENT_STATE.md`, `NEXT_ACTIONS.md`, `SESSION_LOG.md`, `CONTINUATION_PROTOCOL.md`, وملفات JSON في `data/`.
+13. **إضافة فئة "Rejected"** — تقنيات ادّعت تقليل تكلفة بدون أساس
+14. **تحديث tree-visual.svg** — رسم بصري للشجرة
+15. **إضافة CI/CD** — GitHub Actions للتحقق التلقائي
