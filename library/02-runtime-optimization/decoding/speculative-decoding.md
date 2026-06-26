@@ -1,41 +1,90 @@
 ---
-id: "entry-specdec-001"
-title_ar: "فك التشفير التكهني"
-title_en: "Speculative Decoding"
-type: "Practical"
-status: "Deployed"
-category: "Efficient Inference"
-subcategory: "Decoding Strategies"
-cost_dimensions: ["latency", "inference-cost"]
-proof_score: 4
-sources_count: 1
+id: entry-specdec-001
+title_ar: فك الترميز التخميني
+title_en: "Speculative Decoding: Draft-then-Verify for Faster Inference"
+type: practical
+status: production-proven
+category: runtime-optimization
+subcategory: decoding
+cost_dimensions: [latency, throughput, inference-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
+sources_count: 3
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 8
+  A2: 9
+  A3: 8
+  A4: 7
+  B1: 6
+  B2: 0
+  B3: 0
+  B4: 7
+  C1: 5
+  C2: 7
+  C3: 7
+  C4: 7
 ---
 
-# Speculative Decoding
+# 📘 فك الترميز التخميني | Speculative Decoding
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
 
-## 📌 الملخص العربي | Arabic Summary
-فك التشفير التكهني (Speculative Decoding) هي استراتيجية تهدف إلى تسريع عملية استدلال النماذج اللغوية دون فقدان الدقة. تعتمد الطريقة على استخدام نموذج صغير وسريع لتوليد عدة رموز (Tokens) كمسودة (Draft)، ثم يقوم النموذج الكبير بمراجعة واعتماد هذه الرموز في خطوة واحدة متوازية.
+---
 
-## 📌 English Summary
-Speculative Decoding is an exact decoding strategy that accelerates LLM inference without altering the output distribution. A smaller "draft" model generates multiple speculative tokens, which are then verified in parallel by the target large model.
+## المحتوى العربي
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
-- **الكمون / التأخير (Latency):** تحسين ملحوظ (تسريع 2x إلى 3x).
-- **تكلفة الاستدلال (Inference Cost):** زيادة الإنتاجية (Throughput) وتقليل وقت حجز الموارد.
+### ما هو فك الترميز التخميني؟
 
-## 🛡️ بوابات الأدلة | Evidence Gates
-- ✅ **Gate 1 (Built):** متاح في أنظمة مثل `vLLM` و `TGI`.
-- ✅ **Gate 2 (Tested):** أثبتت الدراسات تسريعاً يبلغ من 2 إلى 3 أضعاف.
-- ✅ **Gate 3 (Deployed):** مستخدم في خدمات API لشركات كبرى لتسريع الاستجابات.
-- ✅ **Gate 4 (Saved):** يقلل وقت المعالجة الكلي للطلبات بنسب تصل إلى 60٪.
+فك الترميز التخميني (Speculative Decoding) — وهو تقنية تستخدم نموذج مسودة صغير وسريع (draft model) لتوليد عدة توكنات مُرشحة، ثم النموذج الكبير (target model) يتحقق منها جميعاً دفعة واحدة. لأن التحقق من عدة توكنات بنفس تكلفة توليد واحد (في النماذج الكثيفة)، هذا يُسرّع التوليد **بدون تغيير المخرجات** (lossless).
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
-- يتطلب توفر نموذج مسودة (Draft Model) متوافق في مفرداته (Vocabulary) مع النموذج الرئيسي.
-- يستهلك ذاكرة إضافية لتحميل النموذج الصغير.
-- الفعالية تنخفض إذا كان النموذج الصغير سيئاً في التوقع.
+### كيف يعمل؟
 
-## 📚 المصادر | Sources
-- [1] Leviathan et al., "Fast Inference from Transformers via Speculative Decoding", ICML, 2023. [URL](https://arxiv.org/abs/2211.17192)
+```
+بدون speculative decoding:
+  النموذج الكبير: [tok1] → [tok2] → [tok3] → [tok4] → [tok5]
+  5 خطوات، كل خطوة تحمّل 70B معامل
+
+مع speculative decoding:
+  المسودة (1B): [tok1, tok2, tok3, tok4, tok5] → سريع جداً
+  النموذج الكبير: [تحقق من 5 دفعة واحدة] → خطوة واحدة!
+  قَبِل: tok1 ✅, tok2 ✅, tok3 ✅, tok4 ❌ → أعاد من tok4
+  النتيجة: 3 توكنات بخطوة واحدة بدلاً من 3
+```
+
+### الأرقام (2026)
+
+| الإصدار | التسريع | معدل القبول | ملاحظة |
+|---------|---------|------------|--------|
+| الأصلي (Leviathan 2023) | 2-3× | ~70% | النموذج المرجعي |
+| **EAGLE-3 (2025-2026)** | **1.6×** (70B vLLM) | ~35% | **الأحدث — انظر entry-eagle3-001** |
+| PayPal + EAGLE-3 | 22-49% throughput | 35.5% | **دراسة حالة إنتاجية** |
+| ConFu (أبريل 2026) | 8-21% فوق EAGLE-3 | أعلى | أحدث preprint |
+
+### العلاقة بالتطورات الأحدث
+
+```
+Speculative Decoding (2023) ← المبدأ الأساسي
+    │
+    ├── EAGLE-3 (2025) ← أحدث وأسرع — انظر entry-eagle3-001
+    │
+    ├── MoE-Spec (2026) ← حل مشكلة MoE — انظر entry-moespec-001
+    │
+    ├── ConFu (2026) ← يتفوق على EAGLE-3 بـ 8-21%
+    │
+    └── SpecVLM (2025) ← لنماذج Vision-Language
+```
+
+### القيود الأساسية
+
+1. **فعالية تتناقص مع الدفعات الكبيرة:** batch > 56 → مكاسب ضئيلة
+2. **MoE مشكلة:** كل توكن مُسوَّد يُفعّل خبراء مختلفين → MoE-Spec يحل هذا
+3. **يحتاج draft model:** إعداد إضافي (EAGLE-3 يُبسط هذا)
+
+---
+
+## المصادر
+
+1. **[Tier 1]** Leviathan, Y., et al., "Fast Inference from Transformers via Speculative Decoding", ICML 2023.
+2. **[Tier 1]** Chen, C., et al., "Accelerating Large Language Model Decoding with Speculative Sampling", 2023.
+3. **[Tier 2]** Li, Y., et al., "EAGLE-3: Scaling up Inference Acceleration", arXiv:2503.01840, 2025.

@@ -1,40 +1,82 @@
 ---
-id: "entry-qlora-001"
-title_ar: "خوارزمية QLoRA"
-title_en: "QLoRA Algorithm"
-type: "Practical"
-status: "Deployed"
-category: "Efficient Training"
-subcategory: "Parameter-Efficient Fine-Tuning"
-cost_dimensions: ["training-cost", "memory", "hardware-cost"]
-proof_score: 4
-sources_count: 1
+id: entry-qlora-001
+title_ar: الضبط الدقيق المُكمَّم — QLoRA
+title_en: "QLoRA: Quantized Low-Rank Adaptation"
+type: practical
+status: production-proven
+category: training-optimization
+subcategory: parameter-efficient
+cost_dimensions: [training-cost, memory, hardware-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
+sources_count: 2
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 10
+  A2: 10
+  A3: 10
+  A4: 6
+  B1: 2
+  B2: 10
+  B3: 10
+  B4: 0
+  C1: 9
+  C2: 9
+  C3: 7
+  C4: 10
 ---
 
-# QLoRA: Efficient Finetuning of Quantized LLMs
+# 📘 QLoRA — الضبط الدقيق المُكمَّم
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
 
-## 📌 الملخص العربي | Arabic Summary
-خوارزمية QLoRA (التكيف منخفض الرتبة المكمم) هي تقنية تسمح بتوليف (Fine-tuning) النماذج اللغوية الكبيرة باستخدام ذاكرة أقل بكثير من خلال تكمية أوزان النموذج الأساسي إلى 4-بت (NormalFloat4) وتدريب محولات (Adapters) منخفضة الرتبة (LoRA) فوقها. 
+---
 
-## 📌 English Summary
-QLoRA is a parameter-efficient fine-tuning technique that reduces memory usage by quantizing the base model to 4-bit (NF4) while backpropagating gradients into Low-Rank Adapters (LoRA). This allows fine-tuning massive models on a single GPU.
+## المحتوى العربي
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
-- **تكلفة التدريب (Training Cost):** يقلل من الحاجة لشراء أو استئجار شرائح VRAM ضخمة.
-- **تكلفة الذاكرة (Memory Cost):** يخفض الذاكرة المطلوبة لتدريب نموذج 65B من >780 جيجابايت إلى أقل من 48 جيجابايت.
+### ما هو QLoRA؟
 
-## 🛡️ بوابات الأدلة | Evidence Gates
-- ✅ **Gate 1 (Built):** مدمجة في مكتبة `bitsandbytes` و `PEFT`.
-- ✅ **Gate 2 (Tested):** أداء مقارب جداً للضبط الدقيق الكامل (Full Fine-tuning) على مهام متعددة.
-- ✅ **Gate 3 (Deployed):** الخيار القياسي لضبط النماذج مفتوحة المصدر بتكلفة منخفضة.
-- ✅ **Gate 4 (Saved):** مكنت آلاف المطورين من تدريب نماذج ضخمة على بطاقات شاشة المستهلكين (Consumer GPUs).
+QLoRA (Quantized LoRA) — وهو تقنية تجمع بين تكميم النموذج الأساسي إلى 4-bit (NF4) والضبط الدقيق بمحولات LoRA منخفضة الرتبة. هذا يسمح بضبط نماذج 65B على **GPU واحد بـ 48GB** بدلاً من عدة GPUs.
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
-- أبطأ في التدريب بنسبة معينة مقارنة بالـ LoRA العادي بسبب أعباء حساب التكمية وفكها (Quant/Dequant overhead).
-- قد يتطلب ضبط بعض المعاملات الفائقة (Hyperparameters) بعناية.
+### الابتكارات الثلاثة
 
-## 📚 المصادر | Sources
-- [1] Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs", NeurIPS, 2023. [URL](https://arxiv.org/abs/2305.14314)
+1. **NF4 (Normal Float 4-bit):** تنسيق 4-bit مُحسَّن للتوزيع الطبيعي للأوزان — أدق من INT4
+2. **Double Quantization:** تكميم ثوابت التكميم نفسها — يوفر 0.37 bit/param إضافية
+3. **Paged Optimizers:** ينقل حالة المُحسِّن إلى CPU عند نفاد ذاكرة GPU
+
+### التأثير على التكلفة
+
+| المقياس | Full Fine-tuning | LoRA | **QLoRA** |
+|---------|-----------------|------|----------|
+| ذاكرة لنموذج 65B | ~780 GB | ~160 GB | **~48 GB** |
+| عدد GPUs | 8+ A100 80GB | 2 A100 | **1 A100 48GB** أو RTX 4090 |
+| تكلفة تقريبية (سحابي) | ~$200/ساعة | ~$50/ساعة | **~$3-6/ساعة** |
+| المعاملات المُدرَّبة | 100% | ~0.1-1% | ~0.1-1% |
+| الجودة مقابل Full FT | أساس | ~96-99% | ~93-97% |
+
+### أمثلة عملية
+
+- **ضبط Llama 2 70B:** على RTX 4090 (24GB) — مستحيل بأي طريقة أخرى
+- **Guanaco 65B:** أول نموذج محادثة 65B مُضبط على GPU واحد (نتيجة QLoRA الأصلية)
+- **آلاف النماذج على HuggingFace:** QLoRA هو المعيار للضبط على عتاد المستهلك
+
+### القاعدة السريعة (2026)
+
+```
+ميزانية غير محدودة + أداء أقصى → Full Fine-tuning
+ميزانية معقولة + أداء ممتاز     → LoRA (FP16/BF16)
+GPU واحد + نموذج كبير           → QLoRA (الخيار الوحيد)
+```
+
+### المخاطر
+
+1. **جودة أقل قليلاً:** NF4 base + LoRA = تراكم خطأين
+2. **استدلال أبطأ:** النموذج المُكمَّم يحتاج de-quantization
+3. **LoRA artifacts:** قد تظهر عيوب LoRA على مهام خارج التوزيع
+
+---
+
+## المصادر
+
+1. **[Tier 1]** Dettmers, T., et al., "QLoRA: Efficient Finetuning of Quantized Language Models", NeurIPS 2023. arXiv:2305.14314.
+2. **[Tier 1]** Hu, E., et al., "LoRA: Low-Rank Adaptation of Large Language Models", ICLR 2022. (الأساس).

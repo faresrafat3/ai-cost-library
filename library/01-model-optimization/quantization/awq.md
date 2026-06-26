@@ -1,42 +1,114 @@
 ---
-id: "entry-awq-001"
-title_ar: "تكمية الأوزان المعتمدة على التنشيط (AWQ)"
-title_en: "Activation-aware Weight Quantization (AWQ)"
-type: "Practical"
-status: "Deployed"
-category: "Model Compression"
-subcategory: "Quantization"
-cost_dimensions: ["memory", "inference-cost", "latency"]
-proof_score: 4
-sources_count: 2
+id: entry-awq-001
+title_ar: التكميم المُدرك للتفعيل — AWQ
+title_en: "AWQ: Activation-Aware Weight Quantization"
+type: practical
+status: production-proven
+category: model-optimization
+subcategory: quantization
+cost_dimensions: [memory, inference-cost, throughput, hardware-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
+sources_count: 4
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 10
+  A2: 9
+  A3: 10
+  A4: 6
+  B1: 8
+  B2: 0
+  B3: 9
+  B4: 7
+  C1: 8
+  C2: 8
+  C3: 9
+  C4: 10
 ---
 
-# Activation-aware Weight Quantization (AWQ)
+# 📘 AWQ — التكميم المُدرك للتفعيل
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
+>
+> **المسار:** المكتبة ← تحسين النموذج ← التكميم
 
-## 📌 الملخص العربي | Arabic Summary
-تكمية الأوزان المعتمدة على التنشيط (AWQ) هي تقنية تكمية (Quantization) بعد التدريب صُممت خصيصاً للنماذج اللغوية الكبيرة. بدلاً من الاعتماد على حسابات معقدة للأوزان مثلما يفعل GPTQ، تلاحظ AWQ توزيع "التنشيطات" (Activations) أثناء الاستدلال وتستنتج أن حماية 1% فقط من "الأوزان البارزة" (Salient Weights) يقلل من خطأ التكمية بشكل هائل. توفر الخوارزمية دقة عالية وسرعة استدلال متفوقة بدون الحاجة إلى إعادة ترتيب البيانات (Data layout reordering)، مما يجعلها صديقة جداً للعتاد.
+---
 
-## 📌 English Summary
-Activation-aware Weight Quantization (AWQ) is a hardware-friendly post-training quantization (PTQ) method that compresses LLMs to 3 or 4 bits. By observing activation distributions, AWQ scales to protect the 1% most salient weights, vastly reducing quantization error without relying on complex backpropagation or Hessian reconstruction. This yields superior inference speeds and avoids overfitting to calibration sets.
+## المحتوى العربي
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
-- **تكلفة الذاكرة (Memory Cost):** خفض الذاكرة بحوالي 3 إلى 4 مرات (تكمية النماذج إلى 4 بت). يُمكّن تشغيل Llama-13B على حاسوب محمول بذاكرة 8 جيجابايت.
-- **الكمون / التأخير (Latency):** أسرع بنسبة 1.45x من GPTQ وأسرع بـ 1.85x من FP16 cuBLAS بفضل تجنب إعادة ترتيب البيانات في الذاكرة.
-- **تكلفة الاستدلال (Inference Cost):** يرفع الكثافة الحسابية (Arithmetic Intensity) بمقدار 4x، مما يزيد عدد الرموز المستنتجة لكل دولار.
+### ما هو AWQ؟
 
-## 🛡️ بوابات الأدلة | Evidence Gates
-- ✅ **Gate 1 (Built):** مدعومة بشكل أصلي (Native) في `vLLM`، `Hugging Face Transformers`، ونظام `TinyChat` الخاص بها.
-- ✅ **Gate 2 (Tested):** أظهرت التجارب الرسمية تسريعاً يبلغ 2.7 إلى 3.9 أضعاف على شرائح 4090/Orin مقارنة بـ FP16.
-- ✅ **Gate 3 (Deployed):** معتمدة واسعاً في النشر على الأجهزة الطرفية (On-Device/Edge) وكذلك الخوادم.
-- ✅ **Gate 4 (Saved):** حافظت على دقة شبه مثالية لنماذج اللغة والرؤية المتعددة مع تقليل VRAM بأكثر من 65%، وتحسين سرعة المعالجة بنسبة تصل إلى 41x على أجهزة Apple Silicon (بواسطة أدوات مثل QRAF).
+AWQ (Activation-Aware Weight Quantization) — وهو خوارزمية تكميم 4-bit تحمي الأوزان الأكثر أهمية (المرتبطة بقنوات التفعيل العالية) من التكميم الخشن، مما يحافظ على جودة أعلى بكثير من GPTQ.
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
-- تركز بشكل حصري على تكمية الأوزان (Weight-only)، بينما تظل التنشيطات (Activations) وذاكرة التخزين المؤقت (KV Cache) دون تكمية.
-- مكاسب السرعة تعتمد في بعض الأحيان على كتابة أنوية CUDA مخصصة (Custom Kernels) قد تحتاج لتحديث مستمر للمنصات المختلفة.
+### لماذا AWQ أفضل من GPTQ في الجودة؟
 
-## 📚 المصادر | Sources
-- [1] Lin et al., "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration", arXiv (2306.00978) / MLSys, 2023-2024. [URL](https://arxiv.org/abs/2306.00978)
-- [2] Wentao, "Summary: AWQ: Activation-Aware Weight Quantization", 2026 Review.
+GPTQ يُكمّم كل الأوزان بنفس الطريقة. AWQ يكتشف أن **1% من الأوزان** (المرتبطة بأكبر قيم التفعيل) مسؤولة عن معظم أداء النموذج — فيحميها.
+
+### الأرقام الحديثة (2026)
+
+#### الجودة — AWQ هو الأفضل في 4-bit
+
+| النموذج | FP16 | **AWQ 4-bit** | GPTQ 4-bit | GGUF Q4_K_M |
+|---------|------|-------------|-----------|-------------|
+| Llama 3.1 8B | 87.5 | **86.8 (-0.7)** | 84.7 (-2.8) | 85.9 (-1.6) |
+| Mistral 7B | 85.3 | **84.6 (-0.7)** | 83.1 (-2.2) | 83.8 (-1.5) |
+| Qwen 2.5 14B | 88.1 | **86.6 (-1.5)** | 86.0 (-2.1) | 87.0 (-1.1) |
+
+> **AWQ يحتفظ بـ ~95% من جودة FP16** — الأفضل بين جميع طرق 4-bit على GPU.
+
+#### الإنتاجية (مع Marlin)
+
+| | إنتاجية | TTFT | مقابل FP16 |
+|---|---------|------|-----------|
+| FP16 | 461 tok/s | 57.7ms | أساس |
+| **Marlin-AWQ** | **741 tok/s** | 73.5ms | **1.61×** |
+| Marlin-GPTQ | 712 tok/s | 51.9ms | 1.54× |
+
+> **AWQ+Marlin = أعلى إنتاجية + أعلى جودة** بين جميع طرق 4-bit.
+
+#### على RTX 4090 (Qwen 2.5 14B)
+
+| | إنتاجية | تحسن |
+|---|---------|------|
+| BF16 | 3,869 tok/s | أساس |
+| **AWQ** | **5,653 tok/s** | **+46%** |
+| GPTQ Marlin | 5,026 tok/s | +30% |
+
+### متى تستخدم AWQ
+
+- ✅ **الاختيار الافتراضي لـ 4-bit على GPU** (ما قبل Hopper)
+- ✅ مهام حساسة للجودة (كتابة إبداعية، كود، استدلال)
+- ✅ مع Marlin kernel لأقصى سرعة
+- ✅ HuggingFace Hub: آلاف النماذج المُكمّمة جاهزة
+
+### متى لا تستخدم
+
+- ❌ **Hopper/Blackwell** → FP8 أفضل (جودة 99% مقابل 95%)
+- ❌ **CPU/Mac** → GGUF أفضل (AWQ مُصمم لـ GPU)
+- ❌ **ذاكرة ضيقة جداً** → GPTQ 3-bit (جودة أقل لكن أصغر)
+
+### مقابل FP8 — متى كل واحد؟
+
+| المعيار | AWQ 4-bit | FP8 8-bit |
+|---------|----------|----------|
+| الذاكرة | **نصف FP8** | ضعف AWQ |
+| الجودة | 95% من FP16 | **99% من FP16** |
+| العتاد | أي GPU | Hopper+ فقط |
+| الحكم | أفضل ضغط | أفضل جودة |
+
+---
+
+## English Content
+
+AWQ protects the 1% most important weights (linked to high-activation channels), achieving ~95% FP16 quality retention — best among all 4-bit methods. AWQ+Marlin delivers 1.61× FP16 throughput.
+
+**2026 rule:** Hopper GPU → FP8. Pre-Hopper → AWQ+Marlin.
+
+---
+
+## المصادر | Sources
+
+1. **[Tier 1]** Lin, J., et al., "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration", MLSys 2024. MIT.
+2. **[Tier 2]** JarvisLabs, "Complete Guide to LLM Quantization with vLLM", January 2026. Marlin-AWQ benchmarks.
+3. **[Tier 2]** GPUStack, "Impact of Quantization on vLLM Performance", 2026. RTX 4090 data.
+4. **[Tier 2]** LocalAimaster, "GGUF vs GPTQ vs AWQ 2026", May 2026. Quality comparison across 3 models.

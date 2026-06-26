@@ -1,40 +1,97 @@
 ---
-id: "entry-promptcache-001"
-title_ar: "تخزين الموجهات المؤقت"
-title_en: "Prompt Caching"
-type: "Practical"
-status: "Deployed"
-category: "Token and Prompt Cost Optimization"
-subcategory: "Prompt Caching"
-cost_dimensions: ["api-cost", "latency", "token-cost"]
-proof_score: 4
-sources_count: 1
+id: entry-promptcache-001
+title_ar: تخزين البادئات مؤقتاً
+title_en: "Prompt/Prefix Caching: 90% Cost Reduction on Cached Portions"
+type: practical
+status: production-proven
+category: runtime-optimization
+subcategory: caching
+cost_dimensions: [api-cost, token-cost, inference-cost, latency]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
+sources_count: 3
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 10
+  A2: 7
+  A3: 9
+  A4: 8
+  B1: 9
+  B2: 0
+  B3: 0
+  B4: 3
+  C1: 9
+  C2: 9
+  C3: 9
+  C4: 10
 ---
 
-# Prompt Caching
+# 📘 تخزين البادئات مؤقتاً | Prompt/Prefix Caching
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
 
-## 📌 الملخص العربي | Arabic Summary
-تخزين الموجهات المؤقت (Prompt Caching) هي تقنية مدعومة من موفري واجهات برمجة التطبيقات (مثل Anthropic و OpenAI و Google) والأنظمة مفتوحة المصدر (مثل vLLM باستخدام RadixAttention)، تتيح إعادة استخدام العمليات الحسابية لمقاطع النصوص الطويلة (مثل تعليمات النظام، والأمثلة، وسياق RAG) عبر طلبات متعددة بدلاً من إعادة معالجتها في كل مرة. 
+---
 
-## 📌 English Summary
-Prompt Caching is a technique supported by major API providers (Anthropic, OpenAI, Google) and open-source inference engines (e.g., vLLM with RadixAttention) that allows reusing the precomputed keys and values (KV) of shared context across multiple requests. This eliminates redundant computation for long system prompts or context blocks.
+## المحتوى العربي
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
-- **تكلفة واجهة برمجة التطبيقات (API Cost):** تقليل تكلفة المدخلات (Input Tokens) بشكل جذري.
-- **الكمون / التأخير (Latency):** تسريع زمن الوصول لأول رمز (Time To First Token - TTFT) بشكل كبير نظراً لعدم الحاجة لمعالجة السياق (Prefill).
+### ما هو تخزين البادئات؟
 
-## 🛡️ بوابات الأدلة | Evidence Gates
-- ✅ **Gate 1 (Built):** مدمجة في APIs الرسمية (OpenAI, Anthropic) و `vLLM` / `SGLang`.
-- ✅ **Gate 2 (Tested):** أظهرت دراسة عام 2026 على مهام الوكلاء المستقلين (Agentic Tasks) تخفيضاً في وقت الاستجابة (TTFT) بنسبة 13% إلى 31%.
-- ✅ **Gate 3 (Deployed):** معيار أساسي حالياً في جميع تطبيقات الذكاء الاصطناعي التي تعتمد على RAG أو الوكلاء متعددي الخطوات (Multi-turn agents).
-- ✅ **Gate 4 (Saved):** توفير تكلفة الـ API بنسب تتراوح بين 41% إلى 80% في التطبيقات ذات السياق الطويل المتكرر، وفقاً للقياسات المستقلة.
+تخزين البادئات مؤقتاً (Prompt/Prefix Caching) — وهو إعادة استخدام حسابات مرحلة Prefill لبادئات الموجّهات المتكررة (system prompt, few-shot examples, مستندات مرجعية) بدلاً من إعادة حسابها مع كل طلب.
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
-- تتطلب من المطورين تنظيم الموجهات (Prompts) بحيث تكون الأجزاء الثابتة (مثل تعليمات النظام) في بداية الطلب، وتأخير الأجزاء المتغيرة (مثل مخرجات الأدوات Tool results) للنهاية لعدم إفساد الذاكرة المؤقتة (Cache Invalidation).
-- بعض المزودين يفرضون حداً أدنى من الرموز (Tokens) لتفعيل التخزين المؤقت (مثلاً 1024 توكن).
+### كيف يوفر المال؟
 
-## 📚 المصادر | Sources
-- [1] Du et al., "Don’t Break the Cache: An Evaluation of Prompt Caching for Long-Horizon Agentic Tasks", arXiv (2601.06007), 2026. [URL](https://arxiv.org/abs/2601.06007)
+| السيناريو | بدون تخزين | مع تخزين | التوفير |
+|-----------|-----------|---------|---------|
+| system prompt 2K tokens × 1000 طلب | 2M tokens مدفوعة | 2K + 999 مُخزَّنة | **~99.9%** على البادئة |
+| Anthropic cached tokens | سعر كامل | **90% أرخص** | 90% على الجزء المُخزَّن |
+| OpenAI cached tokens | سعر كامل | **50% أرخص** | 50% على الجزء المُخزَّن |
+
+### التوفر عبر المزودين (يونيو 2026)
+
+| المزود | الآلية | التوفير | TTL | الحد الأدنى |
+|--------|--------|---------|-----|-----------|
+| **Anthropic** | `cache_control` صريح | **90%** | 5 دقائق (يتجدد) | 1,024 tokens |
+| **OpenAI** | تلقائي على البادئات | **50%** | ~5-10 دقائق | 1,024 tokens |
+| **Google Gemini** | `cached_content` API | **75%** | قابل للتخصيص | — |
+| **vLLM** | `enable_prefix_caching=True` | حوسبة كاملة | لا حد | — |
+| **SGLang** | RadixAttention (تلقائي) | حوسبة كاملة | لا حد | — |
+
+### دراسة حالة — ProjectDiscovery
+
+| المقياس | قبل | بعد |
+|---------|------|------|
+| نسبة إصابة التخزين المؤقت | **7%** | **84%** |
+| توكنات مُقدَّمة من التخزين | — | **9.8 مليار** |
+| تقليل تكلفة LLM | — | **59%** |
+
+**كيف؟** نقل الذاكرة العاملة الديناميكية خارج system prompt → البادئة أصبحت ثابتة → نسبة الإصابة ارتفعت من 7% إلى 84%.
+
+### نصائح عملية لتعظيم الإصابة
+
+1. **ضع الثابت أولاً:** system prompt → few-shot → context → user query
+2. **لا تغيّر البادئة:** أي تغيير يُبطل التخزين
+3. **اجمع الطلبات المتشابهة:** نفس البادئة = إصابة أعلى
+4. **راقب نسبة الإصابة:** أقل من 20% = التصميم يحتاج تعديل
+
+### العلاقة بتقنيات أخرى
+
+| التقنية | العلاقة |
+|---------|---------|
+| **Semantic Caching** | **تكميلي** — Prefix caching = نفس البادئة. Semantic = نفس المعنى |
+| **Model Routing** | **تكاملي** — نفس الموجّه يُرسل لنفس النموذج = إصابة أعلى |
+| **RAG** | **تكاملي** — مستندات مرجعية ثابتة = بادئة مثالية للتخزين |
+| **Continuous Batching** | **تبعية** — التخزين يعمل ضمن محرك الاستدلال |
+
+---
+
+## English Content
+
+Prompt/prefix caching reuses Prefill computations for repeated prompt prefixes. Anthropic: 90% discount. OpenAI: 50%. ProjectDiscovery: raised hit rate from 7% to 84%, saving 59% LLM cost. Key: put static content first, never change the prefix.
+
+---
+
+## المصادر
+
+1. **[Tier 2]** Anthropic, "Prompt Caching Documentation", 2025-2026. 90% discount, 5-min TTL.
+2. **[Tier 2]** Digital Applied, "The AI Cost Reckoning", June 2026. ProjectDiscovery case study.
+3. **[Tier 2]** OpenAI, "Prompt Caching Documentation", 2025-2026. 50% automatic discount.
