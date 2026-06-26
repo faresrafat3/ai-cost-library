@@ -1,0 +1,77 @@
+---
+id: entry-synthdata-001
+title_ar: البيانات الاصطناعية لتقليل تكلفة التدريب
+title_en: "Synthetic Data for Cost-Efficient Training & Distillation"
+type: practical
+status: deployed
+category: training-optimization
+subcategory: synthetic-data
+cost_dimensions: [training-cost, data-labeling-cost, compute]
+proof_score: "⭐⭐⭐ منشور | Deployed"
+sources_count: 4
+created: 2026-06-26
+research_review:
+  papers_scanned: 4
+  papers_read: 2
+  decision: "يُضاف — ممارسة إنتاجية واسعة (Llama 3, DeepSeek-R1 distills) مع أبحاث حديثة"
+---
+
+# 📘 البيانات الاصطناعية لتقليل تكلفة التدريب
+
+> **التصنيف:** 📘 عملية | **الإثبات:** ⭐⭐⭐
+
+---
+
+## المحتوى العربي
+
+### ما هي البيانات الاصطناعية؟
+
+البيانات الاصطناعية (Synthetic Data) — وهي بيانات تدريب يُولّدها نموذج لغوي كبير (المعلم) لتدريب نموذج أصغر (التلميذ)، بدلاً من جمع وتسمية بيانات بشرية مكلفة.
+
+### لماذا تُقلل التكلفة؟
+
+| عامل التكلفة | بدون بيانات اصطناعية | مع بيانات اصطناعية |
+|-------------|---------------------|-------------------|
+| تسمية البيانات | $1-10 لكل عينة (بشري) | $0.001-0.01 لكل عينة (LLM) |
+| حجم البيانات المتاح | محدود بالميزانية | غير محدود تقريباً |
+| سرعة الإنتاج | أسابيع-أشهر | ساعات |
+| جودة التنوع | تعتمد على المُسمّي | قابلة للتحكم |
+
+### أمثلة إنتاجية حقيقية
+
+- **Llama 3 (Meta):** استخدم بيانات اصطناعية مُولَّدة من Llama 2 للضبط الدقيق
+- **DeepSeek-R1 Distills:** نماذج 1.5B-70B مُدرَّبة على مسارات تفكير مُولَّدة من R1
+- **Phi-3 (Microsoft):** بيانات اصطناعية "textbook quality" هي الأساس
+
+### أبحاث حديثة مُراجعة
+
+#### Fast OPD (2026) — تسريع الاستخلاص
+- اكتشاف: إشارات التدريب مُركّزة في بداية المخرجات
+- اقتصار التوليد والحساب على البادئة فقط
+- **النتيجة: 2×-47× تقليل في FLOPs** مع نفس الأداء
+
+#### LLM on a Budget — Active Knowledge Distillation (2025)
+- يستخدم Active Learning لاختيار العينات الأكثر إفادة للمعلم
+- **النتيجة: 80% تقليل في عدد العينات المطلوبة**
+- يقلل استدعاءات API المكلفة بشكل كبير
+
+#### Energy-Aware Distillation (2026)
+- تحليل طاقة شامل لعملية الاستخلاص
+- اكتشاف: ميزانية التوليد (max_new_tokens) هي المحرك الأساسي لاستهلاك الطاقة
+- **التوصية:** أطوال توليد معتدلة + أحجام بيانات أصغر قبل التوسع
+
+### المخاطر
+
+1. **انهيار النموذج (Model Collapse):** التدريب المتكرر على بيانات اصطناعية يُدهور الجودة
+2. **تحيز المعلم:** النموذج التلميذ يرث أخطاء وتحيزات المعلم
+3. **جودة غير مضمونة:** بدون تقييم بشري، قد تكون البيانات ظاهرياً جيدة لكنها ضحلة
+4. **قضايا ملكية فكرية:** بعض شروط استخدام النماذج تمنع التدريب على مخرجاتها
+
+---
+
+## المصادر | Sources
+
+1. **[Tier 1]** Zhang, Y., et al., "Fast OPD: Truncated On-Policy Distillation", 2026. 2-47× FLOPs reduction.
+2. **[Tier 2]** Luccioli, V., et al., "LLM on a Budget: Active Knowledge Distillation", arXiv:2511.11574, September 2025. 80% sample reduction.
+3. **[Tier 2]** "Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation", arXiv:2605.13981, May 2026.
+4. **[Tier 2]** Survey: "A Survey of On-Policy Distillation for Large Language Models", arXiv:2604.00626, April 2026.

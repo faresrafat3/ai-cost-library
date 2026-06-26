@@ -347,3 +347,47 @@
 | 25 | Scaling Intelligence — Data Center | ⏳ مرجع | — | تحليل تصميم مراكز بيانات — نظري |
 
 **الإجمالي التراكمي:** 25 بحث مُراجع، ~19 أُضيفوا كإدخالات أو ضمن إدخالات مجمّعة.
+
+---
+
+## الجلسة 7 — 2026-06-26 — ملء الفئات الفارغة
+
+### المنهجية
+بحث مُستهدف لملء 7 فئات فرعية فارغة. فحصت ~12 بحثاً/مصدراً إضافياً.
+
+### 📄 الأبحاث المُراجعة
+
+| # | البحث/المصدر | القرار | الفئة |
+|---|-------------|--------|-------|
+| 26 | Fast OPD — Truncated On-Policy Distillation (2026) | ✅ مذكور في synthetic-data | 2-47× FLOPs reduction |
+| 27 | LLM on a Budget — Active KD (arXiv:2511.11574) | ✅ مذكور | 80% sample reduction |
+| 28 | Energy-Aware Distillation (arXiv:2605.13981) | ✅ مذكور | طاقة التوليد = المحرك الأساسي |
+| 29 | On-Policy Distillation Survey (arXiv:2604.00626) | ✅ مرجع | مسح شامل |
+| 30 | MergeRAG — Context Compression (arXiv:2603.20286) | ✅ أُضيف | 1.51× تحسن RAG |
+| 31 | A-RAG — Hierarchical Retrieval (arXiv:2602.03442) | ✅ أُضيف | استرجاع هرمي أكفأ |
+| 32 | RAG Evaluation Metrics (arXiv:2504.14891) | ✅ مذكور | 50% تقليل عبر retrieval optimization |
+| 33 | BenchLM API Pricing (يونيو 2026) | ✅ أُضيف | أسعار فعلية 24+ نموذج |
+| 34 | MorphLLM API Comparison (يونيو 2026) | ✅ أُضيف | 12 مزود مُقارن |
+| 35 | PE Collective Pricing (أبريل 2026) | ✅ أُضيف | 20+ نموذج |
+
+### الإدخالات الجديدة (3)
+
+1. **Synthetic Data for Training** (📘 ⭐⭐⭐) — library/03-training-optimization/synthetic-data/
+   - يغطي: Fast OPD, Active KD, Energy-Aware Distillation
+   - أمثلة إنتاجية: Llama 3, DeepSeek-R1, Phi-3
+
+2. **RAG Cost Optimization** (📘 ⭐⭐⭐) — library/05-agentic-economics/tool-and-rag-costs/
+   - يغطي: MergeRAG, A-RAG, RAG vs Long Context
+   - تحليل تكلفة كمي لكل نهج
+
+3. **LLM API Pricing June 2026** (📘 ⭐⭐⭐) — library/07-market-economics/provider-comparison/
+   - 24+ نموذج من 3 مصادر مستقلة
+   - أرقام فعلية + استراتيجية توجيه بالأسعار
+
+### الحصيلة التراكمية
+**35+ بحث/مصدر مُراجع، 36 إدخال معرفي، 7/7 فئات بها محتوى**
+
+### الفئات الفرعية المتبقية الفارغة (3 من 21)
+- 03-training-optimization/mixed-precision/ — يمكن إضافة FP8 Training
+- 06-finops-governance/budgeting/ — حدود الإنفاق التلقائية
+- 06-finops-governance/roi-assessment/ — تكلفة المهمة الناجحة
