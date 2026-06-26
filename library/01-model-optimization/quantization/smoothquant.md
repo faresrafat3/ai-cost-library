@@ -96,3 +96,5 @@ Hopper+    → FP8 (يتضمن تنعيم ضمني)
 | **FP8** | **بديل أفضل** على Hopper+ (FP8 يتضمن تنعيم ضمني) |
 | **TensorRT-LLM** | **يُدمج** — SmoothQuant مدمج في TensorRT-LLM |
 | **AWQ/GPTQ** | **أقل ضغطاً** — SQ = 2× مقابل 4× لـ AWQ/GPTQ |
+
+### ملاحظة: SmoothQuant في 2026 مُدمج في TensorRT-LLM كخيار تكميم W8A8 — لا يحتاج تطبيق يدوي.
