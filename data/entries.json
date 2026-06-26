@@ -265,6 +265,118 @@
       "sources_count": 5,
       "file_path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "created": "2026-06-26"
+    },
+    {
+      "id": "entry-cpugpu-001",
+      "title_en": "CPU-GPU Collaborative Inference",
+      "type": "emerging",
+      "category": "infrastructure",
+      "proof_score": 2,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-hetero-001",
+      "title_en": "Heterogeneous Hardware Inference",
+      "type": "emerging",
+      "category": "infrastructure",
+      "proof_score": 2,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-decentral-001",
+      "title_en": "Decentralized AI Inference",
+      "type": "emerging",
+      "category": "infrastructure",
+      "proof_score": 2,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-babbling-001",
+      "title_en": "Babbling Suppression",
+      "type": "emerging",
+      "category": "infrastructure",
+      "proof_score": 2,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-synthdata-001",
+      "title_en": "Synthetic Data for Training",
+      "type": "practical",
+      "category": "training-optimization",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-ragcost-001",
+      "title_en": "RAG Cost Optimization",
+      "type": "practical",
+      "category": "agentic-economics",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-apipricing-001",
+      "title_en": "LLM API Pricing June 2026",
+      "type": "practical",
+      "category": "market-economics",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-skillreducer-001",
+      "title_en": "SkillReducer",
+      "type": "emerging",
+      "category": "agentic-economics",
+      "proof_score": 2,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-mixedprec-001",
+      "title_en": "Mixed Precision Training",
+      "type": "practical",
+      "category": "training-optimization",
+      "proof_score": 4,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-budgetlimits-001",
+      "title_en": "Agent Budget Enforcement",
+      "type": "practical",
+      "category": "finops-governance",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-cpst-001",
+      "title_en": "Cost per Successful Task",
+      "type": "practical",
+      "category": "finops-governance",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-finops-001",
+      "title_en": "AI FinOps Observability",
+      "type": "practical",
+      "category": "finops-governance",
+      "proof_score": 3,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-flashattn-001",
+      "title_en": "FlashAttention",
+      "type": "practical",
+      "category": "runtime-optimization",
+      "proof_score": 4,
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-moespec-001",
+      "title_en": "MoE-Spec: Speculative Decoding for MoE",
+      "type": "emerging",
+      "category": "runtime-optimization",
+      "proof_score": 2,
+      "created": "2026-06-26"
     }
   ]
 }

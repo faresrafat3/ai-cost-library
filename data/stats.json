@@ -1,28 +1,18 @@
 {
-  "version": "0.6.0",
+  "version": "1.0.0",
   "last_updated": "2026-06-26",
-  "session": "session-006",
-  "total_entries": 24,
+  "total_entries": 36,
   "total_categories": 7,
   "total_subcategories": 21,
-  "total_sources": 55,
-  "total_claims": 70,
-  "total_comparisons": 7,
-  "classification_summary": {
-    "practical": 17,
-    "emerging": 4,
+  "total_filesystem_entries": 40,
+  "total_sources": 75,
+  "total_papers_reviewed": 35,
+  "classification": {
+    "practical": 23,
+    "emerging": 12,
     "theoretical": 3,
-    "rejected": 0,
-    "pending": 0
+    "rejected": 0
   },
-  "proof_score_summary": {
-    "4_stars": 8,
-    "3_stars": 12,
-    "2_stars": 4,
-    "1_star": 0
-  },
-  "playbooks_count": 5,
-  "comparisons_count": 7,
-  "glossary_terms": 62,
-  "taxonomy_version": "2.0"
+  "taxonomy_version": "2.0",
+  "scoring_version": "1.0"
 }
