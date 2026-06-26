@@ -94,3 +94,23 @@ Decode:  memory-bound  → لا يتأثر (عنق الزجاجة = ذاكرة،
 ## المصادر
 
 1. **[Tier 2]** "Characterizing LLM Inference Energy-Performance Tradeoffs across Hardware and Workloads", arXiv:2501.08219v4, January 2025 (revised February 2026). 42% energy savings, 87% with routing.
+
+### العلاقة بالعتاد الحديث (2026)
+
+| GPU | استفادة من DVFS |
+|-----|----------------|
+| **H100** | **ممتازة** — Decode memory-bound بشدة |
+| **B200** | **جيدة** — 8 TB/s BW يعني memory-bound أكثر |
+| **L40S** | **جيدة** — لنماذج صغيرة |
+
+### ملاحظة عملية
+
+يمكن تطبيق DVFS على مستوى NVIDIA Management Library (NVML):
+```bash
+# خفض تردد GPU إلى الأدنى (Linux)
+nvidia-smi -lgc 180,180  # lock GPU clock to 180 MHz
+
+# إعادة التردد الأقصى
+nvidia-smi -rgc          # reset GPU clocks
+```
+لا يحتاج تعديل كود الاستدلال — تغيير على مستوى النظام فقط.
