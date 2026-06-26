@@ -920,6 +920,23 @@
         "C3": 6,
         "C4": 5
       }
+    },
+    "entry-multilora-001": {
+      "title": "Multi-LoRA Serving",
+      "scores": {
+        "A1": 8,
+        "A2": 8,
+        "A3": 8,
+        "A4": 9,
+        "B1": 8,
+        "B2": 3,
+        "B3": 8,
+        "B4": 7,
+        "C1": 6,
+        "C2": 7,
+        "C3": 9,
+        "C4": 8
+      }
     }
   },
   "relationships": {
@@ -952,6 +969,11 @@
         "entry-agentdiet-001",
         "entry-skillreducer-001",
         "entry-ctxcompress-001"
+      ],
+      [
+        "entry-lora-001",
+        "entry-qlora-001",
+        "entry-multilora-001"
       ]
     ],
     "alternative": [
