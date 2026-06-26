@@ -1,1 +1,17 @@
-[]
+{
+  "version": "0.2.0",
+  "last_updated": "2026-06-26",
+  "entries": [
+    {"id": "entry-gptq-001", "title_en": "GPTQ", "title_ar": "خوارزمية GPTQ", "type": "Practical", "status": "Deployed", "category": "Model Compression", "subcategory": "Quantization", "proof_score": 4},
+    {"id": "entry-awq-001", "title_en": "AWQ", "title_ar": "تكمية الأوزان المعتمدة على التنشيط", "type": "Practical", "status": "Deployed", "category": "Model Compression", "subcategory": "Quantization", "proof_score": 4},
+    {"id": "entry-smoothquant-001", "title_en": "SmoothQuant", "title_ar": "التكمية الملساء", "type": "Practical", "status": "Deployed", "category": "Model Compression", "subcategory": "Quantization", "proof_score": 4},
+    {"id": "entry-llmint8-001", "title_en": "LLM.int8()", "title_ar": "التكمية المختلطة الدقة", "type": "Practical", "status": "Deployed", "category": "Model Compression", "subcategory": "Quantization", "proof_score": 4},
+    {"id": "entry-specdec-001", "title_en": "Speculative Decoding", "title_ar": "فك التشفير التكهني", "type": "Practical", "status": "Deployed", "category": "Efficient Inference", "subcategory": "Decoding Strategies", "proof_score": 4},
+    {"id": "entry-contbatching-001", "title_en": "Continuous Batching", "title_ar": "التجميع المستمر", "type": "Practical", "status": "Deployed", "category": "Efficient Inference", "subcategory": "Batching", "proof_score": 4},
+    {"id": "entry-pagedattention-001", "title_en": "PagedAttention", "title_ar": "الانتباه المرقّم", "type": "Practical", "status": "Deployed", "category": "Efficient Inference", "subcategory": "KV Cache Optimization", "proof_score": 4},
+    {"id": "entry-radixattention-001", "title_en": "RadixAttention", "title_ar": "الانتباه الشجري", "type": "Practical", "status": "Deployed", "category": "Efficient Inference", "subcategory": "KV Cache Optimization", "proof_score": 4},
+    {"id": "entry-qlora-001", "title_en": "QLoRA", "title_ar": "خوارزمية QLoRA", "type": "Practical", "status": "Deployed", "category": "Efficient Training", "subcategory": "Parameter-Efficient Fine-Tuning", "proof_score": 4},
+    {"id": "entry-lora-001", "title_en": "LoRA", "title_ar": "التكيّف منخفض الرتبة", "type": "Practical", "status": "Deployed", "category": "Efficient Training", "subcategory": "Parameter-Efficient Fine-Tuning", "proof_score": 4},
+    {"id": "entry-promptcache-001", "title_en": "Prompt Caching", "title_ar": "تخزين الموجهات المؤقت", "type": "Practical", "status": "Deployed", "category": "Token and Prompt Cost Optimization", "subcategory": "Prompt Caching", "proof_score": 4}
+  ]
+}

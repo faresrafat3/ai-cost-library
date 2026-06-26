@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "cat-model-compression",
+    "name_ar": "ضغط النماذج",
+    "name_en": "Model Compression",
+    "parent": null,
+    "level": 1,
+    "subcategories": ["quantization", "pruning", "distillation"],
+    "entry_count": 5,
+    "status": "active"
+  },
+  {
+    "id": "quantization",
+    "name_ar": "التكمية",
+    "name_en": "Quantization",
+    "parent": "cat-model-compression",
+    "level": 2,
+    "entry_count": 5
+  },
+  {
+    "id": "pruning",
+    "name_ar": "التقليم",
+    "name_en": "Pruning",
+    "parent": "cat-model-compression",
+    "level": 2,
+    "entry_count": 0
+  },
+  {
+    "id": "distillation",
+    "name_ar": "التقطير",
+    "name_en": "Distillation",
+    "parent": "cat-model-compression",
+    "level": 2,
+    "entry_count": 0
+  },
+  {
+    "id": "cat-efficient-inference",
+    "name_ar": "الاستدلال الفعّال",
+    "name_en": "Efficient Inference",
+    "parent": null,
+    "level": 1,
+    "subcategories": ["decoding", "batching", "kv-cache-optimization", "serving"],
+    "entry_count": 4,
+    "status": "active"
+  },
+  {
+    "id": "decoding",
+    "name_ar": "استراتيجيات فك التشفير",
+    "name_en": "Decoding Strategies",
+    "parent": "cat-efficient-inference",
+    "level": 2,
+    "entry_count": 1
+  },
+  {
+    "id": "batching",
+    "name_ar": "التجميع",
+    "name_en": "Batching",
+    "parent": "cat-efficient-inference",
+    "level": 2,
+    "entry_count": 1
+  },
+  {
+    "id": "kv-cache-optimization",
+    "name_ar": "تحسين الذاكرة المؤقتة",
+    "name_en": "KV Cache Optimization",
+    "parent": "cat-efficient-inference",
+    "level": 2,
+    "entry_count": 2
+  },
+  {
+    "id": "serving",
+    "name_ar": "نموذج التقديم",
+    "name_en": "Serving Systems",
+    "parent": "cat-efficient-inference",
+    "level": 2,
+    "entry_count": 0
+  },
+  {
+    "id": "cat-efficient-training",
+    "name_ar": "التدريب الفعّال",
+    "name_en": "Efficient Training",
+    "parent": null,
+    "level": 1,
+    "subcategories": ["parameter-efficient", "data-efficient-training"],
+    "entry_count": 2,
+    "status": "active"
+  },
+  {
+    "id": "parameter-efficient",
+    "name_ar": "الضبط الدقيق الموفّر للمعاملات",
+    "name_en": "Parameter-Efficient Fine-Tuning",
+    "parent": "cat-efficient-training",
+    "level": 2,
+    "entry_count": 2
+  },
+  {
+    "id": "data-efficient-training",
+    "name_ar": "كفاءة البيانات في التدريب",
+    "name_en": "Data-Efficient Training",
+    "parent": "cat-efficient-training",
+    "level": 2,
+    "entry_count": 0
+  },
+  {
+    "id": "cat-hardware-systems",
+    "name_ar": "العتاد والأنظمة",
+    "name_en": "Hardware and Systems",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "cat-data-efficiency",
+    "name_ar": "كفاءة البيانات",
+    "name_en": "Data Efficiency",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "cat-model-selection",
+    "name_ar": "اختيار وتوجيه النماذج",
+    "name_en": "Model Selection and Routing",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "cat-operations",
+    "name_ar": "العمليات والمراقبة",
+    "name_en": "Operations and Monitoring",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "cat-token-prompt",
+    "name_ar": "تكلفة التوكن والموجهات",
+    "name_en": "Token and Prompt Cost Optimization",
+    "parent": null,
+    "level": 1,
+    "subcategories": ["prompt-caching"],
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "prompt-caching",
+    "name_ar": "تخزين الموجهات المؤقت",
+    "name_en": "Prompt Caching",
+    "parent": "cat-token-prompt",
+    "level": 2,
+    "entry_count": 1
+  },
+  {
+    "id": "cat-retrieval",
+    "name_ar": "كفاءة الاسترجاع والسياق",
+    "name_en": "Retrieval and Context Efficiency",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "cat-energy",
+    "name_ar": "الطاقة والاستدامة",
+    "name_en": "Energy and Sustainability",
+    "parent": null,
+    "level": 1,
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
+  }
+]
