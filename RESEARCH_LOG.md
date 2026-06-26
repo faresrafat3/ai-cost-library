@@ -322,3 +322,28 @@
 | 15 | Hardware Scaling Trends | ⏳ مذكور في DeepSpeed | — |
 
 **الإجمالي:** 15 بحث مُراجع، 10 أُضيفوا كإدخالات، 5 مؤجلون/مراجع.
+
+---
+
+## الجلسة 6 (العتاد والحوسبة) — 2026-06-26
+
+### المنهجية
+بحث في مجالات: تشخيص النماذج لعتاد معين، CPU-GPU collaboration، عتاد متنوع، حوسبة لامركزية.
+فحصت ~10 أبحاث، قرأت 6 بعمق كافٍ.
+
+### 📄 الأبحاث المُراجعة (العتاد)
+
+| # | البحث | القرار | التصنيف | السبب |
+|---|-------|--------|---------|-------|
+| 16 | MoE CPU-GPU Collaborative (ASP-DAC 2026) | ✅ أُضيف | 🧪 ⭐⭐ | مقبول Tier 1، يشغل Mixtral على RTX 4090 |
+| 17 | HGCA — Hybrid GPU-CPU Attention | ✅ أُضيف (ضمن CPU-GPU) | 🧪 ⭐⭐ | CPU كشريك حوسبي لا مخزن فقط |
+| 18 | SKIP Profiler — CPU-GPU Characterization | ✅ مذكور | — | أداة تشخيص مفيدة |
+| 19 | HeteroLLM — Mobile GPU+NPU | ✅ أُضيف | 🧪 ⭐⭐ | 1000+ tok/s على محمول، 7.27× تسريع |
+| 20 | Heterogeneous GPU Serving | ✅ أُضيف | 🧪 ⭐⭐ | خلط GPUs لتقليل التكلفة |
+| 21 | PLENA — HW-SW Co-design | ✅ أُضيف | 🧪 ⭐⭐ | 2.24× أعلى من A100 |
+| 22 | Parallax — P2P Decentralized | ✅ أُضيف | 🧪 ⭐⭐ | جدولة ذكية لشبكات لامركزية |
+| 23 | VeriLLM — Verification | ✅ أُضيف (ضمن decentralized) | 🧪 ⭐⭐ | تحقق بـ 1% overhead |
+| 24 | BlockTrain — Decentralized | ✅ أُضيف | 🧪 ⭐⭐ | يونيو 2026، حديث جداً |
+| 25 | Scaling Intelligence — Data Center | ⏳ مرجع | — | تحليل تصميم مراكز بيانات — نظري |
+
+**الإجمالي التراكمي:** 25 بحث مُراجع، ~19 أُضيفوا كإدخالات أو ضمن إدخالات مجمّعة.
