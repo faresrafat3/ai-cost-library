@@ -1,230 +1,70 @@
 {
+  "version": "2.1.0",
+  "last_updated": "2026-06-26",
   "entries": [
     {
-      "id": "entry-gptq-001",
-      "title_en": "GPTQ",
-      "title_ar": "GPTQ — تكميم ما بعد التدريب للنماذج اللغوية",
-      "type": "practical",
-      "status": "validated",
-      "category": "model-compression",
-      "subcategory": "quantization"
-    },
-    {
-      "id": "entry-awq-001",
-      "title_en": "AWQ",
-      "title_ar": "AWQ — تكميم مُفعَّل بالوزن",
-      "type": "practical",
-      "status": "deployed",
-      "category": "model-compression",
-      "subcategory": "quantization"
-    },
-    {
-      "id": "entry-smoothquant-001",
-      "title_en": "SmoothQuant",
-      "title_ar": "SmoothQuant — تكميم سلس",
-      "type": "practical",
-      "status": "deployed",
-      "category": "model-compression",
-      "subcategory": "quantization"
-    },
-    {
-      "id": "entry-llmint8-001",
-      "title_en": "LLM.int8()",
-      "title_ar": "LLM.int8() — تكميم 8-بت",
-      "type": "practical",
-      "status": "deployed",
-      "category": "model-compression",
-      "subcategory": "quantization"
-    },
-    {
-      "id": "entry-specdec-001",
-      "title_en": "Speculative Decoding",
-      "title_ar": "فك الترميز التخميني",
-      "type": "practical",
-      "status": "deployed",
-      "category": "efficient-inference",
-      "subcategory": "decoding"
-    },
-    {
-      "id": "entry-contbatching-001",
-      "title_en": "Continuous Batching",
-      "title_ar": "التجميع المستمر",
-      "type": "practical",
-      "status": "deployed",
-      "category": "efficient-inference",
-      "subcategory": "batching"
-    },
-    {
-      "id": "entry-pagedattention-001",
-      "title_en": "PagedAttention",
-      "title_ar": "الانتباه المصفح",
+      "id": "entry-distillation-001",
+      "title_ar": "استخلاص المعرفة — من DistilBERT إلى DeepSeek-R1",
+      "title_en": "Knowledge Distillation — From DistilBERT to DeepSeek-R1",
       "type": "practical",
       "status": "production-proven",
-      "category": "efficient-inference",
-      "subcategory": "kv-cache"
+      "category": "model-compression",
+      "subcategory": "distillation",
+      "path": "library/01-model-optimization/compression/distillation.md",
+      "cost_dimensions": "",
+      "proof_score": "4",
+      "sources_count": 5,
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-radixattention-001",
-      "title_en": "RadixAttention",
-      "title_ar": "الانتباه الجذري",
+      "id": "entry-merging-001",
+      "title_ar": "دمج النماذج — بديل رخيص للتدريب المتعدد المهام",
+      "title_en": "Model Merging: Zero-Cost Multi-Task Combination (TIES, DARE, Model Soup)",
       "type": "practical",
       "status": "deployed",
-      "category": "efficient-inference",
-      "subcategory": "kv-cache"
-    },
-    {
-      "id": "entry-lora-001",
-      "title_en": "LoRA",
-      "title_ar": "LoRA — تكييف الرتبة المنخفضة",
-      "type": "practical",
-      "status": "production-proven",
-      "category": "efficient-training",
-      "subcategory": "parameter-efficient"
-    },
-    {
-      "id": "entry-qlora-001",
-      "title_en": "QLoRA",
-      "title_ar": "QLoRA — تكييف الرتبة المنخفضة المُكمَّم",
-      "type": "practical",
-      "status": "production-proven",
-      "category": "efficient-training",
-      "subcategory": "parameter-efficient"
-    },
-    {
-      "id": "entry-promptcache-001",
-      "title_en": "Prompt Caching",
-      "title_ar": "تخزين الطلبات المؤقت",
-      "type": "practical",
-      "status": "deployed",
-      "category": "token-and-prompt-cost",
-      "subcategory": "prompt-caching"
-    },
-    {
-      "id": "entry-layerskip-001",
-      "title_en": "LayerSkip",
-      "title_ar": "LayerSkip — قفز الطبقات",
-      "type": "practical",
-      "status": "validated",
-      "category": "efficient-inference",
-      "subcategory": "early-exit"
-    },
-    {
-      "id": "entry-mod-001",
-      "title_en": "Mixture-of-Depths",
-      "title_ar": "Mixture-of-Depths — خلط الأعماق",
-      "type": "emerging",
-      "status": "emerging",
-      "category": "efficient-training",
-      "subcategory": "compute-allocation"
+      "category": "model-optimization",
+      "subcategory": "compression",
+      "path": "library/01-model-optimization/compression/model-merging.md",
+      "cost_dimensions": [
+        "training-cost",
+        "serving-cost",
+        "engineering-cost"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 3,
+      "updated": "2026-06-26"
     },
     {
       "id": "entry-shortgpt-001",
-      "title_en": "ShortGPT",
-      "title_ar": "ShortGPT — قصّ الطبقات",
+      "title_ar": "ShortGPT — قصّ طبقات النماذج اللغوية الكبيرة",
+      "title_en": "ShortGPT: Layer Pruning in Large Language Models",
       "type": "emerging",
       "status": "emerging",
       "category": "model-compression",
-      "subcategory": "pruning"
+      "subcategory": "pruning",
+      "path": "library/01-model-optimization/compression/short-gpt.md",
+      "cost_dimensions": "",
+      "proof_score": "2",
+      "sources_count": 3,
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-distillation-001",
-      "title_en": "Knowledge Distillation",
-      "title_ar": "استخلاص المعرفة",
+      "id": "entry-dsv4-001",
+      "title_ar": "اقتصاديات DeepSeek V4 — أرخص نموذج حدودي في 2026",
+      "title_en": "DeepSeek V4 Economics: The Cheapest Frontier Model (2026)",
       "type": "practical",
       "status": "production-proven",
-      "category": "model-compression",
-      "subcategory": "distillation"
-    },
-    {
-      "id": "entry-fp8-001",
-      "title_ar": "التكميم بدقة FP8",
-      "title_en": "FP8 Quantization",
-      "type": "practical",
-      "status": "production-proven",
-      "category": "model-compression",
-      "subcategory": "quantization",
-      "tree_path": "AI Cost Library → Model Compression → Quantization → FP8 Quantization",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "path": "library/01-model-optimization/efficient-architecture/deepseek-v4-economics.md",
       "cost_dimensions": [
+        "inference-cost",
+        "api-cost",
         "memory",
-        "compute",
-        "inference-cost",
-        "throughput",
-        "hardware-cost",
-        "energy"
+        "throughput"
       ],
-      "proof_score": 4,
-      "proof_label": "⭐⭐⭐⭐ Production-Proven",
-      "sources_count": 5,
-      "file_path": "library/model-compression/quantization/fp8-quantization.md",
-      "created": "2026-06-26",
-      "updated": "2026-06-26"
-    },
-    {
-      "id": "entry-routing-001",
-      "title_ar": "توجيه النماذج الذكي",
-      "title_en": "Intelligent Model Routing (RouteLLM)",
-      "type": "practical",
-      "status": "deployed",
-      "category": "model-selection-and-routing",
-      "subcategory": "model-routing",
-      "tree_path": "AI Cost Library → Model Selection and Routing → Model Routing → Intelligent Model Routing",
-      "cost_dimensions": [
-        "api-cost",
-        "token-cost",
-        "inference-cost",
-        "latency"
-      ],
-      "proof_score": 3,
-      "proof_label": "⭐⭐⭐ Deployed",
-      "sources_count": 6,
-      "file_path": "library/model-selection-and-routing/model-routing/model-routing.md",
-      "created": "2026-06-26",
-      "updated": "2026-06-26"
-    },
-    {
-      "id": "entry-semcache-001",
-      "title_ar": "التخزين المؤقت الدلالي",
-      "title_en": "Semantic Caching",
-      "type": "practical",
-      "status": "deployed",
-      "category": "token-and-prompt-cost",
-      "subcategory": "semantic-caching",
-      "tree_path": "AI Cost Library → Token and Prompt Cost → Semantic Caching",
-      "cost_dimensions": [
-        "api-cost",
-        "token-cost",
-        "inference-cost",
-        "latency",
-        "compute",
-        "energy"
-      ],
-      "proof_score": 3,
-      "proof_label": "⭐⭐⭐ Deployed",
-      "sources_count": 5,
-      "file_path": "library/token-and-prompt-cost/semantic-caching/semantic-caching.md",
-      "created": "2026-06-26",
-      "updated": "2026-06-26"
-    },
-    {
-      "id": "entry-chinchilla-001",
-      "title_ar": "قوانين التحجيم الأمثل حوسبياً (Chinchilla)",
-      "title_en": "Compute-Optimal Scaling Laws (Chinchilla)",
-      "type": "theoretical",
-      "status": "validated",
-      "category": "efficient-training",
-      "subcategory": "compute-optimal",
-      "tree_path": "AI Cost Library → Efficient Training → Compute-Optimal → Chinchilla Scaling",
-      "cost_dimensions": [
-        "training-cost",
-        "compute",
-        "energy",
-        "hardware-cost"
-      ],
-      "proof_score": 3,
-      "proof_label": "⭐⭐⭐ Validated",
-      "sources_count": 4,
-      "file_path": "library/efficient-training/compute-optimal/chinchilla-scaling.md",
-      "created": "2026-06-26",
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
       "updated": "2026-06-26"
     },
     {
@@ -235,246 +75,934 @@
       "status": "peer-reviewed",
       "category": "model-optimization",
       "subcategory": "efficient-architecture",
-      "proof_score": 3,
+      "path": "library/01-model-optimization/efficient-architecture/inference-efficient-scaling.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ مُراجع أقران | Peer-Reviewed",
       "sources_count": 1,
-      "file_path": "library/01-model-optimization/efficient-architecture/inference-efficient-scaling.md",
-      "created": "2026-06-26"
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-priceofprogress-001",
-      "title_ar": "ثمن التقدم — مفارقة الاستدلال",
-      "title_en": "The Price of Progress: Price Performance and the Future of AI",
+      "id": "entry-layerskip-001",
+      "title_ar": "LayerSkip — قفز الطبقات مع فك الترميز التخميني الذاتي",
+      "title_en": "LayerSkip: Self-Speculative Decoding with Layer Skipping",
+      "type": "practical",
+      "status": "validated",
+      "category": "efficient-inference",
+      "subcategory": "early-exit",
+      "path": "library/01-model-optimization/efficient-architecture/layer-skip.md",
+      "cost_dimensions": "",
+      "proof_score": "3",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-llama4-001",
+      "title_ar": "اقتصاديات Llama 4 — مثال عملي على قوة MoE المفتوحة",
+      "title_en": "Llama 4 MoE Economics: 400B Knowledge at 17B Inference Cost",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "path": "library/01-model-optimization/efficient-architecture/llama4-moe-economics.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "hardware-cost",
+        "api-cost",
+        "memory"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-mod-001",
+      "title_ar": "Mixture-of-Depths — خلط الأعماق",
+      "title_en": "Mixture-of-Depths: Dynamically Allocating Compute in Transformers",
+      "type": "emerging",
+      "status": "emerging",
+      "category": "efficient-training",
+      "subcategory": "compute-allocation",
+      "path": "library/01-model-optimization/efficient-architecture/mixture-of-depths.md",
+      "cost_dimensions": "",
+      "proof_score": "2",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-moe-001",
+      "title_ar": "اقتصاديات مزيج الخبراء (MoE)",
+      "title_en": "Mixture-of-Experts Economics: The Dominant Architecture of 2026",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "path": "library/01-model-optimization/efficient-architecture/mixture-of-experts-economics.md",
+      "cost_dimensions": [
+        "training-cost",
+        "inference-cost",
+        "memory",
+        "compute",
+        "throughput"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-qwen3-001",
+      "title_ar": "كفاءات Qwen3 — دمج التفكير واللا-تفكير في نموذج واحد",
+      "title_en": "Qwen3 Efficiency: Thinking/Non-Thinking Fusion & Budget Control",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "path": "library/01-model-optimization/efficient-architecture/qwen3-efficiency.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "api-cost",
+        "throughput",
+        "training-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 2,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-subquad-001",
+      "title_ar": "النماذج دون التربيعية — Mamba-3 وبدائل Transformer",
+      "title_en": "Sub-Quadratic Models: Mamba-3 and Transformer Alternatives for Inference Efficiency",
+      "type": "emerging",
+      "status": "peer-reviewed",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
+      "path": "library/01-model-optimization/efficient-architecture/subquadratic-models.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "memory",
+        "throughput",
+        "latency"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
+      "sources_count": 2,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-awq-001",
+      "title_ar": "التكميم المُدرك للتفعيل — AWQ",
+      "title_en": "AWQ: Activation-Aware Weight Quantization",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/awq.md",
+      "cost_dimensions": [
+        "memory",
+        "inference-cost",
+        "throughput",
+        "hardware-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-fp8-001",
+      "title_ar": "التكميم بدقة FP8",
+      "title_en": "FP8 Quantization",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-compression",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/fp8-quantization.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-gptq-001",
+      "title_ar": "التكميم بعد التدريب — GPTQ",
+      "title_en": "GPTQ: Post-Training Quantization for GPUs",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/gptq.md",
+      "cost_dimensions": [
+        "memory",
+        "inference-cost",
+        "throughput",
+        "hardware-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-llmint8-001",
+      "title_ar": "التكميم الصحيح 8-بت مع معالجة القيم الشاذة — LLM.int8()",
+      "title_en": "LLM.int8(): Mixed-Precision INT8 with Outlier Handling",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "model-optimization",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/llm-int8.md",
+      "cost_dimensions": [
+        "memory",
+        "inference-cost",
+        "hardware-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-moequant-001",
+      "title_ar": "تكميم نماذج مزيج الخبراء (MoE Quantization)",
+      "title_en": "MoE Quantization: Compressing Expert Models to Ultra-Low Bits",
+      "type": "emerging",
+      "status": "active-research",
+      "category": "model-optimization",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/moe-quantization.md",
+      "cost_dimensions": [
+        "memory",
+        "inference-cost",
+        "hardware-cost",
+        "throughput"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-smoothquant-001",
+      "title_ar": "التكميم الأملس — SmoothQuant",
+      "title_en": "SmoothQuant: Smooth Activations for INT8 Quantization",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-optimization",
+      "subcategory": "quantization",
+      "path": "library/01-model-optimization/quantization/smoothquant.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "throughput",
+        "memory"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 2,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-chinchilla-001",
+      "title_ar": "قوانين التحجيم الأمثل حوسبياً (Chinchilla)",
+      "title_en": "Compute-Optimal Scaling Laws (Chinchilla)",
       "type": "theoretical",
       "status": "validated",
-      "category": "market-economics",
-      "subcategory": "inference-paradox",
-      "proof_score": 3,
+      "category": "efficient-training",
+      "subcategory": "compute-optimal",
+      "path": "library/01-model-optimization/right-sizing/chinchilla-scaling.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ مُتحقق | Validated",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-routing-001",
+      "title_ar": "توجيه النماذج الذكي",
+      "title_en": "Intelligent Model Routing (RouteLLM)",
+      "type": "practical",
+      "status": "deployed",
+      "category": "model-selection-and-routing",
+      "subcategory": "model-routing",
+      "path": "library/01-model-optimization/right-sizing/model-routing.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 6,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-contbatching-001",
+      "title_ar": "التجميع المستمر",
+      "title_en": "Continuous Batching: The Single Biggest Inference Lever",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "runtime-optimization",
+      "subcategory": "batching",
+      "path": "library/02-runtime-optimization/batching/continuous-batching.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "throughput",
+        "compute"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-batchapi-001",
+      "title_ar": "واجهة الدفعات وتحسين المخرجات — 50-80% تقليل تكلفة API",
+      "title_en": "Batch API + Structured Output: 50-80% API Cost Reduction",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "runtime-optimization",
+      "subcategory": "caching",
+      "path": "library/02-runtime-optimization/caching/batch-api-structured-output.md",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-promptcache-001",
+      "title_ar": "تخزين البادئات مؤقتاً",
+      "title_en": "Prompt/Prefix Caching: 90% Cost Reduction on Cached Portions",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "runtime-optimization",
+      "subcategory": "caching",
+      "path": "library/02-runtime-optimization/caching/prompt-caching.md",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost",
+        "latency"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-semcache-001",
+      "title_ar": "التخزين المؤقت الدلالي",
+      "title_en": "Semantic Caching",
+      "type": "practical",
+      "status": "deployed",
+      "category": "token-and-prompt-cost",
+      "subcategory": "semantic-caching",
+      "path": "library/02-runtime-optimization/caching/semantic-caching.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-eagle3-001",
+      "title_ar": "فك الترميز التخميني EAGLE-3",
+      "title_en": "EAGLE-3: State-of-the-Art Speculative Decoding",
+      "type": "practical",
+      "status": "deployed",
+      "category": "runtime-optimization",
+      "subcategory": "decoding",
+      "path": "library/02-runtime-optimization/decoding/eagle3-speculative-decoding.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "latency",
+        "throughput"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-moespec-001",
+      "title_ar": "فك الترميز التخميني الموفّر لنماذج MoE",
+      "title_en": "MoE-Spec: Expert Budgeting for Efficient Speculative Decoding",
+      "type": "emerging",
+      "status": "preprint",
+      "category": "runtime-optimization",
+      "subcategory": "decoding",
+      "path": "library/02-runtime-optimization/decoding/moe-speculative-decoding.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "throughput",
+        "memory"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 1,
-      "file_path": "library/07-market-economics/inference-paradox/price-of-progress.md",
-      "created": "2026-06-26"
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-specdec-001",
+      "title_ar": "فك الترميز التخميني",
+      "title_en": "Speculative Decoding: Draft-then-Verify for Faster Inference",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "runtime-optimization",
+      "subcategory": "decoding",
+      "path": "library/02-runtime-optimization/decoding/speculative-decoding.md",
+      "cost_dimensions": [
+        "latency",
+        "throughput",
+        "inference-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-ttc-001",
+      "title_ar": "اقتصاديات حوسبة وقت الاستدلال (Inference-Time Compute)",
+      "title_en": "Inference-Time Compute Economics: When Thinking More Costs Less",
+      "type": "practical",
+      "status": "deployed",
+      "category": "runtime-optimization",
+      "subcategory": "inference-time-compute",
+      "path": "library/02-runtime-optimization/inference-time-compute/inference-time-compute.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "token-cost",
+        "compute",
+        "latency"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-flashattn-001",
+      "title_ar": "FlashAttention — الانتباه المُحسَّن للذاكرة",
+      "title_en": "FlashAttention: I/O-Aware Exact Attention",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "efficient-inference",
+      "subcategory": "kv-cache",
+      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "cost_dimensions": "",
+      "proof_score": "4",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-kvcachecompress-001",
+      "title_ar": "ضغط ذاكرة KV المؤقتة",
+      "title_en": "KV Cache Compression & Eviction",
+      "type": "emerging",
+      "status": "active-research",
+      "category": "runtime-optimization",
+      "subcategory": "kv-cache",
+      "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-pagedattention-001",
+      "title_ar": "الانتباه المُقسَّم للصفحات — PagedAttention",
+      "title_en": "PagedAttention: Virtual Memory for KV Cache",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "runtime-optimization",
+      "subcategory": "kv-cache",
+      "path": "library/02-runtime-optimization/kv-cache/paged-attention.md",
+      "cost_dimensions": [
+        "memory",
+        "throughput",
+        "inference-cost",
+        "serving-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-radixattention-001",
+      "title_ar": "شجرة الانتباه المتفرعة — RadixAttention (SGLang)",
+      "title_en": "RadixAttention: Prefix Sharing via Radix Tree KV Cache",
+      "type": "practical",
+      "status": "deployed",
+      "category": "runtime-optimization",
+      "subcategory": "kv-cache",
+      "path": "library/02-runtime-optimization/kv-cache/radix-attention.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "throughput",
+        "latency",
+        "memory"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-sparseatt-001",
+      "title_ar": "الانتباه المتناثر والخطي — تسريع السياقات الطويلة 10×",
+      "title_en": "Sparse & Linear Attention: 10× Prefill Speedup for Long Contexts",
+      "type": "emerging",
+      "status": "active-research",
+      "category": "runtime-optimization",
+      "subcategory": "kv-cache",
+      "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "memory",
+        "throughput",
+        "latency"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-deepspeed-001",
+      "title_ar": "التدريب الموزّع — DeepSpeed ZeRO و FSDP",
+      "title_en": "Distributed Training: DeepSpeed ZeRO & PyTorch FSDP",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "training-optimization",
+      "subcategory": "distributed-training",
+      "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-mixedprec-001",
+      "title_ar": "التدريب بالدقة المختلطة (BF16/FP8)",
+      "title_en": "Mixed Precision Training: BF16 as Standard, FP8 as Frontier",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "training-optimization",
+      "subcategory": "mixed-precision",
+      "path": "library/03-training-optimization/mixed-precision/mixed-precision-training.md",
+      "cost_dimensions": [
+        "training-cost",
+        "memory",
+        "compute",
+        "energy",
+        "throughput"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-lora-001",
+      "title_ar": "التكيف منخفض الرتبة — LoRA",
+      "title_en": "LoRA: Low-Rank Adaptation — The Foundation of Efficient Fine-Tuning",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "training-optimization",
+      "subcategory": "parameter-efficient",
+      "path": "library/03-training-optimization/parameter-efficient/lora.md",
+      "cost_dimensions": [
+        "training-cost",
+        "memory",
+        "hardware-cost",
+        "serving-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-multilora-001",
+      "title_ar": "خدمة LoRA متعددة المستأجرين — مئات النماذج على GPU واحد",
+      "title_en": "Multi-LoRA Serving: Hundreds of Fine-Tuned Models on One GPU",
+      "type": "practical",
+      "status": "deployed",
+      "category": "training-optimization",
+      "subcategory": "parameter-efficient",
+      "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
+      "cost_dimensions": [
+        "hardware-cost",
+        "inference-cost",
+        "memory",
+        "serving-cost"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-qlora-001",
+      "title_ar": "الضبط الدقيق المُكمَّم — QLoRA",
+      "title_en": "QLoRA: Quantized Low-Rank Adaptation",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "training-optimization",
+      "subcategory": "parameter-efficient",
+      "path": "library/03-training-optimization/parameter-efficient/qlora.md",
+      "cost_dimensions": [
+        "training-cost",
+        "memory",
+        "hardware-cost"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 2,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-synthdata-001",
+      "title_ar": "البيانات الاصطناعية لتقليل تكلفة التدريب",
+      "title_en": "Synthetic Data for Cost-Efficient Training & Distillation",
+      "type": "practical",
+      "status": "deployed",
+      "category": "training-optimization",
+      "subcategory": "synthetic-data",
+      "path": "library/03-training-optimization/synthetic-data/synthetic-data-distillation.md",
+      "cost_dimensions": [
+        "training-cost",
+        "data-labeling-cost",
+        "compute"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-cpugpu-001",
+      "title_ar": "الاستدلال التعاوني بين المعالج ووحدة الرسومات",
+      "title_en": "CPU-GPU Collaborative Inference for LLMs",
+      "type": "emerging",
+      "status": "peer-reviewed",
+      "category": "infrastructure",
+      "subcategory": "accelerators",
+      "path": "library/04-infrastructure/accelerators/cpu-gpu-collaborative.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-customchips-001",
+      "title_ar": "شرائح الذكاء الاصطناعي المتخصصة — Trainium/Inferentia vs TPU vs GPU",
+      "title_en": "Custom AI Chips: AWS Trainium/Inferentia vs Google TPU vs NVIDIA GPU",
+      "type": "practical",
+      "status": "deployed",
+      "category": "infrastructure",
+      "subcategory": "accelerators",
+      "path": "library/04-infrastructure/accelerators/custom-ai-chips.md",
+      "cost_dimensions": [
+        "hardware-cost",
+        "training-cost",
+        "inference-cost",
+        "energy"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-decentral-001",
+      "title_ar": "الحوسبة اللامركزية للاستدلال",
+      "title_en": "Decentralized AI Inference: Peer-to-Peer GPU Networks",
+      "type": "emerging",
+      "status": "experimental",
+      "category": "infrastructure",
+      "subcategory": "accelerators",
+      "path": "library/04-infrastructure/accelerators/decentralized-inference.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-gpuecon-001",
+      "title_ar": "اقتصاديات GPU للاستدلال — مقارنة H100 vs B200 vs H200 (2026)",
+      "title_en": "GPU Inference Economics 2026: H100 vs B200 vs H200 Cost-per-Token",
+      "type": "practical",
+      "status": "current-market-data",
+      "category": "infrastructure",
+      "subcategory": "accelerators",
+      "path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
+      "cost_dimensions": [
+        "hardware-cost",
+        "inference-cost",
+        "throughput",
+        "energy"
+      ],
+      "proof_score": "⭐⭐⭐ بيانات سوقية | Market Data",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-hetero-001",
+      "title_ar": "الاستدلال على عتاد متنوع",
+      "title_en": "Heterogeneous Hardware Inference (GPU + NPU + Specialized)",
+      "type": "emerging",
+      "status": "tested",
+      "category": "infrastructure",
+      "subcategory": "accelerators",
+      "path": "library/04-infrastructure/accelerators/heterogeneous-inference.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 3,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-gguf-001",
+      "title_ar": "الاستدلال المحلي بـ GGUF — صفر تكلفة API",
+      "title_en": "Local GGUF/llama.cpp Inference: Zero API Cost on Consumer Hardware",
+      "type": "practical",
+      "status": "production-proven",
+      "category": "infrastructure",
+      "subcategory": "deployment-strategies",
+      "path": "library/04-infrastructure/deployment-strategies/local-gguf-inference.md",
+      "cost_dimensions": [
+        "api-cost",
+        "hardware-cost",
+        "inference-cost",
+        "energy"
+      ],
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-ipw-001",
+      "title_ar": "الاستدلال المحلي مقابل السحابي — الذكاء لكل واط",
+      "title_en": "Local vs Cloud Inference: Intelligence per Watt (IPW)",
+      "type": "practical",
+      "status": "validated",
+      "category": "infrastructure",
+      "subcategory": "deployment-strategies",
+      "path": "library/04-infrastructure/deployment-strategies/local-vs-cloud-hybrid.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ مُتحقق | Validated",
+      "sources_count": 1,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-breakeven-001",
+      "title_ar": "نقطة تعادل الاستضافة الذاتية مقابل API",
+      "title_en": "Self-Host vs API: The Break-Even Analysis (2026)",
+      "type": "practical",
+      "status": "current-market-data",
+      "category": "infrastructure",
+      "subcategory": "deployment-strategies",
+      "path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "hardware-cost",
+        "engineering-cost",
+        "api-cost"
+      ],
+      "proof_score": "⭐⭐⭐ بيانات سوقية | Market Data",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-babbling-001",
+      "title_ar": "كبت الثرثرة — تقليل استهلاك الطاقة بمنع التوليد الزائد",
+      "title_en": "Babbling Suppression: 44-89% Energy Savings by Stopping Unnecessary Generation",
+      "type": "emerging",
+      "status": "tested",
+      "category": "infrastructure",
+      "subcategory": "energy-efficiency",
+      "path": "library/04-infrastructure/energy-efficiency/babbling-suppression.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 1,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-dvfs-001",
+      "title_ar": "تخفيض تردد GPU لتوفير الطاقة (DVFS)",
+      "title_en": "GPU Frequency Scaling (DVFS): 42% Energy Savings at 1-3% Latency Cost",
+      "type": "emerging",
+      "status": "tested",
+      "category": "infrastructure",
+      "subcategory": "energy-efficiency",
+      "path": "library/04-infrastructure/energy-efficiency/gpu-frequency-scaling.md",
+      "cost_dimensions": [
+        "energy",
+        "inference-cost",
+        "hardware-cost"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 1,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-agentdiet-001",
+      "title_ar": "تقليص مسارات الوكلاء (AgentDiet)",
+      "title_en": "Agent Trajectory Reduction (AgentDiet)",
+      "type": "emerging",
+      "status": "peer-reviewed",
+      "category": "agentic-economics",
+      "subcategory": "chain-optimization",
+      "path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
+      "sources_count": 1,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-bagen-001",
+      "title_ar": "الوكلاء الواعية بالميزانية — BAGEN",
+      "title_en": "BAGEN: Budget-Aware LLM Agents — Teaching Agents to Stop Wasting Money",
+      "type": "emerging",
+      "status": "preprint",
+      "category": "agentic-economics",
+      "subcategory": "chain-optimization",
+      "path": "library/05-agentic-economics/chain-optimization/budget-aware-agents.md",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost",
+        "api-cost"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 1,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-ctxcompress-001",
+      "title_ar": "ضغط السياق وتقليل التوكنات",
+      "title_en": "Context Compression & Token Reduction for Agents",
+      "type": "emerging",
+      "status": "active-research",
+      "category": "agentic-economics",
+      "subcategory": "chain-optimization",
+      "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost",
+        "api-cost",
+        "latency"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 5,
+      "updated": "2026-06-26"
+    },
+    {
+      "id": "entry-skillreducer-001",
+      "title_ar": "ضغط مهارات الوكلاء (SkillReducer)",
+      "title_en": "SkillReducer: Optimizing LLM Agent Skills for Token Efficiency",
+      "type": "emerging",
+      "status": "preprint",
+      "category": "agentic-economics",
+      "subcategory": "chain-optimization",
+      "path": "library/05-agentic-economics/chain-optimization/skillreducer.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 1,
+      "updated": "2026-06-26"
     },
     {
       "id": "entry-agentmultiplier-001",
       "title_ar": "مضاعف التوكن الوكيلي",
-      "title_en": "Agent Token Multiplier",
+      "title_en": "Agent Token Multiplier: Why Agents Cost 5-30× More",
       "type": "practical",
       "status": "deployed",
       "category": "agentic-economics",
       "subcategory": "token-multiplier",
-      "proof_score": 3,
+      "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
       "sources_count": 5,
-      "file_path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-cpugpu-001",
-      "title_en": "CPU-GPU Collaborative Inference",
-      "type": "emerging",
-      "category": "infrastructure",
-      "proof_score": 2,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-hetero-001",
-      "title_en": "Heterogeneous Hardware Inference",
-      "type": "emerging",
-      "category": "infrastructure",
-      "proof_score": 2,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-decentral-001",
-      "title_en": "Decentralized AI Inference",
-      "type": "emerging",
-      "category": "infrastructure",
-      "proof_score": 2,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-babbling-001",
-      "title_en": "Babbling Suppression",
-      "type": "emerging",
-      "category": "infrastructure",
-      "proof_score": 2,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-synthdata-001",
-      "title_en": "Synthetic Data for Training",
-      "type": "practical",
-      "category": "training-optimization",
-      "proof_score": 3,
-      "created": "2026-06-26"
+      "updated": "2026-06-26"
     },
     {
       "id": "entry-ragcost-001",
-      "title_en": "RAG Cost Optimization",
+      "title_ar": "تحسين تكلفة الاسترجاع المعزز (RAG)",
+      "title_en": "RAG Cost Optimization: Reducing Token Waste in Retrieval",
       "type": "practical",
+      "status": "deployed",
       "category": "agentic-economics",
-      "proof_score": 3,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-apipricing-001",
-      "title_en": "LLM API Pricing June 2026",
-      "type": "practical",
-      "category": "market-economics",
-      "proof_score": 3,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-skillreducer-001",
-      "title_en": "SkillReducer",
-      "type": "emerging",
-      "category": "agentic-economics",
-      "proof_score": 2,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-mixedprec-001",
-      "title_en": "Mixed Precision Training",
-      "type": "practical",
-      "category": "training-optimization",
-      "proof_score": 4,
-      "created": "2026-06-26"
+      "subcategory": "tool-and-rag-costs",
+      "path": "library/05-agentic-economics/tool-and-rag-costs/rag-cost-optimization.md",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost",
+        "api-cost",
+        "latency"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 3,
+      "updated": "2026-06-26"
     },
     {
       "id": "entry-budgetlimits-001",
-      "title_en": "Agent Budget Enforcement",
+      "title_ar": "حدود الإنفاق التلقائية لوكلاء الذكاء الاصطناعي",
+      "title_en": "Agent Budget Enforcement: Preventing Runaway AI Costs",
       "type": "practical",
+      "status": "deployed",
       "category": "finops-governance",
-      "proof_score": 3,
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-cpst-001",
-      "title_en": "Cost per Successful Task",
-      "type": "practical",
-      "category": "finops-governance",
-      "proof_score": 3,
-      "created": "2026-06-26"
+      "subcategory": "budgeting",
+      "path": "library/06-finops-governance/budgeting/agent-budget-enforcement.md",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 4,
+      "updated": "2026-06-26"
     },
     {
       "id": "entry-finops-001",
-      "title_en": "AI FinOps Observability",
+      "title_ar": "مراقبة تكلفة الذكاء الاصطناعي وإسنادها (AI FinOps)",
+      "title_en": "AI Cost Observability & Attribution (AI FinOps)",
       "type": "practical",
+      "status": "deployed",
       "category": "finops-governance",
-      "proof_score": 3,
-      "created": "2026-06-26"
+      "subcategory": "observability",
+      "path": "library/06-finops-governance/observability/ai-finops-observability.md",
+      "cost_dimensions": "",
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 4,
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-flashattn-001",
-      "title_en": "FlashAttention",
+      "id": "entry-cpst-001",
+      "title_ar": "تكلفة المهمة الناجحة — المقياس الصحيح لعام 2026",
+      "title_en": "Cost per Successful Task (CPST): The Right Metric for 2026",
       "type": "practical",
-      "category": "runtime-optimization",
-      "proof_score": 4,
-      "created": "2026-06-26"
+      "status": "emerging-practice",
+      "category": "finops-governance",
+      "subcategory": "roi-assessment",
+      "path": "library/06-finops-governance/roi-assessment/cost-per-successful-task.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "api-cost",
+        "engineering-cost"
+      ],
+      "proof_score": "⭐⭐⭐ منشور | Deployed",
+      "sources_count": 4,
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-moespec-001",
-      "title_en": "MoE-Spec: Speculative Decoding for MoE",
-      "type": "emerging",
-      "category": "runtime-optimization",
-      "proof_score": 2,
-      "created": "2026-06-26"
+      "id": "entry-priceofprogress-001",
+      "title_ar": "ثمن التقدم — لماذا الأسعار تنخفض والفواتير ترتفع",
+      "title_en": "The Price of Progress: Why Token Prices Fall But Bills Rise",
+      "type": "theoretical",
+      "status": "validated",
+      "category": "market-economics",
+      "subcategory": "inference-paradox",
+      "path": "library/07-market-economics/inference-paradox/price-of-progress.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "api-cost",
+        "token-cost"
+      ],
+      "proof_score": "⭐⭐⭐ مُتحقق | Validated",
+      "sources_count": 3,
+      "updated": "2026-06-26"
     },
     {
-      "id": "entry-moe-001",
-      "title_en": "Mixture-of-Experts Economics: The Dominant Architecture of 2026",
+      "id": "entry-apipricing-001",
+      "title_ar": "مقارنة أسعار واجهات برمجة النماذج اللغوية (يونيو 2026)",
+      "title_en": "LLM API Pricing Comparison (June 2026)",
       "type": "practical",
-      "file_path": "library/01-model-optimization/efficient-architecture/mixture-of-experts-economics.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-subquad-001",
-      "title_en": "Sub-Quadratic Models: Mamba-3 and Transformer Alternatives for Inference Efficiency",
-      "type": "emerging",
-      "file_path": "library/01-model-optimization/efficient-architecture/subquadratic-models.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-llama4-001",
-      "title_en": "Llama 4 MoE Economics: 400B Knowledge at 17B Inference Cost",
-      "type": "practical",
-      "file_path": "library/01-model-optimization/efficient-architecture/llama4-moe-economics.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-eagle3-001",
-      "title_en": "EAGLE-3: State-of-the-Art Speculative Decoding",
-      "type": "practical",
-      "file_path": "library/02-runtime-optimization/decoding/eagle3-speculative-decoding.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-kvcachecompress-001",
-      "title_en": "KV Cache Compression & Eviction",
-      "type": "emerging",
-      "file_path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-ttc-001",
-      "title_en": "Inference-Time Compute Economics: When Thinking More Costs Less",
-      "type": "practical",
-      "file_path": "library/02-runtime-optimization/inference-time-compute/inference-time-compute.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-multilora-001",
-      "title_en": "Multi-LoRA Serving: Hundreds of Fine-Tuned Models on One GPU",
-      "type": "practical",
-      "file_path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-deepspeed-001",
-      "title_en": "Distributed Training: DeepSpeed ZeRO & PyTorch FSDP",
-      "type": "practical",
-      "file_path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-gpuecon-001",
-      "title_en": "GPU Inference Economics 2026: H100 vs B200 vs H200 Cost-per-Token",
-      "type": "practical",
-      "file_path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-ipw-001",
-      "title_en": "Local vs Cloud Inference: Intelligence per Watt (IPW)",
-      "type": "practical",
-      "file_path": "library/04-infrastructure/deployment-strategies/local-vs-cloud-hybrid.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-breakeven-001",
-      "title_en": "Self-Host vs API: The Break-Even Analysis (2026)",
-      "type": "practical",
-      "file_path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-dvfs-001",
-      "title_en": "GPU Frequency Scaling (DVFS): 42% Energy Savings at 1-3% Latency Cost",
-      "type": "emerging",
-      "file_path": "library/04-infrastructure/energy-efficiency/gpu-frequency-scaling.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-agentdiet-001",
-      "title_en": "Agent Trajectory Reduction (AgentDiet)",
-      "type": "emerging",
-      "file_path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
-      "created": "2026-06-26"
-    },
-    {
-      "id": "entry-ctxcompress-001",
-      "title_en": "Context Compression & Token Reduction for Agents",
-      "type": "emerging",
-      "file_path": "library/05-agentic-economics/chain-optimization/context-compression.md",
-      "created": "2026-06-26"
+      "status": "current",
+      "category": "market-economics",
+      "subcategory": "provider-comparison",
+      "path": "library/07-market-economics/provider-comparison/llm-api-pricing-2026.md",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost"
+      ],
+      "proof_score": "⭐⭐⭐ بيانات سوقية فعلية | Market Data",
+      "sources_count": 3,
+      "updated": "2026-06-26"
     }
   ]
 }

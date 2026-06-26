@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "2.1.0",
   "last_updated": "2026-06-26",
   "session_count": 4,
   "project_status": "active",
@@ -22,7 +22,11 @@
     "early_exit_subcategory_created",
     "compute_allocation_subcategory_created",
     "glossary_expanded_to_52_terms",
-    "evidence_ledger_updated_15_entries"
+    "evidence_ledger_updated_15_entries",
+    "existing_repository_inspected_with_user_permission",
+    "metadata_sync_script_added",
+    "json_metadata_resynced_from_markdown",
+    "continuation_files_refreshed"
   ],
   "pending_tasks": [
     "BL-001",
@@ -30,11 +34,11 @@
     "BL-003",
     "BL-004"
   ],
-  "current_focus": "توسيع المكتبة بإدخالات نظرية وتحديث المقارنات",
+  "current_focus": "توسيع سجل الادعاءات والأدلة وتدقيق المصادر الرقمية الحساسة",
   "unresolved_issues": [
-    "بعض بوابات Evidence Gates داخل ملفات الإدخالات تحتاج مصادر مباشرة لكل سطر.",
-    "لا توجد إدخالات Theoretical/Rejected/Pending حتى الآن.",
-    "ينبغي إضافة ملفات README لفئات فرعية مستقبلية في الفئات المزروعة عند إنشائها."
+    "data/claims.json وdata/evidence.json لا يغطيان كل الأرقام الموجودة في الإدخالات.",
+    "بعض مصادر 2026 من مدونات أو تقارير غير محكّمة وتحتاج وسم ثقة مناسب.",
+    "لا توجد إدخالات Rejected/Pending رغم دعم التصنيف لها."
   ],
   "quality_notes": [
     "تم إصلاح ملفات JSON الفارغة وربط الادعاءات بالمصادر.",
@@ -43,8 +47,10 @@
     "تمت إضافة 6 إدخالات جديدة (1 عملية منتجة، 3 عملية مُتحققة، 2 ناشئة).",
     "تمت إضافة 15 مصدر موثق جديد."
   ],
-  "last_session": "session-005",
-  "total_entries": 19,
-  "total_sources": 48,
-  "total_claims": 55
+  "last_session": "metadata-sync-2026-06-26",
+  "total_entries": 59,
+  "total_sources": 213,
+  "total_claims": 25,
+  "total_categories": 7,
+  "total_subcategories": 25
 }

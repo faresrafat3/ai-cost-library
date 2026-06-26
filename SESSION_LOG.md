@@ -66,3 +66,30 @@
 3. **ShortGPT** (Emerging, ⭐⭐) — model-compression/pruning/short-gpt.md
 4. **Knowledge Distillation** (Practical, ⭐⭐⭐⭐) — model-compression/distillation/distillation.md
 5. **FlashAttention** (Practical, ⭐⭐⭐⭐) — efficient-inference/kv-cache/flash-attention.md
+
+---
+
+## جلسة فحص ومزامنة — 2026-06-26
+
+### ما حدث
+- المستودع `faresrafat3/ai-cost-library` كان موجوداً مسبقاً؛ تم طلب موافقة المستخدم ثم استنساخه.
+- تم فحص الشجرة الحالية: 7 فئات كبرى، 25 فئات فرعية، 59 إدخالاً معرفياً.
+- أُضيف `scripts/sync_metadata.py` لمزامنة البيانات الأساسية من Markdown.
+- حُدّثت ملفات JSON الأساسية ولوحة القيادة وملفات الاستمرار.
+
+### الملفات التي تغيرت
+- `scripts/sync_metadata.py`
+- `README.md`
+- `AGENT_STATE.md`
+- `NEXT_ACTIONS.md`
+- `data/entries.json`
+- `data/sources.json`
+- `data/tree.json`
+- `data/categories.json`
+- `data/stats.json`
+- `data/project_state.json`
+- `data/backlog.json`
+- `data/session_history.json`
+
+### تحذير
+لم يتم استخدام أي سر داخل الملفات. لا تزال بعض المصادر الحديثة بحاجة مراجعة علمية أعمق قبل اعتبار أرقامها إنتاجية عالية الثقة.

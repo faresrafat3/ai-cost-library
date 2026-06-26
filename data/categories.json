@@ -1,205 +1,258 @@
 [
   {
-    "id": "cat-model-compression",
-    "name_ar": "ضغط النماذج",
-    "name_en": "Model Compression",
-    "parent": null,
+    "id": "01-model-optimization",
     "level": 1,
-    "subcategories": [
-      "quantization",
-      "pruning",
-      "distillation"
-    ],
-    "entry_count": 4,
+    "path": "library/01-model-optimization",
+    "entry_count": 19,
+    "subcategory_count": 4,
+    "status": "active"
+  },
+  {
+    "id": "compression",
+    "level": 2,
+    "parent": "01-model-optimization",
+    "path": "library/01-model-optimization/compression",
+    "entry_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "efficient-architecture",
+    "level": 2,
+    "parent": "01-model-optimization",
+    "path": "library/01-model-optimization/efficient-architecture",
+    "entry_count": 8,
     "status": "active"
   },
   {
     "id": "quantization",
-    "name_ar": "التكمية",
-    "name_en": "Quantization",
-    "parent": "cat-model-compression",
     "level": 2,
-    "subcategories": [],
-    "entry_count": 4,
+    "parent": "01-model-optimization",
+    "path": "library/01-model-optimization/quantization",
+    "entry_count": 6,
     "status": "active"
   },
   {
-    "id": "pruning",
-    "name_ar": "التقليم",
-    "name_en": "Pruning",
-    "parent": "cat-model-compression",
+    "id": "right-sizing",
     "level": 2,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
+    "parent": "01-model-optimization",
+    "path": "library/01-model-optimization/right-sizing",
+    "entry_count": 2,
+    "status": "active"
   },
   {
-    "id": "distillation",
-    "name_ar": "التقطير",
-    "name_en": "Distillation",
-    "parent": "cat-model-compression",
-    "level": 2,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-efficient-inference",
-    "name_ar": "الاستدلال الفعّال",
-    "name_en": "Efficient Inference",
-    "parent": null,
+    "id": "02-runtime-optimization",
     "level": 1,
-    "subcategories": [
-      "decoding",
-      "batching",
-      "kv-cache-optimization",
-      "serving"
-    ],
-    "entry_count": 4,
-    "status": "active"
-  },
-  {
-    "id": "decoding",
-    "name_ar": "استراتيجيات فك التشفير",
-    "name_en": "Decoding Strategies",
-    "parent": "cat-efficient-inference",
-    "level": 2,
-    "subcategories": [],
-    "entry_count": 1,
+    "path": "library/02-runtime-optimization",
+    "entry_count": 13,
+    "subcategory_count": 6,
     "status": "active"
   },
   {
     "id": "batching",
-    "name_ar": "التجميع",
-    "name_en": "Batching",
-    "parent": "cat-efficient-inference",
     "level": 2,
-    "subcategories": [],
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/batching",
     "entry_count": 1,
     "status": "active"
   },
   {
-    "id": "kv-cache-optimization",
-    "name_ar": "تحسين الذاكرة المؤقتة للمفاتيح والقيم",
-    "name_en": "KV Cache Optimization",
-    "parent": "cat-efficient-inference",
+    "id": "caching",
     "level": 2,
-    "subcategories": [],
-    "entry_count": 2,
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/caching",
+    "entry_count": 3,
     "status": "active"
   },
   {
-    "id": "serving",
-    "name_ar": "محركات تقديم النماذج",
-    "name_en": "Serving Engines",
-    "parent": "cat-efficient-inference",
+    "id": "decoding",
     "level": 2,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-efficient-training",
-    "name_ar": "التدريب الفعّال",
-    "name_en": "Efficient Training",
-    "parent": null,
-    "level": 1,
-    "subcategories": [
-      "parameter-efficient-finetuning"
-    ],
-    "entry_count": 2,
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/decoding",
+    "entry_count": 3,
     "status": "active"
   },
   {
-    "id": "parameter-efficient-finetuning",
-    "name_ar": "الضبط الدقيق الموفّر للمعاملات",
-    "name_en": "Parameter-Efficient Fine-Tuning",
-    "parent": "cat-efficient-training",
+    "id": "inference-time-compute",
     "level": 2,
-    "subcategories": [],
-    "entry_count": 2,
-    "status": "active"
-  },
-  {
-    "id": "cat-hardware-and-systems",
-    "name_ar": "العتاد والأنظمة",
-    "name_en": "Hardware and Systems",
-    "parent": null,
-    "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-data-efficiency",
-    "name_ar": "كفاءة البيانات",
-    "name_en": "Data Efficiency",
-    "parent": null,
-    "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-model-selection-routing",
-    "name_ar": "اختيار وتوجيه النماذج",
-    "name_en": "Model Selection and Routing",
-    "parent": null,
-    "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-operations-monitoring",
-    "name_ar": "العمليات والمراقبة",
-    "name_en": "Operations and Monitoring",
-    "parent": null,
-    "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
-  },
-  {
-    "id": "cat-token-prompt-cost",
-    "name_ar": "تكلفة التوكن والموجهات",
-    "name_en": "Token and Prompt Cost Optimization",
-    "parent": null,
-    "level": 1,
-    "subcategories": [
-      "prompt-caching"
-    ],
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/inference-time-compute",
     "entry_count": 1,
     "status": "active"
   },
   {
-    "id": "prompt-caching",
-    "name_ar": "تخزين الموجهات المؤقت",
-    "name_en": "Prompt Caching",
-    "parent": "cat-token-prompt-cost",
+    "id": "kv-cache",
     "level": 2,
-    "subcategories": [],
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/kv-cache",
+    "entry_count": 5,
+    "status": "active"
+  },
+  {
+    "id": "serving-engines",
+    "level": 2,
+    "parent": "02-runtime-optimization",
+    "path": "library/02-runtime-optimization/serving-engines",
+    "entry_count": 0,
+    "status": "seeded"
+  },
+  {
+    "id": "03-training-optimization",
+    "level": 1,
+    "path": "library/03-training-optimization",
+    "entry_count": 6,
+    "subcategory_count": 4,
+    "status": "active"
+  },
+  {
+    "id": "distributed-training",
+    "level": 2,
+    "parent": "03-training-optimization",
+    "path": "library/03-training-optimization/distributed-training",
     "entry_count": 1,
     "status": "active"
   },
   {
-    "id": "cat-retrieval-context-efficiency",
-    "name_ar": "كفاءة الاسترجاع والسياق",
-    "name_en": "Retrieval and Context Efficiency",
-    "parent": null,
-    "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
+    "id": "mixed-precision",
+    "level": 2,
+    "parent": "03-training-optimization",
+    "path": "library/03-training-optimization/mixed-precision",
+    "entry_count": 1,
+    "status": "active"
   },
   {
-    "id": "cat-energy-sustainability",
-    "name_ar": "الطاقة والاستدامة",
-    "name_en": "Energy and Sustainability",
-    "parent": null,
+    "id": "parameter-efficient",
+    "level": 2,
+    "parent": "03-training-optimization",
+    "path": "library/03-training-optimization/parameter-efficient",
+    "entry_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "synthetic-data",
+    "level": 2,
+    "parent": "03-training-optimization",
+    "path": "library/03-training-optimization/synthetic-data",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "04-infrastructure",
     "level": 1,
-    "subcategories": [],
-    "entry_count": 0,
-    "status": "seeded"
+    "path": "library/04-infrastructure",
+    "entry_count": 10,
+    "subcategory_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "accelerators",
+    "level": 2,
+    "parent": "04-infrastructure",
+    "path": "library/04-infrastructure/accelerators",
+    "entry_count": 5,
+    "status": "active"
+  },
+  {
+    "id": "deployment-strategies",
+    "level": 2,
+    "parent": "04-infrastructure",
+    "path": "library/04-infrastructure/deployment-strategies",
+    "entry_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "energy-efficiency",
+    "level": 2,
+    "parent": "04-infrastructure",
+    "path": "library/04-infrastructure/energy-efficiency",
+    "entry_count": 2,
+    "status": "active"
+  },
+  {
+    "id": "05-agentic-economics",
+    "level": 1,
+    "path": "library/05-agentic-economics",
+    "entry_count": 6,
+    "subcategory_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "chain-optimization",
+    "level": 2,
+    "parent": "05-agentic-economics",
+    "path": "library/05-agentic-economics/chain-optimization",
+    "entry_count": 4,
+    "status": "active"
+  },
+  {
+    "id": "token-multiplier",
+    "level": 2,
+    "parent": "05-agentic-economics",
+    "path": "library/05-agentic-economics/token-multiplier",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "tool-and-rag-costs",
+    "level": 2,
+    "parent": "05-agentic-economics",
+    "path": "library/05-agentic-economics/tool-and-rag-costs",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "06-finops-governance",
+    "level": 1,
+    "path": "library/06-finops-governance",
+    "entry_count": 3,
+    "subcategory_count": 3,
+    "status": "active"
+  },
+  {
+    "id": "budgeting",
+    "level": 2,
+    "parent": "06-finops-governance",
+    "path": "library/06-finops-governance/budgeting",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "observability",
+    "level": 2,
+    "parent": "06-finops-governance",
+    "path": "library/06-finops-governance/observability",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "roi-assessment",
+    "level": 2,
+    "parent": "06-finops-governance",
+    "path": "library/06-finops-governance/roi-assessment",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "07-market-economics",
+    "level": 1,
+    "path": "library/07-market-economics",
+    "entry_count": 2,
+    "subcategory_count": 2,
+    "status": "active"
+  },
+  {
+    "id": "inference-paradox",
+    "level": 2,
+    "parent": "07-market-economics",
+    "path": "library/07-market-economics/inference-paradox",
+    "entry_count": 1,
+    "status": "active"
+  },
+  {
+    "id": "provider-comparison",
+    "level": 2,
+    "parent": "07-market-economics",
+    "path": "library/07-market-economics/provider-comparison",
+    "entry_count": 1,
+    "status": "active"
   }
 ]

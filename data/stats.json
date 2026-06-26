@@ -1,25 +1,33 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "last_updated": "2026-06-26",
-  "total_entries": 50,
+  "total_entries": 59,
   "total_categories": 7,
-  "total_subcategories": 22,
-  "total_words": 34000,
-  "total_sources": 201,
-  "total_papers_reviewed": 55,
-  "total_glossary_terms": 75,
-  "scoring_dimensions": 12,
-  "user_profiles": 5,
-  "total_scores": 600,
+  "total_subcategories": 25,
+  "total_sources": 213,
+  "total_glossary_terms": 58,
+  "total_claims": 25,
+  "total_evidence_records": 15,
   "classification": {
-    "practical": 30,
+    "practical": 40,
     "emerging": 16,
-    "theoretical": 4
+    "theoretical": 3,
+    "rejected": 0,
+    "pending": 0
   },
-  "depth": {
-    "deep_150plus": 3,
-    "good_100plus": 47,
-    "medium": 0,
-    "shallow": 0
-  }
+  "status_counts": {
+    "production-proven": 20,
+    "deployed": 14,
+    "emerging": 2,
+    "peer-reviewed": 4,
+    "validated": 4,
+    "active-research": 4,
+    "preprint": 3,
+    "experimental": 1,
+    "current-market-data": 2,
+    "tested": 3,
+    "emerging-practice": 1,
+    "current": 1
+  },
+  "quality_note_ar": "الأرقام مستخرجة آلياً من ملفات Markdown في هذه الجلسة؛ راجع المصادر الرقمية الحساسة يدوياً قبل اتخاذ قرارات إنتاجية."
 }

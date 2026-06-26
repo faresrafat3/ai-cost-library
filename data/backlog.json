@@ -1,26 +1,51 @@
-[
-  {
-    "id": "BL-001",
-    "priority": "high",
-    "task_ar": "إضافة إدخالات ناشئة ونظرية موثقة لتوازن التصنيفات.",
-    "task_en": "Add documented emerging and theoretical entries to balance classifications."
-  },
-  {
-    "id": "BL-002",
-    "priority": "high",
-    "task_ar": "تدقيق درجات الإثبات لكل إدخال عملي وربط كل بوابة بمصدر مباشر.",
-    "task_en": "Audit proof scores and map every evidence gate to direct sources."
-  },
-  {
-    "id": "BL-003",
-    "priority": "medium",
-    "task_ar": "إضافة إدخالات التقليم والتقطير وكفاءة البيانات والطاقة.",
-    "task_en": "Add pruning, distillation, data efficiency, and energy entries."
-  },
-  {
-    "id": "BL-004",
-    "priority": "medium",
-    "task_ar": "بناء حاسبات تكلفة بسيطة من ملفات JSON.",
-    "task_en": "Build simple cost calculators from JSON data."
-  }
-]
+{
+  "version": "2.1.0",
+  "last_updated": "2026-06-26",
+  "items": [
+    {
+      "id": "BL-001",
+      "priority": "high",
+      "task_ar": "إضافة إدخالات ناشئة ونظرية موثقة لتوازن التصنيفات.",
+      "task_en": "Add documented emerging and theoretical entries to balance classifications."
+    },
+    {
+      "id": "BL-002",
+      "priority": "high",
+      "task_ar": "تدقيق درجات الإثبات لكل إدخال عملي وربط كل بوابة بمصدر مباشر.",
+      "task_en": "Audit proof scores and map every evidence gate to direct sources."
+    },
+    {
+      "id": "BL-003",
+      "priority": "medium",
+      "task_ar": "إضافة إدخالات التقليم والتقطير وكفاءة البيانات والطاقة.",
+      "task_en": "Add pruning, distillation, data efficiency, and energy entries."
+    },
+    {
+      "id": "BL-004",
+      "priority": "medium",
+      "task_ar": "بناء حاسبات تكلفة بسيطة من ملفات JSON.",
+      "task_en": "Build simple cost calculators from JSON data."
+    },
+    {
+      "id": "BL-CLAIMS-COVERAGE",
+      "priority": "high",
+      "status": "open",
+      "task_ar": "ربط كل رقم تكلفة/ذاكرة/زمن في الإدخالات بادعاء ومصدر مباشر.",
+      "task_en": "Link every cost/memory/latency number to a claim and direct source."
+    },
+    {
+      "id": "BL-REJECTED-PENDING",
+      "priority": "medium",
+      "status": "open",
+      "task_ar": "إضافة إدخالات Rejected وPending لتفعيل التصنيف الكامل.",
+      "task_en": "Add Rejected and Pending entries to exercise the full taxonomy."
+    },
+    {
+      "id": "BL-CI-CHECKS",
+      "priority": "medium",
+      "status": "open",
+      "task_ar": "إضافة تحقق CI لاتساق front matter والبيانات.",
+      "task_en": "Add CI checks for front matter and metadata consistency."
+    }
+  ]
+}

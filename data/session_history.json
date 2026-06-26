@@ -28,5 +28,20 @@
     "date": "2026-06-26",
     "summary_ar": "مراجعة بحثية منهجية: 9 أبحاث. أُضيفت 3 إدخالات جديدة (Architecture Scaling ICLR 2026, Price of Progress, Agent Token Multiplier). أول محتوى في فئتي اقتصاديات الوكلاء واقتصاديات السوق.",
     "summary_en": "Systematic research review: 9 papers. Added 3 new entries. First content in Agentic Economics and Market Economics categories."
+  },
+  {
+    "id": "metadata-sync-2026-06-26",
+    "date": "2026-06-26",
+    "summary_ar": "فحص المستودع الحالي بعد موافقة المستخدم ومزامنة ملفات JSON ولوحة القيادة وملفات الاستمرار.",
+    "entries_total": 59,
+    "sources_total": 213,
+    "claims_total": 25,
+    "changed_files": [
+      "scripts/sync_metadata.py",
+      "README.md",
+      "AGENT_STATE.md",
+      "NEXT_ACTIONS.md",
+      "data/*.json"
+    ]
   }
 ]
