@@ -1,63 +1,110 @@
 ---
-id: "entry-lora-001"
-title_ar: "التكيّف منخفض الرتبة (LoRA)"
-title_en: "Low-Rank Adaptation (LoRA)"
-type: "Practical"
-status: "Deployed"
-category: "Efficient Training"
-subcategory: "Parameter-Efficient Fine-Tuning"
-tree_path: ["Efficient Training", "Parameter-Efficient Fine-Tuning", "LoRA"]
-cost_dimensions: ["training-cost", "memory", "storage", "engineering-cost"]
-proof_score: 4
+id: entry-lora-001
+title_ar: التكيف منخفض الرتبة — LoRA
+title_en: "LoRA: Low-Rank Adaptation — The Foundation of Efficient Fine-Tuning"
+type: practical
+status: production-proven
+category: training-optimization
+subcategory: parameter-efficient
+cost_dimensions: [training-cost, memory, hardware-cost, serving-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
 sources_count: 4
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 10
+  A2: 10
+  A3: 10
+  A4: 6
+  B1: 2
+  B2: 10
+  B3: 9
+  B4: 0
+  C1: 9
+  C2: 9
+  C3: 8
+  C4: 10
 ---
 
-# التكيّف منخفض الرتبة | Low-Rank Adaptation (LoRA)
+# 📘 LoRA — التكيف منخفض الرتبة
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
+>
+> **الأساس الذي بُنيت عليه صناعة الضبط الدقيق الفعّال بالكامل**
 
-## 📌 الملخص العربي | Arabic Summary
+---
 
-التكيّف منخفض الرتبة (LoRA) هو تقنية ضبط دقيق موفّرة للمعاملات (PEFT) تُجمّد أوزان النموذج المُدرَّب مسبقاً وتحقن مصفوفتين منخفضتي الرتبة (A و B) في طبقات الانتباه (Attention) والطبقات الخطية. أثناء التدريب، تُحدّث هاتان المصفوفتان فقط، بينما تبقى الأوزان الأساسية ثابتة. عند الاستدلال، يمكن دمج المصفوفتين مع الأوزان الأصلية دون أي كمون إضافي.
+## المحتوى العربي
 
-على نموذج GPT-3 بحجم 175B معامل، يقلل LoRA المعاملات القابلة للتدريب من 175 ملياراً إلى حوالي 15-20 مليوناً فقط، مع تقليل متطلبات ذاكرة GPU بمقدار 3 أضعاف وتقليل حجم نقاط التفتيش من 350GB إلى 35MB لكل مهمة.
+### ما هو LoRA؟
 
-## 📌 English Summary
+LoRA (Low-Rank Adaptation) — وهو تقنية تُجمّد أوزان النموذج الأصلي وتُضيف مصفوفتين صغيرتين قابلتين للتدريب (A و B) بجانب كل طبقة مُستهدفة. بدلاً من تحديث مليارات المعاملات، تُدرِّب فقط **0.1-1%** منها.
 
-Low-Rank Adaptation (LoRA) is a parameter-efficient fine-tuning (PEFT) technique that freezes pre-trained model weights and injects two trainable low-rank matrices (A and B) into attention and linear layers. During training, only these matrices are updated; during inference, they can be merged with the base weights with zero additional latency.
+```
+الأصلي: y = Wx          (W مُجمَّد — لا يتغير)
+LoRA:   y = Wx + BAx     (B: d×r, A: r×d — r صغير جداً مثل 8 أو 16)
+المعاملات الإضافية: 2 × d × r  (مقابل d × d للطبقة الكاملة)
+```
 
-On GPT-3 (175B parameters), LoRA reduces trainable parameters from 175 billion to approximately 15-20 million, cuts GPU memory requirements by 3×, and reduces checkpoint size from 350GB to 35MB per task.
+### لماذا LoRA ثوري اقتصادياً؟
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
+| المقياس | Full Fine-Tuning | **LoRA (r=16)** |
+|---------|-----------------|----------------|
+| المعاملات المُدرَّبة | 100% (مثلاً 7B) | **0.1-1%** (~10-70M) |
+| ذاكرة GPU لنموذج 7B | ~28 GB (أوزان) + ~56 GB (تدرجات + محسّن) | ~28 GB (أوزان مُجمَّدة) + **~1-2 GB** (LoRA فقط) |
+| تكلفة الضبط (سحابي) | ~$50-200/ساعة | **~$5-15/ساعة** |
+| حجم المحول المحفوظ | ~14 GB (7B كامل) | **~10-50 MB** |
+| خدمة متعددة المستأجرين | نموذج كامل لكل عميل | **نموذج أساسي واحد + محولات صغيرة** |
 
-- **تكلفة التدريب (Training Cost):** تقليل المعاملات القابلة للتدريب بنسبة تصل إلى 10,000×.
-- **تكلفة الذاكرة (Memory Cost):** تقليل متطلبات VRAM بمقدار 3 أضعاف (من 1.2TB إلى 350GB لنموذج GPT-3).
-- **تكلفة التخزين (Storage Cost):** نقاط تفتيش بحجم 35MB بدلاً من 350GB لكل مهمة.
-- **تكلفة الاستدلال (Inference Cost):** صفر كمون إضافي — يمكن دمج الأوزان في النموذج الأساسي.
+### النتائج — 90-99% من أداء Full FT
 
-## 🛡️ بوابات الأدلة | Evidence Gates
+| المعيار | Full FT | LoRA | الفرق |
+|---------|---------|------|-------|
+| GLUE (متوسط) | 85-88% | 86-88% | **< 1%** |
+| MT-Bench | أساس | 96-99% | **1-4%** |
+| ARD-LoRA (أحدث 2025) | أساس | **99.3%** بـ 0.32% معاملات | **0.7%** فقط |
 
-- ✅ **Gate 1 (Built):** مُدمجة في مكتبة `PEFT` من Hugging Face و `trl`، مع دعم رسمي من Microsoft.
-- ✅ **Gate 2 (Tested):** أداء مكافئ أو أفضل من الضبط الدقيق الكامل على معايير RoBERTa, DeBERTa, GPT-2, GPT-3.
-- ✅ **Gate 3 (Deployed):** الخيار القياسي لضبط النماذج المفتوحة المصدر (Llama, Mistral, Qwen) على منصات سحابية مثل OpenAI, Together.AI, Fireworks.
-- ✅ **Gate 4 (Saved):** 10,000× تقليل في المعاملات القابلة للتدريب، 3× تقليل VRAM، 35MB مقابل 350GB نقاط تفتيش.
+### تطورات LoRA الحديثة (2025-2026)
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
+| الابتكار | ماذا يفعل | النتيجة |
+|---------|-----------|---------|
+| **DoRA (2024)** | يفصل الحجم عن الاتجاه في التحديث | جودة أعلى بنفس المعاملات |
+| **ARD-LoRA (2025)** | رتبة ديناميكية لكل رأس انتباه | 99.3% FT بـ 0.32% معاملات + 41% أقل ذاكرة |
+| **LoRA-FA (2026)** | تمثيل منخفض الرتبة فعّال | يُطابق Full FT على GLUE |
+| **LoRASuite (2025)** | نقل المحولات بين إصدارات النموذج | 5.5 GB أقل + 78% أسرع |
+| **Multi-LoRA Serving** | مئات المحولات على GPU واحد | → انظر entry-multilora-001 |
 
-- LoRA الأصلي يتطلب تحميل النموذج الأساسي بدقة 16 بت — مما يظل كثيف الذاكرة للنماذج الكبيرة جداً (70B+).
-- يُظهر LoRA overhead في التدريب (~40% أبطأ) بسبب أنماط الوصول غير الفعّالة للذاكرة.
-- الأداء قد يكون أدنى من الضبط الكامل في مهام التوليد الطويلة المعقدة.
-- اختيار الرتبة (rank) والطبقات المستهدفة يتطلب خبرة تجريبية.
+### Amazon الاكتشاف العملي (2026)
 
-## 📚 المصادر | Sources
+دراسة من Amazon Science:
+- **o_proj فقط** هو الأفضل كإعداد افتراضي لـ LoRA
+- ضمن 2% من أفضل تكوين مع **22.6% زمن استجابة أقل**
+- إضافة fc2 تُحسّن المهام الصعبة بـ +15% لكن مع زمن أعلى
 
-- [1] Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models", ICLR, 2022. DOI: [arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
-- [2] Zhang et al., "LoRAFusion: Efficient LoRA Fine-Tuning for LLMs", arXiv, 2025. DOI: [arXiv:2510.00206](https://arxiv.org/abs/2510.00206)
-- [3] IBM, "What is LoRA (Low-Rank Adaptation)?", 2026. [URL](https://www.ibm.com/think/topics/lora)
-- [4] Raschka, "Practical Tips for Finetuning LLMs Using LoRA", 2025. [URL](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms)
+### متى تستخدم LoRA
 
-## 🔗 إدخالات ذات صلة | Related Entries
+- ✅ أي ضبط دقيق لنموذج موجود (الاختيار الافتراضي في 2026)
+- ✅ خدمة متعددة المستأجرين (→ Multi-LoRA)
+- ✅ تجريب سريع (محول صغير = تبديل سريع)
+- ✅ ميزانية محدودة (10× أرخص من Full FT)
 
-- [QLoRA](./qlora.md)
-- [SLoRA](../../../efficient-inference/serving/slora.md)
+### متى لا تستخدم
+
+- ❌ تغيير جوهري في سلوك النموذج (مثل تعليم لغة جديدة بالكامل)
+- ❌ الحاجة لأقصى أداء مُمكن بدون أي تنازل
+- ❌ نماذج صغيرة جداً (< 1B) — LoRA overhead نسبياً أكبر
+
+---
+
+## English Content
+
+LoRA freezes base weights and adds trainable low-rank matrices (A, B) — training 0.1-1% of parameters. Achieves 90-99% of full fine-tuning quality at 10× lower cost. Foundation for QLoRA, Multi-LoRA serving, DoRA, ARD-LoRA. Amazon 2026: o_proj-only is the optimal default (2% accuracy gap, 22.6% lower latency).
+
+---
+
+## المصادر | Sources
+
+1. **[Tier 1]** Hu, E., et al., "LoRA: Low-Rank Adaptation of Large Language Models", **ICLR 2022**. Microsoft. The foundational paper.
+2. **[Tier 2]** Shinwari et al., "ARD-LoRA: Per-Head Dynamic Rank", June 2025. 99.3% of FT with 0.32% params.
+3. **[Tier 2]** Amazon Science, "Optimizing LoRA Target Module Selection", 2026. o_proj best default.
+4. **[Tier 2]** Emergent Mind, "LoRA Adaptation: Efficient Low-Rank Fine-Tuning", December 2025. Comprehensive survey of 20+ variants.

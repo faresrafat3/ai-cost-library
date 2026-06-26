@@ -1,64 +1,126 @@
 ---
-id: "entry-pagedattention-001"
-title_ar: "الانتباه المرقّم (PagedAttention)"
-title_en: "PagedAttention — Virtual Memory for LLM KV Caches"
-type: "Practical"
-status: "Deployed"
-category: "Efficient Inference"
-subcategory: "KV Cache Optimization"
-tree_path: ["Efficient Inference", "KV Cache Optimization", "PagedAttention"]
-cost_dimensions: ["memory", "throughput", "inference-cost", "hardware-cost"]
-proof_score: 4
+id: entry-pagedattention-001
+title_ar: الانتباه المُقسَّم للصفحات — PagedAttention
+title_en: "PagedAttention: Virtual Memory for KV Cache"
+type: practical
+status: production-proven
+category: runtime-optimization
+subcategory: kv-cache
+cost_dimensions: [memory, throughput, inference-cost, serving-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
 sources_count: 4
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 10
+  A2: 9
+  A3: 10
+  A4: 7
+  B1: 7
+  B2: 0
+  B3: 9
+  B4: 8
+  C1: 8
+  C2: 10
+  C3: 10
+  C4: 10
 ---
 
-# الانتباه المرقّم | PagedAttention
+# 📘 PagedAttention — الذاكرة الافتراضية لـ KV Cache
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
+>
+> **الاختراع الذي أسس vLLM وغيّر صناعة الاستدلال**
 
-## 📌 الملخص العربي | Arabic Summary
+---
 
-الانتباه المرقّم (PagedAttention) هو خوارزمية إدارة ذاكرة مبتكرة تُعامل الذاكرة المؤقتة للمفاتيح والقيم (KV Cache) في النماذج اللغوية الكبيرة بنفس الطريقة التي تتعامل بها أنظمة التشغيل مع الذاكرة الافتراضية. بدلاً من تخصيص كتل متجاورة من الذاكرة مسبقاً لكل طلب (مما يسبّب هدراً بنسبة 60-80%)، يُقسّم PagedAttention الذاكرة إلى صفحات ثابتة الحجم ويخصّصها عند الحاجة فقط.
+## المحتوى العربي
 
-النتيجة: استخدام ذاكرة يقترب من المثالي (<4% هدر)، وإنتاجية أعلى بـ 2-4× مقارنة بالأنظمة التقليدية، وقدرة على خدمة طلبات متزامنة أكثر بكثير.
+### المشكلة التي يحلها
 
-## 📌 English Summary
+ذاكرة KV المؤقتة تنمو خطياً مع طول السياق. التخصيص التقليدي (المتجاور) يُهدر **60-80%** من الذاكرة:
 
-PagedAttention is an innovative memory management algorithm that treats LLM KV caches the same way operating systems handle virtual memory. Instead of pre-allocating contiguous memory blocks per request (causing 60-80% waste), it divides memory into fixed-size pages allocated on-demand.
+```
+التخصيص التقليدي:
+  الطلب 1: [████████░░░░░░░░░░░░] ← مُخصص لأقصى طول، لكن يستخدم نصفه فقط
+  الطلب 2: [████░░░░░░░░░░░░░░░░] ← هدر 80%!
+  الطلب 3: [لا توجد مساحة!        ] ← مرفوض رغم وجود ذاكرة خاملة
+  → استغلال الذاكرة: ~20-40%
 
-The result: near-optimal memory utilization (<4% waste), 2-4× higher throughput vs traditional systems, and the ability to serve significantly more concurrent requests.
+PagedAttention:
+  الطلب 1: [صفحة1][صفحة2][صفحة3][صفحة4]
+  الطلب 2: [صفحة5][صفحة6]
+  الطلب 3: [صفحة7][صفحة8][صفحة9]
+  → استغلال الذاكرة: ~96%+ (تجزئة < 4%)
+```
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
+### كيف يعمل؟
 
-- **تكلفة الذاكرة (Memory Cost):** تقليل الهدر من 60-80% إلى <4%. نموذج 70B على A100 80GB يخدم 40 طلباً متزامناً بدلاً من 8.
-- **الإنتاجية (Throughput):** تحسين 2-4× مقارنة بالأنظمة التقليدية (FasterTransformer, Hugging Face Transformers).
-- **تكلفة العتاد (Hardware Cost):** يمكن خفض عدد GPUs المطلوبة بنسبة 50-75% لنفس الحمل.
-- **تكلفة الاستدلال (Inference Cost):** 36.9× إنتاجية مقارنة بالتجميع الثابت (عند دمج PagedAttention مع التجميع المستمر).
+مستوحى من **الذاكرة الافتراضية** في أنظمة التشغيل:
+1. **تقسيم KV cache إلى صفحات** (blocks) بحجم ثابت (مثلاً 16 توكن)
+2. **تخصيص عند الطلب** — لا تُخصَّص صفحات حتى تُستخدم فعلاً
+3. **عدم التجاور** — الصفحات يمكن أن تكون متفرقة في الذاكرة
+4. **مشاركة الصفحات** — بادئات مشتركة تُشارك نفس الصفحات (copy-on-write)
 
-## 🛡️ بوابات الأدلة | Evidence Gates
+### الأرقام (2025-2026)
 
-- ✅ **Gate 1 (Built):** الخوارزمية الأساسية في `vLLM` (مفتوح المصدر، >50K نجمة على GitHub).
-- ✅ **Gate 2 (Tested):** مُختبر على نماذج OPT-1.3B, OPT-13B, LLaMA-7B, LLaMA-13B بمقاييس شاملة.
-- ✅ **Gate 3 (Deployed):** مُستخدم في الإنتاج من قبل Anyscale, Together.AI, Fireworks AI, وxAI (Grok).
-- ✅ **Gate 4 (Saved):** 2-4× إنتاجية أعلى مع <4% هدر ذاكرة. 5× تحسين في استخدام GPU.
+| الادعاء | القيمة | المصدر |
+|---------|--------|--------|
+| تقليل هدر ذاكرة KV | من 60-80% إلى **< 4%** | vLLM SOSP 2023 + Introl 2026 |
+| تحسن الإنتاجية | **2-4×** | Introl 2026, أكاديمي |
+| تحسن مقابل TGI (تزامن عالٍ) | حتى **24×** | arXiv:2511.17593 |
+| تقليل ذاكرة GPU مقابل TGI | **19-27%** | arXiv:2511.17593 |
+| استغلال GPU | vLLM: **85-92%** مقابل TGI: 68-74% | arXiv:2511.17593 |
+| حجم KV cache لنموذج 70B (8K سياق) | ~20 GB لكل طلب | Introl 2026 |
+| دفعة 32 طلب × 70B | ~640 GB KV cache | Introl 2026 |
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
+### لماذا PagedAttention هو الأهم عملياً؟
 
-- يتطلب إدارة جدول صفحات (Page Table) مما يزيد التعقيد البرمجي.
-- أقل فعالية في الأحمال منخفضة التزامن حيث يكون الهدر الأصلي صغيراً.
-- لا يحل مشكلة حجم KV Cache المطلق في السياقات الطويلة جداً (128K+).
-- يعتمد على توفر GPU ذاكرة كافية للنموذج الأساسي.
+> **"PagedAttention وحده يُعادل مضاعفة أو أربعة أضعاف استثمار GPU — بدون شراء عتاد إضافي."**
+> — Introl, مارس 2026
 
-## 📚 المصادر | Sources
+KV cache غالباً **يتجاوز حجم أوزان النموذج نفسها** في الذاكرة عند السياقات الطويلة والدفعات الكبيرة. PagedAttention يحل هذا.
 
-- [1] Kwon et al., "vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention", OSDI, 2023. DOI: [arXiv:2309.06180](https://arxiv.org/abs/2309.06180)
-- [2] CalibreOS, "Advanced KV Cache: RadixAttention, LMCache, and Context Parallelism", 2024. [URL](https://www.calibreos.com/learn/genai-kv-cache-management)
-- [3] Spheron, "LLM Serving Optimization: Continuous Batching, PagedAttention", 2026. [URL](https://www.spheron.network/blog/llm-serving-optimization-continuous-batching-paged-attention/)
-- [4] EmergentMind, "vLLM System: Efficient LLM Serving", 2026. [URL](https://www.emergentmind.com/topics/vllm-system)
+### التوافر — أساس كل محرك حديث
 
-## 🔗 إدخالات ذات صلة | Related Entries
+| المحرك | الحالة |
+|--------|--------|
+| vLLM | ✅ الاختراع الأصلي — مُفعَّل افتراضياً |
+| SGLang | ✅ مُفعَّل + RadixAttention (امتداد) |
+| TensorRT-LLM | ✅ تطبيق مُحسَّن |
+| TGI | ✅ مدعوم |
 
-- [التجميع المستمر](../batching/continuous-batching.md)
-- [RadixAttention](./radix-attention.md)
-- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching/prompt-caching.md)
+### التطورات الحديثة (2025-2026)
+
+| التطور | ماذا يفعل |
+|--------|-----------|
+| **PagedEviction** | إخراج صفحات كاملة حسب الأهمية — بدون تعديل CUDA |
+| **FP8 KV Cache** | تكميم الصفحات إلى FP8 → نصف الذاكرة إضافي |
+| **FlexAttention** | واجهة برمجية لـ "paged attention" مُخصصة — < 2% overhead |
+| **KV-Compress** | ضغط متغير لكل رأس انتباه — > 90% دقة بـ 10% ذاكرة |
+
+### العلاقة بتقنيات أخرى
+
+```
+PagedAttention ←── أساس ──→ Continuous Batching (يعملان معاً حصرياً)
+      │
+      ├── يُمكّن ──→ Prefix Caching (مشاركة صفحات البادئة)
+      ├── يُحسَّن بـ ──→ FP8 KV (نصف حجم الصفحات)
+      ├── يمتد إلى ──→ RadixAttention (شجرة بادئات)
+      └── يُضغط بـ ──→ KV Cache Compression (صفحات أقل)
+```
+
+---
+
+## English Content
+
+PagedAttention applies OS virtual memory concepts to KV cache: fixed-size blocks allocated on-demand, non-contiguous, shareable. Reduces memory waste from 60-80% to <4%, enabling 2-4× throughput. Foundation of vLLM and all modern serving engines. KV cache at 70B×8K = 20GB per request — PagedAttention makes this manageable.
+
+---
+
+## المصادر | Sources
+
+1. **[Tier 1]** Kwon, W., et al., "Efficient Memory Management for Large Language Model Serving with PagedAttention", **SOSP 2023**. UC Berkeley — the original vLLM paper.
+2. **[Tier 2]** Introl, "KV Cache Optimization: Memory Efficiency for Production LLMs", March 2026. "Equivalent to 2-4× GPU investment."
+3. **[Tier 2]** Kolluru, "Comparative Analysis of LLM Inference Serving Frameworks", arXiv:2511.17593, November 2025. vLLM vs TGI benchmarks.
+4. **[Tier 2]** Brenndörfer, M., "PagedAttention: Solving LLM KV Cache Memory Fragmentation", January 2026. Visual explanation + simulation.

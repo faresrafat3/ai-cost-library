@@ -1,64 +1,89 @@
 ---
-id: "entry-smoothquant-001"
-title_ar: "التكمية الملساء (SmoothQuant)"
-title_en: "SmoothQuant"
-type: "Practical"
-status: "Deployed"
-category: "Model Compression"
-subcategory: "Quantization"
-tree_path: ["Model Compression", "Quantization", "SmoothQuant"]
-cost_dimensions: ["memory", "inference-cost", "latency"]
-proof_score: 4
-sources_count: 3
+id: entry-smoothquant-001
+title_ar: التكميم الأملس — SmoothQuant
+title_en: "SmoothQuant: Smooth Activations for INT8 Quantization"
+type: practical
+status: deployed
+category: model-optimization
+subcategory: quantization
+cost_dimensions: [inference-cost, throughput, memory]
+proof_score: "⭐⭐⭐ منشور | Deployed"
+sources_count: 2
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 8
+  A2: 10
+  A3: 9
+  A4: 5
+  B1: 7
+  B2: 0
+  B3: 7
+  B4: 6
+  C1: 6
+  C2: 7
+  C3: 8
+  C4: 7
 ---
 
-# التكمية الملساء | SmoothQuant
+# 📘 SmoothQuant — تنعيم التفعيلات للتكميم الصحيح
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية | **الإثبات:** ⭐⭐⭐
 
-## 📌 الملخص العربي | Arabic Summary
+---
 
-التكمية الملساء (SmoothQuant) هي تقنية تكمية بعد التدريب (PTQ) تُحوّل أوزان النماذج اللغوية الكبيرة وتنشيطاتها إلى دقة 8 بت (W8A8) مع الحفاظ على الدقة الأصلية. تعتمد الفكرة على معالجة القيم الشاذة (Outliers) في التنشيطات التي تُصعّب التكمية: يتم "تنعيم" هذه القيم عبر معامل تناسبي يُطبّق على القنوات، ثم تُنقل الصعوبة إلى الأوزان التي تتحملها بسهولة. النتيجة هي تمكين التكمية الكاملة على مستوى العتاد دون فقدان ملحوظ في الدقة.
+## المحتوى العربي
 
-أظهرت النتائج أن SmoothQuant يحافظ على دقة 71.1% على نموذج OPT-175B مقارنة بـ 71.6% في دقة FP16، مع تقليل متطلبات الذاكرة إلى النصف (من 16 وحدة GPU إلى 8 وحدات) دون تغيير الكمون.
+### ما هو SmoothQuant؟
 
-## 📌 English Summary
+SmoothQuant — وهو تقنية تكميم W8A8 (أوزان 8-bit + تفعيلات 8-bit) تحل مشكلة أن **التفعيلات أصعب في التكميم من الأوزان** لأنها تحتوي قيماً شاذة كبيرة.
 
-SmoothQuant is a post-training quantization (PTQ) method that compresses both weights and activations of LLMs to INT8 (W8A8) with negligible accuracy loss. The core insight addresses the fundamental challenge of activation outliers in Transformers — a few features can be 100× larger than average, destroying quantization quality.
+### الفكرة الأساسية — "نقل الصعوبة"
 
-SmoothQuant mathematically "smooths" these outliers by applying per-channel scaling factors, transferring the quantization difficulty from activations (hard to quantize) to weights (easier to quantize). This enables efficient INT8 matrix multiplication across entire layers without mixed-precision overhead.
+```
+المشكلة: التفعيلات لها قيم شاذة → تكميمها مباشرة يُدمّر الجودة
+         الأوزان سلسة → تكميمها سهل
 
-Experimental results show SmoothQuant maintains 71.1% accuracy on OPT-175B vs 71.6% FP16, while halving GPU requirements (16→8 A100s) at nearly identical latency.
+SmoothQuant: يُضرب التفعيلات في عامل تنعيم s⁻¹ (يُقلل القيم الشاذة)
+             ويُضرب الأوزان في s (يُعوّض — الأوزان تتحمل هذا أفضل)
+             
+النتيجة: X' = X / s   (أسهل في التكميم)
+         W' = W × s   (مازالت قابلة للتكميم)
+         Y = X'W' = (X/s)(Ws) = XW   (النتيجة متطابقة رياضياً)
+```
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
+### الأرقام
 
-- **تكلفة الذاكرة (Memory Cost):** تقليل الذاكرة بمقدار 2× (INT8 vs FP16). نموذج MT-NLG 530B يعمل على عقدة واحدة (8× A100 80GB) بدلاً من عقدتين.
-- **الكمون (Latency):** مماثل لـ FP16 — 1689ms مقابل 1707ms لطول تسلسل 1024 (فرق <1%).
-- **تكلفة الاستدلال (Inference Cost):** تحسين بنسبة تصل إلى 1.45× في الإنتاجية عبر الاستفادة الكاملة من وحدات Tensor Cores التي تدعم INT8.
+| الادعاء | القيمة | المصدر |
+|---------|--------|--------|
+| دقة INT8 مع SmoothQuant | **~99% من FP16** | Xiao et al., ICML 2023 |
+| تسريع الاستدلال | **حتى 1.56×** | مقابل FP16 على GPU |
+| تقليل الذاكرة | **~2×** | W8A8 مقابل W16A16 |
 
-## 🛡️ بوابات الأدلة | Evidence Gates
+### موقعه في 2026
 
-- ✅ **Gate 1 (Built):** كود مفتوح المصدر (mit-han-lab/smoothquant) مع دعم Llama-2/3, Falcon, Mistral, Mixtral.
-- ✅ **Gate 2 (Tested):** مُختبر على 7 معايير صفرية + WikiText perplexity.
-- ✅ **Gate 3 (Deployed):** مُدمج في FasterTransformer و PyTorch، ومستخدَم في نشر نماذج 175B+.
-- ✅ **Gate 4 (Saved):** 2× توفير في الذاكرة مع ≤0.5% فقدان دقة على نماذج حتى 530B.
+SmoothQuant مهم تاريخياً — أثبت أن W8A8 ممكن بجودة عالية. لكن في 2026:
+- **FP8 تجاوزه على Hopper/Blackwell** (دعم أصلي + أسهل)
+- **AWQ/GPTQ 4-bit أفضل ضغطاً** (ربع بدلاً من نصف)
+- **مازال مفيداً** على عتاد بدون FP8 عندما تحتاج W8A8
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
+### متى يُستخدم في 2026
 
-- يتطلب مجموعة معايرة (~512 جملة) لحساب معاملات التنعيم.
-- الدقة تنخفض عند التكمية إلى 4 بت (W4A4): من 65.26% إلى 38.41% على LLaMA-1-7B.
-- SmoothQuant+ (الامتداد 4 بت) يعالج المشكلة لكنه يتطلب أنوية CUDA مخصصة.
-- لا يحل مشكلة استهلاك KV Cache.
+- ✅ تكميم أوزان **وتفعيلات** معاً (W8A8) — وليس أوزان فقط
+- ✅ عتاد بدون دعم FP8 يحتاج INT8 أصلي
+- ✅ يُدمج في TensorRT-LLM لتسريع hardware
 
-## 📚 المصادر | Sources
+### القاعدة
 
-- [1] Xiao et al., "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models", ICML, 2023. DOI: [arXiv:2211.10438](https://arxiv.org/abs/2211.10438)
-- [2] Pan et al., "SmoothQuant+: Accurate and Efficient 4-bit Post-Training Quantization", arXiv, 2023. DOI: [arXiv:2312.03788](https://arxiv.org/abs/2312.03788)
-- [3] Intel Analytics, "Enhanced SmoothQuant Approach for LLMs", 2023. [URL](https://medium.com/intel-analytics-software/effective-post-training-quantization-for-large-language-models-with-enhanced-smoothquant-approach-93e9d104fb98)
+```
+Hopper+    → FP8 (يتضمن تنعيم ضمني)
+ما قبل     → SmoothQuant W8A8 (لأقصى جودة 8-bit)
+            أو AWQ 4-bit (لأقصى ضغط)
+```
 
-## 🔗 إدخالات ذات صلة | Related Entries
+---
 
-- [GPTQ](./gptq.md)
-- [AWQ](./awq.md)
-- [LLM.int8()](./llm-int8.md)
+## المصادر
+
+1. **[Tier 1]** Xiao, G., et al., "SmoothQuant: Accurate and Efficient Post-Training Quantization for LLMs", **ICML 2023**. MIT + NVIDIA.
+2. **[Tier 2]** Zylos AI, "LLM Inference Optimization 2026", January 2026. INT8 quality retention ~97-99%.

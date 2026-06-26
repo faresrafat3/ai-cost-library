@@ -1,61 +1,93 @@
 ---
-id: "entry-llmint8-001"
-title_ar: "التكمية المختلطة الدقة للنماذج اللغوية (LLM.int8())"
-title_en: "LLM.int8() — Mixed-Precision Decomposition for LLMs"
-type: "Practical"
-status: "Deployed"
-category: "Model Compression"
-subcategory: "Quantization"
-tree_path: ["Model Compression", "Quantization", "LLM.int8()"]
-cost_dimensions: ["memory", "inference-cost"]
-proof_score: 4
+id: entry-llmint8-001
+title_ar: التكميم الصحيح 8-بت مع معالجة القيم الشاذة — LLM.int8()
+title_en: "LLM.int8(): Mixed-Precision INT8 with Outlier Handling"
+type: practical
+status: production-proven
+category: model-optimization
+subcategory: quantization
+cost_dimensions: [memory, inference-cost, hardware-cost]
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
 sources_count: 3
+created: 2026-06-26
+updated: 2026-06-26
+scoring:
+  A1: 9
+  A2: 10
+  A3: 10
+  A4: 4
+  B1: 6
+  B2: 0
+  B3: 8
+  B4: 5
+  C1: 9
+  C2: 8
+  C3: 8
+  C4: 9
 ---
 
-# التكمية المختلطة الدقة للنماذج اللغوية | LLM.int8()
+# 📘 LLM.int8() — التكميم المختلط الدقة مع القيم الشاذة
 
-![Proof Score: 4/4](https://img.shields.io/badge/Proof_Score-4%2F4-brightgreen)
-![Practical](https://img.shields.io/badge/Class-Practical-blue)
+> **التصنيف:** 📘 عملية — إنتاج مُثبت | **الإثبات:** ⭐⭐⭐⭐
 
-## 📌 الملخص العربي | Arabic Summary
+---
 
-LLM.int8() هي تقنية تكمية بعد التدريب تهدف إلى تمكين استدلال النماذج اللغوية الكبيرة (حتى 175B معامل) بدقة 8 بت دون فقدان الدقة. الاكتشاف الجوهري هو أن بنية المحوّل (Transformer) تحتوي على عدد صغير من "الميزات الشاذة" (Outlier Features) — أبعاد تنشيط أكبر بـ 100 مرة من المتوسط — والتي عند تكميتها مباشرة تُسبب انهياراً في الأداء.
+## المحتوى العربي
 
-الحل هو "التفكيك مختلط الدقة" (Mixed-Precision Decomposition): عزل أبعاد القيم الشاذة ومعالجتها بدقة 16 بت بينما تُكمّل بقية 99.9% من القيم بدقة 8 بت. النتيجة هي تقليل استهلاك الذاكرة بنسبة ~50% مع الحفاظ على الدقة الأصلية.
+### ما هو LLM.int8()؟
 
-## 📌 English Summary
+LLM.int8() — وهو أول طريقة تكميم ناجحة للنماذج اللغوية الكبيرة (2022)، ابتكرها Tim Dettmers. الاكتشاف الأساسي: **~0.1% من قيم التفعيل** (القيم الشاذة / outliers) تُدمّر الجودة عند تكميمها. الحل: مسار مزدوج.
 
-LLM.int8() is a post-training quantization technique enabling 8-bit inference for LLMs up to 175B parameters with zero accuracy degradation. The key discovery is that Transformer architectures contain a small number of "outlier features" — activation dimensions up to 100× larger than average — which, when quantized directly, cause catastrophic accuracy collapse.
+### كيف يعمل؟ — المسار المزدوج
 
-The solution is "mixed-precision decomposition": isolating outlier dimensions and processing them in FP16 while quantizing the remaining 99.9% of values to INT8. This yields approximately 50% memory reduction while preserving original model accuracy.
+```
+مصفوفة الأوزان × مصفوفة التفعيل:
 
-## ⚙️ أبعاد التكلفة | Cost Dimensions Affected
+الأبعاد العادية (99.9%):     → INT8 × INT8 → سريع + ذاكرة أقل
+الأبعاد الشاذة (0.1%):       → FP16 × FP16 → دقيق + بطيء
 
-- **تكلفة الذاكرة (Memory Cost):** تقليل الذاكرة بنسبة ~50%. نموذج BLOOM-176B يقل من ~350GB إلى ~178GB (1.96× تقليل).
-- **تكلفة الاستدلال (Inference Cost):** تمكين استدلال نماذج 175B على خادم واحد ببطاقات GPU استهلاكية.
+المخرج = دمج النتيجتين
+```
 
-## 🛡️ بوابات الأدلة | Evidence Gates
+### الأرقام
 
-- ✅ **Gate 1 (Built):** مُدمجة في مكتبة `bitsandbytes` و `Hugging Face Transformers` عبر `from_pretrained(load_in_8bit=True)`.
-- ✅ **Gate 2 (Tested):** دقة 66.7% على OPT-175B (W8A8) مقارنة بـ 66.9% (FP16) عبر 7 معايير.
-- ✅ **Gate 3 (Deployed):** مُستخدمة في Hugging Face Transformers، Petals، وأنظمة الاستدلال الموزعة.
-- ✅ **Gate 4 (Saved):** 1.96× تقليل في الذاكرة لنماذج 175B+ مع صفر فقدان دقة.
+| المقياس | القيمة |
+|---------|--------|
+| تقليل الذاكرة | **~2×** (FP16 → INT8) |
+| فقدان الجودة (على نماذج ≤ 175B) | **~0%** (ضمن الضوضاء) |
+| تأثير السرعة | **أبطأ من FP16** على بعض العتاد (overhead المسار المزدوج) |
+| نماذج تعمل على GPU واحد (24GB) | حتى **~13B** (مقابل ~7B بـ FP16) |
 
-## ⚠️ القيود والمخاطر | Limitations & Risks
+### موقعه في 2026 — كلاسيكي أساسي لكن تجاوزته البدائل
 
-- أبطأ من SmoothQuant لأنها تستخرج أعمدة القيم الشاذة ديناميكياً أثناء التشغيل.
-- لا تدعم التكمية إلى أقل من 8 بت (مثل 4 بت) — يتطلب تقنيات أخرى كـ GPTQ أو AWQ.
-- التفكيك المختلط يعتمد على أنوية CUDA مخصصة قد لا تكون محسّنة لجميع المنصات.
+| المعيار | LLM.int8() | FP8 | AWQ 4-bit | GPTQ 4-bit |
+|---------|-----------|-----|----------|-----------|
+| الذاكرة | 2× أقل | 2× أقل | **4× أقل** | **4× أقل** |
+| الجودة | ~99.9% | ~99.5% | ~95% | ~90% |
+| السرعة | **أبطأ** من FP16 | **أسرع** 1.5× | **أسرع** 1.6× (Marlin) | **أسرع** 1.5× (Marlin) |
+| العتاد | أي GPU | Hopper+ | أي GPU | أي GPU |
+| الحكم في 2026 | 🟡 مُتجاوَز | ✅ الأفضل 8-bit | ✅ الأفضل 4-bit | ✅ أقصى ضغط |
 
-## 📚 المصادر | Sources
+### متى يُستخدم في 2026
 
-- [1] Dettmers et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale", NeurIPS, 2022. DOI: [arXiv:2208.07339](https://arxiv.org/abs/2208.07339)
-- [2] Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs", NeurIPS, 2023. DOI: [arXiv:2305.14314](https://arxiv.org/abs/2305.14314)
-- [3] Meta Intelligence, "Model Quantization Guide: Run 70B LLMs in 4 Bits", 2025. [URL](https://www.meta-intelligence.tech/en/insight-quantization)
+- ✅ **أبسط طريقة** لتشغيل نموذج أكبر قليلاً — سطر واحد في `bitsandbytes`
+- ✅ عتاد قديم بدون دعم FP8
+- ✅ عندما الجودة أولوية مطلقة ولا يُقبل أي فقدان
 
-## 🔗 إدخالات ذات صلة | Related Entries
+### متى لا يُستخدم
 
-- [SmoothQuant](./smoothquant.md)
-- [GPTQ](./gptq.md)
-- [AWQ](./awq.md)
-- [QLoRA](../../efficient-training/parameter-efficient/qlora.md)
+- ❌ **Hopper/Blackwell** → FP8 أفضل بكل المقاييس
+- ❌ **ذاكرة ضيقة** → AWQ/GPTQ 4-bit أفضل (ربع بدلاً من نصف)
+- ❌ **إنتاجية مهمة** → المسار المزدوج يُبطئ
+
+### الأهمية التاريخية
+
+> LLM.int8() فتح الباب لتشغيل النماذج الكبيرة على عتاد المستهلك. بدونه لم يكن ممكناً تشغيل 13B على RTX 3090. أسس لـ QLoRA والتكميم الحديث.
+
+---
+
+## المصادر
+
+1. **[Tier 1]** Dettmers, T., et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale", **NeurIPS 2022**.
+2. **[Tier 2]** bitsandbytes library documentation, 2022-2026. https://github.com/TimDettmers/bitsandbytes
+3. **[Tier 2]** Zylos AI, "LLM Inference Optimization and Quantization 2026", January 2026. Comparison table.
