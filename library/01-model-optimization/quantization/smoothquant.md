@@ -87,3 +87,12 @@ Hopper+    → FP8 (يتضمن تنعيم ضمني)
 
 1. **[Tier 1]** Xiao, G., et al., "SmoothQuant: Accurate and Efficient Post-Training Quantization for LLMs", **ICML 2023**. MIT + NVIDIA.
 2. **[Tier 2]** Zylos AI, "LLM Inference Optimization 2026", January 2026. INT8 quality retention ~97-99%.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **LLM.int8()** | **يُكمل** — LLM.int8() W8A16، SmoothQuant W8A8 |
+| **FP8** | **بديل أفضل** على Hopper+ (FP8 يتضمن تنعيم ضمني) |
+| **TensorRT-LLM** | **يُدمج** — SmoothQuant مدمج في TensorRT-LLM |
+| **AWQ/GPTQ** | **أقل ضغطاً** — SQ = 2× مقابل 4× لـ AWQ/GPTQ |

@@ -89,3 +89,20 @@ Heterogeneous inference combines different processor types (GPU + CPU + NPU + sp
 1. **[Tier 2]** "HeteroLLM: Accelerating LLM Inference on Mobile SoCs with Heterogeneous Processors", arXiv:2501.14794, January 2025.
 2. **[Tier 2]** "Demystifying Cost-Efficiency in LLM Serving over Heterogeneous GPUs", arXiv:2502.00722, February 2025.
 3. **[Tier 2]** "PLENA: Hardware-Software Co-Designed System for Long-Context LLM Inference", arXiv:2509.09505, September 2025.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **CPU-GPU Collaborative** | **حالة خاصة** — CPU+GPU = أبسط شكل من العتاد المتنوع |
+| **Decentralized Inference** | **يُوسّع** — لامركزي = عتاد متنوع عبر الإنترنت |
+| **Self-Host vs API** | **يُؤثر** — عتاد متنوع يُقلل نقطة التعادل |
+
+### شجرة القرار — أي عتاد (2026)
+
+```
+ميزانية غير محدودة + أداء أقصى → H100/B200 متجانسة
+ميزانية معقولة + أحمال مختلطة   → خلط GPU أنواع (Heterogeneous)
+عتاد محمول + تطبيق محلي        → GPU + NPU (HeteroLLM)
+بدون GPU + نموذج صغير           → CPU فقط (llama.cpp)
+```

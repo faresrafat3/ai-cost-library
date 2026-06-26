@@ -81,3 +81,19 @@ research_review:
 ## المصادر
 
 1. **[Tier 2]** "MoE-Spec: Expert Budgeting for Efficient Speculative Decoding of MoE Models", arXiv:2602.16052, February 2026.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **EAGLE-3** | **يحل مشكلته** — EAGLE-3 يفقد كفاءته على MoE |
+| **MoE Economics** | **يُمكّن** — يجعل speculative decoding يعمل على MoE |
+| **Continuous Batching** | **تكاملي** — يعمل ضمن vLLM batching |
+
+### لماذا المشكلة مهمة اقتصادياً؟
+
+كل نموذج حدودي في 2026 هو MoE (DeepSeek-V3/V4, Llama 4, Mixtral, Gemini). بدون MoE-Spec:
+- Speculative decoding (أهم تقنية تسريع) **لا يعمل** بكفاءة على هذه النماذج
+- شجرة 127 توكن تُفعّل **54 من 64 خبيراً** = تقريباً النموذج الكامل = لا وفر
+
+MoE-Spec يحل هذا بـ **expert budgeting**: أعلى 50% من الخبراء = 93% من الدقة.

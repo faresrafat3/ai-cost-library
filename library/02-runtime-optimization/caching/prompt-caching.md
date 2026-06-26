@@ -95,3 +95,36 @@ Prompt/prefix caching reuses Prefill computations for repeated prompt prefixes. 
 1. **[Tier 2]** Anthropic, "Prompt Caching Documentation", 2025-2026. 90% discount, 5-min TTL.
 2. **[Tier 2]** Digital Applied, "The AI Cost Reckoning", June 2026. ProjectDiscovery case study.
 3. **[Tier 2]** OpenAI, "Prompt Caching Documentation", 2025-2026. 50% automatic discount.
+
+### كود عملي — Anthropic Prompt Caching
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+# البادئة الثابتة = system prompt + أمثلة
+response = client.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": "أنت محلل بيانات خبير...",  # 2000+ توكن
+            "cache_control": {"type": "ephemeral"}  # ← خزّن هذا!
+        }
+    ],
+    messages=[{"role": "user", "content": "حلل هذه البيانات..."}]
+)
+
+# الطلب الأول: يحسب البادئة (سعر كامل)
+# الطلب الثاني+: يعيد استخدامها (90% أرخص!)
+# TTL: 5 دقائق (يتجدد مع كل استخدام)
+```
+
+### قاعدة التصميم لأقصى إصابة
+
+```
+الموجّه = [ثابت (system + examples)] + [شبه ثابت (مستند)] + [متغير (استعلام)]
+         ←── يُخزَّن مؤقتاً ──→   ←── يُخزَّن إن تكرر ──→   ←── دائماً جديد ──→
+```

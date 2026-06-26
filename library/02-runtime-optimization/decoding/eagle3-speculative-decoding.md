@@ -85,3 +85,21 @@ PayPal نشرت EAGLE-3 على وكيلها التجاري (Commerce Agent) مع
 1. **[Tier 2]** Qin, A., et al., "Accelerating PayPal's Commerce Agent with EAGLE3", arXiv:2604.19767, March 2026. **دراسة حالة إنتاجية.**
 2. **[Tier 2]** Li, Y., et al., "EAGLE-3: Scaling up Inference Acceleration", arXiv:2503.01840, March 2025.
 3. **[Tier 2]** "ConFu: Contemplate the Future for Better Speculative Sampling", arXiv:2603.08899, April 2026. 8-21% over EAGLE-3.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **Speculative Decoding** | **يطوّر** — EAGLE-3 = أحدث إصدار من المبدأ الأساسي |
+| **MoE-Spec** | **يحل مشكلته** — EAGLE-3 يفقد كفاءته على MoE بدون MoE-Spec |
+| **Continuous Batching** | **يعمل ضمنه** — مُدمج في vLLM continuous batching |
+| **FP8** | **تكاملي** — EAGLE-3 + FP8 = أقصى تسريع |
+
+### متى EAGLE-3 مقابل بدائله (2026)
+
+| السيناريو | الأفضل | السبب |
+|-----------|--------|-------|
+| خدمة عامة (vLLM) | **EAGLE-3** | مُدمج + مُختبر إنتاجياً |
+| نموذج MoE | **MoE-Spec** | يحل مشكلة expert activation |
+| أقصى سرعة (preprint) | **ConFu** | 8-21% فوق EAGLE-3 |
+| بدون draft model | **Suffix/N-gram** | لا يحتاج تدريب |

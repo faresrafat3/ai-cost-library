@@ -88,3 +88,17 @@ Speculative Decoding (2023) ← المبدأ الأساسي
 1. **[Tier 1]** Leviathan, Y., et al., "Fast Inference from Transformers via Speculative Decoding", ICML 2023.
 2. **[Tier 1]** Chen, C., et al., "Accelerating Large Language Model Decoding with Speculative Sampling", 2023.
 3. **[Tier 2]** Li, Y., et al., "EAGLE-3: Scaling up Inference Acceleration", arXiv:2503.01840, 2025.
+
+### العلاقة بإدخالات أخرى
+
+| الإدخال | العلاقة |
+|---------|---------|
+| **EAGLE-3** | **أحدث تطوير** — أسرع + مُدمج في vLLM |
+| **MoE-Spec** | **يحل مشكلة MoE** — speculative decoding على MoE |
+| **Continuous Batching** | **تكاملي** — يُحسّن كل طلب داخل الدفعة |
+| **Inference-Time Compute** | **عكسي** — speculative يُسرّع التوليد، TTC يُبطئه عمداً |
+
+### الحكم في 2026
+
+> Speculative Decoding الأصلي = المبدأ الأساسي. للإنتاج استخدم **EAGLE-3** (مُدمج في vLLM).
+> لنماذج MoE أضف **MoE-Spec**. لأقصى أداء (preprint) جرّب **ConFu**.
