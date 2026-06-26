@@ -1,6 +1,6 @@
-# 🏆 ترتيب التقنيات حسب المستخدم | Rankings by User Profile
+# 🏆 ترتيب التقنيات حسب المستخدم | Rankings
 
-> **48 تقنية مُقيَّمة** × 12 بُعد × 5 ملفات مستخدم | آخر تحديث: 2026-06-26
+> **50 تقنية** × 12 بُعد × 5 ملفات | 2026-06-26
 
 ---
 
@@ -20,7 +20,7 @@
 | 9. | Mixed Precision Training | **77.2** |
 | 10. | Continuous Batching | **75.6** |
 
-*... و38 تقنية أخرى*
+*... و40 تقنية أخرى*
 
 
 ## 🏢 فريق الشركة المتوسطة | Mid-size Team
@@ -31,14 +31,14 @@
 | 🥈 | FlashAttention | **83.9** |
 | 🥉 | PagedAttention | **83.3** |
 | 4. | Knowledge Distillation | **82.8** |
-| 5. | FP8 Quantization | **81.1** |
-| 6. | GPTQ | **81.1** |
-| 7. | AWQ | **81.1** |
-| 8. | MoE Economics (DeepSeek-V3) | **80.0** |
-| 9. | Prompt Caching | **77.2** |
-| 10. | GPU Inference Economics 2026 | **75.6** |
+| 5. | Llama 4 MoE Economics | **81.7** |
+| 6. | FP8 Quantization | **81.1** |
+| 7. | GPTQ | **81.1** |
+| 8. | AWQ | **81.1** |
+| 9. | MoE Economics (DeepSeek-V3) | **80.0** |
+| 10. | Prompt Caching | **77.2** |
 
-*... و38 تقنية أخرى*
+*... و40 تقنية أخرى*
 
 
 ## 🏗️ فريق البنية التحتية | Infrastructure Team
@@ -56,7 +56,7 @@
 | 9. | Continuous Batching | **79.5** |
 | 10. | MoE Economics (DeepSeek-V3) | **78.9** |
 
-*... و38 تقنية أخرى*
+*... و40 تقنية أخرى*
 
 
 ## 🔬 الباحث / المهووس | Researcher / Enthusiast
@@ -70,11 +70,11 @@
 | 5. | DeepSpeed ZeRO + FSDP | **79.1** |
 | 6. | Mixed Precision Training | **79.1** |
 | 7. | FP8 Quantization | **78.3** |
-| 8. | Continuous Batching | **77.0** |
-| 9. | GPTQ | **76.1** |
-| 10. | AWQ | **76.1** |
+| 8. | Llama 4 MoE Economics | **77.8** |
+| 9. | Continuous Batching | **77.0** |
+| 10. | GPTQ | **76.1** |
 
-*... و38 تقنية أخرى*
+*... و40 تقنية أخرى*
 
 
 ## 🤖 مطور الوكلاء | Agent Developer
@@ -87,9 +87,9 @@
 | 4. | FP8 Quantization | **81.1** |
 | 5. | GPTQ | **81.1** |
 | 6. | AWQ | **81.1** |
-| 7. | Knowledge Distillation | **80.5** |
-| 8. | Prompt Caching | **77.9** |
-| 9. | MoE Economics (DeepSeek-V3) | **76.8** |
-| 10. | Multi-LoRA Serving | **74.2** |
+| 7. | Llama 4 MoE Economics | **81.1** |
+| 8. | Knowledge Distillation | **80.5** |
+| 9. | Prompt Caching | **77.9** |
+| 10. | MoE Economics (DeepSeek-V3) | **76.8** |
 
-*... و38 تقنية أخرى*
+*... و40 تقنية أخرى*
