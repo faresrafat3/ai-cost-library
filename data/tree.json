@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "last_updated": "2026-06-26",
   "tree": {
     "root": "AI Cost Library",
@@ -10,9 +10,32 @@
         "name_ar": "ضغط النماذج",
         "status": "active",
         "subcategories": [
-          {"id": "quantization", "name_en": "Quantization", "name_ar": "التكمية", "entries": ["entry-gptq-001", "entry-awq-001", "entry-smoothquant-001", "entry-llmint8-001"]},
-          {"id": "pruning", "name_en": "Pruning", "name_ar": "التقليم", "entries": []},
-          {"id": "distillation", "name_en": "Distillation", "name_ar": "التقطير", "entries": []}
+          {
+            "id": "quantization",
+            "name_en": "Quantization",
+            "name_ar": "التكمية",
+            "status": "active",
+            "entries": [
+              "entry-gptq-001",
+              "entry-awq-001",
+              "entry-smoothquant-001",
+              "entry-llmint8-001"
+            ]
+          },
+          {
+            "id": "pruning",
+            "name_en": "Pruning",
+            "name_ar": "التقليم",
+            "status": "seeded",
+            "entries": []
+          },
+          {
+            "id": "distillation",
+            "name_en": "Distillation",
+            "name_ar": "التقطير",
+            "status": "seeded",
+            "entries": []
+          }
         ]
       },
       {
@@ -21,9 +44,41 @@
         "name_ar": "الاستدلال الفعّال",
         "status": "active",
         "subcategories": [
-          {"id": "decoding", "name_en": "Decoding Strategies", "name_ar": "استراتيجيات فك التشفير", "entries": ["entry-specdec-001"]},
-          {"id": "batching", "name_en": "Batching", "name_ar": "التجميع", "entries": ["entry-contbatching-001"]},
-          {"id": "kv-cache", "name_en": "KV Cache Optimization", "name_ar": "تحسين الذاكرة المؤقتة", "entries": ["entry-pagedattention-001", "entry-radixattention-001"]}
+          {
+            "id": "decoding",
+            "name_en": "Decoding Strategies",
+            "name_ar": "استراتيجيات فك التشفير",
+            "status": "active",
+            "entries": [
+              "entry-specdec-001"
+            ]
+          },
+          {
+            "id": "batching",
+            "name_en": "Batching",
+            "name_ar": "التجميع",
+            "status": "active",
+            "entries": [
+              "entry-contbatching-001"
+            ]
+          },
+          {
+            "id": "kv-cache-optimization",
+            "name_en": "KV Cache Optimization",
+            "name_ar": "تحسين الذاكرة المؤقتة للمفاتيح والقيم",
+            "status": "active",
+            "entries": [
+              "entry-pagedattention-001",
+              "entry-radixattention-001"
+            ]
+          },
+          {
+            "id": "serving",
+            "name_en": "Serving Engines",
+            "name_ar": "محركات تقديم النماذج",
+            "status": "seeded",
+            "entries": []
+          }
         ]
       },
       {
@@ -32,11 +87,20 @@
         "name_ar": "التدريب الفعّال",
         "status": "active",
         "subcategories": [
-          {"id": "parameter-efficient", "name_en": "Parameter-Efficient Fine-Tuning", "name_ar": "الضبط الدقيق الموفّر للمعاملات", "entries": ["entry-lora-001", "entry-qlora-001"]}
+          {
+            "id": "parameter-efficient-finetuning",
+            "name_en": "Parameter-Efficient Fine-Tuning",
+            "name_ar": "الضبط الدقيق الموفّر للمعاملات",
+            "status": "active",
+            "entries": [
+              "entry-lora-001",
+              "entry-qlora-001"
+            ]
+          }
         ]
       },
       {
-        "id": "cat-hardware-systems",
+        "id": "cat-hardware-and-systems",
         "name_en": "Hardware and Systems",
         "name_ar": "العتاد والأنظمة",
         "status": "seeded",
@@ -50,37 +114,45 @@
         "subcategories": []
       },
       {
-        "id": "cat-model-selection",
+        "id": "cat-model-selection-routing",
         "name_en": "Model Selection and Routing",
         "name_ar": "اختيار وتوجيه النماذج",
         "status": "seeded",
         "subcategories": []
       },
       {
-        "id": "cat-operations",
+        "id": "cat-operations-monitoring",
         "name_en": "Operations and Monitoring",
         "name_ar": "العمليات والمراقبة",
         "status": "seeded",
         "subcategories": []
       },
       {
-        "id": "cat-token-prompt",
+        "id": "cat-token-prompt-cost",
         "name_en": "Token and Prompt Cost Optimization",
         "name_ar": "تكلفة التوكن والموجهات",
         "status": "active",
         "subcategories": [
-          {"id": "prompt-caching", "name_en": "Prompt Caching", "name_ar": "تخزين الموجهات المؤقت", "entries": ["entry-promptcache-001"]}
+          {
+            "id": "prompt-caching",
+            "name_en": "Prompt Caching",
+            "name_ar": "تخزين الموجهات المؤقت",
+            "status": "active",
+            "entries": [
+              "entry-promptcache-001"
+            ]
+          }
         ]
       },
       {
-        "id": "cat-retrieval",
+        "id": "cat-retrieval-context-efficiency",
         "name_en": "Retrieval and Context Efficiency",
         "name_ar": "كفاءة الاسترجاع والسياق",
         "status": "seeded",
         "subcategories": []
       },
       {
-        "id": "cat-energy",
+        "id": "cat-energy-sustainability",
         "name_en": "Energy and Sustainability",
         "name_ar": "الطاقة والاستدامة",
         "status": "seeded",

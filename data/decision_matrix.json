@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "scenario_ar": "تقليل تكلفة API لنموذج لغوي",
+    "scenario_en": "Reduce LLM API cost",
+    "try_first": [
+      "prompt-caching",
+      "model-routing",
+      "prompt-shortening"
+    ],
+    "avoid_when_ar": "إذا كانت البوادئ غير متكررة أو قصيرة جداً."
+  },
+  {
+    "scenario_ar": "استضافة نموذج 7B-13B على GPU واحد",
+    "scenario_en": "Self-host 7B-13B on one GPU",
+    "try_first": [
+      "AWQ/GPTQ",
+      "vLLM/PagedAttention",
+      "continuous-batching"
+    ],
+    "avoid_when_ar": "إذا كانت الدقة في مهام حساسة تتدهور بعد التكمية."
+  },
+  {
+    "scenario_ar": "ضبط دقيق منخفض الميزانية",
+    "scenario_en": "Low-budget fine-tuning",
+    "try_first": [
+      "QLoRA",
+      "LoRA",
+      "gradient-checkpointing"
+    ],
+    "avoid_when_ar": "إذا كان المطلوب تعديل كل أوزان النموذج أو تدريب من الصفر."
+  },
+  {
+    "scenario_ar": "زمن استجابة مرتفع في الاستدلال",
+    "scenario_en": "High inference latency",
+    "try_first": [
+      "speculative-decoding",
+      "continuous-batching",
+      "KV-cache reuse"
+    ],
+    "avoid_when_ar": "إذا لم يتوفر نموذج مسودة جيد أو كانت الطلبات قصيرة جداً."
+  }
+]

@@ -1,52 +1,32 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "last_updated": "2026-06-26",
-  "session_count": 2,
+  "session_count": 3,
   "project_status": "active",
   "completed_tasks": [
-    "create_repo_skeleton",
-    "write_6_initial_entries",
-    "write_1_playbook",
-    "add_smoothquant_entry",
-    "add_llm_int8_entry",
-    "add_lora_entry",
-    "add_pagedattention_entry",
-    "add_radixattention_entry",
-    "write_5_playbooks",
-    "write_5_comparison_pages",
-    "write_glossary_md",
-    "write_contributing_md",
-    "write_roadmap_md",
-    "write_quality_checklist_md",
-    "update_all_json_data",
-    "create_category_readmes",
-    "update_decision_matrix",
-    "update_evidence_ledger",
-    "update_claims_ledger",
-    "update_tree_md"
+    "repository_inspected_existing",
+    "subcategory_readmes_added",
+    "prompt_caching_restructured_to_l2",
+    "energy_category_added",
+    "tracking_json_populated",
+    "claims_and_evidence_ledgers_synced",
+    "tree_and_stats_corrected"
   ],
   "pending_tasks": [
-    "add_emerging_entries",
-    "add_theoretical_entries",
-    "add_pruning_entry",
-    "add_distillation_entry",
-    "add_data_efficiency_entries",
-    "add_model_selection_entries",
-    "add_operations_monitoring_entries",
-    "add_energy_sustainability_entries",
-    "write_case_studies",
-    "add_mlperf_benchmarks",
-    "add_interactive_cost_calculators"
+    "BL-001",
+    "BL-002",
+    "BL-003",
+    "BL-004"
   ],
-  "current_focus": "إضافة إدخالات ناشئة ونظرية + توسيع الفئات المزروعة",
+  "current_focus": "تدقيق الإدخالات الحالية بوابة-ببوابة ثم إضافة إدخالات ناشئة ونظرية",
   "unresolved_issues": [
-    "بعض الفئات L1 لا تزال فارغة (مزروعة فقط)",
-    "لا توجد إدخالات ناشئة أو نظرية بعد",
-    "ملف CHANGELOG يحتاج تحديثاً تفصيلياً"
+    "بعض بوابات Evidence Gates داخل ملفات الإدخالات تحتاج مصادر مباشرة لكل سطر.",
+    "لا توجد إدخالات Emerging/Theoretical/Rejected/Pending حتى الآن.",
+    "ينبغي إضافة ملفات README لفئات فرعية مستقبلية في الفئات المزروعة عند إنشائها."
   ],
   "quality_notes": [
-    "جميع الإدخالات الحالية عملية (Practical) — يجب إضافة تنوع في التصنيفات",
-    "الأدلة جميعها Tier 1 و Tier 2 — ممتاز",
-    "لا توجد ادعاءات بدون مصادر"
+    "تم إصلاح ملفات JSON الفارغة وربط الادعاءات بالمصادر.",
+    "تم تخفيض بعض درجات الإثبات وفق سياسة عدم المبالغة.",
+    "تم استكمال فئة Energy and Sustainability المطلوبة."
   ]
 }

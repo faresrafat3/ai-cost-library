@@ -60,5 +60,5 @@ Unlike simple Prefix Caching that matches only fixed leading prefixes, RadixAtte
 ## 🔗 إدخالات ذات صلة | Related Entries
 
 - [PagedAttention](./paged-attention.md)
-- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching.md)
+- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching/prompt-caching.md)
 - [التجميع المستمر](../batching/continuous-batching.md)

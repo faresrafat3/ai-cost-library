@@ -5,8 +5,12 @@
     "name_en": "Model Compression",
     "parent": null,
     "level": 1,
-    "subcategories": ["quantization", "pruning", "distillation"],
-    "entry_count": 5,
+    "subcategories": [
+      "quantization",
+      "pruning",
+      "distillation"
+    ],
+    "entry_count": 4,
     "status": "active"
   },
   {
@@ -15,7 +19,9 @@
     "name_en": "Quantization",
     "parent": "cat-model-compression",
     "level": 2,
-    "entry_count": 5
+    "subcategories": [],
+    "entry_count": 4,
+    "status": "active"
   },
   {
     "id": "pruning",
@@ -23,7 +29,9 @@
     "name_en": "Pruning",
     "parent": "cat-model-compression",
     "level": 2,
-    "entry_count": 0
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
   },
   {
     "id": "distillation",
@@ -31,7 +39,9 @@
     "name_en": "Distillation",
     "parent": "cat-model-compression",
     "level": 2,
-    "entry_count": 0
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
   },
   {
     "id": "cat-efficient-inference",
@@ -39,7 +49,12 @@
     "name_en": "Efficient Inference",
     "parent": null,
     "level": 1,
-    "subcategories": ["decoding", "batching", "kv-cache-optimization", "serving"],
+    "subcategories": [
+      "decoding",
+      "batching",
+      "kv-cache-optimization",
+      "serving"
+    ],
     "entry_count": 4,
     "status": "active"
   },
@@ -49,7 +64,9 @@
     "name_en": "Decoding Strategies",
     "parent": "cat-efficient-inference",
     "level": 2,
-    "entry_count": 1
+    "subcategories": [],
+    "entry_count": 1,
+    "status": "active"
   },
   {
     "id": "batching",
@@ -57,23 +74,29 @@
     "name_en": "Batching",
     "parent": "cat-efficient-inference",
     "level": 2,
-    "entry_count": 1
+    "subcategories": [],
+    "entry_count": 1,
+    "status": "active"
   },
   {
     "id": "kv-cache-optimization",
-    "name_ar": "تحسين الذاكرة المؤقتة",
+    "name_ar": "تحسين الذاكرة المؤقتة للمفاتيح والقيم",
     "name_en": "KV Cache Optimization",
     "parent": "cat-efficient-inference",
     "level": 2,
-    "entry_count": 2
+    "subcategories": [],
+    "entry_count": 2,
+    "status": "active"
   },
   {
     "id": "serving",
-    "name_ar": "نموذج التقديم",
-    "name_en": "Serving Systems",
+    "name_ar": "محركات تقديم النماذج",
+    "name_en": "Serving Engines",
     "parent": "cat-efficient-inference",
     "level": 2,
-    "entry_count": 0
+    "subcategories": [],
+    "entry_count": 0,
+    "status": "seeded"
   },
   {
     "id": "cat-efficient-training",
@@ -81,28 +104,24 @@
     "name_en": "Efficient Training",
     "parent": null,
     "level": 1,
-    "subcategories": ["parameter-efficient", "data-efficient-training"],
+    "subcategories": [
+      "parameter-efficient-finetuning"
+    ],
     "entry_count": 2,
     "status": "active"
   },
   {
-    "id": "parameter-efficient",
+    "id": "parameter-efficient-finetuning",
     "name_ar": "الضبط الدقيق الموفّر للمعاملات",
     "name_en": "Parameter-Efficient Fine-Tuning",
     "parent": "cat-efficient-training",
     "level": 2,
-    "entry_count": 2
+    "subcategories": [],
+    "entry_count": 2,
+    "status": "active"
   },
   {
-    "id": "data-efficient-training",
-    "name_ar": "كفاءة البيانات في التدريب",
-    "name_en": "Data-Efficient Training",
-    "parent": "cat-efficient-training",
-    "level": 2,
-    "entry_count": 0
-  },
-  {
-    "id": "cat-hardware-systems",
+    "id": "cat-hardware-and-systems",
     "name_ar": "العتاد والأنظمة",
     "name_en": "Hardware and Systems",
     "parent": null,
@@ -122,7 +141,7 @@
     "status": "seeded"
   },
   {
-    "id": "cat-model-selection",
+    "id": "cat-model-selection-routing",
     "name_ar": "اختيار وتوجيه النماذج",
     "name_en": "Model Selection and Routing",
     "parent": null,
@@ -132,7 +151,7 @@
     "status": "seeded"
   },
   {
-    "id": "cat-operations",
+    "id": "cat-operations-monitoring",
     "name_ar": "العمليات والمراقبة",
     "name_en": "Operations and Monitoring",
     "parent": null,
@@ -142,12 +161,14 @@
     "status": "seeded"
   },
   {
-    "id": "cat-token-prompt",
+    "id": "cat-token-prompt-cost",
     "name_ar": "تكلفة التوكن والموجهات",
     "name_en": "Token and Prompt Cost Optimization",
     "parent": null,
     "level": 1,
-    "subcategories": ["prompt-caching"],
+    "subcategories": [
+      "prompt-caching"
+    ],
     "entry_count": 1,
     "status": "active"
   },
@@ -155,12 +176,14 @@
     "id": "prompt-caching",
     "name_ar": "تخزين الموجهات المؤقت",
     "name_en": "Prompt Caching",
-    "parent": "cat-token-prompt",
+    "parent": "cat-token-prompt-cost",
     "level": 2,
-    "entry_count": 1
+    "subcategories": [],
+    "entry_count": 1,
+    "status": "active"
   },
   {
-    "id": "cat-retrieval",
+    "id": "cat-retrieval-context-efficiency",
     "name_ar": "كفاءة الاسترجاع والسياق",
     "name_en": "Retrieval and Context Efficiency",
     "parent": null,
@@ -170,7 +193,7 @@
     "status": "seeded"
   },
   {
-    "id": "cat-energy",
+    "id": "cat-energy-sustainability",
     "name_ar": "الطاقة والاستدامة",
     "name_en": "Energy and Sustainability",
     "parent": null,

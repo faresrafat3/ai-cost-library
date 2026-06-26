@@ -1,26 +1,26 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "last_updated": "2026-06-26",
-  "session": "session-002",
-  "total_entries": 12,
+  "session": "session-003",
+  "total_entries": 11,
   "total_categories": 10,
-  "total_subcategories": 8,
-  "total_sources": 28,
-  "total_claims": 18,
+  "total_subcategories": 9,
+  "total_sources": 13,
+  "total_claims": 15,
   "classification_summary": {
-    "practical": 12,
+    "practical": 11,
     "emerging": 0,
     "theoretical": 0,
     "rejected": 0,
     "pending": 0
   },
   "proof_score_summary": {
-    "4_stars_production_proven": 12,
-    "3_stars_deployed": 0,
+    "4_stars_production_proven": 4,
+    "3_stars_deployed_or_validated": 7,
     "2_stars_validated": 0,
     "1_star_prototype": 0
   },
-  "playbooks_count": 6,
-  "comparisons_count": 5,
-  "glossary_terms": 28
+  "playbooks_count": 5,
+  "comparisons_count": 6,
+  "glossary_terms": 32
 }

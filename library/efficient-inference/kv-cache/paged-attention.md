@@ -61,4 +61,4 @@ The result: near-optimal memory utilization (<4% waste), 2-4× higher throughput
 
 - [التجميع المستمر](../batching/continuous-batching.md)
 - [RadixAttention](./radix-attention.md)
-- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching.md)
+- [تخزين الموجهات المؤقت](../../token-and-prompt-cost/prompt-caching/prompt-caching.md)

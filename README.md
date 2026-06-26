@@ -1,28 +1,43 @@
 # مكتبة تكلفة الذكاء الاصطناعي · AI Cost Library
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-مكتبة علمية ثنائية اللغة (عربية/إنجليزية) قائمة على الأدلة، ونظام دعم اتخاذ القرار لتوثيق وتقييم طرق تقليل تكلفة الذكاء الاصطناعي.
+مكتبة علمية ثنائية اللغة قائمة على الأدلة لتوثيق وتقييم طرق تقليل تكلفة الذكاء الاصطناعي.  
 A bilingual, evidence-based scientific library and decision-support system for AI cost reduction methods.
 
-## 🎯 الهدف الأساسي | Core Mission
-تهدف هذه المكتبة إلى مساعدة المطورين والشركات على الإجابة عن:
-- ما هي الطرق المتاحة لتقليل تكلفة الذكاء الاصطناعي؟
-- أي منها أثبت فعاليته في بيئات الإنتاج (Production-proven)؟
-- ما هي المخاطر، التنازلات (Tradeoffs)، والأدلة الداعمة لكل طريقة؟
+## الهدف | Mission
+تساعد هذه المكتبة المطورين والشركات والباحثين على فهم طرق تقليل تكلفة الذكاء الاصطناعي، وتصنيفها حسب قوة الدليل، ومعرفة متى تُستخدم ومتى لا تُستخدم.
 
-## 🏗️ الهيكلية | Structure
-تم تقسيم المكتبة بناءً على حالة الإثبات (Proof State) إلى:
-- 📘 **تطبيقية (Practical)**: مُختبرة ومُطبقة عملياً.
-- 🧪 **ناشئة (Emerging)**: واعدة ولكن لم تثبت بالكامل في الإنتاج.
-- 📐 **نظرية (Theoretical)**: موثقة أكاديمياً دون أدلة إنتاجية.
-- ❌ **مرفوضة (Rejected)**: طرق تم دحضها أو لا يوجد لها أساس علمي متين.
+## الإحصاءات الحالية | Current Statistics
+- الفئات الكبرى: 10
+- الفئات الفرعية: 9
+- الإدخالات: 11
+- المصادر المسجلة: 13
+- الادعاءات المسجلة: 15
+- آخر تحديث: 2026-06-26
 
-## 🔗 روابط هامة | Quick Links
-- [شجرة التصنيفات (TREE)](TREE.md)
-- [المعجم العلمي (GLOSSARY)](GLOSSARY.md)
-- [سجل الأدلة (EVIDENCE LEDGER)](EVIDENCE_LEDGER.md)
-- [دليل المصطلحات العربية (ARABIC TERMINOLOGY)](ARABIC_TERMINOLOGY_GUIDE.md)
+## روابط أساسية | Key Links
+- [شجرة التصنيفات](TREE.md)
+- [المنهجية](METHODOLOGY.md)
+- [المعجم](GLOSSARY.md)
+- [مصفوفة القرار](DECISION_MATRIX.md)
+- [سجل الأدلة](EVIDENCE_LEDGER.md)
+- [سجل الادعاءات](CLAIMS.md)
+- [سياسة عدم المبالغة](NO_HYPE_POLICY.md)
+- [بروتوكول الاستمرار](CONTINUATION_PROTOCOL.md)
 
-## 📖 أدلة التطبيق | Playbooks
-اطلع على مجلد `playbooks/` للحصول على أدلة تطبيقية مباشرة (مثل: كيفية تقليل تكلفة واجهات برمجة التطبيقات، نشر نماذج بتكلفة أقل، الخ).
+## الفئات الكبرى | Major Categories
+1. Model Compression — ضغط النماذج
+2. Efficient Inference — الاستدلال الفعّال
+3. Efficient Training — التدريب الفعّال
+4. Hardware and Systems — العتاد والأنظمة
+5. Data Efficiency — كفاءة البيانات
+6. Model Selection and Routing — اختيار وتوجيه النماذج
+7. Operations and Monitoring — العمليات والمراقبة
+8. Token and Prompt Cost Optimization — تحسين تكلفة التوكن والموجهات
+9. Retrieval and Context Efficiency — كفاءة الاسترجاع والسياق
+10. Energy and Sustainability — الطاقة والاستدامة
+
+## سياسة عدم المبالغة | No-Hype Policy
+**عدم اليقين الصادق أفضل من يقين مُختلق.** كل ادعاء رقمي يجب أن يكون مرتبطاً بمصدر مباشر، وأي ادعاء غير مكتمل الدليل يجب أن يُوسم بوضوح.
+
+## الترخيص | License
+MIT

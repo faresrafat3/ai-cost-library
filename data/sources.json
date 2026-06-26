@@ -1,1 +1,119 @@
-[]
+[
+  {
+    "id": "SRC-GPTQ-2023",
+    "tier": 1,
+    "authors": "Frantar et al.",
+    "title": "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+    "venue": "ICLR / arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2210.17323"
+  },
+  {
+    "id": "SRC-AWQ-2024",
+    "tier": 1,
+    "authors": "Lin et al.",
+    "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+    "venue": "MLSys / arXiv",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2306.00978"
+  },
+  {
+    "id": "SRC-SMOOTHQUANT-2023",
+    "tier": 1,
+    "authors": "Xiao et al.",
+    "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
+    "venue": "ICML / arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2211.10438"
+  },
+  {
+    "id": "SRC-LLMINT8-2022",
+    "tier": 1,
+    "authors": "Dettmers et al.",
+    "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+    "venue": "NeurIPS / arXiv",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2208.07339"
+  },
+  {
+    "id": "SRC-SPECDEC-2023",
+    "tier": 1,
+    "authors": "Leviathan, Kalman, and Matias",
+    "title": "Fast Inference from Transformers via Speculative Decoding",
+    "venue": "ICML / arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2211.17192"
+  },
+  {
+    "id": "SRC-ORCA-2022",
+    "tier": 1,
+    "authors": "Yu et al.",
+    "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
+    "venue": "OSDI",
+    "year": 2022,
+    "url": "https://www.usenix.org/conference/osdi22/presentation/yu"
+  },
+  {
+    "id": "SRC-VLLM-2023",
+    "tier": 1,
+    "authors": "Kwon et al.",
+    "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+    "venue": "SOSP / arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.06180"
+  },
+  {
+    "id": "SRC-SGLANG-2023",
+    "tier": 2,
+    "authors": "Zheng et al.",
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "venue": "arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.07104"
+  },
+  {
+    "id": "SRC-LORA-2022",
+    "tier": 1,
+    "authors": "Hu et al.",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "venue": "ICLR / arXiv",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2106.09685"
+  },
+  {
+    "id": "SRC-QLORA-2023",
+    "tier": 1,
+    "authors": "Dettmers et al.",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "venue": "NeurIPS / arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.14314"
+  },
+  {
+    "id": "SRC-PROMPTCACHE-2023",
+    "tier": 2,
+    "authors": "Gim et al.",
+    "title": "Prompt Cache: Modular Attention Reuse for Low-Latency Inference",
+    "venue": "arXiv",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2311.04934"
+  },
+  {
+    "id": "SRC-OPENAI-PROMPT-CACHING",
+    "tier": 2,
+    "authors": "OpenAI",
+    "title": "Prompt Caching documentation",
+    "venue": "Official documentation",
+    "year": 2024,
+    "url": "https://platform.openai.com/docs/guides/prompt-caching"
+  },
+  {
+    "id": "SRC-ANTHROPIC-PROMPT-CACHING",
+    "tier": 2,
+    "authors": "Anthropic",
+    "title": "Prompt caching documentation",
+    "venue": "Official documentation",
+    "year": 2024,
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
+  }
+]

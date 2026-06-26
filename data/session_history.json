@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "session": "session-001",
+    "date": "2026-06-26",
+    "summary_ar": "إنشاء الهيكل الأولي للمستودع وإدخالات أساسية.",
+    "summary_en": "Created initial repository skeleton and seed entries."
+  },
+  {
+    "session": "session-002",
+    "date": "2026-06-26",
+    "summary_ar": "توسيع المحتوى بإدخالات إضافية وصفحات مقارنة وأدلة تطبيق.",
+    "summary_en": "Expanded content with additional entries, comparisons, and playbooks."
+  },
+  {
+    "session": "session-003",
+    "date": "2026-06-26",
+    "summary_ar": "فحص المستودع الموجود، إضافة ملفات README للفئات الفرعية، إصلاح JSON للتتبّع، إضافة فئة الطاقة والاستدامة، وتحديث بروتوكول الاستمرار.",
+    "summary_en": "Inspected existing repository, added subcategory READMEs, fixed tracking JSON, added Energy and Sustainability category, and updated continuation state."
+  }
+]

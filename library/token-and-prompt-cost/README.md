@@ -18,7 +18,7 @@ Token and Prompt Cost Optimization aims to reduce costs associated with LLM API 
 
 | الإدخال | النوع | درجة الإثبات | الحالة |
 |---|---|---|---|
-| [تخزين الموجهات المؤقت](./prompt-caching.md) | تقنية API | ⭐⭐⭐⭐ | Deployed |
+| [تخزين الموجهات المؤقت](./prompt-caching/prompt-caching.md) | تقنية API | ⭐⭐⭐⭐ | Deployed |
 
 ## 🎯 لماذا تحسين تكلفة التوكن مهم؟
 

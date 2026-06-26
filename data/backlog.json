@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "BL-001",
+    "priority": "high",
+    "task_ar": "إضافة إدخالات ناشئة ونظرية موثقة لتوازن التصنيفات.",
+    "task_en": "Add documented emerging and theoretical entries to balance classifications."
+  },
+  {
+    "id": "BL-002",
+    "priority": "high",
+    "task_ar": "تدقيق درجات الإثبات لكل إدخال عملي وربط كل بوابة بمصدر مباشر.",
+    "task_en": "Audit proof scores and map every evidence gate to direct sources."
+  },
+  {
+    "id": "BL-003",
+    "priority": "medium",
+    "task_ar": "إضافة إدخالات التقليم والتقطير وكفاءة البيانات والطاقة.",
+    "task_en": "Add pruning, distillation, data efficiency, and energy entries."
+  },
+  {
+    "id": "BL-004",
+    "priority": "medium",
+    "task_ar": "بناء حاسبات تكلفة بسيطة من ملفات JSON.",
+    "task_en": "Build simple cost calculators from JSON data."
+  }
+]

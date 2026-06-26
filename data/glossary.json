@@ -1,34 +1,198 @@
 {
-  "glossary_version": "0.2.0",
+  "glossary_version": "0.3.0",
   "last_updated": "2026-06-26",
   "terms": [
-    {"en": "Quantization", "ar": "التكمية", "definition_ar": "عملية تحويل الأوزان أو التنشيطات من دقة عالية إلى دقة منخفضة لتقليل حجم النموذج وتسريع الاستدلال", "definition_en": "Converting weights or activations from high precision to low precision to reduce model size and accelerate inference"},
-    {"en": "Post-Training Quantization", "ar": "التكمية بعد التدريب", "definition_ar": "ضغط النموذج دون الحاجة لإعادة التدريب، باستخدام مجموعة بيانات معايرة صغيرة", "definition_en": "Compressing a model without retraining, using a small calibration dataset"},
-    {"en": "Quantization-Aware Training", "ar": "التدريب الواعي بالتكمية", "definition_ar": "تدريب النموذج مع محاكاة تأثير التكمية أثناء عملية التدريب لتحسين الدقة النهائية", "definition_en": "Training the model while simulating quantization effects to improve final accuracy"},
-    {"en": "Pruning", "ar": "التقليم", "definition_ar": "إزالة الأوزان أو الوحدات العصبية غير الضرورية من النموذج لتقليل حجمه وتعقيده", "definition_en": "Removing unnecessary weights or neural units from a model to reduce size and complexity"},
-    {"en": "Distillation", "ar": "التقطير", "definition_ar": "تدريب نموذج صغير (طالب) لتقليد سلوك نموذج كبير (معلّم) مع الحفاظ على الأداء", "definition_en": "Training a small student model to mimic a large teacher model while preserving performance"},
-    {"en": "Weight Quantization", "ar": "تكمية الأوزان", "definition_ar": "تقليل دقة أوزان النموذج فقط مع إبقاء التنشيطات بدقة عالية", "definition_en": "Reducing precision of model weights only while keeping activations at high precision"},
-    {"en": "Activation Quantization", "ar": "تكمية التنشيطات", "definition_ar": "تقليل دقة القيم الوسيطة (التنشيطات) أثناء تمرير البيانات عبر طبقات النموذج", "definition_en": "Reducing precision of intermediate values (activations) during forward passes"},
-    {"en": "Inference", "ar": "الاستدلال", "definition_ar": "عملية استخدام نموذج مدرب لتوليد مخرجات من مدخلات جديدة دون تحديث أوزانه", "definition_en": "Using a trained model to generate outputs from new inputs without updating its weights"},
-    {"en": "Latency", "ar": "الكمون / التأخير", "definition_ar": "الزمن المستغرق لمعالجة طلب واحد من بدايته إلى نهايته", "definition_en": "Time taken to process a single request from start to finish"},
-    {"en": "Throughput", "ar": "الإنتاجية", "definition_ar": "عدد الطلبات التي يمكن معالجتها في وحدة زمنية واحدة", "definition_en": "Number of requests that can be processed per unit of time"},
-    {"en": "Batching", "ar": "التجميع", "definition_ar": "معالجة عدة طلبات معاً في دفعة واحدة لتحسين كفاءة استخدام العتاد", "definition_en": "Processing multiple requests together in a single batch to improve hardware utilization"},
-    {"en": "Continuous Batching", "ar": "التجميع المستمر", "definition_ar": "تقنية جدولة تزيل الطلبات المنتهية وتُدخل طلبات جديدة في كل خطوة تكرارية", "definition_en": "A scheduling technique that removes finished requests and inserts new ones at each iteration"},
-    {"en": "Speculative Decoding", "ar": "فك التشفير التكهني", "definition_ar": "استخدام نموذج صغير لتوليد رموز مسودة يتحقق منها النموذج الكبير بالتوازي", "definition_en": "Using a small model to generate draft tokens that the large model verifies in parallel"},
-    {"en": "KV Cache", "ar": "الذاكرة المؤقتة للمفاتيح والقيم", "definition_ar": "تخزين حالات التحويل (Key-Value pairs) الناتجة عن الرموز السابقة لتجنب إعادة حسابها", "definition_en": "Storing transformer states from previous tokens to avoid recomputation"},
-    {"en": "Time To First Token", "ar": "الزمن حتى أول رمز", "definition_ar": "مقياس للكمون يقيس الوقت من إرسال الطلب حتى تلقي أول رمز من المخرج", "definition_en": "A latency metric measuring time from request submission to receiving the first output token"},
-    {"en": "Fine-tuning", "ar": "الضبط الدقيق", "definition_ar": "إعادة تدريب نموذج مُدرَّب مسبقاً على بيانات محددة لمهمة معينة", "definition_en": "Retraining a pre-trained model on task-specific data"},
-    {"en": "Low-Rank Adaptation", "ar": "التكيّف منخفض الرتبة", "definition_ar": "إضافة مصفوفات منخفضة الرتبة قابلة للتدريب إلى طبقات النموذج المجمّد", "definition_en": "Adding trainable low-rank matrices to frozen model layers"},
-    {"en": "Parameter-Efficient Fine-Tuning", "ar": "الضبط الدقيق الموفّر للمعاملات", "definition_ar": "عائلة تقنيات تضبط جزءاً صغيراً فقط من معاملات النموذج مع تجميد الباقي", "definition_en": "Techniques that update only a small fraction of model parameters while freezing the rest"},
-    {"en": "Gradient Checkpointing", "ar": "ترقيم النقاط المرجعية للتدرج", "definition_ar": "تقنية توفّر الذاكرة بإعادة حساب التدرجات بدلاً من تخزينها", "definition_en": "A memory-saving technique that recomputes gradients instead storing them"},
-    {"en": "GPU Memory", "ar": "ذاكرة وحدة معالجة الرسومات", "definition_ar": "الذاكرة عالية السرعة المخصصة لوحدة معالجة الرسومات، تحدد حجم النماذج التي يمكن تحميلها", "definition_en": "High-speed memory dedicated to the GPU, determining maximum model size that can be loaded"},
-    {"en": "Arithmetic Intensity", "ar": "الكثافة الحسابية", "definition_ar": "نسبة عدد العمليات الحسابية إلى كمية البيانات المنقولة من الذاكرة", "definition_en": "Ratio of computation operations to memory data transfers"},
-    {"en": "Memory Bandwidth", "ar": "عرض النطاق الترددي للذاكرة", "definition_ar": "السرعة القصوى لنقل البيانات بين الذاكرة ووحدة المعالجة", "definition_en": "Maximum rate at which data can be transferred between memory and processor"},
-    {"en": "Tensor Core", "ar": "نواة الموترات", "definition_ar": "وحدة معالجة متخصصة في مصفوفات GPU مصممة للعمليات الخطية المتوازية", "definition_en": "Specialized GPU processing unit designed for parallel linear algebra operations"},
-    {"en": "Retrieval-Augmented Generation", "ar": "التوليد المعزّز بالاسترجاع", "definition_ar": "نظام يدمج استرجاع المستندات مع توليد النص لتحسين الدقة وتقليل التكلفة", "definition_en": "A system combining document retrieval with text generation to improve accuracy and reduce cost"},
-    {"en": "Context Window", "ar": "نافذة السياق", "definition_ar": "الحد الأقصى لعدد الرموز التي يمكن للنموذج معالجتها في طلب واحد", "definition_en": "Maximum number of tokens a model can process in a single request"},
-    {"en": "Token", "ar": "رمز", "definition_ar": "الوحدة الأساسية التي يقسّم النموذج النص إليها للمعالجة", "definition_en": "The basic unit into which a model splits text for processing"},
-    {"en": "Prompt Caching", "ar": "تخزين الموجهات المؤقت", "definition_ar": "إعادة استخدام الحسابات السابقة للمقاطع المشتركة بين الطلبات المتعددة", "definition_en": "Reusing previous computations for shared text segments across multiple requests"},
-    {"en": "Cost per Query", "ar": "تكلفة الاستعلام الواحد", "definition_ar": "إجمالي التكلفة الحسابية مقسومة على عدد الطلبات المعالجة", "definition_en": "Total computational cost divided by number of requests processed"}
+    {
+      "en": "Quantization",
+      "ar": "التكمية",
+      "definition_ar": "عملية تحويل الأوزان أو التنشيطات من دقة عالية إلى دقة منخفضة لتقليل حجم النموذج وتسريع الاستدلال",
+      "definition_en": "Converting weights or activations from high precision to low precision to reduce model size and accelerate inference"
+    },
+    {
+      "en": "Post-Training Quantization",
+      "ar": "التكمية بعد التدريب",
+      "definition_ar": "ضغط النموذج دون الحاجة لإعادة التدريب، باستخدام مجموعة بيانات معايرة صغيرة",
+      "definition_en": "Compressing a model without retraining, using a small calibration dataset"
+    },
+    {
+      "en": "Quantization-Aware Training",
+      "ar": "التدريب الواعي بالتكمية",
+      "definition_ar": "تدريب النموذج مع محاكاة تأثير التكمية أثناء عملية التدريب لتحسين الدقة النهائية",
+      "definition_en": "Training the model while simulating quantization effects to improve final accuracy"
+    },
+    {
+      "en": "Pruning",
+      "ar": "التقليم",
+      "definition_ar": "إزالة الأوزان أو الوحدات العصبية غير الضرورية من النموذج لتقليل حجمه وتعقيده",
+      "definition_en": "Removing unnecessary weights or neural units from a model to reduce size and complexity"
+    },
+    {
+      "en": "Distillation",
+      "ar": "التقطير",
+      "definition_ar": "تدريب نموذج صغير (طالب) لتقليد سلوك نموذج كبير (معلّم) مع الحفاظ على الأداء",
+      "definition_en": "Training a small student model to mimic a large teacher model while preserving performance"
+    },
+    {
+      "en": "Weight Quantization",
+      "ar": "تكمية الأوزان",
+      "definition_ar": "تقليل دقة أوزان النموذج فقط مع إبقاء التنشيطات بدقة عالية",
+      "definition_en": "Reducing precision of model weights only while keeping activations at high precision"
+    },
+    {
+      "en": "Activation Quantization",
+      "ar": "تكمية التنشيطات",
+      "definition_ar": "تقليل دقة القيم الوسيطة (التنشيطات) أثناء تمرير البيانات عبر طبقات النموذج",
+      "definition_en": "Reducing precision of intermediate values (activations) during forward passes"
+    },
+    {
+      "en": "Inference",
+      "ar": "الاستدلال",
+      "definition_ar": "عملية استخدام نموذج مدرب لتوليد مخرجات من مدخلات جديدة دون تحديث أوزانه",
+      "definition_en": "Using a trained model to generate outputs from new inputs without updating its weights"
+    },
+    {
+      "en": "Latency",
+      "ar": "الكمون / التأخير",
+      "definition_ar": "الزمن المستغرق لمعالجة طلب واحد من بدايته إلى نهايته",
+      "definition_en": "Time taken to process a single request from start to finish"
+    },
+    {
+      "en": "Throughput",
+      "ar": "الإنتاجية",
+      "definition_ar": "عدد الطلبات التي يمكن معالجتها في وحدة زمنية واحدة",
+      "definition_en": "Number of requests that can be processed per unit of time"
+    },
+    {
+      "en": "Batching",
+      "ar": "التجميع",
+      "definition_ar": "معالجة عدة طلبات معاً في دفعة واحدة لتحسين كفاءة استخدام العتاد",
+      "definition_en": "Processing multiple requests together in a single batch to improve hardware utilization"
+    },
+    {
+      "en": "Continuous Batching",
+      "ar": "التجميع المستمر",
+      "definition_ar": "تقنية جدولة تزيل الطلبات المنتهية وتُدخل طلبات جديدة في كل خطوة تكرارية",
+      "definition_en": "A scheduling technique that removes finished requests and inserts new ones at each iteration"
+    },
+    {
+      "en": "Speculative Decoding",
+      "ar": "فك التشفير التكهني",
+      "definition_ar": "استخدام نموذج صغير لتوليد رموز مسودة يتحقق منها النموذج الكبير بالتوازي",
+      "definition_en": "Using a small model to generate draft tokens that the large model verifies in parallel"
+    },
+    {
+      "en": "KV Cache",
+      "ar": "الذاكرة المؤقتة للمفاتيح والقيم",
+      "definition_ar": "تخزين حالات التحويل (Key-Value pairs) الناتجة عن الرموز السابقة لتجنب إعادة حسابها",
+      "definition_en": "Storing transformer states from previous tokens to avoid recomputation"
+    },
+    {
+      "en": "Time To First Token",
+      "ar": "الزمن حتى أول رمز",
+      "definition_ar": "مقياس للكمون يقيس الوقت من إرسال الطلب حتى تلقي أول رمز من المخرج",
+      "definition_en": "A latency metric measuring time from request submission to receiving the first output token"
+    },
+    {
+      "en": "Fine-tuning",
+      "ar": "الضبط الدقيق",
+      "definition_ar": "إعادة تدريب نموذج مُدرَّب مسبقاً على بيانات محددة لمهمة معينة",
+      "definition_en": "Retraining a pre-trained model on task-specific data"
+    },
+    {
+      "en": "Low-Rank Adaptation",
+      "ar": "التكيّف منخفض الرتبة",
+      "definition_ar": "إضافة مصفوفات منخفضة الرتبة قابلة للتدريب إلى طبقات النموذج المجمّد",
+      "definition_en": "Adding trainable low-rank matrices to frozen model layers"
+    },
+    {
+      "en": "Parameter-Efficient Fine-Tuning",
+      "ar": "الضبط الدقيق الموفّر للمعاملات",
+      "definition_ar": "عائلة تقنيات تضبط جزءاً صغيراً فقط من معاملات النموذج مع تجميد الباقي",
+      "definition_en": "Techniques that update only a small fraction of model parameters while freezing the rest"
+    },
+    {
+      "en": "Gradient Checkpointing",
+      "ar": "ترقيم النقاط المرجعية للتدرج",
+      "definition_ar": "تقنية توفّر الذاكرة بإعادة حساب التدرجات بدلاً من تخزينها",
+      "definition_en": "A memory-saving technique that recomputes gradients instead storing them"
+    },
+    {
+      "en": "GPU Memory",
+      "ar": "ذاكرة وحدة معالجة الرسومات",
+      "definition_ar": "الذاكرة عالية السرعة المخصصة لوحدة معالجة الرسومات، تحدد حجم النماذج التي يمكن تحميلها",
+      "definition_en": "High-speed memory dedicated to the GPU, determining maximum model size that can be loaded"
+    },
+    {
+      "en": "Arithmetic Intensity",
+      "ar": "الكثافة الحسابية",
+      "definition_ar": "نسبة عدد العمليات الحسابية إلى كمية البيانات المنقولة من الذاكرة",
+      "definition_en": "Ratio of computation operations to memory data transfers"
+    },
+    {
+      "en": "Memory Bandwidth",
+      "ar": "عرض النطاق الترددي للذاكرة",
+      "definition_ar": "السرعة القصوى لنقل البيانات بين الذاكرة ووحدة المعالجة",
+      "definition_en": "Maximum rate at which data can be transferred between memory and processor"
+    },
+    {
+      "en": "Tensor Core",
+      "ar": "نواة الموترات",
+      "definition_ar": "وحدة معالجة متخصصة في مصفوفات GPU مصممة للعمليات الخطية المتوازية",
+      "definition_en": "Specialized GPU processing unit designed for parallel linear algebra operations"
+    },
+    {
+      "en": "Retrieval-Augmented Generation",
+      "ar": "التوليد المعزّز بالاسترجاع",
+      "definition_ar": "نظام يدمج استرجاع المستندات مع توليد النص لتحسين الدقة وتقليل التكلفة",
+      "definition_en": "A system combining document retrieval with text generation to improve accuracy and reduce cost"
+    },
+    {
+      "en": "Context Window",
+      "ar": "نافذة السياق",
+      "definition_ar": "الحد الأقصى لعدد الرموز التي يمكن للنموذج معالجتها في طلب واحد",
+      "definition_en": "Maximum number of tokens a model can process in a single request"
+    },
+    {
+      "en": "Token",
+      "ar": "رمز",
+      "definition_ar": "الوحدة الأساسية التي يقسّم النموذج النص إليها للمعالجة",
+      "definition_en": "The basic unit into which a model splits text for processing"
+    },
+    {
+      "en": "Prompt Caching",
+      "ar": "تخزين الموجهات المؤقت",
+      "definition_ar": "إعادة استخدام الحسابات السابقة للمقاطع المشتركة بين الطلبات المتعددة",
+      "definition_en": "Reusing previous computations for shared text segments across multiple requests"
+    },
+    {
+      "en": "Cost per Query",
+      "ar": "تكلفة الاستعلام الواحد",
+      "definition_ar": "إجمالي التكلفة الحسابية مقسومة على عدد الطلبات المعالجة",
+      "definition_en": "Total computational cost divided by number of requests processed"
+    },
+    {
+      "en": "Serving Engine",
+      "ar": "محرك تقديم النماذج",
+      "definition_ar": "نظام برمجي يدير استقبال طلبات الاستدلال وجدولتها وتنفيذها على المسرّعات مع تحسين الذاكرة والإنتاجية.",
+      "definition_en": "Software that receives, schedules, and executes inference requests on accelerators while optimizing memory and throughput."
+    },
+    {
+      "en": "Energy Efficiency",
+      "ar": "كفاءة الطاقة",
+      "definition_ar": "نسبة العمل المفيد، مثل عدد التوكنات أو العينات المعالجة، إلى الطاقة المستهلكة أثناء التدريب أو الاستدلال.",
+      "definition_en": "The amount of useful work, such as processed tokens or samples, per unit of energy consumed during training or inference."
+    },
+    {
+      "en": "Carbon-Aware Scheduling",
+      "ar": "الجدولة الواعية بالكربون",
+      "definition_ar": "تشغيل أحمال الحوسبة في أوقات أو مناطق تكون فيها كثافة الكربون في الكهرباء أقل لتقليل الأثر البيئي.",
+      "definition_en": "Running compute workloads at times or locations with lower electricity carbon intensity to reduce environmental impact."
+    },
+    {
+      "en": "Prefix Reuse",
+      "ar": "إعادة استخدام البادئات",
+      "definition_ar": "إعادة استعمال نتائج حسابية لسياقات أو بادئات متكررة بدلاً من حسابها من جديد في كل طلب.",
+      "definition_en": "Reusing computed results for repeated contexts or prefixes instead of recomputing them for every request."
+    }
   ]
 }
