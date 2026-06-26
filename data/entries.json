@@ -377,6 +377,104 @@
       "category": "runtime-optimization",
       "proof_score": 2,
       "created": "2026-06-26"
+    },
+    {
+      "id": "entry-moe-001",
+      "title_en": "Mixture-of-Experts Economics: The Dominant Architecture of 2026",
+      "type": "practical",
+      "file_path": "library/01-model-optimization/efficient-architecture/mixture-of-experts-economics.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-subquad-001",
+      "title_en": "Sub-Quadratic Models: Mamba-3 and Transformer Alternatives for Inference Efficiency",
+      "type": "emerging",
+      "file_path": "library/01-model-optimization/efficient-architecture/subquadratic-models.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-llama4-001",
+      "title_en": "Llama 4 MoE Economics: 400B Knowledge at 17B Inference Cost",
+      "type": "practical",
+      "file_path": "library/01-model-optimization/efficient-architecture/llama4-moe-economics.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-eagle3-001",
+      "title_en": "EAGLE-3: State-of-the-Art Speculative Decoding",
+      "type": "practical",
+      "file_path": "library/02-runtime-optimization/decoding/eagle3-speculative-decoding.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-kvcachecompress-001",
+      "title_en": "KV Cache Compression & Eviction",
+      "type": "emerging",
+      "file_path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-ttc-001",
+      "title_en": "Inference-Time Compute Economics: When Thinking More Costs Less",
+      "type": "practical",
+      "file_path": "library/02-runtime-optimization/inference-time-compute/inference-time-compute.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-multilora-001",
+      "title_en": "Multi-LoRA Serving: Hundreds of Fine-Tuned Models on One GPU",
+      "type": "practical",
+      "file_path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-deepspeed-001",
+      "title_en": "Distributed Training: DeepSpeed ZeRO & PyTorch FSDP",
+      "type": "practical",
+      "file_path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-gpuecon-001",
+      "title_en": "GPU Inference Economics 2026: H100 vs B200 vs H200 Cost-per-Token",
+      "type": "practical",
+      "file_path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-ipw-001",
+      "title_en": "Local vs Cloud Inference: Intelligence per Watt (IPW)",
+      "type": "practical",
+      "file_path": "library/04-infrastructure/deployment-strategies/local-vs-cloud-hybrid.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-breakeven-001",
+      "title_en": "Self-Host vs API: The Break-Even Analysis (2026)",
+      "type": "practical",
+      "file_path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-dvfs-001",
+      "title_en": "GPU Frequency Scaling (DVFS): 42% Energy Savings at 1-3% Latency Cost",
+      "type": "emerging",
+      "file_path": "library/04-infrastructure/energy-efficiency/gpu-frequency-scaling.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-agentdiet-001",
+      "title_en": "Agent Trajectory Reduction (AgentDiet)",
+      "type": "emerging",
+      "file_path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
+      "created": "2026-06-26"
+    },
+    {
+      "id": "entry-ctxcompress-001",
+      "title_en": "Context Compression & Token Reduction for Agents",
+      "type": "emerging",
+      "file_path": "library/05-agentic-economics/chain-optimization/context-compression.md",
+      "created": "2026-06-26"
     }
   ]
 }

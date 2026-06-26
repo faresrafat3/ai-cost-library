@@ -1,18 +1,25 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "last_updated": "2026-06-26",
-  "total_entries": 36,
+  "total_entries": 50,
   "total_categories": 7,
-  "total_subcategories": 21,
-  "total_filesystem_entries": 40,
-  "total_sources": 75,
-  "total_papers_reviewed": 35,
+  "total_subcategories": 22,
+  "total_words": 34000,
+  "total_sources": 201,
+  "total_papers_reviewed": 55,
+  "total_glossary_terms": 75,
+  "scoring_dimensions": 12,
+  "user_profiles": 5,
+  "total_scores": 600,
   "classification": {
-    "practical": 23,
-    "emerging": 12,
-    "theoretical": 3,
-    "rejected": 0
+    "practical": 30,
+    "emerging": 16,
+    "theoretical": 4
   },
-  "taxonomy_version": "2.0",
-  "scoring_version": "1.0"
+  "depth": {
+    "deep_150plus": 3,
+    "good_100plus": 47,
+    "medium": 0,
+    "shallow": 0
+  }
 }

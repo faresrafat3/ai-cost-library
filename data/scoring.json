@@ -1022,6 +1022,23 @@
         "C3": 9,
         "C4": 9
       }
+    },
+    "entry-batchapi-001": {
+      "title": "Batch API + Structured Output",
+      "scores": {
+        "A1": 10,
+        "A2": 7,
+        "A3": 10,
+        "A4": 9,
+        "B1": 9,
+        "B2": 0,
+        "B3": 0,
+        "B4": 0,
+        "C1": 9,
+        "C2": 9,
+        "C3": 10,
+        "C4": 10
+      }
     }
   },
   "relationships": {
