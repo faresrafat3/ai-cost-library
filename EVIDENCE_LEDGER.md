@@ -12,3 +12,5 @@ This ledger records all quantified claims for cost/memory/latency reduction.
 | `CLAIM-PCACHE-02` | Prompt Caching | Latency (TTFT) | 13% to 31% improvement | Du et al., 2026 (arXiv:2601.06007) |
 | `CLAIM-CBATCH-01` | Continuous Batching | Throughput | Up to 23x vs Static Batching | Anyscale Benchmark, 2026 |
 | `CLAIM-CBATCH-02` | Continuous Batching | Throughput | 36.9x vs FasterTransformer | Yu et al., 2022 (Orca OSDI) |
+| `CLAIM-AWQ-01` | AWQ | Latency | 1.45x faster than GPTQ | Lin et al., 2023-2024 (AWQ) |
+| `CLAIM-AWQ-02` | AWQ | Memory / Speed | Fits 13B on 8GB VRAM (33 tok/s) | Lin et al., 2023-2024 (AWQ) |
