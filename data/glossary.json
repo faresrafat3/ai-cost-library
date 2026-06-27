@@ -349,6 +349,12 @@
       "ar": "تكميم 8-بت للنماذج اللغوية",
       "definition_ar": "تكميم 8-بت يتعامل مع القيم الشاذة بدقة 16-بت مع تكميم باقي النموذج",
       "definition_en": "8-bit quantization that handles outlier values in 16-bit while quantizing the rest of the model"
+    },
+    {
+      "term_ar": "حوسبة وقت النوم",
+      "term_en": "Sleep-time Compute",
+      "definition_ar": "نقل جزء من الحوسبة أو الاستدلال من وقت الطلب إلى فترة سابقة غير متزامنة عندما يكون السياق معروفاً مسبقاً، بهدف خفض الكمون والتكلفة عند وصول الاستعلام.",
+      "definition_en": "Shifting part of reasoning or compute from request time to an earlier offline phase when context is already known, in order to reduce latency and cost at query time."
     }
   ]
 }

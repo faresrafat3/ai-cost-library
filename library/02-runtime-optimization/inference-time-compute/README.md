@@ -7,3 +7,5 @@
 | اقتصاديات حوسبة وقت الاستدلال | 📘 عملية | ⭐⭐⭐ | [inference-time-compute.md](inference-time-compute.md) |
 
 **الاكتشاف الأهم:** نموذج 7B بسعر $0.05/M token أغلى **57%** من نموذج 14B بسعر $0.10/M token — لأن الأصغر "يُفرط في التفكير" (3.13× توكنات أكثر).
+
+| Sleep-time Compute | 🧪 ناشئة | ⭐⭐ | [sleep-time-compute.md](sleep-time-compute.md) | arXiv 2504.13171 + code repository |

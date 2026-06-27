@@ -27,3 +27,5 @@
 ```bash
 python3 scripts/sync_metadata.py && git status --short
 ```
+
+12. توسيع فئة `inference-time-compute/` بإدخالات مترابطة: Sleep-time Compute, DeepConf early stopping, Kinetics, Inference-time distillation.

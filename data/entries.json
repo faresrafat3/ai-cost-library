@@ -464,6 +464,25 @@
       "updated": "2026-06-26"
     },
     {
+      "id": "entry-sleeptime-001",
+      "title_ar": "حوسبة وقت النوم",
+      "title_en": "Sleep-time Compute",
+      "type": "emerging",
+      "status": "active-research",
+      "category": "runtime-optimization",
+      "subcategory": "inference-time-compute",
+      "path": "library/02-runtime-optimization/inference-time-compute/sleep-time-compute.md",
+      "cost_dimensions": [
+        "inference-cost",
+        "token-cost",
+        "latency",
+        "compute"
+      ],
+      "proof_score": "⭐⭐ نموذج أولي | Prototype",
+      "sources_count": 4,
+      "updated": "2026-06-26"
+    },
+    {
       "id": "entry-flashattn-001",
       "title_ar": "FlashAttention — الانتباه المُحسَّن للذاكرة",
       "title_en": "FlashAttention: I/O-Aware Exact Attention",

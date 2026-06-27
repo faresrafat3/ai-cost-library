@@ -1,19 +1,194 @@
 {
   "evidence": [
-    {"id": "EV-001", "claim_id": "CL-003", "evidence_type": "benchmark", "description_ar": "تجربة على CNN/DM تلخيص باستخدام Llama-2-7B مع LayerSkip", "description_en": "Experiment on CNN/DM summarization using Llama-2-7B with LayerSkip", "source": "SRC-003", "verified": true, "tier": 1},
-    {"id": "EV-002", "claim_id": "CL-008", "evidence_type": "benchmark", "description_ar": "تقييم DistilBERT على معيار GLUE", "description_en": "DistilBERT evaluation on GLUE benchmark", "source": "SRC-008", "verified": true, "tier": 1},
-    {"id": "EV-003", "claim_id": "CL-009", "evidence_type": "cost_analysis", "description_ar": "مقارنة ساعات GPU بين DistilBERT وRoBERTa", "description_en": "GPU hours comparison between DistilBERT and RoBERTa", "source": "SRC-008", "verified": true, "tier": 1},
-    {"id": "EV-004", "claim_id": "CL-010", "evidence_type": "benchmark", "description_ar": "مقارنة R1-Distill-Qwen-8B مع Qwen3-235B-thinking على معايير الاستدلال", "description_en": "R1-Distill-Qwen-8B vs Qwen3-235B-thinking comparison on reasoning benchmarks", "source": "SRC-015", "verified": true, "tier": 2},
-    {"id": "EV-005", "claim_id": "CL-012", "evidence_type": "cost_analysis", "description_ar": "NVIDIA Minitron يستخدم 1/40 رموز تدريب", "description_en": "NVIDIA Minitron uses 1/40 training tokens", "source": "SRC-011", "verified": true, "tier": 2},
-    {"id": "EV-006", "claim_id": "CL-013", "evidence_type": "benchmark", "description_ar": "TinyBERT-4 يحقق 7.5× تصغير و9.4× تسريع", "description_en": "TinyBERT-4 achieves 7.5× compression and 9.4× speedup", "source": "SRC-020", "verified": true, "tier": 2},
-    {"id": "EV-007", "claim_id": "CL-014", "evidence_type": "benchmark", "description_ar": "Minitron يحسن MMLU بـ+16% مقارنة بالتدريب من الصفر", "description_en": "Minitron improves MMLU by +16% vs from-scratch training", "source": "SRC-011", "verified": true, "tier": 2},
-    {"id": "EV-008", "claim_id": "CL-016", "evidence_type": "deployment", "description_ar": "R1-Distill-Qwen-7B يعمل على أجهزة استهلاكية 16GB VRAM", "description_en": "R1-Distill-Qwen-7B runs on consumer hardware with 16GB VRAM", "source": "SRC-001", "verified": true, "tier": 2},
-    {"id": "EV-009", "claim_id": "CL-018", "evidence_type": "benchmark", "description_ar": "M-RARU يقلل متطلبات العينات 80%", "description_en": "M-RARU reduces sample requirements by 80%", "source": "SRC-014", "verified": true, "tier": 2},
-    {"id": "EV-010", "claim_id": "CL-019", "evidence_type": "deployment", "description_ar": "نماذج R1 مستخلصة متاحة على AWS Bedrock", "description_en": "R1 distilled models available on AWS Bedrock", "source": "SRC-013", "verified": true, "tier": 2},
-    {"id": "EV-011", "claim_id": "CL-020", "evidence_type": "code", "description_ar": "LayerSkip متاح على GitHub: facebookresearch/LayerSkip", "description_en": "LayerSkip available on GitHub: facebookresearch/LayerSkip", "source": "SRC-004", "verified": true, "tier": 2},
-    {"id": "EV-012", "claim_id": "CL-022", "evidence_type": "paper", "description_ar": "ورقة MoD من DeepMind (Raposo et al.)", "description_en": "MoD paper from DeepMind (Raposo et al.)", "source": "SRC-006", "verified": true, "tier": 2},
-    {"id": "EV-013", "claim_id": "CL-023", "evidence_type": "benchmark", "description_ar": "MiniLLM يتفوق على استخلاص KL القياسي", "description_en": "MiniLLM outperforms standard KL distillation", "source": "SRC-010", "verified": true, "tier": 1},
-    {"id": "EV-014", "claim_id": "CL-004", "evidence_type": "benchmark", "description_ar": "LayerSkip يحقق 1.82× تسريع على الترميز", "description_en": "LayerSkip achieves 1.82× speedup on coding", "source": "SRC-003", "verified": true, "tier": 1},
-    {"id": "EV-015", "claim_id": "CL-001", "evidence_type": "benchmark", "description_ar": "ShortGPT يحافظ على 85% أداء Llama-2-7B بعد قص 25%", "description_en": "ShortGPT retains 85% of Llama-2-7B performance after 25% pruning", "source": "SRC-001", "verified": false, "tier": 2}
+    {
+      "id": "EV-001",
+      "claim_id": "CL-003",
+      "evidence_type": "benchmark",
+      "description_ar": "تجربة على CNN/DM تلخيص باستخدام Llama-2-7B مع LayerSkip",
+      "description_en": "Experiment on CNN/DM summarization using Llama-2-7B with LayerSkip",
+      "source": "SRC-003",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-002",
+      "claim_id": "CL-008",
+      "evidence_type": "benchmark",
+      "description_ar": "تقييم DistilBERT على معيار GLUE",
+      "description_en": "DistilBERT evaluation on GLUE benchmark",
+      "source": "SRC-008",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-003",
+      "claim_id": "CL-009",
+      "evidence_type": "cost_analysis",
+      "description_ar": "مقارنة ساعات GPU بين DistilBERT وRoBERTa",
+      "description_en": "GPU hours comparison between DistilBERT and RoBERTa",
+      "source": "SRC-008",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-004",
+      "claim_id": "CL-010",
+      "evidence_type": "benchmark",
+      "description_ar": "مقارنة R1-Distill-Qwen-8B مع Qwen3-235B-thinking على معايير الاستدلال",
+      "description_en": "R1-Distill-Qwen-8B vs Qwen3-235B-thinking comparison on reasoning benchmarks",
+      "source": "SRC-015",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-005",
+      "claim_id": "CL-012",
+      "evidence_type": "cost_analysis",
+      "description_ar": "NVIDIA Minitron يستخدم 1/40 رموز تدريب",
+      "description_en": "NVIDIA Minitron uses 1/40 training tokens",
+      "source": "SRC-011",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-006",
+      "claim_id": "CL-013",
+      "evidence_type": "benchmark",
+      "description_ar": "TinyBERT-4 يحقق 7.5× تصغير و9.4× تسريع",
+      "description_en": "TinyBERT-4 achieves 7.5× compression and 9.4× speedup",
+      "source": "SRC-020",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-007",
+      "claim_id": "CL-014",
+      "evidence_type": "benchmark",
+      "description_ar": "Minitron يحسن MMLU بـ+16% مقارنة بالتدريب من الصفر",
+      "description_en": "Minitron improves MMLU by +16% vs from-scratch training",
+      "source": "SRC-011",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-008",
+      "claim_id": "CL-016",
+      "evidence_type": "deployment",
+      "description_ar": "R1-Distill-Qwen-7B يعمل على أجهزة استهلاكية 16GB VRAM",
+      "description_en": "R1-Distill-Qwen-7B runs on consumer hardware with 16GB VRAM",
+      "source": "SRC-001",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-009",
+      "claim_id": "CL-018",
+      "evidence_type": "benchmark",
+      "description_ar": "M-RARU يقلل متطلبات العينات 80%",
+      "description_en": "M-RARU reduces sample requirements by 80%",
+      "source": "SRC-014",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-010",
+      "claim_id": "CL-019",
+      "evidence_type": "deployment",
+      "description_ar": "نماذج R1 مستخلصة متاحة على AWS Bedrock",
+      "description_en": "R1 distilled models available on AWS Bedrock",
+      "source": "SRC-013",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-011",
+      "claim_id": "CL-020",
+      "evidence_type": "code",
+      "description_ar": "LayerSkip متاح على GitHub: facebookresearch/LayerSkip",
+      "description_en": "LayerSkip available on GitHub: facebookresearch/LayerSkip",
+      "source": "SRC-004",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-012",
+      "claim_id": "CL-022",
+      "evidence_type": "paper",
+      "description_ar": "ورقة MoD من DeepMind (Raposo et al.)",
+      "description_en": "MoD paper from DeepMind (Raposo et al.)",
+      "source": "SRC-006",
+      "verified": true,
+      "tier": 2
+    },
+    {
+      "id": "EV-013",
+      "claim_id": "CL-023",
+      "evidence_type": "benchmark",
+      "description_ar": "MiniLLM يتفوق على استخلاص KL القياسي",
+      "description_en": "MiniLLM outperforms standard KL distillation",
+      "source": "SRC-010",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-014",
+      "claim_id": "CL-004",
+      "evidence_type": "benchmark",
+      "description_ar": "LayerSkip يحقق 1.82× تسريع على الترميز",
+      "description_en": "LayerSkip achieves 1.82× speedup on coding",
+      "source": "SRC-003",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-015",
+      "claim_id": "CL-001",
+      "evidence_type": "benchmark",
+      "description_ar": "ShortGPT يحافظ على 85% أداء Llama-2-7B بعد قص 25%",
+      "description_en": "ShortGPT retains 85% of Llama-2-7B performance after 25% pruning",
+      "source": "SRC-001",
+      "verified": false,
+      "tier": 2
+    },
+    {
+      "id": "EV-016",
+      "claim_id": "CL-026",
+      "evidence_type": "benchmark",
+      "description_ar": "تجارب Stateful GSM-Symbolic وStateful AIME في ورقة Sleep-time Compute",
+      "description_en": "Stateful GSM-Symbolic and Stateful AIME experiments in the Sleep-time Compute paper",
+      "source": "SRC-026",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-017",
+      "claim_id": "CL-027",
+      "evidence_type": "cost_analysis",
+      "description_ar": "تحليل Multi-Query GSM-Symbolic يوضح خفض متوسط التكلفة لكل سؤال 2.5×",
+      "description_en": "Multi-Query GSM-Symbolic analysis showing 2.5× lower average cost per question",
+      "source": "SRC-026",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-018",
+      "claim_id": "CL-028",
+      "evidence_type": "benchmark",
+      "description_ar": "نتائج رفع الدقة 13% و18% عند توسيع sleep-time compute",
+      "description_en": "Accuracy gains of 13% and 18% when scaling sleep-time compute",
+      "source": "SRC-026",
+      "verified": true,
+      "tier": 1
+    },
+    {
+      "id": "EV-019",
+      "claim_id": "CL-029",
+      "evidence_type": "code",
+      "description_ar": "مستودع GitHub عام يتضمن الكود والبيانات المرافقة للورقة",
+      "description_en": "Public GitHub repository containing paper code and associated datasets",
+      "source": "SRC-027",
+      "verified": true,
+      "tier": 2
+    }
   ]
 }

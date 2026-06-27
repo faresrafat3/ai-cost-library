@@ -1,9 +1,9 @@
-# 🌳 شجرة التصنيفات | Library Tree — 54 Entries
+# 🌳 شجرة التصنيفات | Library Tree — 55 Entries
 
-> آخر تحديث: 2026-06-26 | **54 إدخال مُقيَّم** | v2.0
+> آخر تحديث: 2026-06-26 | **55 إدخال مُقيَّم** | v2.0
 
 ```
-مكتبة تكلفة الذكاء الاصطناعي (54 إدخال | 34,000+ كلمة | 195+ مصادر)
+مكتبة تكلفة الذكاء الاصطناعي (55 إدخال | 34,000+ كلمة | 199+ مصادر)
 │
 ├── 1. تحسين النموذج (15 إدخال)
 │   ├── التكميم (5): LLM.int8⭐⭐⭐⭐ · GPTQ⭐⭐⭐⭐ · AWQ⭐⭐⭐⭐ · SmoothQuant⭐⭐⭐ · FP8⭐⭐⭐⭐
@@ -19,7 +19,7 @@
 │   │   RadixAttention⭐⭐⭐ · KV Compression(4 أبحاث)⭐⭐
 │   ├── التخزين المؤقت (2): Prompt Caching⭐⭐⭐⭐ · Semantic Caching⭐⭐⭐
 │   ├── محركات → comparisons/inference-engines.md
-│   └── حوسبة الاستدلال (1): Inference-Time Compute⭐⭐⭐
+│   └── حوسبة الاستدلال (2): Inference-Time Compute⭐⭐⭐ · Sleep-time Compute⭐⭐
 │
 ├── 3. تحسين التدريب (7 إدخالات)
 │   ├── PEFT (3): LoRA⭐⭐⭐⭐ · QLoRA⭐⭐⭐⭐ · Multi-LoRA⭐⭐⭐

@@ -61,7 +61,7 @@
       {
         "id": "02-runtime-optimization",
         "path": "library/02-runtime-optimization",
-        "entry_count": 13,
+        "entry_count": 14,
         "subcategories": [
           {
             "id": "batching",
@@ -94,9 +94,10 @@
           {
             "id": "inference-time-compute",
             "path": "library/02-runtime-optimization/inference-time-compute",
-            "entry_count": 1,
+            "entry_count": 2,
             "entries": [
-              "entry-ttc-001"
+              "entry-ttc-001",
+              "entry-sleeptime-001"
             ]
           },
           {

@@ -494,576 +494,596 @@
     },
     {
       "id": "SRC-AUTO-099",
-      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "record": "[Tier 1] Dao et al., \"FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness\", NeurIPS 2022"
+      "path": "library/02-runtime-optimization/inference-time-compute/sleep-time-compute.md",
+      "record": "1. **[Tier 1]** Lin, K., Snell, C., Wang, Y., Packer, C., Wooders, S., Stoica, I., Gonzalez, J. E., \"Sleep-time Compute: Beyond Inference Scaling at Test-time,\" arXiv:2504.13171, April 2025. مباشر: ~5× تقليل حوسبة وقت الاختبار لنفس الدقة، و2.5× خفض متوسط التكلفة لكل سؤال، و13-18% تحسن دقة."
     },
     {
       "id": "SRC-AUTO-100",
-      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "record": "[Tier 1] Dao et al., \"FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning\", ICLR 2024"
+      "path": "library/02-runtime-optimization/inference-time-compute/sleep-time-compute.md",
+      "record": "2. **[Tier 2]** Letta + UC Berkeley, \"sleep-time-compute\" code repository, GitHub, April 2025. دليل البناء وإتاحة الكود والبيانات."
     },
     {
       "id": "SRC-AUTO-101",
-      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "record": "[Tier 1] Shah et al., \"FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision\", NeurIPS 2024 (Spotlight)"
+      "path": "library/02-runtime-optimization/inference-time-compute/sleep-time-compute.md",
+      "record": "3. **[Tier 2]** Letta documentation, \"Sleep-time agents developer docs,\" 2025-2026. دليل تطبيقي لفكرة الوكلاء المعتمدين على sleep-time."
     },
     {
       "id": "SRC-AUTO-102",
-      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "record": "[Tier 2] Lambda Cloud, \"How FlashAttention-2 Accelerates LLMs on NVIDIA H100 and A100 GPUs\", https://lambda.ai/blog/flashattention-2-lambda-cloud-h100-vs-a100"
+      "path": "library/02-runtime-optimization/inference-time-compute/sleep-time-compute.md",
+      "record": "4. **[Tier 2]** Sadhukhan, R., et al., \"Kinetics: Rethinking Test-Time Scaling Laws,\" arXiv:2506.05333, June 2025. مرجع مكمل يوضح أن تكلفة وقت الاختبار ليست مجرد FLOPs بل تتأثر بشدة بكلفة الذاكرة والانتباه."
     },
     {
       "id": "SRC-AUTO-103",
       "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "record": "[Tier 1] MLCommons, \"MLPerf Inference v4.1 Benchmarks\", 2024"
+      "record": "[Tier 1] Dao et al., \"FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness\", NeurIPS 2022"
     },
     {
       "id": "SRC-AUTO-104",
+      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "record": "[Tier 1] Dao et al., \"FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning\", ICLR 2024"
+    },
+    {
+      "id": "SRC-AUTO-105",
+      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "record": "[Tier 1] Shah et al., \"FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision\", NeurIPS 2024 (Spotlight)"
+    },
+    {
+      "id": "SRC-AUTO-106",
+      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "record": "[Tier 2] Lambda Cloud, \"How FlashAttention-2 Accelerates LLMs on NVIDIA H100 and A100 GPUs\", https://lambda.ai/blog/flashattention-2-lambda-cloud-h100-vs-a100"
+    },
+    {
+      "id": "SRC-AUTO-107",
+      "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "record": "[Tier 1] MLCommons, \"MLPerf Inference v4.1 Benchmarks\", 2024"
+    },
+    {
+      "id": "SRC-AUTO-108",
       "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
       "record": "1. **[Tier 2]** Lin, X., et al., \"CompressKV: Semantic-Retrieval-Guided KV-Cache Compression\", arXiv:2606.24467, June 2026. TU Darmstadt. Code: github.com/TUDa-HWAI/CompressKV"
     },
     {
-      "id": "SRC-AUTO-105",
+      "id": "SRC-AUTO-109",
       "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
       "record": "2. **[Tier 2]** Kim, J.-H., et al., \"Fast KVzip: Efficient and Accurate LLM Inference with Gated KV Eviction\", arXiv:2601.17668, January 2026."
     },
     {
-      "id": "SRC-AUTO-106",
+      "id": "SRC-AUTO-110",
       "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
       "record": "3. **[Tier 2]** Yang, X., et al., \"IndexMem: Learned KV-Cache Eviction with Latent Memory\", arXiv:2605.25475, May 2026."
     },
     {
-      "id": "SRC-AUTO-107",
+      "id": "SRC-AUTO-111",
       "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
       "record": "4. **[Tier 2]** Mai, T., et al., \"LaProx: Reformulating KV Cache Eviction Problem\", arXiv:2605.07234, May 2026."
     },
     {
-      "id": "SRC-AUTO-108",
+      "id": "SRC-AUTO-112",
       "path": "library/02-runtime-optimization/kv-cache/paged-attention.md",
       "record": "1. **[Tier 1]** Kwon, W., et al., \"Efficient Memory Management for Large Language Model Serving with PagedAttention\", **SOSP 2023**. UC Berkeley — the original vLLM paper."
     },
     {
-      "id": "SRC-AUTO-109",
+      "id": "SRC-AUTO-113",
       "path": "library/02-runtime-optimization/kv-cache/paged-attention.md",
       "record": "2. **[Tier 2]** Introl, \"KV Cache Optimization: Memory Efficiency for Production LLMs\", March 2026. \"Equivalent to 2-4× GPU investment.\""
     },
     {
-      "id": "SRC-AUTO-110",
+      "id": "SRC-AUTO-114",
       "path": "library/02-runtime-optimization/kv-cache/paged-attention.md",
       "record": "3. **[Tier 2]** Kolluru, \"Comparative Analysis of LLM Inference Serving Frameworks\", arXiv:2511.17593, November 2025. vLLM vs TGI benchmarks."
     },
     {
-      "id": "SRC-AUTO-111",
+      "id": "SRC-AUTO-115",
       "path": "library/02-runtime-optimization/kv-cache/paged-attention.md",
       "record": "4. **[Tier 2]** Brenndörfer, M., \"PagedAttention: Solving LLM KV Cache Memory Fragmentation\", January 2026. Visual explanation + simulation."
     },
     {
-      "id": "SRC-AUTO-112",
+      "id": "SRC-AUTO-116",
       "path": "library/02-runtime-optimization/kv-cache/radix-attention.md",
       "record": "1. **[Tier 1]** Zheng, L., et al., \"SGLang: Efficient Execution of Structured Language Model Programs\", 2024. UC Berkeley."
     },
     {
-      "id": "SRC-AUTO-113",
+      "id": "SRC-AUTO-117",
       "path": "library/02-runtime-optimization/kv-cache/radix-attention.md",
       "record": "2. **[Tier 2]** Spheron, \"SGLang Production Deployment Guide: RadixAttention\", March 2026. Cache hit rates + configuration."
     },
     {
-      "id": "SRC-AUTO-114",
+      "id": "SRC-AUTO-118",
       "path": "library/02-runtime-optimization/kv-cache/radix-attention.md",
       "record": "3. **[Tier 2]** Particula Tech, \"SGLang vs vLLM in 2026: Benchmarks\", March 2026. Head-to-head comparison."
     },
     {
-      "id": "SRC-AUTO-115",
+      "id": "SRC-AUTO-119",
       "path": "library/02-runtime-optimization/kv-cache/radix-attention.md",
       "record": "4. **[Tier 2]** RunPod, \"SGLang in Production: RadixAttention\", April 2026. 6.4× throughput, production deployment."
     },
     {
-      "id": "SRC-AUTO-116",
+      "id": "SRC-AUTO-120",
       "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
       "record": "1. **[Tier 2]** Fu, Y., et al., \"SparDA: Sparse Decoupled Attention\", arXiv:2606.04511, June 2026. NVIDIA. 5.3× throughput."
     },
     {
-      "id": "SRC-AUTO-117",
+      "id": "SRC-AUTO-121",
       "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
       "record": "2. **[Tier 2]** Wang, X., et al., \"DLA: Dynamic Linear Attention\", arXiv:2606.10650, June 2026. Dynamic multi-state memory."
     },
     {
-      "id": "SRC-AUTO-118",
+      "id": "SRC-AUTO-122",
       "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
       "record": "3. **[Tier 2]** Xiong, S., et al., \"DHSA: Dynamic Hierarchical Sparse Attention\", arXiv:2510.24606, 2025-2026. 10× prefill, 100K on 24GB."
     },
     {
-      "id": "SRC-AUTO-119",
+      "id": "SRC-AUTO-123",
       "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
       "record": "4. **[Tier 2]** \"RetrievalAttention: ANNS for KV Cache\", arXiv:2409.10516v2, 2024-2025. 128K on single RTX 4090."
     },
     {
-      "id": "SRC-AUTO-120",
+      "id": "SRC-AUTO-124",
       "path": "library/02-runtime-optimization/kv-cache/sparse-linear-attention.md",
       "record": "5. **[Tier 2]** \"SALE: Low-bit Estimation for Sparse Attention\", arXiv:2505.24179, May 2025. 4-bit estimation, 11% overhead."
     },
     {
-      "id": "SRC-AUTO-121",
+      "id": "SRC-AUTO-125",
       "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
       "record": "1. **[Tier 1]** Rajbhandari, S., et al., \"ZeRO: Memory Optimizations Toward Training Trillion Parameter Models\", SC 2020. Microsoft."
     },
     {
-      "id": "SRC-AUTO-122",
+      "id": "SRC-AUTO-126",
       "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
       "record": "2. **[Tier 1]** Zhao, Y., et al., \"PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel\", VLDB 2023. Meta."
     },
     {
-      "id": "SRC-AUTO-123",
+      "id": "SRC-AUTO-127",
       "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
       "record": "3. **[Tier 2]** Wei, Z., et al., \"DeepCompile: A Compiler-Driven Approach to Optimizing Distributed Training\", arXiv:2504.09983, 2025."
     },
     {
-      "id": "SRC-AUTO-124",
+      "id": "SRC-AUTO-128",
       "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
       "record": "4. **[Tier 2]** Hagemann, B., et al., \"Hardware Scaling Trends and Diminishing Returns in Large-Scale Distributed Training\", arXiv:2411.13055, 2025."
     },
     {
-      "id": "SRC-AUTO-125",
+      "id": "SRC-AUTO-129",
       "path": "library/03-training-optimization/mixed-precision/mixed-precision-training.md",
       "record": "1. **[Tier 1]** Micikevicius, P., et al., \"Mixed Precision Training\", **ICLR 2018**. NVIDIA. الورقة المؤسسة."
     },
     {
-      "id": "SRC-AUTO-126",
+      "id": "SRC-AUTO-130",
       "path": "library/03-training-optimization/mixed-precision/mixed-precision-training.md",
       "record": "2. **[Tier 2]** \"InfiR2: FP8 Training Recipe for Reasoning LLMs\", arXiv:2510.22536, 2025. FP8 RL stability."
     },
     {
-      "id": "SRC-AUTO-127",
+      "id": "SRC-AUTO-131",
       "path": "library/03-training-optimization/mixed-precision/mixed-precision-training.md",
       "record": "3. **[Tier 1]** DeepSeek-AI, \"DeepSeek-V3 Technical Report\", 2024-2026. First 671B FP8 training."
     },
     {
-      "id": "SRC-AUTO-128",
+      "id": "SRC-AUTO-132",
       "path": "library/03-training-optimization/parameter-efficient/lora.md",
       "record": "1. **[Tier 1]** Hu, E., et al., \"LoRA: Low-Rank Adaptation of Large Language Models\", **ICLR 2022**. Microsoft. The foundational paper."
     },
     {
-      "id": "SRC-AUTO-129",
+      "id": "SRC-AUTO-133",
       "path": "library/03-training-optimization/parameter-efficient/lora.md",
       "record": "2. **[Tier 2]** Shinwari et al., \"ARD-LoRA: Per-Head Dynamic Rank\", June 2025. 99.3% of FT with 0.32% params."
     },
     {
-      "id": "SRC-AUTO-130",
+      "id": "SRC-AUTO-134",
       "path": "library/03-training-optimization/parameter-efficient/lora.md",
       "record": "3. **[Tier 2]** Amazon Science, \"Optimizing LoRA Target Module Selection\", 2026. o_proj best default."
     },
     {
-      "id": "SRC-AUTO-131",
+      "id": "SRC-AUTO-135",
       "path": "library/03-training-optimization/parameter-efficient/lora.md",
       "record": "4. **[Tier 2]** Emergent Mind, \"LoRA Adaptation: Efficient Low-Rank Fine-Tuning\", December 2025. Comprehensive survey of 20+ variants."
     },
     {
-      "id": "SRC-AUTO-132",
+      "id": "SRC-AUTO-136",
       "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
       "record": "1. **[Tier 2]** \"ServerlessLoRA: Minimizing Latency and Cost\", arXiv:2505.14468, May 2025. 89% cost reduction."
     },
     {
-      "id": "SRC-AUTO-133",
+      "id": "SRC-AUTO-137",
       "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
       "record": "2. **[Tier 2]** \"Prism: Cost-Efficient Multi-LLM Serving via GPU Memory Ballooning\", arXiv:2505.04021, May 2025. 2× cost reduction."
     },
     {
-      "id": "SRC-AUTO-134",
+      "id": "SRC-AUTO-138",
       "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
       "record": "3. **[Tier 2]** \"Compress then Serve: Serving Thousands of LoRA Adapters\", arXiv:2407.00066v4, 2025. 80% throughput with 1000 LoRAs."
     },
     {
-      "id": "SRC-AUTO-135",
+      "id": "SRC-AUTO-139",
       "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
       "record": "4. **[Tier 2]** \"LoRAServe: Serving Heterogeneous LoRA Adapters\", arXiv:2511.22880, November 2025. 50% GPU savings."
     },
     {
-      "id": "SRC-AUTO-136",
+      "id": "SRC-AUTO-140",
       "path": "library/03-training-optimization/parameter-efficient/multi-lora-serving.md",
       "record": "5. **[Tier 2]** \"S-LoRA: Scalable LoRA Serving\", 2024-2026. Unified paging + custom kernels."
     },
     {
-      "id": "SRC-AUTO-137",
+      "id": "SRC-AUTO-141",
       "path": "library/03-training-optimization/parameter-efficient/qlora.md",
       "record": "1. **[Tier 1]** Dettmers, T., et al., \"QLoRA: Efficient Finetuning of Quantized Language Models\", NeurIPS 2023. arXiv:2305.14314."
     },
     {
-      "id": "SRC-AUTO-138",
+      "id": "SRC-AUTO-142",
       "path": "library/03-training-optimization/parameter-efficient/qlora.md",
       "record": "2. **[Tier 1]** Hu, E., et al., \"LoRA: Low-Rank Adaptation of Large Language Models\", ICLR 2022. (الأساس)."
     },
     {
-      "id": "SRC-AUTO-139",
+      "id": "SRC-AUTO-143",
       "path": "library/03-training-optimization/synthetic-data/synthetic-data-distillation.md",
       "record": "1. **[Tier 1]** Zhang, Y., et al., \"Fast OPD: Truncated On-Policy Distillation\", 2026. 2-47× FLOPs reduction."
     },
     {
-      "id": "SRC-AUTO-140",
+      "id": "SRC-AUTO-144",
       "path": "library/03-training-optimization/synthetic-data/synthetic-data-distillation.md",
       "record": "2. **[Tier 2]** Luccioli, V., et al., \"LLM on a Budget: Active Knowledge Distillation\", arXiv:2511.11574, September 2025. 80% sample reduction."
     },
     {
-      "id": "SRC-AUTO-141",
+      "id": "SRC-AUTO-145",
       "path": "library/03-training-optimization/synthetic-data/synthetic-data-distillation.md",
       "record": "3. **[Tier 2]** \"Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation\", arXiv:2605.13981, May 2026."
     },
     {
-      "id": "SRC-AUTO-142",
+      "id": "SRC-AUTO-146",
       "path": "library/03-training-optimization/synthetic-data/synthetic-data-distillation.md",
       "record": "4. **[Tier 2]** Survey: \"A Survey of On-Policy Distillation for Large Language Models\", arXiv:2604.00626, April 2026."
     },
     {
-      "id": "SRC-AUTO-143",
+      "id": "SRC-AUTO-147",
       "path": "library/04-infrastructure/accelerators/cpu-gpu-collaborative.md",
       "record": "1. **[Tier 1]** \"Efficient CPU-GPU Collaborative Inference for MoE-based LLMs on Consumer-Grade Hardware\", **ASP-DAC 2026** (مقبول), arXiv:2512.16473. ELSA Lab."
     },
     {
-      "id": "SRC-AUTO-144",
+      "id": "SRC-AUTO-148",
       "path": "library/04-infrastructure/accelerators/cpu-gpu-collaborative.md",
       "record": "2. **[Tier 2]** \"HGCA: Hybrid GPU-CPU Attention for Long Context LLM Inference\", arXiv:2507.03153, July 2025."
     },
     {
-      "id": "SRC-AUTO-145",
+      "id": "SRC-AUTO-149",
       "path": "library/04-infrastructure/accelerators/cpu-gpu-collaborative.md",
       "record": "3. **[Tier 2]** \"Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures\", arXiv:2504.11750, April 2025."
     },
     {
-      "id": "SRC-AUTO-146",
+      "id": "SRC-AUTO-150",
       "path": "library/04-infrastructure/accelerators/custom-ai-chips.md",
       "record": "1. **[Tier 2]** StackPulsar, \"AWS Trainium and Inferentia: A Production Guide\", June 2026. Inferentia2 vs H100 comparison."
     },
     {
-      "id": "SRC-AUTO-147",
+      "id": "SRC-AUTO-151",
       "path": "library/04-infrastructure/accelerators/custom-ai-chips.md",
       "record": "2. **[Tier 2]** CloudExpat, \"AWS Trainium vs Google TPU v5e vs Azure H100\", March 2026. Three-way comparison."
     },
     {
-      "id": "SRC-AUTO-148",
+      "id": "SRC-AUTO-152",
       "path": "library/04-infrastructure/accelerators/custom-ai-chips.md",
       "record": "3. **[Tier 2]** Cerebrium, \"AWS Trn1 & Inf2: Better Price-Performance\", June 2026. Inference benchmarks."
     },
     {
-      "id": "SRC-AUTO-149",
+      "id": "SRC-AUTO-153",
       "path": "library/04-infrastructure/accelerators/decentralized-inference.md",
       "record": "1. **[Tier 2]** \"Parallax: Efficient LLM Inference Service over Decentralized Peer-to-Peer GPUs\", arXiv:2509.26182, 2025."
     },
     {
-      "id": "SRC-AUTO-150",
+      "id": "SRC-AUTO-154",
       "path": "library/04-infrastructure/accelerators/decentralized-inference.md",
       "record": "2. **[Tier 2]** \"VeriLLM: A Lightweight Framework for Publicly Verifiable Decentralized Inference\", arXiv:2509.24257, 2025."
     },
     {
-      "id": "SRC-AUTO-151",
+      "id": "SRC-AUTO-155",
       "path": "library/04-infrastructure/accelerators/decentralized-inference.md",
       "record": "3. **[Tier 2]** \"Decentralised AI Training and Inference with BlockTrain\", arXiv:2606.24722, June 2026."
     },
     {
-      "id": "SRC-AUTO-152",
+      "id": "SRC-AUTO-156",
       "path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
       "record": "1. **[Tier 2]** Spheron, \"NVIDIA B200 Specs and Benchmarks\", May 2026. MLPerf v6.0 data, pricing."
     },
     {
-      "id": "SRC-AUTO-153",
+      "id": "SRC-AUTO-157",
       "path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
       "record": "2. **[Tier 2]** Spheron, \"Best GPU for AI Inference 2026\", April 2026. Cost-per-token comparison."
     },
     {
-      "id": "SRC-AUTO-154",
+      "id": "SRC-AUTO-158",
       "path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
       "record": "3. **[Tier 2]** Inworld AI, \"NVIDIA B200 GPU Guide\", April 2026. $0.02/M tokens claim."
     },
     {
-      "id": "SRC-AUTO-155",
+      "id": "SRC-AUTO-159",
       "path": "library/04-infrastructure/accelerators/gpu-inference-economics-2026.md",
       "record": "4. **[Tier 2]** Spheron, \"NVIDIA Rubin vs Blackwell vs Hopper\", March 2026. Generational comparison."
     },
     {
-      "id": "SRC-AUTO-156",
+      "id": "SRC-AUTO-160",
       "path": "library/04-infrastructure/accelerators/heterogeneous-inference.md",
       "record": "1. **[Tier 2]** \"HeteroLLM: Accelerating LLM Inference on Mobile SoCs with Heterogeneous Processors\", arXiv:2501.14794, January 2025."
     },
     {
-      "id": "SRC-AUTO-157",
+      "id": "SRC-AUTO-161",
       "path": "library/04-infrastructure/accelerators/heterogeneous-inference.md",
       "record": "2. **[Tier 2]** \"Demystifying Cost-Efficiency in LLM Serving over Heterogeneous GPUs\", arXiv:2502.00722, February 2025."
     },
     {
-      "id": "SRC-AUTO-158",
+      "id": "SRC-AUTO-162",
       "path": "library/04-infrastructure/accelerators/heterogeneous-inference.md",
       "record": "3. **[Tier 2]** \"PLENA: Hardware-Software Co-Designed System for Long-Context LLM Inference\", arXiv:2509.09505, September 2025."
     },
     {
-      "id": "SRC-AUTO-159",
+      "id": "SRC-AUTO-163",
       "path": "library/04-infrastructure/deployment-strategies/local-gguf-inference.md",
       "record": "1. **[Tier 2]** Spheron, \"GGUF Dynamic Quantization on GPU Cloud: 50% Cheaper\", April 2026. Q4_K_M vs FP16 cost."
     },
     {
-      "id": "SRC-AUTO-160",
+      "id": "SRC-AUTO-164",
       "path": "library/04-infrastructure/deployment-strategies/local-gguf-inference.md",
       "record": "2. **[Tier 2]** daily.dev, \"Running LLMs Locally in 2026: Ollama, llama.cpp\", June 2026. Performance comparison."
     },
     {
-      "id": "SRC-AUTO-161",
+      "id": "SRC-AUTO-165",
       "path": "library/04-infrastructure/deployment-strategies/local-gguf-inference.md",
       "record": "3. **[Tier 2]** LLMKube, \"Qwen3.6-27B on $800 Consumer GPUs\", April 2026. Real cost measurement ($3.96/M marginal)."
     },
     {
-      "id": "SRC-AUTO-162",
+      "id": "SRC-AUTO-166",
       "path": "library/04-infrastructure/deployment-strategies/local-gguf-inference.md",
       "record": "4. **[Tier 3]** KServe issue #5334, \"Add llama.cpp as CPU-optimized ServingRuntime\", April 2026. Production Kubernetes deployment."
     },
     {
-      "id": "SRC-AUTO-163",
+      "id": "SRC-AUTO-167",
       "path": "library/04-infrastructure/deployment-strategies/local-vs-cloud-hybrid.md",
       "record": "1. **[Tier 2]** Saad-Falcon, J., Narayan, A., ..., Hennessy, J., Mirhoseini, A., Ré, C., \"Intelligence per Watt: Measuring Intelligence Efficiency of Local AI\", arXiv:2511.07885v4, November 2025 (revised May 2026). Stanford University."
     },
     {
-      "id": "SRC-AUTO-164",
+      "id": "SRC-AUTO-168",
       "path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
       "record": "1. **[Tier 2]** Spheron, \"AI Inference Cost Economics 2026\", April 2026. Break-even at 50-100M tokens/month."
     },
     {
-      "id": "SRC-AUTO-165",
+      "id": "SRC-AUTO-169",
       "path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
       "record": "2. **[Tier 3]** DevTk AI, \"Self-Host LLM vs API: Real Cost Breakdown 2026\", May 2026. $3,240 adjusted monthly cost."
     },
     {
-      "id": "SRC-AUTO-166",
+      "id": "SRC-AUTO-170",
       "path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
       "record": "3. **[Tier 3]** Braincuber, \"Self-Hosted vs API: $4,200/mo Break-Even Point\", March 2026. 11B tokens/month threshold."
     },
     {
-      "id": "SRC-AUTO-167",
+      "id": "SRC-AUTO-171",
       "path": "library/04-infrastructure/deployment-strategies/self-host-vs-api-breakeven.md",
       "record": "4. **[Tier 3]** Mark AI Code, \"Amazon EC2 GPU Inference Cost 2026\", June 2026. $0.033/1M tokens at scale."
     },
     {
-      "id": "SRC-AUTO-168",
+      "id": "SRC-AUTO-172",
       "path": "library/04-infrastructure/energy-efficiency/babbling-suppression.md",
       "record": "1. **[Tier 2]** Solovyeva, L., Castor, F., \"Towards Green AI: Decoding the Energy of LLM Inference in Software Development\", arXiv:2602.05712, February 2026. University of Twente."
     },
     {
-      "id": "SRC-AUTO-169",
+      "id": "SRC-AUTO-173",
       "path": "library/04-infrastructure/energy-efficiency/babbling-suppression.md",
       "record": "2. **[Tier 2]** Niu et al., \"Energy Efficient Benchmarking of LLM Inference Engines\", 2025. vLLM vs DeepSpeed vs TensorRT-LLM energy comparison."
     },
     {
-      "id": "SRC-AUTO-170",
+      "id": "SRC-AUTO-174",
       "path": "library/04-infrastructure/energy-efficiency/babbling-suppression.md",
       "record": "3. **[Tier 2]** Shi et al., \"Efficient and Green Large Language Models for Software Engineering: Literature Review\", 2025. Comprehensive green AI survey."
     },
     {
-      "id": "SRC-AUTO-171",
+      "id": "SRC-AUTO-175",
       "path": "library/04-infrastructure/energy-efficiency/gpu-frequency-scaling.md",
       "record": "1. **[Tier 2]** \"Characterizing LLM Inference Energy-Performance Tradeoffs across Hardware and Workloads\", arXiv:2501.08219v4, January 2025 (revised February 2026). 42% energy savings, 87% with routing."
     },
     {
-      "id": "SRC-AUTO-172",
+      "id": "SRC-AUTO-176",
       "path": "library/05-agentic-economics/README.md",
       "record": "1. **[Tier 2]** Zylos AI, \"Inference Economics: AI Agent Compute Markets in 2026\", April 2026"
     },
     {
-      "id": "SRC-AUTO-173",
+      "id": "SRC-AUTO-177",
       "path": "library/05-agentic-economics/README.md",
       "record": "2. **[Tier 2]** Oplexa, \"AI Inference Cost Crisis 2026\", March 2026"
     },
     {
-      "id": "SRC-AUTO-174",
+      "id": "SRC-AUTO-178",
       "path": "library/05-agentic-economics/README.md",
       "record": "3. **[Tier 2]** Gartner, \"Agentic AI Cost Analysis\", March 2026"
     },
     {
-      "id": "SRC-AUTO-175",
+      "id": "SRC-AUTO-179",
       "path": "library/05-agentic-economics/README.md",
       "record": "4. **[Tier 3]** TechAhead Corp, \"The Inference Cost Trap\", June 2026"
     },
     {
-      "id": "SRC-AUTO-176",
+      "id": "SRC-AUTO-180",
       "path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
       "record": "1. **[Tier 1]** Xiao, Y.-A., Gao, P., Peng, C., Xiong, Y., \"Reducing Cost of LLM Agents with Trajectory Reduction\", **FSE 2026** (مقبول), arXiv:2509.23586. DOI: 10.1145/3797084"
     },
     {
-      "id": "SRC-AUTO-177",
+      "id": "SRC-AUTO-181",
       "path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
       "record": "2. **[Tier 2]** \"RedundancyBench: Detecting Redundant Steps in LLM Agent Trajectories\", arXiv:2605.29893, May 2026."
     },
     {
-      "id": "SRC-AUTO-178",
+      "id": "SRC-AUTO-182",
       "path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
       "record": "3. **[Tier 2]** Emergent Mind, \"Efficient LLM Agent Deployment: Cost Analysis\", 2025-2026. Simple masking comparison."
     },
     {
-      "id": "SRC-AUTO-179",
+      "id": "SRC-AUTO-183",
       "path": "library/05-agentic-economics/chain-optimization/budget-aware-agents.md",
       "record": "1. **[Tier 2]** Lin, Y., Wang, Z., et al., \"BAGEN: Are LLM Agents Budget-Aware?\", arXiv:2606.00198, May 2026. 5 frontier agents, 4 environments. Early stop saves 28-64%. **قُرئ.**"
     },
     {
-      "id": "SRC-AUTO-180",
+      "id": "SRC-AUTO-184",
       "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
       "record": "1. **[Tier 2]** Verma, N., \"Focus: Active Context Compression\", arXiv:2601.07190, January 2026. 22.7% reduction."
     },
     {
-      "id": "SRC-AUTO-181",
+      "id": "SRC-AUTO-185",
       "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
       "record": "2. **[Tier 2]** \"ACON: Agent Context Optimization\", arXiv (October 2025). 26-54% peak reduction."
     },
     {
-      "id": "SRC-AUTO-182",
+      "id": "SRC-AUTO-186",
       "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
       "record": "3. **[Tier 2]** Anthropic, \"Compact API beta (compact-2026-01-12)\", January 2026. Production-ready."
     },
     {
-      "id": "SRC-AUTO-183",
+      "id": "SRC-AUTO-187",
       "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
       "record": "4. **[Tier 2]** \"Cross-Lingual Token Arbitrage\", arXiv:2606.03618, June 2026. 12-34% reduction."
     },
     {
-      "id": "SRC-AUTO-184",
+      "id": "SRC-AUTO-188",
       "path": "library/05-agentic-economics/chain-optimization/context-compression.md",
       "record": "5. **[Tier 2]** \"LLM-DCP: Dynamic Compressing Prompts\", arXiv:2504.11004, April 2025. MDP-based compression."
     },
     {
-      "id": "SRC-AUTO-185",
+      "id": "SRC-AUTO-189",
       "path": "library/05-agentic-economics/chain-optimization/skillreducer.md",
       "record": "1. **[Tier 2]** \"SkillReducer: Optimizing LLM Agent Skills for Token Efficiency\", arXiv:2603.29919, March 2026."
     },
     {
-      "id": "SRC-AUTO-186",
+      "id": "SRC-AUTO-190",
       "path": "library/05-agentic-economics/chain-optimization/skillreducer.md",
       "record": "2. **[Tier 2]** \"Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows\", arXiv:2606.03618, June 2026. References SkillReducer as complementary."
     },
     {
-      "id": "SRC-AUTO-187",
+      "id": "SRC-AUTO-191",
       "path": "library/05-agentic-economics/chain-optimization/skillreducer.md",
       "record": "3. **[Tier 2]** Zylos AI, \"AI Agent Context Compression Strategies\", February 2026. Compares SkillReducer to ACON and Focus."
     },
     {
-      "id": "SRC-AUTO-188",
+      "id": "SRC-AUTO-192",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "record": "1. **[Tier 2]** Gartner, \"Agentic AI Models Require 5-30x More Tokens\", March 2026 analysis."
     },
     {
-      "id": "SRC-AUTO-189",
+      "id": "SRC-AUTO-193",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "record": "2. **[Tier 2]** Zylos AI, \"Inference Economics: AI Agent Compute Markets in 2026\", April 2026. https://zylos.ai/research/2026-04-13-inference-economics-ai-agent-compute-markets"
     },
     {
-      "id": "SRC-AUTO-190",
+      "id": "SRC-AUTO-194",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "record": "3. **[Tier 2]** Digital Applied, \"The AI Cost Reckoning: Right-Sizing Model Spend 2026\", June 2026. Uber and Microsoft case studies. https://www.digitalapplied.com/blog/ai-cost-reckoning-right-sizing-model-spend-2026"
     },
     {
-      "id": "SRC-AUTO-191",
+      "id": "SRC-AUTO-195",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "record": "4. **[Tier 3]** TechAhead Corp, \"The Inference Cost Trap: Why AI Agent Economics Break At Scale\", June 2026. https://www.techaheadcorp.com/blog/inference-cost-explosion/"
     },
     {
-      "id": "SRC-AUTO-192",
+      "id": "SRC-AUTO-196",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
       "record": "5. **[Tier 2]** Oplexa, \"AI Inference Cost Crisis 2026\", March 2026. AnalyticsWeek data. https://oplexa.com/ai-inference-cost-crisis-2026/"
     },
     {
-      "id": "SRC-AUTO-193",
+      "id": "SRC-AUTO-197",
       "path": "library/05-agentic-economics/tool-and-rag-costs/rag-cost-optimization.md",
       "record": "1. **[Tier 2]** \"MergeRAG: Query-Aware Context Compression for RAG\", arXiv:2603.20286, March 2026. 1.51× improvement."
     },
     {
-      "id": "SRC-AUTO-194",
+      "id": "SRC-AUTO-198",
       "path": "library/05-agentic-economics/tool-and-rag-costs/rag-cost-optimization.md",
       "record": "2. **[Tier 2]** \"A-RAG: Scaling Agentic RAG via Hierarchical Interfaces\", arXiv:2602.03442, February 2026."
     },
     {
-      "id": "SRC-AUTO-195",
+      "id": "SRC-AUTO-199",
       "path": "library/05-agentic-economics/tool-and-rag-costs/rag-cost-optimization.md",
       "record": "3. **[Tier 2]** \"RAG Evaluation: Cost-Effectiveness Metrics\", arXiv:2504.14891, April 2026. 50% cost reduction via retrieval optimization."
     },
     {
-      "id": "SRC-AUTO-196",
+      "id": "SRC-AUTO-200",
       "path": "library/06-finops-governance/budgeting/agent-budget-enforcement.md",
       "record": "1. **[Tier 2]** Waxell AI, \"The $400M AI FinOps Gap: Cost Enforcement\", April 2026. Per-session enforcement."
     },
     {
-      "id": "SRC-AUTO-197",
+      "id": "SRC-AUTO-201",
       "path": "library/06-finops-governance/budgeting/agent-budget-enforcement.md",
       "record": "2. **[Tier 2]** Digital Applied, \"The AI Cost Reckoning\", June 2026. Uber $1,500/employee cap."
     },
     {
-      "id": "SRC-AUTO-198",
+      "id": "SRC-AUTO-202",
       "path": "library/06-finops-governance/budgeting/agent-budget-enforcement.md",
       "record": "3. **[Tier 3]** enzu (OSS), \"Budget Hardstop Demo\", 2026. github.com/teilomillet/enzu"
     },
     {
-      "id": "SRC-AUTO-199",
+      "id": "SRC-AUTO-203",
       "path": "library/06-finops-governance/budgeting/agent-budget-enforcement.md",
       "record": "4. **[Tier 2]** FinOps Foundation, \"FinOps for AI: Tools Considerations\", April 2026. Gateway guardrails."
     },
     {
-      "id": "SRC-AUTO-200",
+      "id": "SRC-AUTO-204",
       "path": "library/06-finops-governance/observability/ai-finops-observability.md",
       "record": "1. **[Tier 2]** FinOps Foundation, \"FinOps for AI: Tools & Services Considerations\", April 2026. https://www.finops.org/wg/finops-for-ai-tools-services-considerations/"
     },
     {
-      "id": "SRC-AUTO-201",
+      "id": "SRC-AUTO-205",
       "path": "library/06-finops-governance/observability/ai-finops-observability.md",
       "record": "2. **[Tier 2]** TrueFoundry, \"AI Cost Optimization: A Practical Guide for 2026\", April 2026. https://www.truefoundry.com/blog/what-is-ai-cost-optimization"
     },
     {
-      "id": "SRC-AUTO-202",
+      "id": "SRC-AUTO-206",
       "path": "library/06-finops-governance/observability/ai-finops-observability.md",
       "record": "3. **[Tier 3]** LeanOps Tech, \"Traditional FinOps Breaks On AI Workloads\", May 2026. https://leanopstech.com/blog/finops-for-ai-2026/"
     },
     {
-      "id": "SRC-AUTO-203",
+      "id": "SRC-AUTO-207",
       "path": "library/06-finops-governance/observability/ai-finops-observability.md",
       "record": "4. **[Tier 2]** IBM Research, \"FinOps Agent — A Use-Case for IT Infrastructure and Cost Optimization\", arXiv:2510.25914, October 2025."
     },
     {
-      "id": "SRC-AUTO-204",
+      "id": "SRC-AUTO-208",
       "path": "library/06-finops-governance/roi-assessment/cost-per-successful-task.md",
       "record": "1. **[Tier 2]** Digital Applied, \"The AI Cost Reckoning\", June 2026. \"Cost per successful task\" as North Star."
     },
     {
-      "id": "SRC-AUTO-205",
+      "id": "SRC-AUTO-209",
       "path": "library/06-finops-governance/roi-assessment/cost-per-successful-task.md",
       "record": "2. **[Tier 2]** \"OckBench: Measuring LLM Reasoning Efficiency\", arXiv:2511.05722, 2025-2026. Overthinking Tax data."
     },
     {
-      "id": "SRC-AUTO-206",
+      "id": "SRC-AUTO-210",
       "path": "library/06-finops-governance/roi-assessment/cost-per-successful-task.md",
       "record": "3. **[Tier 2]** Bain & Company, \"Automation and AI Pathfinder Survey 2026\" (n=951). 40% underperformed."
     },
     {
-      "id": "SRC-AUTO-207",
+      "id": "SRC-AUTO-211",
       "path": "library/06-finops-governance/roi-assessment/cost-per-successful-task.md",
       "record": "4. **[Tier 2]** TechTimes, \"Enterprise AI Budgets: 5-Driver Audit\", June 2026. 65% spend recoverable."
     },
     {
-      "id": "SRC-AUTO-208",
+      "id": "SRC-AUTO-212",
       "path": "library/07-market-economics/inference-paradox/price-of-progress.md",
       "record": "1. **[Tier 2]** Gundlach, H., Lynch, J., Mertens, M., Thompson, N., \"The Price of Progress\", arXiv:2511.23455v2, MIT + Epoch AI. **قُرئ بالكامل.**"
     },
     {
-      "id": "SRC-AUTO-209",
+      "id": "SRC-AUTO-213",
       "path": "library/07-market-economics/inference-paradox/price-of-progress.md",
       "record": "2. **[Tier 2]** Epoch AI, \"How persistent is the inference cost burden?\", March 2026. 5-10× annual reduction."
     },
     {
-      "id": "SRC-AUTO-210",
+      "id": "SRC-AUTO-214",
       "path": "library/07-market-economics/inference-paradox/price-of-progress.md",
       "record": "3. **[Tier 2]** Stanford HAI, \"2025 AI Index Report\", 2025. 280× price drop over 2 years."
     },
     {
-      "id": "SRC-AUTO-211",
+      "id": "SRC-AUTO-215",
       "path": "library/07-market-economics/provider-comparison/llm-api-pricing-2026.md",
       "record": "1. **[Tier 2]** BenchLM, \"LLM API Pricing Comparison 2026\", June 2026. https://benchlm.ai/llm-pricing"
     },
     {
-      "id": "SRC-AUTO-212",
+      "id": "SRC-AUTO-216",
       "path": "library/07-market-economics/provider-comparison/llm-api-pricing-2026.md",
       "record": "2. **[Tier 2]** MorphLLM, \"LLM API Providers 2026: 12 APIs Compared\", June 2026. https://www.morphllm.com/llm-api"
     },
     {
-      "id": "SRC-AUTO-213",
+      "id": "SRC-AUTO-217",
       "path": "library/07-market-economics/provider-comparison/llm-api-pricing-2026.md",
       "record": "3. **[Tier 2]** PE Collective, \"LLM API Pricing 2026: 20+ Models\", April 2026. https://pecollective.com/blog/llm-api-pricing-comparison/"
     }
