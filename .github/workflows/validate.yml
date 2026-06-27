@@ -1,0 +1,95 @@
+name: Validate library
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate JSON files
+        run: |
+          set -e
+          echo "Validating JSON files in data/..."
+          python3 - <<'EOF'
+          import json, sys
+          from pathlib import Path
+          errors = []
+          for p in sorted(Path("data").glob("*.json")):
+              try:
+                  json.loads(p.read_text(encoding="utf-8"))
+                  print(f"  OK  {p}")
+              except json.JSONDecodeError as e:
+                  errors.append(f"  FAIL {p}: {e}")
+          if errors:
+              print("\nJSON validation errors:")
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          print(f"\nAll JSON files valid.")
+          EOF
+
+      - name: Validate Markdown front matter in library entries
+        run: |
+          set -e
+          echo "Validating front matter in library/**/*.md..."
+          python3 - <<'EOF'
+          import sys, re
+          from pathlib import Path
+          required_keys = ["id", "title_ar", "title_en", "type", "status", "category"]
+          errors = []
+          entries = [p for p in Path("library").rglob("*.md") if p.name != "README.md"]
+          if not entries:
+              print("  (no entries found)")
+          for p in sorted(entries):
+              txt = p.read_text(encoding="utf-8")
+              if not txt.startswith("---"):
+                  errors.append(f"  FAIL {p}: missing front matter")
+                  continue
+              parts = txt.split("---", 2)
+              if len(parts) < 3:
+                  errors.append(f"  FAIL {p}: malformed front matter")
+                  continue
+              fm = parts[1]
+              missing = [k for k in required_keys if not re.search(rf"^{k}\s*:", fm, re.MULTILINE)]
+              if missing:
+                  errors.append(f"  FAIL {p}: missing keys: {', '.join(missing)}")
+                  continue
+              print(f"  OK  {p}")
+          if errors:
+              print("\nFront matter errors:")
+              for e in errors:
+                  print(e)
+              sys.exit(1)
+          print(f"\nAll {len(entries)} entries have valid front matter.")
+          EOF
+
+      - name: Run sync_metadata.py
+        run: |
+          python3 scripts/sync_metadata.py
+          echo "sync_metadata.py ran successfully."
+
+      - name: Check for uncommitted sync changes
+        run: |
+          # If sync_metadata.py produced different output than what's committed,
+          # that means data/*.json is stale — fail so contributors remember to re-sync.
+          if ! git diff --quiet data/; then
+            echo "::error::data/*.json is out of sync with library/*.md"
+            echo "Run: python3 scripts/sync_metadata.py"
+            echo ""
+            echo "Diff summary:"
+            git diff --stat data/
+            exit 1
+          else
+            echo "data/*.json is in sync with library/*.md ✓"
+          fi

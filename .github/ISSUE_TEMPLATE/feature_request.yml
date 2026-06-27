@@ -1,0 +1,59 @@
+name: 💡 Feature request
+description: اقتراح ميزة أو تحسين / Suggest a feature or improvement
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكرًا لاقتراحك! صفّ الفائدة المتوقعة بوضوح.
+        Thanks for the suggestion! Please describe the expected benefit clearly.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: نوع الاقتراح / Type
+      options:
+        - إدخال جديد / New entry
+        - playbook أو مقارنة / Playbook or comparison
+        - تحسين أداة أو سكربت / Tooling/script improvement
+        - تحسين README/توثيق / Documentation improvement
+        - تحسين scoring أو ranking / Scoring/ranking improvement
+        - آخر / Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: الاقتراح / Proposal
+      description: ما الذي تقترحه؟ ولماذا؟
+      placeholder: "أقترح إضافة playbook عن 'خفض تكلفة الوكلاء متعددي الخطوات'..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: الفائدة المتوقعة / Expected benefit
+      description: من سيستفيد؟ وكيف؟
+      placeholder: "مطورو الـ agents في الشركات سيوفرون 20-40% من تكلفة التوكن..."
+    validations:
+      required: true
+
+  - type: input
+    id: sources
+    attributes:
+      label: مصادر أولية (اختياري) / Initial sources (optional)
+      description: لو عندك مصادر تدعم الاقتراح
+      placeholder: "arXiv:2401.xxxxx, ICLR 2025, ..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: هل ستحقق الـ PR بنفسك؟ / Will you implement the PR yourself?
+      options:
+        - label: نعم، سأرسل PR
+        - label: لا، أرجو من المجتمع تنفيذه

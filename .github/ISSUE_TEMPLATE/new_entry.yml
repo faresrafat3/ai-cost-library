@@ -1,0 +1,115 @@
+name: 📚 New entry submission
+description: اقتراح إدخال جديد للمكتبة / Propose a new library entry
+title: "[Entry]: "
+labels: ["new-entry", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## قبل البدء / Before you start
+
+        اقرأ:
+        - [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md)
+        - [QUALITY_CHECKLIST.md](../blob/main/QUALITY_CHECKLIST.md)
+        - [NO_HYPE_POLICY.md](../blob/main/NO_HYPE_POLICY.md)
+        - [ARABIC_TERMINOLOGY_GUIDE.md](../blob/main/ARABIC_TERMINOLOGY_GUIDE.md)
+
+        كل إدخال **يجب** أن يكون ثنائي اللغة (عربي + إنجليزي) ومعه مصادر موثّقة.
+
+  - type: input
+    id: title_ar
+    attributes:
+      label: العنوان العربي / Arabic title
+      placeholder: "التكميم بعد التدريب — GPTQ"
+    validations:
+      required: true
+
+  - type: input
+    id: title_en
+    attributes:
+      label: العنوان الإنجليزي / English title
+      placeholder: "Post-Training Quantization — GPTQ"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: التصنيف / Classification
+      description: |
+        - 📘 Practical: مُثبت في إنتاج + 4 evidence gates
+        - 🧪 Emerging: واعد لكن غير مثبت
+        - 📐 Theoretical: أساس علمي بدون تطبيق مباشر
+        - ❌ Rejected: شائع لكن بلا دليل
+      options:
+        - 📘 Practical
+        - 🧪 Emerging
+        - 📐 Theoretical
+        - ❌ Rejected
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: الفئة / Category
+      options:
+        - "1. تحسين النموذج / Model Optimization"
+        - "2. تحسين التشغيل / Runtime Optimization"
+        - "3. تحسين التدريب / Training Optimization"
+        - "4. البنية التحتية / Infrastructure"
+        - "5. اقتصاديات الوكلاء / Agentic Economics"
+        - "6. الحوكمة المالية / FinOps Governance"
+        - "7. اقتصاديات السوق / Market Economics"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: ملخص تنفيذي / Executive summary
+      description: 3-5 أسطر تلخّص التقنية والوفر المتوقع والتنازلات
+      placeholder: |
+        GPTQ هي طريقة تكميم بعد التدريب تقلل دقة الأوزان إلى 3-4 بت.
+        توفر ~4-5× من ذاكرة الأوزان مقابل FP16، مع فقد دقة <1 نقطة.
+        التنازل الرئيسي: تتطلب مجموعة معايرة، وبعض النماذج تتحملها أقل من غيرها.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: المصادر / Sources
+      description: على الأقل مصدر Tier 1 أو Tier 2 (مؤتمر/مجلة، أو arXiv معتمد)
+      placeholder: |
+        [Tier 1] Frantar et al., "GPTQ: Accurate Post-Training Quantization for GPT", ICLR 2023, https://arxiv.org/abs/2210.17323
+    validations:
+      required: true
+
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: التنازلات والمخاطر / Tradeoffs & Risks
+      description: ما هو ثمن استخدام هذه التقنية؟ (إلزامي وفق NO_HYPE_POLICY)
+      placeholder: |
+        - بعض النماذج (مثل OPT-175B) تتحمل التكميم 3-بت جيدًا، لكن نماذج أصغر قد تتدهور بشكل ملحوظ
+        - تتطلب مجموعة معايرة (عادة 128-512 عينة)
+        - زيادة طفيفة في زمن الاستدلال على بعض العتاد
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: قائمة التحقق / Checklist
+      options:
+        - label: قرأت CONTRIBUTING.md و NO_HYPE_POLICY.md
+          required: true
+        - label: الإدخال ثنائي اللغة (عربي + إنجليزي)
+          required: true
+        - label: كل ادعاء رقمي له مصدر مباشر
+          required: true
+        - label: ذكرت التنازلات بصراحة
+          required: true
+        - label: سأرسل PR بهذا الإدخال (وليس مجرد issue)
+          required: true

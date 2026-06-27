@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-cost-library"
+version = "2.1.0"
+description = "A bilingual, evidence-based scientific library for AI cost reduction methods."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Fares Rafat", url = "https://github.com/faresrafat3" }
+]
+keywords = [
+    "ai-cost-optimization",
+    "llm",
+    "inference",
+    "quantization",
+    "rag",
+    "finops",
+    "arabic",
+    "bilingual",
+    "evidence-based",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Natural Language :: Arabic",
+    "Natural Language :: English",
+]
+
+# The scripts in this repo are intentionally dependency-free (stdlib only)
+# so that any future agent can run them in a fresh shell without pip install.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/faresrafat3/ai-cost-library"
+Repository = "https://github.com/faresrafat3/ai-cost-library"
+Issues = "https://github.com/faresrafat3/ai-cost-library/issues"
+Changelog = "https://github.com/faresrafat3/ai-cost-library/blob/main/CHANGELOG.md"
+
+[project.scripts]
+acl-sync = "scripts.sync_metadata:main"
+acl-rank = "scripts.generate_fair_ranking:main"
+
+[tool.setuptools]
+packages = ["scripts"]
+package-dir = { "" = "." }
+
+[tool.setuptools.package-data]
+scripts = ["*.py"]

@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "AI Cost Library — مكتبة تكلفة الذكاء الاصطناعي"
+message: "A bilingual, evidence-based scientific library and decision-support system for AI cost reduction methods."
+type: software
+authors:
+  - alias: faresrafat3
+    given-names: Fares
+repository-code: "https://github.com/faresrafat3/ai-cost-library"
+url: "https://github.com/faresrafat3/ai-cost-library"
+keywords:
+  - ai-cost-optimization
+  - llm
+  - inference
+  - quantization
+  - rag
+  - finops
+  - arabic
+  - bilingual
+  - evidence-based
+  - cost-reduction
+license: MIT
+version: "2.1.0"
+date-released: "2026-06-27"
+abstract: >-
+  A bilingual (Arabic/English) evidence-based scientific library documenting
+  and evaluating methods for reducing the cost of AI inference, training, and
+  deployment. The library classifies 60+ techniques across 7 categories by
+  evidence strength (practical, emerging, theoretical, rejected) and provides
+  a multi-criteria scoring system, evidence ledger, claims registry, and a
+  no-hype policy to help developers, companies, and researchers make informed
+  cost-reduction decisions.
+preferred-citation:
+  type: software
+  authors:
+    - alias: faresrafat3
+      given-names: Fares
+  title: "AI Cost Library — مكتبة تكلفة الذكاء الاصطناعي"
+  year: 2026
+  url: "https://github.com/faresrafat3/ai-cost-library"

@@ -1,11 +1,70 @@
 # Python
 __pycache__/
-*.pyc
-.venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
 env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
 # OS
 .DS_Store
-# Temporary scripts
+Thumbs.db
+
+# Project-specific
+# Generated plots (regenerated from scripts)
+plots/
+# Local-only agent working files
+.agent/
+# Backups
+*.bak
+*.orig
+
+# Temporary setup scripts (kept out of version control per project convention)
 setup.py
 populate_md.py
 populate_entries.py

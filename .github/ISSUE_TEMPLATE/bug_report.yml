@@ -1,0 +1,57 @@
+name: 🐛 Bug report
+description: تقرير عن خطأ في إدخال أو بيانات أو كود / Report an error in an entry, data, or code
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكرًا لتقريرك! رجاءً صفّ المشكلة بدقة، مع ذكر الملف/الإدخال المتأثر.
+        Thanks for reporting! Please describe the issue precisely and mention the affected file/entry.
+
+  - type: input
+    id: file
+    attributes:
+      label: الملف المتأثر / Affected file
+      description: مسار الملف (مثال: library/01-model-optimization/quantization/gptq.md)
+      placeholder: library/01-model-optimization/quantization/gptq.md
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: الخطورة / Severity
+      options:
+        - منخفضة — Low (typo, formatting)
+        - متوسطة — Medium (factual error in non-critical data)
+        - عالية — High (factual error in cost/savings claim)
+        - حرجة — Critical (broken script, broken link, license issue)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: وصف المشكلة / Description
+      description: اشرح المشكلة بالعربي أو الإنجليزي
+      placeholder: "المشكلة في ادعاء أن GPTQ يوفر 5× من الذاكرة، لكن المصدر الفعلي يقول 4×..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: المصدر المرجعي / Reference source
+      description: لو عندك مصدر يخالف أو يؤكد المعلومة
+      placeholder: "Paper X (2024), Section 4.3: ..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: no_hype
+    attributes:
+      label: الالتزام بسياسة عدم المبالغة / No-hype policy
+      options:
+        - label: قرأت NO_HYPE_POLICY.md وألتزم بها
+          required: true
