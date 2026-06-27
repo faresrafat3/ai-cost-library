@@ -1,0 +1,1096 @@
+{
+  "date": "2026-06-27",
+  "weights": {
+    "E": 0.2,
+    "C": 0.25,
+    "M": 0.15,
+    "I": 0.1,
+    "R": 0.1,
+    "G": 0.05,
+    "T": 0.05,
+    "S": 0.05,
+    "P": 0.05
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "id": "entry-lora-001",
+      "title_en": "LoRA: Low-Rank Adaptation — The Foundation of Efficient Fine-Tuning",
+      "title_ar": "التكيف منخفض الرتبة — LoRA",
+      "score_100": 97.0,
+      "axes": {
+        "E": 10,
+        "C": 10,
+        "M": 10,
+        "I": 9,
+        "R": 10,
+        "G": 9,
+        "T": 10,
+        "S": 8,
+        "P": 9
+      }
+    },
+    {
+      "rank": 2,
+      "id": "entry-qlora-001",
+      "title_en": "QLoRA: Quantized Low-Rank Adaptation",
+      "title_ar": "الضبط الدقيق المُكمَّم — QLoRA",
+      "score_100": 96.5,
+      "axes": {
+        "E": 10,
+        "C": 10,
+        "M": 10,
+        "I": 9,
+        "R": 10,
+        "G": 9,
+        "T": 10,
+        "S": 8,
+        "P": 8
+      }
+    },
+    {
+      "rank": 3,
+      "id": "entry-contbatching-001",
+      "title_en": "Continuous Batching: The Single Biggest Inference Lever",
+      "title_ar": "التجميع المستمر",
+      "score_100": 95.5,
+      "axes": {
+        "E": 9,
+        "C": 10,
+        "M": 10,
+        "I": 8,
+        "R": 10,
+        "G": 10,
+        "T": 10,
+        "S": 9,
+        "P": 10
+      }
+    },
+    {
+      "rank": 4,
+      "id": "entry-gptq-001",
+      "title_en": "GPTQ: Post-Training Quantization for GPUs",
+      "title_ar": "التكميم بعد التدريب — GPTQ",
+      "score_100": 92.5,
+      "axes": {
+        "E": 10,
+        "C": 9,
+        "M": 10,
+        "I": 8,
+        "R": 9,
+        "G": 8,
+        "T": 10,
+        "S": 8,
+        "P": 10
+      }
+    },
+    {
+      "rank": 5,
+      "id": "entry-mixedprec-001",
+      "title_en": "Mixed Precision Training: BF16 as Standard, FP8 as Frontier",
+      "title_ar": "التدريب بالدقة المختلطة (BF16/FP8)",
+      "score_100": 92.5,
+      "axes": {
+        "E": 10,
+        "C": 8,
+        "M": 10,
+        "I": 8,
+        "R": 10,
+        "G": 10,
+        "T": 10,
+        "S": 9,
+        "P": 10
+      }
+    },
+    {
+      "rank": 6,
+      "id": "entry-pagedattention-001",
+      "title_en": "PagedAttention: Virtual Memory for KV Cache",
+      "title_ar": "الانتباه المُقسَّم للصفحات — PagedAttention",
+      "score_100": 92.5,
+      "axes": {
+        "E": 9,
+        "C": 9,
+        "M": 10,
+        "I": 8,
+        "R": 10,
+        "G": 10,
+        "T": 10,
+        "S": 8,
+        "P": 10
+      }
+    },
+    {
+      "rank": 7,
+      "id": "entry-flashattn-001",
+      "title_en": "FlashAttention: I/O-Aware Exact Attention",
+      "title_ar": "FlashAttention — الانتباه المُحسَّن للذاكرة",
+      "score_100": 92.0,
+      "axes": {
+        "E": 10,
+        "C": 8,
+        "M": 10,
+        "I": 8,
+        "R": 10,
+        "G": 10,
+        "T": 10,
+        "S": 8,
+        "P": 10
+      }
+    },
+    {
+      "rank": 8,
+      "id": "entry-deepspeed-001",
+      "title_en": "Distributed Training: DeepSpeed ZeRO & PyTorch FSDP",
+      "title_ar": "التدريب الموزّع — DeepSpeed ZeRO و FSDP",
+      "score_100": 91.0,
+      "axes": {
+        "E": 10,
+        "C": 9,
+        "M": 10,
+        "I": 6,
+        "R": 9,
+        "G": 9,
+        "T": 10,
+        "S": 8,
+        "P": 10
+      }
+    },
+    {
+      "rank": 9,
+      "id": "entry-awq-001",
+      "title_en": "AWQ: Activation-Aware Weight Quantization",
+      "title_ar": "التكميم المُدرك للتفعيل — AWQ",
+      "score_100": 90.5,
+      "axes": {
+        "E": 9,
+        "C": 9,
+        "M": 10,
+        "I": 8,
+        "R": 9,
+        "G": 8,
+        "T": 10,
+        "S": 8,
+        "P": 10
+      }
+    },
+    {
+      "rank": 10,
+      "id": "entry-batchapi-001",
+      "title_en": "Batch API + Structured Output: 50-80% API Cost Reduction",
+      "title_ar": "واجهة الدفعات وتحسين المخرجات — 50-80% تقليل تكلفة API",
+      "score_100": 90.5,
+      "axes": {
+        "E": 8,
+        "C": 9,
+        "M": 10,
+        "I": 9,
+        "R": 10,
+        "G": 9,
+        "T": 10,
+        "S": 7,
+        "P": 10
+      }
+    },
+    {
+      "rank": 11,
+      "id": "entry-dsv4-001",
+      "title_en": "DeepSeek V4 Economics: The Cheapest Frontier Model (2026)",
+      "title_ar": "اقتصاديات DeepSeek V4 — أرخص نموذج حدودي في 2026",
+      "score_100": 88.0,
+      "axes": {
+        "E": 7,
+        "C": 10,
+        "M": 10,
+        "I": 8,
+        "R": 9,
+        "G": 8,
+        "T": 8,
+        "S": 9,
+        "P": 9
+      }
+    },
+    {
+      "rank": 12,
+      "id": "entry-llmint8-001",
+      "title_en": "LLM.int8(): Mixed-Precision INT8 with Outlier Handling",
+      "title_ar": "التكميم الصحيح 8-بت مع معالجة القيم الشاذة — LLM.int8()",
+      "score_100": 88.0,
+      "axes": {
+        "E": 10,
+        "C": 8,
+        "M": 9,
+        "I": 9,
+        "R": 9,
+        "G": 8,
+        "T": 9,
+        "S": 8,
+        "P": 8
+      }
+    },
+    {
+      "rank": 13,
+      "id": "entry-gguf-001",
+      "title_en": "Local GGUF/llama.cpp Inference: Zero API Cost on Consumer Hardware",
+      "title_ar": "الاستدلال المحلي بـ GGUF — صفر تكلفة API",
+      "score_100": 87.5,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 10,
+        "I": 10,
+        "R": 9,
+        "G": 6,
+        "T": 10,
+        "S": 10,
+        "P": 8
+      }
+    },
+    {
+      "rank": 14,
+      "id": "entry-promptcache-001",
+      "title_en": "Prompt/Prefix Caching: 90% Cost Reduction on Cached Portions",
+      "title_ar": "تخزين البادئات مؤقتاً",
+      "score_100": 87.5,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 10,
+        "I": 9,
+        "R": 9,
+        "G": 9,
+        "T": 10,
+        "S": 7,
+        "P": 10
+      }
+    },
+    {
+      "rank": 15,
+      "id": "entry-routing-001",
+      "title_en": "Intelligent Model Routing (RouteLLM)",
+      "title_ar": "توجيه النماذج الذكي",
+      "score_100": 87.5,
+      "axes": {
+        "E": 10,
+        "C": 10,
+        "M": 8,
+        "I": 7,
+        "R": 8,
+        "G": 8,
+        "T": 8,
+        "S": 7,
+        "P": 8
+      }
+    },
+    {
+      "rank": 16,
+      "id": "entry-distillation-001",
+      "title_en": "Knowledge Distillation — From DistilBERT to DeepSeek-R1",
+      "title_ar": "استخلاص المعرفة — من DistilBERT إلى DeepSeek-R1",
+      "score_100": 87.0,
+      "axes": {
+        "E": 10,
+        "C": 9,
+        "M": 10,
+        "I": 5,
+        "R": 8,
+        "G": 8,
+        "T": 8,
+        "S": 8,
+        "P": 9
+      }
+    },
+    {
+      "rank": 17,
+      "id": "entry-qwen3-001",
+      "title_en": "Qwen3 Efficiency: Thinking/Non-Thinking Fusion & Budget Control",
+      "title_ar": "كفاءات Qwen3 — دمج التفكير واللا-تفكير في نموذج واحد",
+      "score_100": 87.0,
+      "axes": {
+        "E": 9,
+        "C": 8,
+        "M": 10,
+        "I": 8,
+        "R": 9,
+        "G": 8,
+        "T": 9,
+        "S": 8,
+        "P": 9
+      }
+    },
+    {
+      "rank": 18,
+      "id": "entry-fp8-001",
+      "title_en": "FP8 Quantization",
+      "title_ar": "التكميم بدقة FP8",
+      "score_100": 86.5,
+      "axes": {
+        "E": 9,
+        "C": 8,
+        "M": 10,
+        "I": 8,
+        "R": 9,
+        "G": 7,
+        "T": 9,
+        "S": 8,
+        "P": 9
+      }
+    },
+    {
+      "rank": 19,
+      "id": "entry-moe-001",
+      "title_en": "Mixture-of-Experts Economics: The Dominant Architecture of 2026",
+      "title_ar": "اقتصاديات مزيج الخبراء (MoE)",
+      "score_100": 85.0,
+      "axes": {
+        "E": 10,
+        "C": 10,
+        "M": 10,
+        "I": 3,
+        "R": 6,
+        "G": 7,
+        "T": 7,
+        "S": 9,
+        "P": 9
+      }
+    },
+    {
+      "rank": 20,
+      "id": "entry-llama4-001",
+      "title_en": "Llama 4 MoE Economics: 400B Knowledge at 17B Inference Cost",
+      "title_ar": "اقتصاديات Llama 4 — مثال عملي على قوة MoE المفتوحة",
+      "score_100": 83.5,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 10,
+        "I": 7,
+        "R": 8,
+        "G": 8,
+        "T": 9,
+        "S": 8,
+        "P": 9
+      }
+    },
+    {
+      "rank": 21,
+      "id": "entry-eagle3-001",
+      "title_en": "EAGLE-3: State-of-the-Art Speculative Decoding",
+      "title_ar": "فك الترميز التخميني EAGLE-3",
+      "score_100": 82.0,
+      "axes": {
+        "E": 8,
+        "C": 9,
+        "M": 8,
+        "I": 7,
+        "R": 8,
+        "G": 8,
+        "T": 9,
+        "S": 8,
+        "P": 8
+      }
+    },
+    {
+      "rank": 22,
+      "id": "entry-merging-001",
+      "title_en": "Model Merging: Zero-Cost Multi-Task Combination (TIES, DARE, Model Soup)",
+      "title_ar": "دمج النماذج — بديل رخيص للتدريب المتعدد المهام",
+      "score_100": 82.0,
+      "axes": {
+        "E": 9,
+        "C": 9,
+        "M": 7,
+        "I": 8,
+        "R": 8,
+        "G": 7,
+        "T": 9,
+        "S": 7,
+        "P": 7
+      }
+    },
+    {
+      "rank": 23,
+      "id": "entry-synthdata-001",
+      "title_en": "Synthetic Data for Cost-Efficient Training & Distillation",
+      "title_ar": "البيانات الاصطناعية لتقليل تكلفة التدريب",
+      "score_100": 81.0,
+      "axes": {
+        "E": 8,
+        "C": 9,
+        "M": 9,
+        "I": 6,
+        "R": 8,
+        "G": 8,
+        "T": 7,
+        "S": 7,
+        "P": 8
+      }
+    },
+    {
+      "rank": 24,
+      "id": "entry-gpuecon-001",
+      "title_en": "GPU Inference Economics 2026: H100 vs B200 vs H200 Cost-per-Token",
+      "title_ar": "اقتصاديات GPU للاستدلال — مقارنة H100 vs B200 vs H200 (2026)",
+      "score_100": 78.0,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 9,
+        "I": 4,
+        "R": 7,
+        "G": 8,
+        "T": 7,
+        "S": 10,
+        "P": 9
+      }
+    },
+    {
+      "rank": 25,
+      "id": "entry-multilora-001",
+      "title_en": "Multi-LoRA Serving: Hundreds of Fine-Tuned Models on One GPU",
+      "title_ar": "خدمة LoRA متعددة المستأجرين — مئات النماذج على GPU واحد",
+      "score_100": 76.5,
+      "axes": {
+        "E": 8,
+        "C": 8,
+        "M": 8,
+        "I": 6,
+        "R": 7,
+        "G": 7,
+        "T": 8,
+        "S": 8,
+        "P": 8
+      }
+    },
+    {
+      "rank": 26,
+      "id": "entry-radixattention-001",
+      "title_en": "RadixAttention: Prefix Sharing via Radix Tree KV Cache",
+      "title_ar": "شجرة الانتباه المتفرعة — RadixAttention (SGLang)",
+      "score_100": 76.5,
+      "axes": {
+        "E": 8,
+        "C": 8,
+        "M": 8,
+        "I": 7,
+        "R": 7,
+        "G": 6,
+        "T": 7,
+        "S": 8,
+        "P": 8
+      }
+    },
+    {
+      "rank": 27,
+      "id": "entry-semcache-001",
+      "title_en": "Semantic Caching",
+      "title_ar": "التخزين المؤقت الدلالي",
+      "score_100": 76.0,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 8,
+        "I": 6,
+        "R": 7,
+        "G": 7,
+        "T": 7,
+        "S": 7,
+        "P": 8
+      }
+    },
+    {
+      "rank": 28,
+      "id": "entry-smoothquant-001",
+      "title_en": "SmoothQuant: Smooth Activations for INT8 Quantization",
+      "title_ar": "التكميم الأملس — SmoothQuant",
+      "score_100": 75.0,
+      "axes": {
+        "E": 9,
+        "C": 7,
+        "M": 8,
+        "I": 6,
+        "R": 7,
+        "G": 7,
+        "T": 7,
+        "S": 7,
+        "P": 8
+      }
+    },
+    {
+      "rank": 29,
+      "id": "entry-specdec-001",
+      "title_en": "Speculative Decoding: Draft-then-Verify for Faster Inference",
+      "title_ar": "فك الترميز التخميني",
+      "score_100": 72.5,
+      "axes": {
+        "E": 9,
+        "C": 7,
+        "M": 8,
+        "I": 5,
+        "R": 6,
+        "G": 7,
+        "T": 7,
+        "S": 7,
+        "P": 7
+      }
+    },
+    {
+      "rank": 30,
+      "id": "entry-breakeven-001",
+      "title_en": "Self-Host vs API: The Break-Even Analysis (2026)",
+      "title_ar": "نقطة تعادل الاستضافة الذاتية مقابل API",
+      "score_100": 70.0,
+      "axes": {
+        "E": 6,
+        "C": 8,
+        "M": 9,
+        "I": 3,
+        "R": 7,
+        "G": 8,
+        "T": 6,
+        "S": 7,
+        "P": 8
+      }
+    },
+    {
+      "rank": 31,
+      "id": "entry-ragcost-001",
+      "title_en": "RAG Cost Optimization: Reducing Token Waste in Retrieval",
+      "title_ar": "تحسين تكلفة الاسترجاع المعزز (RAG)",
+      "score_100": 67.0,
+      "axes": {
+        "E": 7,
+        "C": 7,
+        "M": 7,
+        "I": 6,
+        "R": 6,
+        "G": 7,
+        "T": 6,
+        "S": 6,
+        "P": 7
+      }
+    },
+    {
+      "rank": 32,
+      "id": "entry-ttc-001",
+      "title_en": "Inference-Time Compute Economics: When Thinking More Costs Less",
+      "title_ar": "اقتصاديات حوسبة وقت الاستدلال (Inference-Time Compute)",
+      "score_100": 65.5,
+      "axes": {
+        "E": 8,
+        "C": 5,
+        "M": 9,
+        "I": 4,
+        "R": 7,
+        "G": 7,
+        "T": 6,
+        "S": 5,
+        "P": 7
+      }
+    },
+    {
+      "rank": 33,
+      "id": "entry-ipw-001",
+      "title_en": "Local vs Cloud Inference: Intelligence per Watt (IPW)",
+      "title_ar": "الاستدلال المحلي مقابل السحابي — الذكاء لكل واط",
+      "score_100": 64.5,
+      "axes": {
+        "E": 7,
+        "C": 7,
+        "M": 6,
+        "I": 5,
+        "R": 6,
+        "G": 7,
+        "T": 5,
+        "S": 8,
+        "P": 6
+      }
+    },
+    {
+      "rank": 34,
+      "id": "entry-chinchilla-001",
+      "title_en": "Compute-Optimal Scaling Laws (Chinchilla)",
+      "title_ar": "قوانين التحجيم الأمثل حوسبياً (Chinchilla)",
+      "score_100": 63.5,
+      "axes": {
+        "E": 10,
+        "C": 7,
+        "M": 7,
+        "I": 2,
+        "R": 3,
+        "G": 8,
+        "T": 1,
+        "S": 6,
+        "P": 6
+      }
+    },
+    {
+      "rank": 35,
+      "id": "entry-finops-001",
+      "title_en": "AI Cost Observability & Attribution (AI FinOps)",
+      "title_ar": "مراقبة تكلفة الذكاء الاصطناعي وإسنادها (AI FinOps)",
+      "score_100": 63.0,
+      "axes": {
+        "E": 6,
+        "C": 6,
+        "M": 7,
+        "I": 5,
+        "R": 6,
+        "G": 8,
+        "T": 7,
+        "S": 6,
+        "P": 8
+      }
+    },
+    {
+      "rank": 36,
+      "id": "entry-sleeptime-001",
+      "title_en": "Sleep-time Compute",
+      "title_ar": "حوسبة وقت النوم",
+      "score_100": 62.5,
+      "axes": {
+        "E": 8,
+        "C": 6,
+        "M": 5,
+        "I": 6,
+        "R": 5,
+        "G": 7,
+        "T": 6,
+        "S": 6,
+        "P": 7
+      }
+    },
+    {
+      "rank": 37,
+      "id": "entry-sparseatt-001",
+      "title_en": "Sparse & Linear Attention: 10× Prefill Speedup for Long Contexts",
+      "title_ar": "الانتباه المتناثر والخطي — تسريع السياقات الطويلة 10×",
+      "score_100": 60.0,
+      "axes": {
+        "E": 8,
+        "C": 8,
+        "M": 4,
+        "I": 3,
+        "R": 3,
+        "G": 6,
+        "T": 4,
+        "S": 8,
+        "P": 6
+      }
+    },
+    {
+      "rank": 38,
+      "id": "entry-layerskip-001",
+      "title_en": "LayerSkip: Self-Speculative Decoding with Layer Skipping",
+      "title_ar": "LayerSkip — قفز الطبقات مع فك الترميز التخميني الذاتي",
+      "score_100": 59.5,
+      "axes": {
+        "E": 8,
+        "C": 6,
+        "M": 6,
+        "I": 4,
+        "R": 5,
+        "G": 5,
+        "T": 4,
+        "S": 6,
+        "P": 6
+      }
+    },
+    {
+      "rank": 39,
+      "id": "entry-moequant-001",
+      "title_en": "MoE Quantization: Compressing Expert Models to Ultra-Low Bits",
+      "title_ar": "تكميم نماذج مزيج الخبراء (MoE Quantization)",
+      "score_100": 59.5,
+      "axes": {
+        "E": 8,
+        "C": 9,
+        "M": 3,
+        "I": 3,
+        "R": 2,
+        "G": 6,
+        "T": 4,
+        "S": 8,
+        "P": 5
+      }
+    },
+    {
+      "rank": 40,
+      "id": "entry-customchips-001",
+      "title_en": "Custom AI Chips: AWS Trainium/Inferentia vs Google TPU vs NVIDIA GPU",
+      "title_ar": "شرائح الذكاء الاصطناعي المتخصصة — Trainium/Inferentia vs TPU vs GPU",
+      "score_100": 58.5,
+      "axes": {
+        "E": 6,
+        "C": 7,
+        "M": 7,
+        "I": 3,
+        "R": 4,
+        "G": 5,
+        "T": 4,
+        "S": 8,
+        "P": 6
+      }
+    },
+    {
+      "rank": 41,
+      "id": "entry-subquad-001",
+      "title_en": "Sub-Quadratic Models: Mamba-3 and Transformer Alternatives for Inference Efficiency",
+      "title_ar": "النماذج دون التربيعية — Mamba-3 وبدائل Transformer",
+      "score_100": 58.5,
+      "axes": {
+        "E": 9,
+        "C": 8,
+        "M": 4,
+        "I": 2,
+        "R": 2,
+        "G": 5,
+        "T": 3,
+        "S": 8,
+        "P": 5
+      }
+    },
+    {
+      "rank": 42,
+      "id": "entry-ctxcompress-001",
+      "title_en": "Context Compression & Token Reduction for Agents",
+      "title_ar": "ضغط السياق وتقليل التوكنات",
+      "score_100": 57.5,
+      "axes": {
+        "E": 7,
+        "C": 7,
+        "M": 4,
+        "I": 5,
+        "R": 4,
+        "G": 6,
+        "T": 5,
+        "S": 6,
+        "P": 5
+      }
+    },
+    {
+      "rank": 43,
+      "id": "entry-agentdiet-001",
+      "title_en": "Agent Trajectory Reduction (AgentDiet)",
+      "title_ar": "تقليص مسارات الوكلاء (AgentDiet)",
+      "score_100": 56.5,
+      "axes": {
+        "E": 9,
+        "C": 7,
+        "M": 3,
+        "I": 5,
+        "R": 3,
+        "G": 4,
+        "T": 3,
+        "S": 6,
+        "P": 4
+      }
+    },
+    {
+      "rank": 44,
+      "id": "entry-budgetlimits-001",
+      "title_en": "Agent Budget Enforcement: Preventing Runaway AI Costs",
+      "title_ar": "حدود الإنفاق التلقائية لوكلاء الذكاء الاصطناعي",
+      "score_100": 56.5,
+      "axes": {
+        "E": 5,
+        "C": 5,
+        "M": 6,
+        "I": 7,
+        "R": 6,
+        "G": 7,
+        "T": 6,
+        "S": 5,
+        "P": 6
+      }
+    },
+    {
+      "rank": 45,
+      "id": "entry-kvcachecompress-001",
+      "title_en": "KV Cache Compression & Eviction",
+      "title_ar": "ضغط ذاكرة KV المؤقتة",
+      "score_100": 56.5,
+      "axes": {
+        "E": 7,
+        "C": 9,
+        "M": 2,
+        "I": 3,
+        "R": 3,
+        "G": 6,
+        "T": 3,
+        "S": 8,
+        "P": 5
+      }
+    },
+    {
+      "rank": 46,
+      "id": "entry-moespec-001",
+      "title_en": "MoE-Spec: Expert Budgeting for Efficient Speculative Decoding",
+      "title_ar": "فك الترميز التخميني الموفّر لنماذج MoE",
+      "score_100": 54.5,
+      "axes": {
+        "E": 6,
+        "C": 8,
+        "M": 3,
+        "I": 5,
+        "R": 2,
+        "G": 5,
+        "T": 4,
+        "S": 8,
+        "P": 5
+      }
+    },
+    {
+      "rank": 47,
+      "id": "entry-cpugpu-001",
+      "title_en": "CPU-GPU Collaborative Inference for LLMs",
+      "title_ar": "الاستدلال التعاوني بين المعالج ووحدة الرسومات",
+      "score_100": 53.5,
+      "axes": {
+        "E": 8,
+        "C": 7,
+        "M": 4,
+        "I": 3,
+        "R": 2,
+        "G": 4,
+        "T": 3,
+        "S": 7,
+        "P": 4
+      }
+    },
+    {
+      "rank": 48,
+      "id": "entry-iescaling-001",
+      "title_en": "Architecture-Aware Scaling Laws for Inference-Efficient LLMs",
+      "title_ar": "قوانين التحجيم المعماري لكفاءة الاستدلال",
+      "score_100": 53.5,
+      "axes": {
+        "E": 10,
+        "C": 7,
+        "M": 3,
+        "I": 1,
+        "R": 1,
+        "G": 6,
+        "T": 1,
+        "S": 7,
+        "P": 5
+      }
+    },
+    {
+      "rank": 49,
+      "id": "entry-hetero-001",
+      "title_en": "Heterogeneous Hardware Inference (GPU + NPU + Specialized)",
+      "title_ar": "الاستدلال على عتاد متنوع",
+      "score_100": 50.0,
+      "axes": {
+        "E": 7,
+        "C": 7,
+        "M": 4,
+        "I": 2,
+        "R": 2,
+        "G": 4,
+        "T": 2,
+        "S": 7,
+        "P": 4
+      }
+    },
+    {
+      "rank": 50,
+      "id": "entry-apipricing-001",
+      "title_en": "LLM API Pricing Comparison (June 2026)",
+      "title_ar": "مقارنة أسعار واجهات برمجة النماذج اللغوية (يونيو 2026)",
+      "score_100": 49.5,
+      "axes": {
+        "E": 7,
+        "C": 1,
+        "M": 10,
+        "I": 1,
+        "R": 6,
+        "G": 10,
+        "T": 1,
+        "S": 3,
+        "P": 8
+      }
+    },
+    {
+      "rank": 51,
+      "id": "entry-shortgpt-001",
+      "title_en": "ShortGPT: Layer Pruning in Large Language Models",
+      "title_ar": "ShortGPT — قصّ طبقات النماذج اللغوية الكبيرة",
+      "score_100": 49.5,
+      "axes": {
+        "E": 7,
+        "C": 6,
+        "M": 3,
+        "I": 4,
+        "R": 3,
+        "G": 5,
+        "T": 3,
+        "S": 6,
+        "P": 4
+      }
+    },
+    {
+      "rank": 52,
+      "id": "entry-dvfs-001",
+      "title_en": "GPU Frequency Scaling (DVFS): 42% Energy Savings at 1-3% Latency Cost",
+      "title_ar": "تخفيض تردد GPU لتوفير الطاقة (DVFS)",
+      "score_100": 49.0,
+      "axes": {
+        "E": 7,
+        "C": 3,
+        "M": 3,
+        "I": 7,
+        "R": 4,
+        "G": 7,
+        "T": 5,
+        "S": 7,
+        "P": 5
+      }
+    },
+    {
+      "rank": 53,
+      "id": "entry-bagen-001",
+      "title_en": "BAGEN: Budget-Aware LLM Agents — Teaching Agents to Stop Wasting Money",
+      "title_ar": "الوكلاء الواعية بالميزانية — BAGEN",
+      "score_100": 46.5,
+      "axes": {
+        "E": 6,
+        "C": 6,
+        "M": 2,
+        "I": 4,
+        "R": 3,
+        "G": 6,
+        "T": 3,
+        "S": 6,
+        "P": 4
+      }
+    },
+    {
+      "rank": 54,
+      "id": "entry-skillreducer-001",
+      "title_en": "SkillReducer: Optimizing LLM Agent Skills for Token Efficiency",
+      "title_ar": "ضغط مهارات الوكلاء (SkillReducer)",
+      "score_100": 44.0,
+      "axes": {
+        "E": 6,
+        "C": 5,
+        "M": 2,
+        "I": 6,
+        "R": 3,
+        "G": 4,
+        "T": 3,
+        "S": 5,
+        "P": 3
+      }
+    },
+    {
+      "rank": 55,
+      "id": "entry-agentmultiplier-001",
+      "title_en": "Agent Token Multiplier: Why Agents Cost 5-30× More",
+      "title_ar": "مضاعف التوكن الوكيلي",
+      "score_100": 43.0,
+      "axes": {
+        "E": 5,
+        "C": 1,
+        "M": 9,
+        "I": 1,
+        "R": 5,
+        "G": 10,
+        "T": 1,
+        "S": 3,
+        "P": 8
+      }
+    },
+    {
+      "rank": 56,
+      "id": "entry-decentral-001",
+      "title_en": "Decentralized AI Inference: Peer-to-Peer GPU Networks",
+      "title_ar": "الحوسبة اللامركزية للاستدلال",
+      "score_100": 43.0,
+      "axes": {
+        "E": 6,
+        "C": 6,
+        "M": 3,
+        "I": 2,
+        "R": 1,
+        "G": 4,
+        "T": 3,
+        "S": 6,
+        "P": 4
+      }
+    },
+    {
+      "rank": 57,
+      "id": "entry-cpst-001",
+      "title_en": "Cost per Successful Task (CPST): The Right Metric for 2026",
+      "title_ar": "تكلفة المهمة الناجحة — المقياس الصحيح لعام 2026",
+      "score_100": 42.5,
+      "axes": {
+        "E": 5,
+        "C": 1,
+        "M": 5,
+        "I": 5,
+        "R": 6,
+        "G": 10,
+        "T": 3,
+        "S": 3,
+        "P": 7
+      }
+    },
+    {
+      "rank": 58,
+      "id": "entry-babbling-001",
+      "title_en": "Babbling Suppression: 44-89% Energy Savings by Stopping Unnecessary Generation",
+      "title_ar": "كبت الثرثرة — تقليل استهلاك الطاقة بمنع التوليد الزائد",
+      "score_100": 42.0,
+      "axes": {
+        "E": 7,
+        "C": 3,
+        "M": 2,
+        "I": 7,
+        "R": 3,
+        "G": 4,
+        "T": 2,
+        "S": 6,
+        "P": 3
+      }
+    },
+    {
+      "rank": 59,
+      "id": "entry-mod-001",
+      "title_en": "Mixture-of-Depths: Dynamically Allocating Compute in Transformers",
+      "title_ar": "Mixture-of-Depths — خلط الأعماق",
+      "score_100": 41.5,
+      "axes": {
+        "E": 7,
+        "C": 5,
+        "M": 2,
+        "I": 2,
+        "R": 2,
+        "G": 4,
+        "T": 2,
+        "S": 6,
+        "P": 4
+      }
+    },
+    {
+      "rank": 60,
+      "id": "entry-priceofprogress-001",
+      "title_en": "The Price of Progress: Why Token Prices Fall But Bills Rise",
+      "title_ar": "ثمن التقدم — لماذا الأسعار تنخفض والفواتير ترتفع",
+      "score_100": 40.0,
+      "axes": {
+        "E": 8,
+        "C": 1,
+        "M": 5,
+        "I": 1,
+        "R": 3,
+        "G": 10,
+        "T": 1,
+        "S": 3,
+        "P": 6
+      }
+    }
+  ]
+}
