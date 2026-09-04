@@ -1,5 +1,14 @@
 # سجل التغييرات | Changelog
 
+## 2.1.0 — 2026-09-04
+> Documentation catch-up entry. `pyproject.toml` and `data/stats.json` have been at 2.1.0 since 2026-06-28, but the CHANGELOG was not updated. This entry reconstructs the headline changes between 0.4.0 and 2.1.0 from `git log` and `data/stats.json`.
+
+- 🟢 **Library growth**: 60 → 61 documented techniques (added: Model Router Cascade in `05-agentic-economics/`).
+- 🟢 **Methodology upgrade**: Calibrated fair multi-criteria ranking (v2) — see `RANKING.md` and `data/fair_ranking.json`.
+- 🟢 **Metadata integrity**: Frontmatter and `data/*.json` synced via `scripts/sync_metadata.py`; entry-model-router-cascade was the last entry to receive formal YAML frontmatter.
+- 🟢 **Stats source of truth**: README and badges now read from `data/stats.json` (61 entries, 217 sources) rather than a hand-edited count.
+- 🟡 **CHANGELOG hygiene**: This entry closes the 0.4.0 → 2.1.0 documentation gap.
+
 ## 0.4.0 — 2026-06-28
 - 🔴 إصلاح LICENSE المكسور (كان 12 bytes فقط) — كتابة MIT License كامل مع ملاحظة على content licensing.
 - 🟡 حل تعارض التسمية بين `RANKING.md` و `RANKINGS.md` — إعادة تسمية `RANKINGS.md` → `USER_RANKINGS.md` لتوضيح أنه الترتيب حسب نوع المستخدم.
