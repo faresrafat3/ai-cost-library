@@ -29,6 +29,11 @@ env.bak/
 venv.bak/
 .venv/
 
+# Environment files (config, NOT virtualenvs)
+.env
+.env.local
+.env.*.local
+
 # IDE
 .vscode/
 .idea/
