@@ -906,16 +906,16 @@
     },
     {
       "id": "entry-model-router-cascade",
-      "title_ar": "model router cascade",
-      "title_en": "Model Router Cascade",
+      "title_ar": "توجيه النماذج المتدرج (Model Router Cascade)",
+      "title_en": "Model Router Cascade (Tiered Inference)",
       "type": "pending",
-      "status": "pending",
-      "category": "tmp",
+      "status": "emerging",
+      "category": "agentic-economics",
       "subcategory": "05-agentic-economics",
       "path": "library/05-agentic-economics/model-router-cascade.md",
-      "cost_dimensions": [],
-      "proof_score": "",
-      "sources_count": 0,
+      "cost_dimensions": "",
+      "proof_score": "⭐ قيد التقييم | Under Review",
+      "sources_count": 1,
       "updated": "2026-06-26"
     },
     {

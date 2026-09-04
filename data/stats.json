@@ -18,7 +18,7 @@
   "status_counts": {
     "production-proven": 20,
     "deployed": 14,
-    "emerging": 2,
+    "emerging": 3,
     "peer-reviewed": 4,
     "validated": 4,
     "active-research": 5,
@@ -26,7 +26,6 @@
     "experimental": 1,
     "current-market-data": 2,
     "tested": 3,
-    "pending": 1,
     "emerging-practice": 1,
     "current": 1
   },

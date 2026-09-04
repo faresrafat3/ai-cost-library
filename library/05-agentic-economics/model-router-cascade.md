@@ -1,3 +1,24 @@
+---
+id: entry-model-router-cascade
+title_ar: توجيه النماذج المتدرج (Model Router Cascade)
+title_en: Model Router Cascade (Tiered Inference)
+type: pending
+status: emerging
+category: agentic-economics
+subcategory: 05-agentic-economics
+tree_path: "AI Cost Library → Agentic Economics → Model Router Cascade"
+cost_dimensions:
+  - inference-cost
+  - token-cost
+proof_score: "⭐ قيد التقييم | Under Review"
+sources_count: 1
+created: 2026-06-26
+updated: 2026-06-26
+research_review:
+  paper_read: true
+  abstract_read: true
+---
+
 # Technique: Model Router Cascade (Tiered Inference)
 
 **Category:** 05-agentic-economics
