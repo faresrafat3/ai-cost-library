@@ -905,6 +905,20 @@
       "updated": "2026-06-26"
     },
     {
+      "id": "entry-model-router-cascade",
+      "title_ar": "model router cascade",
+      "title_en": "Model Router Cascade",
+      "type": "pending",
+      "status": "pending",
+      "category": "tmp",
+      "subcategory": "05-agentic-economics",
+      "path": "library/05-agentic-economics/model-router-cascade.md",
+      "cost_dimensions": [],
+      "proof_score": "",
+      "sources_count": 0,
+      "updated": "2026-06-26"
+    },
+    {
       "id": "entry-agentmultiplier-001",
       "title_ar": "مضاعف التوكن الوكيلي",
       "title_en": "Agent Token Multiplier: Why Agents Cost 5-30× More",

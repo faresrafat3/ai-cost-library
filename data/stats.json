@@ -1,7 +1,7 @@
 {
   "version": "2.1.0",
   "last_updated": "2026-06-26",
-  "total_entries": 60,
+  "total_entries": 61,
   "total_categories": 7,
   "total_subcategories": 25,
   "total_sources": 217,
@@ -13,7 +13,7 @@
     "emerging": 17,
     "theoretical": 3,
     "rejected": 0,
-    "pending": 0
+    "pending": 1
   },
   "status_counts": {
     "production-proven": 20,
@@ -26,6 +26,7 @@
     "experimental": 1,
     "current-market-data": 2,
     "tested": 3,
+    "pending": 1,
     "emerging-practice": 1,
     "current": 1
   },
