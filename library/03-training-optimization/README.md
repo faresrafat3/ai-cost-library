@@ -4,11 +4,13 @@
 > **الوصف:** تقليل تكلفة بناء وضبط النماذج.
 > **ملاحظة مهمة:** تكلفة التدريب = 10-30% فقط من التكلفة الإجمالية. الاستدلال = 70-90%. لكن التدريب يحدد جودة النموذج.
 
+> **آخر تحديث: 2026-09-04 (round 85)**: تم تصحيح عدد الإدخالات — `parameter-efficient` 2→3 (بعد round 84)، و`distributed-training` / `synthetic-data` / `mixed-precision` من "0 ⏳" إلى 1 (كل واحدة فيها إدخال فعلي).
+
 ## الفئات الفرعية
 
 | الفئة | الوصف | الإدخالات |
 |-------|-------|----------|
-| [الضبط الموفّر](parameter-efficient/) | LoRA, QLoRA | 2 |
-| [التدريب الموزّع](distributed-training/) | DeepSpeed, FSDP | 0 ⏳ |
-| [البيانات الاصطناعية](synthetic-data/) | توليد بيانات من نماذج | 0 ⏳ |
-| [التدريب المختلط](mixed-precision/) | BF16, FP8 Training | 0 ⏳ |
+| [الضبط الموفّر](parameter-efficient/) | LoRA, QLoRA, SLoRA متعدد المستأجرين | 3 |
+| [التدريب الموزّع](distributed-training/) | DeepSpeed, FSDP | 1 |
+| [البيانات الاصطناعية](synthetic-data/) | توليد بيانات من نماذج | 1 |
+| [التدريب المختلط](mixed-precision/) | BF16, FP8 Training | 1 |
