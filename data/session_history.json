@@ -150,5 +150,16 @@
       "GLOSSARY.md (round 88)",
       "library/05-agentic-economics/README.md (round 94)"
     ]
+  },
+  {
+    "session": "session-016",
+    "date": "2026-09-05",
+    "summary_ar": "Round 102: استبدال assets/tree-visual.svg الـ placeholder (100×100) بـ SVG حقيقي يحوي 7 فئات و25 فئة فرعية و61 إدخال، مع لوحة counts من data/stats.json. تم إضافة scripts/generate_tree_visual.py (stdlib-only, idempotent) كمصدر موثوق. تم تحديث internal/NEXT_ACTIONS.md لإغلاق priority #7.",
+    "summary_en": "Round 102: replaced assets/tree-visual.svg placeholder (100×100) with a real SVG showing 7 categories, 25 subcategories, 61 entries, plus a counts panel from data/stats.json. Added scripts/generate_tree_visual.py (stdlib-only, idempotent) as the source of truth. Updated internal/NEXT_ACTIONS.md to close priority #7.",
+    "changed_files": [
+      "assets/tree-visual.svg",
+      "scripts/generate_tree_visual.py",
+      "internal/NEXT_ACTIONS.md"
+    ]
   }
 ]

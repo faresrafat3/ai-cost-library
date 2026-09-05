@@ -1,1 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="10" y="50">Tree Visual Placeholder</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" font-family="system-ui, -apple-system, sans-serif">
+<style>
+  .title { font-size: 22px; font-weight: 700; fill: #0F172A; }
+  .subtitle { font-size: 12px; fill: #64748B; }
+  .root { font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+  .root-bg { fill: #1E40AF; }
+  .l1 { font-size: 12px; font-weight: 600; fill: #FFFFFF; }
+  .l2 { font-size: 10px; fill: #334155; }
+  .l2-line { stroke: #94A3B8; stroke-width: 1; fill: none; }
+  .legend { font-size: 10px; fill: #475569; }
+</style>
+<rect width="900" height="800" fill="#F8FAFC"/>
+<text x="450" y="30" text-anchor="middle" class="title">AI Cost Library — Tree Visualization</text>
+<text x="450" y="50" text-anchor="middle" class="subtitle">7 categories · 7 subcategory groups · 61 entries (60 ranked + 1 pending) · generated 2026-09-05</text>
+<rect x="350" y="70" width="200" height="36" rx="6" class="root-bg"/>
+<text x="450" y="93" text-anchor="middle" class="root">AI Cost Library</text>
+<line x1="450" y1="106" x2="110" y2="150" class="l2-line"/>
+<rect x="40" y="150" width="140" height="30" rx="4" fill="#DC2626"/>
+<text x="110" y="170" text-anchor="middle" class="l1">01. model-opti (19)</text>
+<text x="40" y="200" class="l2">├ compression (3)</text>
+<text x="40" y="215" class="l2">├ efficient-architec (8)</text>
+<text x="40" y="230" class="l2">├ quantization (6)</text>
+<text x="40" y="245" class="l2">├ right-sizing (2)</text>
+<line x1="450" y1="106" x2="260" y2="150" class="l2-line"/>
+<rect x="190" y="150" width="140" height="30" rx="4" fill="#EA580C"/>
+<text x="260" y="170" text-anchor="middle" class="l1">02. runtime-op (14)</text>
+<text x="190" y="200" class="l2">├ batching (1)</text>
+<text x="190" y="215" class="l2">├ caching (3)</text>
+<text x="190" y="230" class="l2">├ decoding (3)</text>
+<text x="190" y="245" class="l2">├ inference-time-com (2)</text>
+<text x="190" y="260" class="l2">├ kv-cache (5)</text>
+<text x="190" y="275" class="l2">├ serving-engines (0)</text>
+<line x1="450" y1="106" x2="410" y2="150" class="l2-line"/>
+<rect x="340" y="150" width="140" height="30" rx="4" fill="#CA8A04"/>
+<text x="410" y="170" text-anchor="middle" class="l1">03. training-o (6)</text>
+<text x="340" y="200" class="l2">├ distributed-traini (1)</text>
+<text x="340" y="215" class="l2">├ mixed-precision (1)</text>
+<text x="340" y="230" class="l2">├ parameter-efficien (3)</text>
+<text x="340" y="245" class="l2">├ synthetic-data (1)</text>
+<line x1="450" y1="106" x2="560" y2="150" class="l2-line"/>
+<rect x="490" y="150" width="140" height="30" rx="4" fill="#65A30D"/>
+<text x="560" y="170" text-anchor="middle" class="l1">04. infrastruc (10)</text>
+<text x="490" y="200" class="l2">├ accelerators (5)</text>
+<text x="490" y="215" class="l2">├ deployment-strateg (3)</text>
+<text x="490" y="230" class="l2">├ energy-efficiency (2)</text>
+<line x1="450" y1="106" x2="710" y2="150" class="l2-line"/>
+<rect x="640" y="150" width="140" height="30" rx="4" fill="#059669"/>
+<text x="710" y="170" text-anchor="middle" class="l1">05. agentic-ec (7)</text>
+<text x="640" y="200" class="l2">├ chain-optimization (4)</text>
+<text x="640" y="215" class="l2">├ token-multiplier (1)</text>
+<text x="640" y="230" class="l2">├ tool-and-rag-costs (1)</text>
+<line x1="450" y1="106" x2="110" y2="320" class="l2-line"/>
+<rect x="40" y="320" width="140" height="30" rx="4" fill="#0891B2"/>
+<text x="110" y="340" text-anchor="middle" class="l1">06. finops-gov (3)</text>
+<text x="40" y="370" class="l2">├ budgeting (1)</text>
+<text x="40" y="385" class="l2">├ observability (1)</text>
+<text x="40" y="400" class="l2">├ roi-assessment (1)</text>
+<line x1="450" y1="106" x2="260" y2="320" class="l2-line"/>
+<rect x="190" y="320" width="140" height="30" rx="4" fill="#7C3AED"/>
+<text x="260" y="340" text-anchor="middle" class="l1">07. market-eco (2)</text>
+<text x="190" y="370" class="l2">├ inference-paradox (1)</text>
+<text x="190" y="385" class="l2">├ provider-compariso (1)</text>
+<rect x="380" y="320" width="500" height="160" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+<text x="400" y="345" class="l1" fill="#0F172A">Counts</text>
+<text x="400" y="370" class="l2">Type:  practical=40  emerging=17  theoretical=3  pending=1</text>
+<text x="400" y="388" class="l2">Sources: 217  Claims: 29  Evidence: 19  Glossary: 59</text>
+<text x="400" y="406" class="l2">Skipped from RANKING: 1 (entry-model-router-cascade, pending)</text>
+<text x="40" y="540" class="l1" fill="#0F172A">Legend</text>
+<text x="40" y="560" class="l2">L1 (category): colored box with count</text>
+<text x="40" y="575" class="l2">L2 (subcategory): text under L1, with count</text>
+<text x="40" y="590" class="l2">Pending entry: shown at L1 level (no subcategory)</text>
+<text x="40" y="620" class="l2" fill="#64748B">Source: data/categories.json + data/stats.json (re-runnable)</text>
+<text x="40" y="635" class="l2" fill="#64748B">Replaces the original 100x100 placeholder.</text>
+<text x="40" y="755" class="legend">License: MIT (per repo root)  ·  Generated: 2026-09-05</text>
+</svg>

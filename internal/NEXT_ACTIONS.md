@@ -3,6 +3,8 @@
 **آخر تحديث:** 2026-06-26 (Session 5 — أوائل الـ ACL Polish)
 **مراجعة Round 68:** 2026-09-04 (التحديثات الحالية: 61 إدخال، 29 ادعاء، 217 مصدر، 59 مصطلح، 1 pending)
 **مراجعة Round 75:** 2026-09-04 (تحديث backlog: BL-001/002/003 → done, BL-004 → open. 4 open tasks)
+**مراجعة Round 97:** 2026-09-05 (BL-CI-CHECKS → done in round 93, 3 open tasks now)
+**مراجعة Round 102:** 2026-09-05 (tree-visual.svg → done; priority #7 closed)
 **مراجعة Round 97:** 2026-09-05 (BL-CI-CHECKS → done in round 93, 3 open tasks now: BL-004, BL-CLAIMS-COVERAGE, BL-REJECTED-PENDING)
 
 > **ملاحظة Round 68:** الأولويات أدناه مرّت بمرور الوقت. الحالة الحالية:
@@ -22,7 +24,7 @@
 
 5. **تحديث `EVIDENCE_LEDGER.md` آلياً/يدوياً** ليتطابق مع `data/evidence.json`.
 6. ~~**إضافة تحقق CI**~~: **مُنجزة** (`.github/workflows/validate.yml` يفحص JSON + front matter).
-7. **تحديث `assets/tree-visual.svg`** ليعكس 7 فئات و25 فئة فرعية و61 إدخال.
+7. ~~**تحديث `assets/tree-visual.svg`**~~: **مُنجَزة** (`assets/tree-visual.svg` يحوي 7 فئات و25 فئة فرعية و61 إدخال، مع لوحة counts. مولَّد آلياً من `scripts/generate_tree_visual.py` stdlib-only، idempotent.)
 8. **استكمال مصطلحات المعجم** من الإدخالات الحديثة: FP8, MoE routing, semantic cache, budget-aware agents, sleep-time compute, deepconf, model router cascade.
 
 ## أولوية متوسطة
