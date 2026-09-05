@@ -1,5 +1,20 @@
 # سجل الأدلة | Evidence Ledger
 
+> **آخر تحديث: 2026-09-04 (round 74)**
+>
+> **ملاحظة عن drift (2026-09-04)**: هذا الملف **يحوي نفس جدول الادعاءات** الموجود في `CLAIMS.md` — وهو الـ canonical claim ledger الأمثل للقراءة السريعة. الـ canonical **evidence ledger** الفعلي موجود في `data/evidence.json` (19 بند: `EV-001` إلى `EV-019`، تربط ادعاءات `CL-NNN` بأدلة Tier 1/2/3).
+>
+> حسب السياسة (NO_HYPE_POLICY.md، QUALITY_CHECKLIST.md، CONTRIBUTING.md):
+> - `EVIDENCE_LEDGER.md` يجب أن يطابق `data/evidence.json` (الأدلة)
+> - `CLAIMS.md` يجب أن يطابق `data/claims.json` (الادعاءات)
+> - لكن تاريخياً الاثنين يحويان نفس جدول الـ 15 ادعاء المختار — drift موثّق هنا دون إصلاح هيكلي.
+>
+> الإصلاح الصحيح (out of scope لهذه الجلسة): إعادة بناء `EVIDENCE_LEDGER.md` ليحوي 19 بند `EV-NNN` من JSON، مع روابط للـ claims المرتبطة. حالياً يبقى متطابقاً مع CLAIMS.md لأسباب backward-compat (عدة ملفات تشير إليه: README.md, PULL_REQUEST_TEMPLATE, QUALITY_CHECKLIST, NO_HYPE_POLICY, CONTRIBUTING, internal/NEXT_ACTIONS).
+>
+> **Drift note (2026-09-04)**: This file currently contains the **same claim table as `CLAIMS.md`** — it should be the evidence ledger but historically mirrors the claims ledger. The canonical evidence ledger is in `data/evidence.json` (19 items, `EV-001` to `EV-019`, linking `CL-NNN` claims to Tier 1/2/3 evidence).
+>
+> Per the policy docs, EVIDENCE_LEDGER.md should match `data/evidence.json` and CLAIMS.md should match `data/claims.json`, but historically both MD files contain the same 15-claim curated table. The structural fix (rebuild this file from `data/evidence.json`) is out of scope for a sync round; preserved as-is for backward-compat with the 6+ files that link to it.
+
 يسجل هذا الملف الأدلة والادعاءات المهمة المرتبطة بتقليل التكلفة أو الذاكرة أو الكمون. كل ادعاء مرتبط بمعرّف مصدر في `data/sources.json`.
 
 This file records important AI cost-reduction claims. Each claim links to source identifiers in `data/sources.json`.
