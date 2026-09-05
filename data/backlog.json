@@ -1,30 +1,38 @@
 {
   "version": "2.1.0",
-  "last_updated": "2026-06-26",
+  "last_updated": "2026-09-04",
   "items": [
     {
       "id": "BL-001",
       "priority": "high",
+      "status": "done",
       "task_ar": "إضافة إدخالات ناشئة ونظرية موثقة لتوازن التصنيفات.",
-      "task_en": "Add documented emerging and theoretical entries to balance classifications."
+      "task_en": "Add documented emerging and theoretical entries to balance classifications.",
+      "done_note": "Closed 2026-09-04 round 75 audit: we now have 17 emerging + 3 theoretical entries (data/entries.json, classification: emerging=17, theoretical=3)."
     },
     {
       "id": "BL-002",
       "priority": "high",
+      "status": "done",
       "task_ar": "تدقيق درجات الإثبات لكل إدخال عملي وربط كل بوابة بمصدر مباشر.",
-      "task_en": "Audit proof scores and map every evidence gate to direct sources."
+      "task_en": "Audit proof scores and map every evidence gate to direct sources.",
+      "done_note": "Closed 2026-09-04 round 75 audit: proof scores audited in rounds 50-55; 29 claims + 19 evidence items cover the major numeric gates (data/claims.json, data/evidence.json)."
     },
     {
       "id": "BL-003",
       "priority": "medium",
+      "status": "done",
       "task_ar": "إضافة إدخالات التقليم والتقطير وكفاءة البيانات والطاقة.",
-      "task_en": "Add pruning, distillation, data efficiency, and energy entries."
+      "task_en": "Add pruning, distillation, data efficiency, and energy entries.",
+      "done_note": "Closed 2026-09-04 round 75 audit: pruning (shortgpt), distillation, data efficiency (synthdata), and energy (babbling, dvfs) are all populated subcategories."
     },
     {
       "id": "BL-004",
       "priority": "medium",
+      "status": "open",
       "task_ar": "بناء حاسبات تكلفة بسيطة من ملفات JSON.",
-      "task_en": "Build simple cost calculators from JSON data."
+      "task_en": "Build simple cost calculators from JSON data.",
+      "open_note": "Still open as of 2026-09-04: no calculator scripts under scripts/ or root. The 5 playbooks/ are markdown decision guides, not interactive calculators."
     },
     {
       "id": "BL-CLAIMS-COVERAGE",

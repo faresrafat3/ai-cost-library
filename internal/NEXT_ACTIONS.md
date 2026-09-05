@@ -2,6 +2,7 @@
 
 **آخر تحديث:** 2026-06-26 (Session 5 — أوائل الـ ACL Polish)
 **مراجعة Round 68:** 2026-09-04 (التحديثات الحالية: 61 إدخال، 29 ادعاء، 217 مصدر، 59 مصطلح، 1 pending)
+**مراجعة Round 75:** 2026-09-04 (تحديث backlog: BL-001/002/003 → done, BL-004 → open. 4 open tasks: BL-004, BL-CLAIMS-COVERAGE, BL-REJECTED-PENDING, BL-CI-CHECKS)
 
 > **ملاحظة Round 68:** الأولويات أدناه مرّت بمرور الوقت. الحالة الحالية:
 > - الأولوية 1 (توسيع الادعاءات): **انخفضت** — حالياً 29 ادعاء لـ 61 إدخال (نسبة ~48%، أفضل من 25/59 = 42% قبل ذلك).
@@ -37,3 +38,17 @@ python3 scripts/sync_metadata.py && git status --short
 
 12. توسيع فئة `inference-time-compute/` بإدخالات مترابطة: Sleep-time Compute, DeepConf early stopping, Kinetics, Inference-time distillation.
 13. **إضافة 2 rejected entries** لاختبار بوابات الرفض (تم تحديد البوابات في `NO_HYPE_POLICY.md`، لم تُستخدم بعد).
+
+---
+
+## المهام من data/backlog.json (round 75 sync)
+
+| ID | Status | Task |
+|---|---|---|
+| BL-001 | **done** (round 75) | Add emerging/theoretical entries (17+3 = present) |
+| BL-002 | **done** (round 75) | Audit proof scores (done in rounds 50-55) |
+| BL-003 | **done** (round 75) | Add pruning/distillation/data-efficiency/energy entries (all populated) |
+| BL-004 | **open** | Build simple cost calculators from JSON data (no calculator scripts exist) |
+| BL-CLAIMS-COVERAGE | **open** | Link every numeric gate to a claim + direct source |
+| BL-REJECTED-PENDING | **open** | Add Rejected + Pending entries (only 1 pending exists) |
+| BL-CI-CHECKS | **open** | Add CI checks for front matter and metadata consistency |

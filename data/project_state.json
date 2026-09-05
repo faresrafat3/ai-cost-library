@@ -31,10 +31,18 @@
     "entry_count_60_to_61_synced_across_docs",
     "internal_state_docs_synced_to_data",
     "root_state_docs_synced_to_data",
-    "project_state_json_self_synced"
+    "project_state_json_self_synced",
+    "backlog_json_status_fields_added",
+    "bl_001_to_bl_003_marked_done",
+    "bl_004_reopened_no_calculator"
   ],
-  "pending_tasks": [],
-  "current_focus": "إضافة 2 rejected entries لاختبار بوابات الرفض؛ توسيع coverage لـ data/evidence.json",
+  "pending_tasks": [
+    "BL-004",
+    "BL-CLAIMS-COVERAGE",
+    "BL-REJECTED-PENDING",
+    "BL-CI-CHECKS"
+  ],
+  "current_focus": "BL-004 (cost calculator) + BL-REJECTED-PENDING (add 2 rejected entries) + BL-CLAIMS-COVERAGE (link every numeric gate to a claim)",
   "unresolved_issues": [
     "data/evidence.json (19) أصغر من data/claims.json (29) وأقل بكثير من 217 مصدر — نسبة coverage منخفضة.",
     "بعض مصادر 2026 من مدونات أو تقارير غير محكّمة وتحتاج وسم ثقة مناسب.",
