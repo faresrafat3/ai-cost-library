@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "last_updated": "2026-09-04",
+  "last_updated": "2026-09-05",
   "session_count": 7,
   "project_status": "active",
   "completed_tasks": [
@@ -34,19 +34,21 @@
     "project_state_json_self_synced",
     "backlog_json_status_fields_added",
     "bl_001_to_bl_003_marked_done",
-    "bl_004_reopened_no_calculator"
+    "bl_004_reopened_no_calculator",
+    "bl_ci_checks_marked_done_round_93",
+    "internal_docs_synced_to_backlog_state"
   ],
   "pending_tasks": [
     "BL-004",
     "BL-CLAIMS-COVERAGE",
-    "BL-REJECTED-PENDING",
-    "BL-CI-CHECKS"
+    "BL-REJECTED-PENDING"
   ],
   "current_focus": "BL-004 (cost calculator) + BL-REJECTED-PENDING (add 2 rejected entries) + BL-CLAIMS-COVERAGE (link every numeric gate to a claim)",
   "unresolved_issues": [
     "data/evidence.json (19) أصغر من data/claims.json (29) وأقل بكثير من 217 مصدر — نسبة coverage منخفضة.",
     "بعض مصادر 2026 من مدونات أو تقارير غير محكّمة وتحتاج وسم ثقة مناسب.",
-    "data/project_state.json كان يحوي أرقام قديمة (59/213/25) — تم إصلاحه في round 70 لكن يدل على أن drift الداخلي يحتاج sync دوري."
+    "data/project_state.json كان يحوي أرقام قديمة (59/213/25) — تم إصلاحه في round 70 لكن يدل على أن drift الداخلي يحتاج sync دوري.",
+    "round 101: pending_tasks كانت تحوي BL-CI-CHECKS رغم إغلاقه في round 93 (الـ canonical data/backlog.json يطابق). تم إصلاحه هنا أيضاً."
   ],
   "quality_notes": [
     "تم إصلاح ملفات JSON الفارغة وربط الادعاءات بالمصادر.",
@@ -56,7 +58,7 @@
     "تمت إضافة 15 مصدر موثق جديد.",
     "round 70: project_state.json كان يحوي total_entries=59, total_sources=213, total_claims=25 — كلها قديمة. تم إصلاحها إلى 61/217/29 لتطابق stats.json وentries.json وsources.json وclaims.json."
   ],
-  "last_session": "internal-state-sync-2026-09-04",
+  "last_session": "internal-state-sync-2026-09-05",
   "total_entries": 61,
   "total_sources": 217,
   "total_claims": 29,

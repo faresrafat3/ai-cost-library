@@ -130,5 +130,25 @@
       "data/project_state.json",
       "internal/NEXT_ACTIONS.md"
     ]
+  },
+  {
+    "session": "session-015",
+    "date": "2026-09-05",
+    "summary_ar": "Rounds 76-101: مزامنة شاملة + self-corrections. 11 commits drift-fix (rounds 75, 83, 90-98) + 6 audit rounds (56, 57, 58, 63, 99, 100). آخر إصلاح: round 101 — data/project_state.json كان يحوي BL-CI-CHECKS في pending_tasks رغم إغلاقه في round 93 (الـ canonical data/backlog.json يطابق).",
+    "summary_en": "Rounds 76-101: comprehensive sync + self-corrections. 11 commits drift-fix (rounds 75, 83, 90-98) + 6 audit rounds (56, 57, 58, 63, 99, 100). Latest fix: round 101 — data/project_state.json had BL-CI-CHECKS in pending_tasks despite being closed in round 93 (canonical data/backlog.json is consistent).",
+    "changed_files": [
+      "data/project_state.json",
+      "data/backlog.json (consistency check)",
+      "internal/NEXT_ACTIONS.md (round 97)",
+      "internal/SESSION_LOG.md (round 98)",
+      "ROADMAP.md (round 98)",
+      "scripts/generate_fair_ranking.py (round 95)",
+      "scripts/sync_metadata.py (round 92)",
+      "data/stats.json (round 90-91)",
+      "assets/dashboard.svg (round 91, 95)",
+      "TREE.md (round 86)",
+      "GLOSSARY.md (round 88)",
+      "library/05-agentic-economics/README.md (round 94)"
+    ]
   }
 ]
