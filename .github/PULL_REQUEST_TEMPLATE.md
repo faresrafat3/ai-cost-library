@@ -28,6 +28,7 @@
 - [ ] شغّلت `python3 scripts/sync_metadata.py` وحدّثت `data/*.json`
 - [ ] شغّلت `python3 scripts/generate_fair_ranking.py` (لو أثر التغيير على التصنيف)
 - [ ] شغّلت `python3 scripts/generate_dashboard.py` (لو أثر التغيير على الإحصائيات)
+- [ ] شغّلت `python3 scripts/generate_tree_visual.py` (لو أثر التغيير على بنية الشجرة)
 - [ ] حدّثت [CHANGELOG.md](CHANGELOG.md)
 
 ---

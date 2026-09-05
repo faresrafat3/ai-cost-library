@@ -73,6 +73,9 @@ python3 scripts/generate_fair_ranking.py
 
 # توليد لوحة القيادة assets/dashboard.svg
 python3 scripts/generate_dashboard.py
+
+# توليد شجرة التصنيف المرئية assets/tree-visual.svg
+python3 scripts/generate_tree_visual.py
 ```
 
 > السكربتات تعتمد على stdlib فقط — يمكن تشغيلها في أي بيئة Python 3.9+ بدون `pip install`.
