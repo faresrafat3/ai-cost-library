@@ -2,11 +2,14 @@
 
 > **المسار:** المكتبة ← تحسين التشغيل ← ذاكرة KV
 
+> **آخر تحديث: 2026-09-04 (round 84)**: تم إكمال الجدول بإضافة `sparse-linear-attention.md` الذي كان مفقوداً.
+
 | الإدخال | التصنيف | الإثبات | الملف |
 |---------|---------|---------|-------|
 | PagedAttention | 📘 عملية | ⭐⭐⭐⭐ | [paged-attention.md](paged-attention.md) |
 | FlashAttention | 📘 عملية | ⭐⭐⭐⭐ | [flash-attention.md](flash-attention.md) |
 | RadixAttention | 📘 عملية | ⭐⭐⭐ | [radix-attention.md](radix-attention.md) |
+| الانتباه المتناثر والخطي | 🧪 ناشئة | ⭐⭐ | [sparse-linear-attention.md](sparse-linear-attention.md) |
 
 | ضغط ذاكرة KV | 🧪 ناشئة | ⭐⭐ | [kv-cache-compression.md](kv-cache-compression.md) |
 

@@ -4,6 +4,8 @@
 
 تقليل دقة الأوزان والتفعيلات لتقليل الذاكرة وزيادة الإنتاجية.
 
+> **آخر تحديث: 2026-09-04 (round 84)**: تم إكمال الجدول بإضافة `moe-quantization.md` الذي كان مفقوداً.
+
 | الإدخال | التصنيف | الإثبات | الملف |
 |---------|---------|---------|-------|
 | LLM.int8() | 📘 عملية | ⭐⭐⭐⭐ | [llm-int8.md](llm-int8.md) |
@@ -11,5 +13,6 @@
 | AWQ | 📘 عملية | ⭐⭐⭐⭐ | [awq.md](awq.md) |
 | SmoothQuant | 📘 عملية | ⭐⭐⭐ | [smoothquant.md](smoothquant.md) |
 | FP8 Quantization | 📘 عملية | ⭐⭐⭐⭐ | [fp8-quantization.md](fp8-quantization.md) |
+| تكميم MoE | 🧪 ناشئة | ⭐⭐ | [moe-quantization.md](moe-quantization.md) |
 
 **التوصية في 2026:** FP8 هو المعيار الافتراضي على Hopper/Blackwell. ابدأ به، ثم جرّب INT4 (AWQ/GPTQ) إذا احتجت ضغطاً أكبر.
