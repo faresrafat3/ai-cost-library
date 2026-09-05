@@ -7,7 +7,7 @@ from pathlib import Path
 import json, re, datetime, collections
 
 ROOT = Path(__file__).resolve().parents[1]
-TODAY = "2026-06-26"
+TODAY = datetime.date.today().isoformat()
 
 def read(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="ignore")
@@ -55,7 +55,7 @@ for p in entry_files:
         "cost_dimensions": fm.get("cost_dimensions", []),
         "proof_score": fm.get("proof_score", ""),
         "sources_count": int(fm.get("sources_count", "0") or 0) if str(fm.get("sources_count", "0")).isdigit() else 0,
-        "updated": fm.get("updated", TODAY),
+        "updated": fm.get("updated") or fm.get("last_reviewed") or fm.get("created") or TODAY,
     })
 
 # Count source records in markdown conservatively from Tier markers.

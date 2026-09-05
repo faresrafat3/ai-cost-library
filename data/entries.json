@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "last_updated": "2026-09-04",
+  "last_updated": "2026-09-05",
   "entries": [
     {
       "id": "entry-distillation-001",
@@ -14,7 +14,7 @@
       "cost_dimensions": "",
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
-      "updated": "2026-06-26"
+      "updated": "2026-09-04"
     },
     {
       "id": "entry-merging-001",
@@ -46,7 +46,7 @@
       "cost_dimensions": "",
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
-      "updated": "2026-06-26"
+      "updated": "2026-09-04"
     },
     {
       "id": "entry-dsv4-001",
@@ -93,7 +93,7 @@
       "cost_dimensions": "",
       "proof_score": "⭐⭐⭐ مُراجع أقران | Peer-Reviewed",
       "sources_count": 3,
-      "updated": "2026-06-26"
+      "updated": "2026-09-04"
     },
     {
       "id": "entry-llama4-001",
@@ -126,7 +126,7 @@
       "cost_dimensions": "",
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
-      "updated": "2026-06-26"
+      "updated": "2026-09-04"
     },
     {
       "id": "entry-moe-001",
@@ -480,7 +480,7 @@
       ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 4,
-      "updated": "2026-06-26"
+      "updated": "2026-06-27"
     },
     {
       "id": "entry-flashattn-001",
@@ -494,7 +494,7 @@
       "cost_dimensions": "",
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
-      "updated": "2026-06-26"
+      "updated": "2026-09-04"
     },
     {
       "id": "entry-kvcachecompress-001",
