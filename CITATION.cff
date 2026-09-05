@@ -20,7 +20,7 @@ keywords:
   - cost-reduction
 license: MIT
 version: "2.1.0"
-date-released: "2026-06-27"
+date-released: "2026-09-04"
 abstract: >-
   A bilingual (Arabic/English) evidence-based scientific library documenting
   and evaluating methods for reducing the cost of AI inference, training, and
