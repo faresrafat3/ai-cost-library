@@ -16,7 +16,7 @@ cost_dimensions:
 proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
 sources_count: 5
 created: 2026-06-26
-last_reviewed: 2026-06-26
+last_reviewed: 2026-09-04
 ---
 
 # FlashAttention — الانتباه المُحسَّن للذاكرة

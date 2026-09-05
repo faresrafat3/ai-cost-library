@@ -15,7 +15,7 @@ cost_dimensions:
 proof_score: "⭐⭐⭐ مُراجع أقران | Peer-Reviewed"
 sources_count: 3
 created: 2026-06-26
-last_reviewed: 2026-06-26
+last_reviewed: 2026-09-04
 ---
 
 # LayerSkip — قفز الطبقات مع فك الترميز التخميني الذاتي

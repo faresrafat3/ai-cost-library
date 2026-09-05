@@ -15,7 +15,7 @@ cost_dimensions:
 proof_score: "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype"
 sources_count: 3
 created: 2026-06-26
-last_reviewed: 2026-06-26
+last_reviewed: 2026-09-04
 ---
 
 # ShortGPT — قصّ طبقات النماذج اللغوية الكبيرة
