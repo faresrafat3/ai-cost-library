@@ -2,7 +2,8 @@
 
 **آخر تحديث:** 2026-06-26 (Session 5 — أوائل الـ ACL Polish)
 **مراجعة Round 68:** 2026-09-04 (التحديثات الحالية: 61 إدخال، 29 ادعاء، 217 مصدر، 59 مصطلح، 1 pending)
-**مراجعة Round 75:** 2026-09-04 (تحديث backlog: BL-001/002/003 → done, BL-004 → open. 4 open tasks: BL-004, BL-CLAIMS-COVERAGE, BL-REJECTED-PENDING, BL-CI-CHECKS)
+**مراجعة Round 75:** 2026-09-04 (تحديث backlog: BL-001/002/003 → done, BL-004 → open. 4 open tasks)
+**مراجعة Round 97:** 2026-09-05 (BL-CI-CHECKS → done in round 93, 3 open tasks now: BL-004, BL-CLAIMS-COVERAGE, BL-REJECTED-PENDING)
 
 > **ملاحظة Round 68:** الأولويات أدناه مرّت بمرور الوقت. الحالة الحالية:
 > - الأولوية 1 (توسيع الادعاءات): **انخفضت** — حالياً 29 ادعاء لـ 61 إدخال (نسبة ~48%، أفضل من 25/59 = 42% قبل ذلك).
@@ -51,4 +52,4 @@ python3 scripts/sync_metadata.py && git status --short
 | BL-004 | **open** | Build simple cost calculators from JSON data (no calculator scripts exist) |
 | BL-CLAIMS-COVERAGE | **open** | Link every numeric gate to a claim + direct source |
 | BL-REJECTED-PENDING | **open** | Add Rejected + Pending entries (only 1 pending exists) |
-| BL-CI-CHECKS | **open** | Add CI checks for front matter and metadata consistency |
+| BL-CI-CHECKS | **done** (round 93) | Add CI checks for front matter and metadata consistency (validate.yml covers all 3 requirements) |
