@@ -1,6 +1,8 @@
 # سجل الجلسة | Session Log
 
-> **آخر تحديث: 2026-09-04 (round 76)**
+> **آخر تحديث: 2026-09-05 (round 98)** — توضيح أن pending entry handling في RANKING تم حلها في round 95
+>
+> **آخر تحديث سابق: 2026-09-04 (round 76)**
 >
 > هذا الملف هو **سرد بشري** للجلسات الكبيرة فقط (الجلسات 4، 5، فحص ومزامنة، Round 68). الـ canonical machine-readable log الكامل موجود في `data/session_history.json` (16 entries اعتباراً من round 76: session-001..003, session-004..006, metadata-sync-2026-06-26, session-007..014).
 >
@@ -126,3 +128,5 @@
 ### ملاحظات
 - الإصدار 0.4.0 في `AGENT_STATE.md` كان قديماً (من Session 6)؛ الإصدار الفعلي في `pyproject.toml` و`CHANGELOG.md` هو `2.1.0` منذ Round 41.
 - الـ 1 pending entry (entry-model-router-cascade) لم يُدرج في RANKING.md بعد؛ يتطلب تشغيل v2.0 MCDA algorithm (out of scope لهذه الجلسة).
+  - **تحديث Round 95 (2026-09-05)**: الـ script الآن يتخطى `type=pending` entries بشكل صريح. RANKING.md header يقول "60 (تم تخطي 1 إدخال pending: entry-model-router-cascade)" — لم يعد drift بين الـ script output والـ committed state.
+  - **Round 95 update (2026-09-05)**: The script now explicitly skips `type=pending` entries. RANKING.md header says "60 (skipping 1 pending entry: entry-model-router-cascade)" — no more drift between script output and committed state.
