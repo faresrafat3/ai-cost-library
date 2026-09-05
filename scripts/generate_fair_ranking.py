@@ -260,7 +260,15 @@ def make_rows() -> list[dict]:
     entries_data = json.loads((ROOT / "data/entries.json").read_text(encoding="utf-8"))["entries"]
     scoring_data = json.loads((ROOT / "data/scoring.json").read_text(encoding="utf-8"))["entries"]
     rows = []
+    skipped_pending: list[str] = []
     for entry in entries_data:
+        # Skip pending entries (not yet ready for ranking evaluation).
+        # type=pending means the entry is acknowledged in the library but
+        # not evaluated. Including it would produce a bogus score from
+        # missing frontmatter data.
+        if entry.get("type") == "pending":
+            skipped_pending.append(entry["id"])
+            continue
         base = dict(scoring_data.get(entry["id"], {}).get("scores", {}))
         base.update(load_frontmatter_scores(ROOT / entry["path"]))
         axes = axis_scores(entry, base)
@@ -268,7 +276,7 @@ def make_rows() -> list[dict]:
         cal = calibrated_score(entry, axes, badges)
         rows.append({"entry": entry, "base": base, "axes": axes, "badges": badges, "calibration": cal})
     rows.sort(key=lambda r: (-float(r["calibration"]["final"]), -float(r["calibration"]["raw"]), r["entry"]["id"]))
-    return rows
+    return rows, skipped_pending
 
 
 def scenario_rank(rows: list[dict], ids: list[str]) -> list[dict]:
@@ -279,11 +287,19 @@ def scenario_rank(rows: list[dict], ids: list[str]) -> list[dict]:
 
 
 def main() -> None:
-    rows = make_rows()
+    rows, skipped_pending = make_rows()
 
     lines: list[str] = []
     lines.append("# التصنيف العادل متعدد المعايير | Fair Multi-Criteria Ranking\n")
-    lines.append(f"> إصدار خوارزمية: **v2.0 Calibrated MCDA** | تاريخ الإصدار: 2026-06-27 | عدد المداخل: **{len(rows)}** | المصدر: `data/entries.json`.\n\n")
+    if skipped_pending:
+        # Document pending entries so the reader knows the count
+        # excludes them on purpose.
+        skipped_list = ", ".join(skipped_pending)
+        lines.append(
+            f"> إصدار خوارزمية: **v2.0 Calibrated MCDA** | تاريخ الإصدار: 2026-06-27 | عدد المداخل: **{len(rows)}** (تم تخطي {len(skipped_pending)} إدخال pending: {skipped_list}) | المصدر: `data/entries.json`.\n\n"
+        )
+    else:
+        lines.append(f"> إصدار خوارزمية: **v2.0 Calibrated MCDA** | تاريخ الإصدار: 2026-06-27 | عدد المداخل: **{len(rows)}** | المصدر: `data/entries.json`.\n\n")
 
     lines.append("## لماذا v2؟\n\n")
     lines.append("الإصدار الأول كان مفيدًا كبداية، لكنه كان **متفائلًا أكثر من اللازم**: درجات كثيرة فوق 90 أعطت انطباعًا خاطئًا أن المكتبة وصلت إلى إجابة نهائية أو أن التقنيات العليا تصلح لكل الحالات. لذلك يستخدم هذا الإصدار خوارزمية أعمق وأكثر محافظة: يعطي التقنية حقها إذا كانت ممتازة في سيناريو محدد، لكنه لا يسمح لها بالفوز عالميًا لمجرد أنها قوية في محور واحد.\n\n")

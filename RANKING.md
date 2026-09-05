@@ -1,5 +1,5 @@
 # التصنيف العادل متعدد المعايير | Fair Multi-Criteria Ranking
-> إصدار خوارزمية: **v2.0 Calibrated MCDA** | تاريخ الإصدار: 2026-06-27 | عدد المداخل في الجدول: **60 من 61** (الإدخال 61 — `entry-model-router-cascade` — أُضيف إلى `data/entries.json` في 2026-09-04 لكن لم يُقيَّم بعدُ) | المصدر: `data/entries.json`.
+> إصدار خوارزمية: **v2.0 Calibrated MCDA** | تاريخ الإصدار: 2026-06-27 | عدد المداخل: **60** (تم تخطي 1 إدخال pending: entry-model-router-cascade) | المصدر: `data/entries.json`.
 
 ## لماذا v2؟
 
