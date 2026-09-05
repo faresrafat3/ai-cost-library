@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" font-family="Inter, "Helvetica Neue", Arial, sans-serif">
 <rect width="880" height="460" fill="#0F172A"/>
 <text x="40" y="50" fill="#E2E8F0" font-size="22" font-weight="700">AI Cost Library — Dashboard</text>
-<text x="40" y="74" fill="#94A3B8" font-size="13">v2.1.0 · last updated 2026-06-26</text>
+<text x="40" y="74" fill="#94A3B8" font-size="13">v2.1.0 · last updated 2026-09-04</text>
 <rect x="40" y="100" width="130" height="40" rx="6" fill="#1E293B"/>
 <rect x="40" y="100" width="3" height="40" fill="#3B82F6"/>
 <text x="54" y="117" fill="#94A3B8" font-size="11">Entries</text>
