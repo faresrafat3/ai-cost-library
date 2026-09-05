@@ -24,11 +24,11 @@ date-released: "2026-06-27"
 abstract: >-
   A bilingual (Arabic/English) evidence-based scientific library documenting
   and evaluating methods for reducing the cost of AI inference, training, and
-  deployment. The library classifies 60+ techniques across 7 categories by
-  evidence strength (practical, emerging, theoretical, rejected) and provides
-  a multi-criteria scoring system, evidence ledger, claims registry, and a
-  no-hype policy to help developers, companies, and researchers make informed
-  cost-reduction decisions.
+  deployment. The library classifies 61 techniques (60 ranked + 1 pending) across
+  7 categories by evidence strength (practical, emerging, theoretical, pending,
+  rejected) and provides a multi-criteria scoring system, evidence ledger,
+  claims registry, and a no-hype policy to help developers, companies, and
+  researchers make informed cost-reduction decisions.
 preferred-citation:
   type: software
   authors:
