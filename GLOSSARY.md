@@ -4,6 +4,25 @@
 
 Every technical term used by the library should appear here and in `data/glossary.json`.
 
+> **آخر تحديث: 2026-09-04 (round 88)**
+>
+> **ملاحظة عن drift (2026-09-04)**: هناك drift منهجي بين `GLOSSARY.md` و`data/glossary.json`:
+> - `data/glossary.json` يحوي **59 مصطلح** (المصدر الموثوق حسب `scripts/sync_metadata.py`)
+> - `GLOSSARY.md` يحوي **58 صف في الجدول**
+> - **29 مصطلح في MD غير موجود في JSON** (مثل: Distillation، Mixture of Experts، Model Routing، Semantic Caching)
+> - **30 مصطلح في JSON غير موجود في MD** (مثل: AWQ، FlashAttention، LoRA، PagedAttention، QLoRA)
+> - **29 مصطلح فقط مشترك بين الاثنين**
+>
+> السبب: `scripts/sync_metadata.py` يقرأ من `data/glossary.json` ويحدّث `data/stats.json` و`data/tree.json` لكنه **لا يولّد `GLOSSARY.md`**. الملفان تطوّروا بشكل مستقل منذ آخر تحديث يدوي.
+>
+> **الإصلاح الصحيح (out of scope لهذه الجلسة)**: إما
+> 1. تعديل `scripts/sync_metadata.py` لتوليد `GLOSSARY.md` من `data/glossary.json` (مثل `data/tree.json`)، أو
+> 2. تعديل `data/glossary.json` ليطابق `GLOSSARY.md` (المصدر البشري)
+>
+> كلا الخيارين يتطلب قرار معماري (أي مصدر موثوق) ومراجعة شاملة. هذه الجلسة توثّق drift فقط.
+>
+> **Drift note (2026-09-04)**: There is systematic drift between `GLOSSARY.md` (58 rows) and `data/glossary.json` (59 terms). Only 29 terms overlap. The script `scripts/sync_metadata.py` reads from JSON but does not generate the MD, so the two files have evolved independently. The proper fix (regenerate one from the other) requires an architectural decision about which is the source of truth, and is out of scope for this round.
+
 | المصطلح العربي | English Term | تعريف عربي | English Definition |
 |---|---|---|---|
 | التكمية | Quantization | عملية تحويل الأوزان أو التنشيطات من دقة عالية إلى دقة منخفضة لتقليل حجم النموذج وتسريع الاستدلال | Converting weights or activations from high precision to low precision to reduce model size and accelerate inference |
