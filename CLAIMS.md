@@ -1,8 +1,14 @@
 # سجل الادعاءات | Claims Ledger
 
-يسجل هذا الملف الادعاءات المهمة المرتبطة بتقليل التكلفة أو الذاكرة أو الكمون. كل ادعاء مرتبط بمعرّف مصدر في `data/sources.json`.
-
-This file records important AI cost-reduction claims. Each claim links to source identifiers in `data/sources.json`.
+> **آخر تحديث: 2026-09-04 (round 73)**
+>
+> هذا الملف هو **مجموعة مختارة من الادعاءات المميّزة** المرتبطة بتقليل التكلفة أو الذاكرة أو الكمون. كل ادعاء مرتبط بمعرّف مصدر في `data/sources.json`.
+>
+> This file is a **curated subset of flagship claims** linked to AI cost/memory/latency reduction. Each claim links to source identifiers in `data/sources.json`.
+>
+> **ملاحظة عن drift (2026-09-04)**: الـ ledger الكامل في `data/claims.json` يحوي **29 ادعاء** عبر 5 إدخالات (`entry-distillation-001` بـ 13، `entry-layerskip-001` بـ 5، `entry-shortgpt-001` بـ 4، `entry-sleeptime-001` بـ 4، `entry-mod-001` بـ 3). هذا الملف يحوي **15 ادعاء مختار** عبر ~11 إدخال — ليس ledger كامل، بل curated selection لأبرز الادعاءات للقراءة السريعة. الـ canonical state دائماً في `data/claims.json` (معرّفات `CL-NNN`). المعرّفات هنا (`CLAIM-NAME-NN`) مختلفة عمداً — تربط الادعاء بالمدخل بدل رقم تسلسلي.
+>
+> **Drift note (2026-09-04)**: The full ledger in `data/claims.json` contains **29 claims** across 5 entries. This file contains **15 curated claims** across ~11 entries — not the full ledger, but a curated selection of flagship claims for quick reading. The canonical state is always `data/claims.json` (IDs `CL-NNN`). The IDs here (`CLAIM-NAME-NN`) are intentionally different — they bind the claim to the entry name rather than a serial number.
 
 | Claim ID | Entry | Metric | Claim | Sources | Confidence |
 |---|---|---|---|---|---|
