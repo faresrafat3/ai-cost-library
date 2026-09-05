@@ -103,11 +103,13 @@ python3 scripts/generate_dashboard.py
 |---|-------|-------|----------|---------------|
 | 1 | [تحسين النموذج](library/01-model-optimization/) | تكميم، ضغط، اختيار، بنية | 19 | 30-75% |
 | 2 | [تحسين التشغيل](library/02-runtime-optimization/) | تجميع، ذاكرة، تخزين، محركات | 14 | 40-80% |
-| 3 | [تحسين التدريب](library/03-training-optimization/) | LoRA, QLoRA, موزّع | 3 | متغير |
-| 4 | [البنية التحتية](library/04-infrastructure/) | مسرّعات، نشر، طاقة | 8 | 40-65% |
-| 5 | [اقتصاديات الوكلاء](library/05-agentic-economics/) | مضاعف التوكن، سلاسل، RAG | 5 | حرج |
+| 3 | [تحسين التدريب](library/03-training-optimization/) | LoRA, QLoRA, موزّع | 6 | متغير |
+| 4 | [البنية التحتية](library/04-infrastructure/) | مسرّعات، نشر، طاقة | 10 | 40-65% |
+| 5 | [اقتصاديات الوكلاء](library/05-agentic-economics/) | مضاعف التوكن، سلاسل، RAG | 7 | حرج |
 | 6 | [الحوكمة المالية](library/06-finops-governance/) | مراقبة، ميزانية، عائد | 3 | حوكمة |
 | 7 | [اقتصاديات السوق](library/07-market-economics/) | أسعار، مزودون، مفارقات | 2 | سياق |
+
+> **آخر تحديث: 2026-09-04 (round 87)**: تم تصحيح عدد الإدخالات في الجدول (3: 3→6، 4: 8→10، 5: 5→7). الإجمالي الجديد 61 (مطابق لـ `data/entries.json` و `data/categories.json`).
 
 التفاصيل الكاملة في [**TAXONOMY_REDESIGN.md**](TAXONOMY_REDESIGN.md).
 
