@@ -1,6 +1,6 @@
 # خارطة الطريق | Roadmap
 
-> **آخر تحديث: 2026-09-04 (round 79)**
+> **آخر تحديث: 2026-09-04 (round 79)** + **round 98: mark "Automated Scoring" as done**
 >
 > **ملاحظة عن drift (2026-09-04)**: المرحلة 2 كانت موصوفة بأنها "الحالية 🔄" في 2026-06-26، لكن **جميع بنودها الـ 6 مكتملة فعلياً** في 2026-09-04. هذا drift حقيقي — checkbox `[ ]` يقول "غير مكتمل" لكن الملفات موجودة. تم إصلاحها في هذه الجولة بفحص كل بند ضد الـ filesystem.
 >
@@ -47,7 +47,7 @@
 - [ ] نماذج التنبؤ بالتكلفة (Cost Prediction Models)
 - [ ] تكامل مع MLPerf Benchmarks
 - [ ] دراسات حالة من شركات حقيقية
-- [ ] نظام التقييم التلقائي (Automated Scoring)
+- [x] ~~نظام التقييم التلقائي (Automated Scoring)~~ — **مُنجَز**: `scripts/generate_fair_ranking.py` (v2.0 Calibrated MCDA, 9 axes)، `data/fair_ranking.json` (60 إدخال مُقيَّم + 1 pending مُتجاوز)، `RANKING.md` (الجدول + المنهجية)، `SCORING_SYSTEM.md` (12 بُعد). **Drift note (round 98)**: هذا البند كان مذكوراً كـ `[ ]` لكن الـ implementation الفعلي مكتمل ومُختبَر.
 
 ## 📅 المرحلة 4 — النظام البيئي (طويلة المدى 🚀)
 - [ ] واجهة برمجة تطبيقات للاستعلام (Query API)
