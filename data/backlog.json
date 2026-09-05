@@ -51,9 +51,10 @@
     {
       "id": "BL-CI-CHECKS",
       "priority": "medium",
-      "status": "open",
+      "status": "done",
       "task_ar": "إضافة تحقق CI لاتساق front matter والبيانات.",
-      "task_en": "Add CI checks for front matter and metadata consistency."
+      "task_en": "Add CI checks for front matter and metadata consistency.",
+      "done_note": "Closed 2026-09-05 round 93 audit: .github/workflows/validate.yml has 3 steps that cover all the requirements — (1) JSON validation for all data/*.json, (2) front matter validation for library/**/*.md (required keys), (3) sync_metadata.py run + diff check (catches drift between library/ and data/). Round 92 also fixed the script to be idempotent (datetime.date.today instead of hardcoded 2026-06-26). This item is now obsolete — the CI exists, passes, and stays green."
     }
   ]
 }
