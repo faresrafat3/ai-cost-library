@@ -1,7 +1,7 @@
 # سجل التغييرات | Changelog
 
 ## 2.1.0 — 2026-09-04
-> Documentation catch-up entry. `pyproject.toml` and `data/stats.json` have been at 2.1.0 since 2026-06-28, but the CHANGELOG was not updated. This entry reconstructs the headline changes between 0.4.0 and 2.1.0 from `git log` and `data/stats.json`.
+> Documentation catch-up entry. `pyproject.toml` and `data/stats.json` have been at 2.1.0 since 2026-09-04 (set in round 41+ per `internal/AGENT_STATE.md`), but the CHANGELOG was not updated. This entry reconstructs the headline changes between 0.4.0 and 2.1.0 from `git log` and `data/stats.json`.
 
 - 🟢 **Library growth**: 60 → 61 documented techniques (added: Model Router Cascade in `05-agentic-economics/`).
 - 🟢 **Methodology upgrade**: Calibrated fair multi-criteria ranking (v2) — see `RANKING.md` and `data/fair_ranking.json`.
