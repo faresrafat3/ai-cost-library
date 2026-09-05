@@ -13,7 +13,7 @@ cost_dimensions:
   - memory
   - compute
   - energy
-proof_score: 4
+proof_score: "⭐⭐⭐⭐ إنتاج | Production-Proven"
 sources_count: 5
 created: 2026-06-26
 last_reviewed: 2026-06-26

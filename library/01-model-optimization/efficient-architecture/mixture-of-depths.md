@@ -12,7 +12,7 @@ cost_dimensions:
   - inference-cost
   - compute
   - energy
-proof_score: 2
+proof_score: "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype"
 sources_count: 3
 created: 2026-06-26
 last_reviewed: 2026-06-26

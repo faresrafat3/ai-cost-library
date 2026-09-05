@@ -12,7 +12,7 @@
       "subcategory": "distillation",
       "path": "library/01-model-optimization/compression/distillation.md",
       "cost_dimensions": "",
-      "proof_score": "4",
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
       "updated": "2026-06-26"
     },
@@ -44,7 +44,7 @@
       "subcategory": "pruning",
       "path": "library/01-model-optimization/compression/short-gpt.md",
       "cost_dimensions": "",
-      "proof_score": "2",
+      "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
       "updated": "2026-06-26"
     },
@@ -91,7 +91,7 @@
       "subcategory": "early-exit",
       "path": "library/01-model-optimization/efficient-architecture/layer-skip.md",
       "cost_dimensions": "",
-      "proof_score": "3",
+      "proof_score": "⭐⭐⭐ مُراجع أقران | Peer-Reviewed",
       "sources_count": 3,
       "updated": "2026-06-26"
     },
@@ -124,7 +124,7 @@
       "subcategory": "compute-allocation",
       "path": "library/01-model-optimization/efficient-architecture/mixture-of-depths.md",
       "cost_dimensions": "",
-      "proof_score": "2",
+      "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
       "updated": "2026-06-26"
     },
@@ -492,7 +492,7 @@
       "subcategory": "kv-cache",
       "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
       "cost_dimensions": "",
-      "proof_score": "4",
+      "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
       "updated": "2026-06-26"
     },

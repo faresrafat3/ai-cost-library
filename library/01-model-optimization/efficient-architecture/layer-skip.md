@@ -12,7 +12,7 @@ cost_dimensions:
   - latency
   - compute
   - energy
-proof_score: 3
+proof_score: "⭐⭐⭐ مُراجع أقران | Peer-Reviewed"
 sources_count: 3
 created: 2026-06-26
 last_reviewed: 2026-06-26
