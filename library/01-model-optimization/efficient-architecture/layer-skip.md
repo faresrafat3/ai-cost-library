@@ -4,8 +4,8 @@ title_ar: "LayerSkip — قفز الطبقات مع فك الترميز التخ
 title_en: "LayerSkip: Self-Speculative Decoding with Layer Skipping"
 type: practical
 status: validated
-category: efficient-inference
-subcategory: early-exit
+category: model-optimization
+subcategory: efficient-architecture
 tree_path: efficient-inference/early-exit/layer-skip.md
 cost_dimensions:
   - inference-cost

@@ -4,7 +4,7 @@ title_ar: التكميم بدقة FP8
 title_en: FP8 Quantization
 type: practical
 status: production-proven
-category: model-compression
+category: model-optimization
 subcategory: quantization
 tree_path: "AI Cost Library → Model Compression → Quantization → FP8 Quantization"
 cost_dimensions:

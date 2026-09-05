@@ -5,7 +5,7 @@ title_en: Model Router Cascade (Tiered Inference)
 type: pending
 status: emerging
 category: agentic-economics
-subcategory: 05-agentic-economics
+subcategory: ""
 tree_path: "AI Cost Library → Agentic Economics → Model Router Cascade"
 cost_dimensions:
   - inference-cost

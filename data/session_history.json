@@ -161,5 +161,24 @@
       "scripts/generate_tree_visual.py",
       "internal/NEXT_ACTIONS.md"
     ]
+  },
+  {
+    "session": "session-017",
+    "date": "2026-09-05",
+    "summary_ar": "Round 104: إصلاح drift بين frontmatter v1 (model-compression, efficient-inference, etc.) و v2 taxonomy (model-optimization, runtime-optimization, etc.) في 9 إدخالات + subcategory في pending entry. إصلاح bug في front_matter parser: كان يفشل في قراءة multi-line lists (cost_dimensions) فيحولها إلى empty string. الآن يقرأها كقائمة فعلية (61/61 entries with proper list).",
+    "summary_en": "Round 104: fixed v1→v2 category drift in 9 entries (model-compression/efficient-inference/etc → model-optimization/runtime-optimization). Fixed front_matter parser bug: multi-line lists (cost_dimensions) were being parsed as empty string instead of list. Now 61/61 entries have proper list.",
+    "changed_files": [
+      "library/01-model-optimization/compression/distillation.md",
+      "library/01-model-optimization/compression/short-gpt.md",
+      "library/01-model-optimization/efficient-architecture/layer-skip.md",
+      "library/01-model-optimization/efficient-architecture/mixture-of-depths.md",
+      "library/01-model-optimization/quantization/fp8-quantization.md",
+      "library/01-model-optimization/right-sizing/chinchilla-scaling.md",
+      "library/01-model-optimization/right-sizing/model-routing.md",
+      "library/02-runtime-optimization/caching/semantic-caching.md",
+      "library/02-runtime-optimization/kv-cache/flash-attention.md",
+      "library/05-agentic-economics/model-router-cascade.md",
+      "scripts/sync_metadata.py"
+    ]
   }
 ]

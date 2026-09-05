@@ -4,8 +4,8 @@ title_ar: "Mixture-of-Depths — خلط الأعماق"
 title_en: "Mixture-of-Depths: Dynamically Allocating Compute in Transformers"
 type: emerging
 status: emerging
-category: efficient-training
-subcategory: compute-allocation
+category: model-optimization
+subcategory: efficient-architecture
 tree_path: efficient-training/compute-allocation/mixture-of-depths.md
 cost_dimensions:
   - training-cost

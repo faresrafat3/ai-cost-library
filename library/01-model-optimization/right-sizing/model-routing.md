@@ -4,8 +4,8 @@ title_ar: توجيه النماذج الذكي
 title_en: Intelligent Model Routing (RouteLLM)
 type: practical
 status: deployed
-category: model-selection-and-routing
-subcategory: model-routing
+category: model-optimization
+subcategory: right-sizing
 tree_path: "AI Cost Library → Model Selection and Routing → Model Routing → Intelligent Model Routing"
 cost_dimensions:
   - api-cost

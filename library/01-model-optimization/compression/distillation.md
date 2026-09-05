@@ -4,8 +4,8 @@ title_ar: "استخلاص المعرفة — من DistilBERT إلى DeepSeek-R1"
 title_en: "Knowledge Distillation — From DistilBERT to DeepSeek-R1"
 type: practical
 status: production-proven
-category: model-compression
-subcategory: distillation
+category: model-optimization
+subcategory: compression
 tree_path: model-compression/distillation/distillation.md
 cost_dimensions:
   - training-cost

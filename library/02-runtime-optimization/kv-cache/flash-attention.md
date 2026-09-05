@@ -4,7 +4,7 @@ title_ar: "FlashAttention — الانتباه المُحسَّن للذاكرة
 title_en: "FlashAttention: I/O-Aware Exact Attention"
 type: practical
 status: production-proven
-category: efficient-inference
+category: runtime-optimization
 subcategory: kv-cache
 tree_path: efficient-inference/kv-cache/flash-attention.md
 cost_dimensions:

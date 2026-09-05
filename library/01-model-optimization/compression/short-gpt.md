@@ -4,8 +4,8 @@ title_ar: "ShortGPT — قصّ طبقات النماذج اللغوية الكب
 title_en: "ShortGPT: Layer Pruning in Large Language Models"
 type: emerging
 status: emerging
-category: model-compression
-subcategory: pruning
+category: model-optimization
+subcategory: compression
 tree_path: model-compression/pruning/short-gpt.md
 cost_dimensions:
   - inference-cost

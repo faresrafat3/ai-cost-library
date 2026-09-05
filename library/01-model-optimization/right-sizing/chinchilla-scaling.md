@@ -4,8 +4,8 @@ title_ar: قوانين التحجيم الأمثل حوسبياً (Chinchilla)
 title_en: Compute-Optimal Scaling Laws (Chinchilla)
 type: theoretical
 status: validated
-category: efficient-training
-subcategory: compute-optimal
+category: model-optimization
+subcategory: right-sizing
 tree_path: "AI Cost Library → Efficient Training → Compute-Optimal → Chinchilla Scaling"
 cost_dimensions:
   - training-cost

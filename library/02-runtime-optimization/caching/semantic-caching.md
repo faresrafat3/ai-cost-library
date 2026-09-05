@@ -4,8 +4,8 @@ title_ar: التخزين المؤقت الدلالي
 title_en: Semantic Caching
 type: practical
 status: deployed
-category: token-and-prompt-cost
-subcategory: semantic-caching
+category: runtime-optimization
+subcategory: caching
 tree_path: "AI Cost Library → Token and Prompt Cost → Semantic Caching"
 cost_dimensions:
   - api-cost

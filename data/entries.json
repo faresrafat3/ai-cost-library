@@ -8,10 +8,16 @@
       "title_en": "Knowledge Distillation — From DistilBERT to DeepSeek-R1",
       "type": "practical",
       "status": "production-proven",
-      "category": "model-compression",
-      "subcategory": "distillation",
+      "category": "model-optimization",
+      "subcategory": "compression",
       "path": "library/01-model-optimization/compression/distillation.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "training-cost",
+        "inference-cost",
+        "compute",
+        "memory",
+        "energy"
+      ],
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
       "updated": "2026-09-04"
@@ -40,10 +46,15 @@
       "title_en": "ShortGPT: Layer Pruning in Large Language Models",
       "type": "emerging",
       "status": "emerging",
-      "category": "model-compression",
-      "subcategory": "pruning",
+      "category": "model-optimization",
+      "subcategory": "compression",
       "path": "library/01-model-optimization/compression/short-gpt.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "inference-cost",
+        "compute",
+        "memory",
+        "energy"
+      ],
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
       "updated": "2026-09-04"
@@ -76,7 +87,11 @@
       "category": "model-optimization",
       "subcategory": "efficient-architecture",
       "path": "library/01-model-optimization/efficient-architecture/inference-efficient-scaling.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "inference-cost",
+        "throughput",
+        "training-cost"
+      ],
       "proof_score": "⭐⭐⭐ مُراجع أقران | Peer-Reviewed",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -87,10 +102,15 @@
       "title_en": "LayerSkip: Self-Speculative Decoding with Layer Skipping",
       "type": "practical",
       "status": "validated",
-      "category": "efficient-inference",
-      "subcategory": "early-exit",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
       "path": "library/01-model-optimization/efficient-architecture/layer-skip.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "inference-cost",
+        "latency",
+        "compute",
+        "energy"
+      ],
       "proof_score": "⭐⭐⭐ مُراجع أقران | Peer-Reviewed",
       "sources_count": 3,
       "updated": "2026-09-04"
@@ -120,10 +140,15 @@
       "title_en": "Mixture-of-Depths: Dynamically Allocating Compute in Transformers",
       "type": "emerging",
       "status": "emerging",
-      "category": "efficient-training",
-      "subcategory": "compute-allocation",
+      "category": "model-optimization",
+      "subcategory": "efficient-architecture",
       "path": "library/01-model-optimization/efficient-architecture/mixture-of-depths.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "training-cost",
+        "inference-cost",
+        "compute",
+        "energy"
+      ],
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
       "updated": "2026-09-04"
@@ -211,10 +236,17 @@
       "title_en": "FP8 Quantization",
       "type": "practical",
       "status": "production-proven",
-      "category": "model-compression",
+      "category": "model-optimization",
       "subcategory": "quantization",
       "path": "library/01-model-optimization/quantization/fp8-quantization.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "memory",
+        "compute",
+        "inference-cost",
+        "throughput",
+        "hardware-cost",
+        "energy"
+      ],
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
       "updated": "2026-06-26"
@@ -299,10 +331,15 @@
       "title_en": "Compute-Optimal Scaling Laws (Chinchilla)",
       "type": "theoretical",
       "status": "validated",
-      "category": "efficient-training",
-      "subcategory": "compute-optimal",
+      "category": "model-optimization",
+      "subcategory": "right-sizing",
       "path": "library/01-model-optimization/right-sizing/chinchilla-scaling.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "training-cost",
+        "compute",
+        "energy",
+        "hardware-cost"
+      ],
       "proof_score": "⭐⭐⭐ مُتحقق | Validated",
       "sources_count": 4,
       "updated": "2026-06-26"
@@ -313,10 +350,15 @@
       "title_en": "Intelligent Model Routing (RouteLLM)",
       "type": "practical",
       "status": "deployed",
-      "category": "model-selection-and-routing",
-      "subcategory": "model-routing",
+      "category": "model-optimization",
+      "subcategory": "right-sizing",
       "path": "library/01-model-optimization/right-sizing/model-routing.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost",
+        "latency"
+      ],
       "proof_score": "⭐⭐⭐ منشور | Deployed",
       "sources_count": 6,
       "updated": "2026-06-26"
@@ -382,10 +424,17 @@
       "title_en": "Semantic Caching",
       "type": "practical",
       "status": "deployed",
-      "category": "token-and-prompt-cost",
-      "subcategory": "semantic-caching",
+      "category": "runtime-optimization",
+      "subcategory": "caching",
       "path": "library/02-runtime-optimization/caching/semantic-caching.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "api-cost",
+        "token-cost",
+        "inference-cost",
+        "latency",
+        "compute",
+        "energy"
+      ],
       "proof_score": "⭐⭐⭐ منشور | Deployed",
       "sources_count": 5,
       "updated": "2026-06-26"
@@ -488,10 +537,16 @@
       "title_en": "FlashAttention: I/O-Aware Exact Attention",
       "type": "practical",
       "status": "production-proven",
-      "category": "efficient-inference",
+      "category": "runtime-optimization",
       "subcategory": "kv-cache",
       "path": "library/02-runtime-optimization/kv-cache/flash-attention.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "training-cost",
+        "inference-cost",
+        "memory",
+        "compute",
+        "energy"
+      ],
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 5,
       "updated": "2026-09-04"
@@ -505,7 +560,12 @@
       "category": "runtime-optimization",
       "subcategory": "kv-cache",
       "path": "library/02-runtime-optimization/kv-cache/kv-cache-compression.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "memory",
+        "inference-cost",
+        "throughput",
+        "latency"
+      ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 4,
       "updated": "2026-06-26"
@@ -576,7 +636,12 @@
       "category": "training-optimization",
       "subcategory": "distributed-training",
       "path": "library/03-training-optimization/distributed-training/deepspeed-fsdp.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "training-cost",
+        "memory",
+        "hardware-cost",
+        "compute"
+      ],
       "proof_score": "⭐⭐⭐⭐ إنتاج | Production-Proven",
       "sources_count": 4,
       "updated": "2026-06-26"
@@ -684,7 +749,12 @@
       "category": "infrastructure",
       "subcategory": "accelerators",
       "path": "library/04-infrastructure/accelerators/cpu-gpu-collaborative.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "hardware-cost",
+        "memory",
+        "inference-cost",
+        "throughput"
+      ],
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 3,
       "updated": "2026-06-26"
@@ -717,7 +787,11 @@
       "category": "infrastructure",
       "subcategory": "accelerators",
       "path": "library/04-infrastructure/accelerators/decentralized-inference.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "hardware-cost",
+        "inference-cost",
+        "compute"
+      ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 3,
       "updated": "2026-06-26"
@@ -750,7 +824,12 @@
       "category": "infrastructure",
       "subcategory": "accelerators",
       "path": "library/04-infrastructure/accelerators/heterogeneous-inference.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "hardware-cost",
+        "inference-cost",
+        "throughput",
+        "energy"
+      ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 3,
       "updated": "2026-06-26"
@@ -783,7 +862,13 @@
       "category": "infrastructure",
       "subcategory": "deployment-strategies",
       "path": "library/04-infrastructure/deployment-strategies/local-vs-cloud-hybrid.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "energy",
+        "compute",
+        "inference-cost",
+        "hardware-cost",
+        "latency"
+      ],
       "proof_score": "⭐⭐⭐ مُتحقق | Validated",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -816,7 +901,12 @@
       "category": "infrastructure",
       "subcategory": "energy-efficiency",
       "path": "library/04-infrastructure/energy-efficiency/babbling-suppression.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "energy",
+        "compute",
+        "token-cost",
+        "latency"
+      ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -848,7 +938,11 @@
       "category": "agentic-economics",
       "subcategory": "chain-optimization",
       "path": "library/05-agentic-economics/chain-optimization/agentdiet.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost",
+        "compute"
+      ],
       "proof_score": "⭐⭐ نموذج أولي مُراجع | Peer-Reviewed Prototype",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -899,7 +993,10 @@
       "category": "agentic-economics",
       "subcategory": "chain-optimization",
       "path": "library/05-agentic-economics/chain-optimization/skillreducer.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost"
+      ],
       "proof_score": "⭐⭐ نموذج أولي | Prototype",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -911,9 +1008,12 @@
       "type": "pending",
       "status": "emerging",
       "category": "agentic-economics",
-      "subcategory": "05-agentic-economics",
+      "subcategory": "",
       "path": "library/05-agentic-economics/model-router-cascade.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "inference-cost",
+        "token-cost"
+      ],
       "proof_score": "⭐ قيد التقييم | Under Review",
       "sources_count": 1,
       "updated": "2026-06-26"
@@ -927,7 +1027,12 @@
       "category": "agentic-economics",
       "subcategory": "token-multiplier",
       "path": "library/05-agentic-economics/token-multiplier/agent-token-multiplier.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "token-cost",
+        "inference-cost",
+        "api-cost",
+        "compute"
+      ],
       "proof_score": "⭐⭐⭐ منشور | Deployed",
       "sources_count": 5,
       "updated": "2026-06-26"
@@ -978,7 +1083,12 @@
       "category": "finops-governance",
       "subcategory": "observability",
       "path": "library/06-finops-governance/observability/ai-finops-observability.md",
-      "cost_dimensions": "",
+      "cost_dimensions": [
+        "monitoring-cost",
+        "api-cost",
+        "inference-cost",
+        "engineering-cost"
+      ],
       "proof_score": "⭐⭐⭐ منشور | Deployed",
       "sources_count": 4,
       "updated": "2026-06-26"

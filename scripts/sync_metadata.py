@@ -19,16 +19,39 @@ def front_matter(text: str) -> dict:
     if len(parts) < 3:
         return {}
     out = {}
-    for line in parts[1].splitlines():
-        if ":" not in line or line.startswith("  "):
+    lines = parts[1].splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if ":" not in line:
+            i += 1
+            continue
+        # Skip lines that are continuations of a multi-line list (start with "  - ")
+        if line.startswith("  - "):
+            i += 1
             continue
         k, v = line.split(":", 1)
         v = v.strip().strip('"')
         if v.startswith("[") and v.endswith("]"):
-            vals=[x.strip().strip('"\'') for x in v[1:-1].split(',') if x.strip()]
+            # Inline list: [a, b, c]
+            vals = [x.strip().strip('"\'') for x in v[1:-1].split(',') if x.strip()]
             out[k.strip()] = vals
+        elif v == "":
+            # Could be a multi-line list. Look ahead for "  - X" lines
+            vals = []
+            j = i + 1
+            while j < len(lines) and lines[j].startswith("  - "):
+                vals.append(lines[j].strip()[2:].strip())
+                j += 1
+            if vals:
+                out[k.strip()] = vals
+                i = j
+                continue
+            else:
+                out[k.strip()] = v
         else:
             out[k.strip()] = v
+        i += 1
     return out
 
 entry_files = sorted(p for p in (ROOT/"library").glob("**/*.md") if p.name != "README.md")
