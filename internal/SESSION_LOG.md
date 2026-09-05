@@ -1,14 +1,16 @@
 # سجل الجلسة | Session Log
 
-> **آخر تحديث: 2026-09-05 (round 98)** — توضيح أن pending entry handling في RANKING تم حلها في round 95
+> **آخر تحديث: 2026-09-05 (round 109)** — تحديث عدد entries في `data/session_history.json` (20 total, 18 session-*)
+>
+> **آخر تحديث سابق: 2026-09-05 (round 98)** — توضيح أن pending entry handling في RANKING تم حلها في round 95
 >
 > **آخر تحديث سابق: 2026-09-04 (round 76)**
 >
-> هذا الملف هو **سرد بشري** للجلسات الكبيرة فقط (الجلسات 4، 5، فحص ومزامنة، Round 68). الـ canonical machine-readable log الكامل موجود في `data/session_history.json` (16 entries اعتباراً من round 76: session-001..003, session-004..006, metadata-sync-2026-06-26, session-007..014).
+> هذا الملف هو **سرد بشري** للجلسات الكبيرة فقط (الجلسات 4، 5، فحص ومزامنة، Round 68). الـ canonical machine-readable log الكامل موجود في `data/session_history.json` (20 entries اعتباراً من round 109: session-001..003, session-004..006, metadata-sync-2026-06-26, session-007..018).
 >
 > **ملاحظة عن الترقيم (round 76)**: `data/session_history.json` كان يحوي 6 entries بترتيب session-001..003 → 005..006 (session-004 مفقود). السبب: Session 4 كانت موثّقة هنا فقط (تحت "الجلسة 4"). تم إصلاحه في round 76 بإضافة session-004 إلى JSON.
 >
-> This file is a **human narrative** of major sessions only (Sessions 4, 5, فحص ومزامنة, Round 68). The full canonical machine-readable log is in `data/session_history.json` (16 entries as of round 76: session-001..003, session-004..006, metadata-sync-2026-06-26, session-007..014).
+> This file is a **human narrative** of major sessions only (Sessions 4, 5, فحص ومزامنة, Round 68). The full canonical machine-readable log is in `data/session_history.json` (20 entries as of round 109: session-001..003, session-004..006, metadata-sync-2026-06-26, session-007..018).
 >
 > **Numbering note (round 76)**: `data/session_history.json` had 6 entries in order session-001..003 → 005..006 (session-004 missing). Reason: Session 4 was documented only here (under "الجلسة 4"). Repaired in round 76 by adding session-004 to the JSON.
 
